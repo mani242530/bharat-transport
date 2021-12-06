@@ -1,0 +1,138 @@
+<ion-header>
+  <!-- <ion-toolbar> -->
+  <div
+    class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple"
+  >
+    <h5 class="font-weight-normal mb-0 text-white">
+      <a class="text-purple" routerLink="/home"
+        ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
+      ></a>
+      <ion-title>Search Results</ion-title>
+    </h5>
+    <div class="ml-auto d-flex align-items-center">
+      <!-- <a class="text-white h6 mb-0" routerLink="/home"
+          ><fa-icon icon="search" class="icofont-search-1"></fa-icon
+        ></a>
+        <a
+          href="#"
+          class="mx-4 text-white h6 mb-0"
+          data-toggle="modal"
+          data-target="#filterModal"
+          ><fa-icon icon="filter" class="icofont-filter"></fa-icon
+        ></a> -->
+      <ngx-avatar
+        name="{{ userName }}"
+        (clickOnAvatar)="avatarClicked($event)"
+        size="50"
+      ></ngx-avatar>
+      <ion-buttons slot="end">
+        <ion-menu-button
+          ><fa-icon icon="bars" class="icofont-navigation-menu"></fa-icon
+        ></ion-menu-button>
+      </ion-buttons>
+    </div>
+  </div>
+  <!-- </ion-toolbar> -->
+</ion-header>
+
+<ion-content id="content" fullscreen>
+  <!-- <cdk-virtual-scroll-viewport
+    class="scroll-viewport"
+    #scroll
+    itemSize="80"
+    minBufferPx="900"
+    maxBufferPx="1350"
+  > -->
+  <div class="osahan-listing p-0 m-0 row border-top">
+    <div class="p-2 w-100">
+      <div class="bg-white border border-warning rounded-1 shadow-sm p-2">
+        <div class="row mx-0 px-1">
+          <div class="col-6 p-0">
+            <small class="text-muted mb-1 f-10 pr-1">GOING FROM</small>
+            <p class="small mb-0">{{ searchParam.from | uppercase }}</p>
+          </div>
+
+          <div class="col-6 p-0">
+            <small class="text-muted mb-1 f-10 pr-1">GOING TO</small>
+            <p class="small mb-0">{{ searchParam.to | uppercase }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        size="12"
+        margin
+        *ngFor="let company of companys; let i = index"
+        [routerLink]="['/listing-detail/', company.id]"
+        class="text-dark px-0 py-0"
+      >
+        <div
+          class="
+            list_item_gird
+            m-1
+            bg-white
+            shadow-sm
+            listing-item
+            border-right
+            p-3
+          "
+        >
+          <div class="tic-div mb-2">
+            <p class="mb-0 l-hght-10">{{ company.companyName }}</p>
+            <span class="text-purple small text-small"
+              >{{ company.firstName }} {{ company.lastName }}</span
+            >
+          </div>
+          <div class="d-flex">
+            <div class="bus_details w-100">
+              <div class="d-flex l-hght-10">
+                <div>
+                  <small class="text-muted d-block">Firm Activity</small>
+                  <p class="l-hght-10">{{ company.firmActivity }}</p>
+                </div>
+              </div>
+              <div class="d-flex l-hght-10">
+                <div>
+                  <small class="text-muted d-block"
+                    >Service Providing / vehicle Type</small
+                  >
+                  <p class="l-hght-20">{{ company.serviceProviding }}</p>
+                </div>
+              </div>
+              <div class="d-flex l-hght-10">
+                <div>
+                  <small class="text-muted d-block">Location</small>
+                  <p class="l-hght-10">{{ company.location }}</p>
+                </div>
+              </div>
+            </div>
+            <fa-icon
+              icon="angle-double-right"
+              class="angle-double-right"
+            ></fa-icon>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="d-flex justify-content-center">
+    <div
+      class="spinner-grow d-flex justify-content-center"
+      role="status"
+      *ngIf="isLoading"
+    >
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center" *ngIf="noresults">
+    <span>No results found</span>
+  </div>
+
+  <!-- </cdk-virtual-scroll-viewport> -->
+</ion-content>

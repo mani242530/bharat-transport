@@ -1,0 +1,232 @@
+<ion-header>
+  <!-- <ion-toolbar> -->
+  <div
+    class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple"
+  >
+    <h5 class="font-weight-normal mb-0 text-white">
+      <a class="text-purple" routerLink="/get-started"
+        ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
+      ></a>
+      <ion-title>Payment</ion-title>
+    </h5>
+  </div>
+  <!-- </ion-toolbar> -->
+</ion-header>
+
+<ion-content id="content" fullscreen>
+  <!-- <cdk-virtual-scroll-viewport
+    class="scroll-viewport"
+    #scroll
+    itemSize="80"
+    minBufferPx="900"
+    maxBufferPx="1350"
+  > -->
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <div
+        class="
+          osahan-header-nav
+          shadow-sm
+          p-3
+          d-flex
+          align-items-center
+          bg-purple
+        "
+      >
+        <h5 class="font-weight-normal mb-0 text-white">
+          <a class="text-purple" routerLink="/get-started"
+            ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
+          ></a>
+          <ion-title>Payment</ion-title>
+        </h5>
+      </div>
+    </ion-toolbar>
+  </ion-header> -->
+  <!-- Payment -->
+  <div
+    class="
+      osahan-index
+      bg-c
+      align-items-center
+      justify-content-center
+      vh-100
+      index-page
+      py-3
+    "
+  >
+    <div class="osahan-form pt-3 px-3">
+      <!-- You Ticket -->
+      <div class="your-ticket mb-3">
+        <div class="p-0">
+          <!-- Select Payment -->
+          <div class="payment-borrad bg-white m-0 p-3">
+            <div class="border p-3">
+              <div
+                class="
+                  w-100
+                  mastercard
+                  custom-control custom-radio custom-control-inline
+                  mr-0
+                "
+              >
+                <input
+                  type="radio"
+                  id="customRadiomaster1"
+                  name="customRadiocard1"
+                  class="custom-control-input"
+                  checked
+                />
+                <label
+                  class="custom-control-label small w-100"
+                  for="customRadiomaster1"
+                >
+                  <a class="d-flex align-items-start">
+                    <div class="">
+                      <p class="mb-0 text-dark">Mastercard / Visa / Rupay</p>
+                      <small class="text-muted"
+                        >Pay from mastercard account using mastercard payment
+                        gateway</small
+                      >
+                    </div>
+                    <img
+                      src="assets/img/master.png"
+                      class="img-fluid rounded ml-auto"
+                    />
+                  </a>
+                </label>
+              </div>
+            </div>
+            <div class="border p-3">
+              <div
+                class="
+                  w-100
+                  visa
+                  custom-control custom-radio custom-control-inline
+                  mr-0
+                "
+              >
+                <input
+                  type="radio"
+                  id="customRadiovisa1"
+                  name="customRadiocard1"
+                  class="custom-control-input"
+                />
+                <label
+                  class="custom-control-label small w-100"
+                  for="customRadiovisa1"
+                >
+                  <a class="d-flex align-items-start">
+                    <div class="">
+                      <p class="mb-0 text-dark">Net Banking</p>
+                      <small class="text-muted"
+                        >Pay from your bank account using net banking
+                        gateway</small
+                      >
+                    </div>
+                    <img
+                      src="assets/img/visa.png"
+                      class="img-fluid rounded ml-auto"
+                    />
+                  </a>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Select Payment -->
+      <div class="payment-borrad bg-white m-0 p-3">
+        <div class="d-flex small">
+          <p>Total Payable INR</p>
+          <p class="ml-auto font-weight-bold text-danger">5,000</p>
+        </div>
+        <div class="small">
+          <div class="form-group row mb-3">
+            <div class="d-flex align-items-start">
+              <label for="exampleInputEmail1" class="mb-1 small text-label"
+                >Card Number</label
+              >
+              <img
+                src="assets/img/master-card.png"
+                class="img-fluid ml-auto rounded"
+              />
+            </div>
+            <div class="d-flex align-items-start">
+              <input
+                type="number"
+                class="form-control form-control-sm px-1 it-form-control"
+                placeholder="1234 5678 9145 4589"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+            </div>
+          </div>
+          <div class="form-group row mb-3">
+            <div class="col-8">
+              <label for="exampleInputmondate1" class="mb-1 small text-label"
+                >Month / Date</label
+              >
+              <div class="d-flex border rounded">
+                <input
+                  type="number"
+                  class="
+                    form-control
+                    text-center
+                    form-control-sm
+                    border-0
+                    px-1
+                    it-form-control
+                  "
+                  placeholder="DD"
+                  id="exampleInputmondate1"
+                  aria-describedby="mondateHelp"
+                />
+                <span class="pt-2">/</span>
+                <input
+                  type="number"
+                  class="
+                    form-control
+                    text-center
+                    form-control-sm
+                    border-0
+                    px-1
+                    it-form-control
+                  "
+                  placeholder="MM"
+                  id="exampleInputmondate1"
+                  aria-describedby="mondateHelp"
+                />
+              </div>
+            </div>
+            <div class="col-4">
+              <label for="exampleInputcvv1" class="mb-1 small text-muted"
+                >CVV</label
+              >
+              <input
+                type="number"
+                class="form-control text-center form-control-sm it-form-control"
+                placeholder="000"
+                id="exampleInputcvv1"
+                aria-describedby="cvvHelp"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row mb-3">
+            <div class="col-12">
+              <button
+                type="submit"
+                class="btn btn-purple btn-block"
+                data-toggle="modal"
+                data-target="#paymentModal"
+                routerLink="/select-vehicle"
+              >
+                Pay
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

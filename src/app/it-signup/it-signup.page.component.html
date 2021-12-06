@@ -1,0 +1,170 @@
+<ion-header>
+  <!-- <ion-toolbar> -->
+  <div
+    class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple"
+  >
+    <h5 class="font-weight-normal mb-0 text-white">
+      <a class="text-purple" routerLink="/get-started"
+        ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
+      ></a>
+      <ion-title>Create an Account</ion-title>
+    </h5>
+  </div>
+  <!-- </ion-toolbar> -->
+</ion-header>
+
+<ion-content id="content" fullscreen>
+  <!-- <cdk-virtual-scroll-viewport
+    class="scroll-viewport"
+    #scroll
+    itemSize="80"
+    minBufferPx="900"
+    maxBufferPx="1350"
+  > -->
+  <div
+    class="
+      osahan-index
+      bg-c
+      align-items-center
+      justify-content-center
+      vh-100
+      index-page
+    "
+  >
+    <div class="px-3 py-3">
+      <form [formGroup]="createCompanyForm" #createForm>
+        <ion-list>
+          <div class="form-group mb-3">
+            <ion-input
+              class="form-control rc-form-control it-form-control"
+              placeholder="First name"
+              inputMode="text"
+              clearInput="true"
+              formControlName="firstName"
+              required
+            ></ion-input>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-input
+              class="form-control rc-form-control it-form-control"
+              placeholder="Last name"
+              inputMode="text"
+              clearInput="true"
+              formControlName="lastName"
+              required
+            ></ion-input>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-input
+              class="form-control rc-form-control it-form-control"
+              placeholder="Company Name"
+              inputMode="text"
+              clearInput="true"
+              formControlName="companyName"
+              required
+            ></ion-input>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-select
+              interface="popover"
+              class="form-control rc-form-control native-select it-form-control"
+              role="combobox"
+              placeholder="Select Firm Activity"
+              slot
+              formControlName="firmActivity"
+              required
+            >
+              <ion-select-option value="Freight Forwarders"
+                >Freight Forwarders</ion-select-option
+              >
+              <ion-select-option value="Booking">Booking</ion-select-option>
+              <ion-select-option value="Supplier">Supplier</ion-select-option>
+              <ion-select-option value="Owner">Owner</ion-select-option>
+            </ion-select>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-select
+              multiple="true"
+              class="form-control rc-form-control native-select it-form-control"
+              placeholder="Select Service Providing"
+              formControlName="serviceProviding"
+              cancelText="cancel"
+              okText="ok"
+            >
+              <ion-select-option
+                *ngFor="let vehicleType of vehicleTypes"
+                selected="false"
+                value="{{ vehicleType }}"
+                title="{{ vehicleType }}"
+                >{{ vehicleType }}</ion-select-option
+              >
+            </ion-select>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-select
+              interface="popover"
+              class="form-control rc-form-control native-select it-form-control"
+              placeholder="Select Location"
+              formControlName="location"
+              required
+            >
+              <ion-select-option
+                *ngFor="let location of locations"
+                value="{{ location.name }}"
+                title="{{ location.name }}"
+                >{{ location.name }}</ion-select-option
+              >
+            </ion-select>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-input
+              class="form-control rc-form-control it-form-control"
+              placeholder="Mobile Number"
+              inputMode="tel"
+              clearInput="true"
+              formControlName="mobileNumber"
+              required
+            ></ion-input>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-input
+              class="form-control rc-form-control it-form-control"
+              placeholder="Landline Number"
+              inputMode="tel"
+              clearInput="true"
+              formControlName="landlineNumber"
+            ></ion-input>
+          </div>
+        </ion-list>
+        <button
+          type="submit"
+          class="btn btn-purple btn-block osahanbus-btn rounded-1"
+          slot="end"
+          fill="clear"
+          [disabled]="!createCompanyForm.valid"
+          (click)="createCompany(createCompanyForm.value)"
+        >
+          REGISTER
+        </button>
+      </form>
+      <div class="sign-or d-flex align-items-center justify-content-center">
+        <hr class="mr-4" />
+        <p class="text-muted text-center py-2 m-0">OR</p>
+        <hr class="ml-4" />
+      </div>
+      <div class="osahan-signin text-center text-purple p-1">
+        <p class="mb-3">
+          Already a member ?
+          <a routerLink="/signin" class="text-orange ml-2">Sign In</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,83 @@
+<ion-header>
+  <!-- <ion-toolbar> -->
+  <div
+    class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple"
+  >
+    <h5 class="font-weight-normal mb-0 text-white">
+      <a class="text-purple"
+        ><fa-icon
+          icon="bus"
+          class="icofont-truck text-white h2 bg-purple p-2 rounded-circle"
+        ></fa-icon
+      ></a>
+      <ion-title>Select Vehicle</ion-title>
+    </h5>
+
+    <div class="ml-auto d-flex align-items-center">
+      <ngx-avatar
+        name="{{ userName }}"
+        (clickOnAvatar)="avatarClicked($event)"
+        size="50"
+      ></ngx-avatar>
+
+      <ion-buttons slot="end">
+        <ion-menu-button
+          ><fa-icon icon="bars" class="icofont-navigation-menu"></fa-icon
+        ></ion-menu-button>
+      </ion-buttons>
+    </div>
+  </div>
+  <!-- </ion-toolbar> -->
+</ion-header>
+
+<ion-content id="content" fullscreen>
+  <!-- <cdk-virtual-scroll-viewport
+    class="scroll-viewport"
+    #scroll
+    itemSize="80"
+    minBufferPx="900"
+    maxBufferPx="1350"
+  > -->
+  <div
+    class="
+      osahan-index
+      bg-c
+      align-items-center
+      justify-content-center
+      vh-100
+      index-page
+    "
+  >
+    <div class="osahan-listing">
+      <ion-grid>
+        <ion-row>
+          <ion-col
+            size="4"
+            margin
+            routerLink="/home"
+            class="text-dark text-center"
+            *ngFor="let vehicleType of vehicleTypes; let i = index"
+          >
+            <div
+              class="
+                list-item-img
+                language-item-list
+                align-items-center
+                d-inline-flex
+                justify-content-center
+                mb-2
+              "
+              id="vehicleType"
+              (click)="selectVehicleType(vehicleType)"
+            >
+              <img src="assets/img/listing/item1.png" class="img-fluid" />
+            </div>
+            <p class="l-hght-10 text-center text-black mb-2">
+              {{ vehicleType }}
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

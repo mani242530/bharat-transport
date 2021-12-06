@@ -1,0 +1,68 @@
+<ion-header>
+  <!-- <ion-toolbar> -->
+  <div
+    class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple"
+  >
+    <h5 class="font-weight-normal mb-0 text-white">
+      <a class="text-purple" routerLink="/get-started"
+        ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
+      ></a>
+      <ion-title>Choose Language</ion-title>
+    </h5>
+  </div>
+  <!-- </ion-toolbar> -->
+</ion-header>
+
+<ion-content id="content" fullscreen>
+  <!-- <cdk-virtual-scroll-viewport
+    class="scroll-viewport"
+    #scroll
+    itemSize="80"
+    minBufferPx="900"
+    maxBufferPx="1350"
+  > -->
+  <div
+    class="
+      osahan-index
+      bg-c
+      align-items-center
+      justify-content-center
+      vh-100
+      index-page
+    "
+  >
+    <ion-grid>
+      <ion-row>
+        <ion-col
+          size="4"
+          margin
+          routerLink="/signup"
+          class="text-dark text-center"
+          *ngFor="let language of languages"
+        >
+          <div
+            class="
+              list-item-img
+              language-item-list
+              align-items-center
+              d-inline-flex
+              justify-content-center
+            "
+            id="{{ language }}"
+          >
+            <!-- <img
+                src="../../assets/img/language//telugu.png"
+                class="img-fluid"
+              /> -->
+            <span class="mb-0 l-hght-10 text-center text-black mb-2 p-1">
+              {{ language }}</span
+            >
+          </div>
+          <!-- <p class="l-hght-10 text-center text-black mb-2">
+              {{ language }}
+            </p> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
