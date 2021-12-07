@@ -37,7 +37,9 @@
           <div class="form-group mb-3">
             <ion-input
               class="form-control rc-form-control it-form-control"
-              placeholder="First name"
+              placeholder="{{
+                'APP.CREATE_ACCOUNT.PLACEHOLDER.FIRST_NAME' | translate
+              }}"
               inputMode="text"
               clearInput="true"
               formControlName="firstName"
@@ -48,7 +50,9 @@
           <div class="form-group mb-3">
             <ion-input
               class="form-control rc-form-control it-form-control"
-              placeholder="Last name"
+              placeholder="{{
+                'APP.CREATE_ACCOUNT.PLACEHOLDER.LAST_NAME' | translate
+              }}"
               inputMode="text"
               clearInput="true"
               formControlName="lastName"
@@ -59,7 +63,9 @@
           <div class="form-group mb-3">
             <ion-input
               class="form-control rc-form-control it-form-control"
-              placeholder="Company Name"
+              placeholder="{{
+                'APP.CREATE_ACCOUNT.PLACEHOLDER.COMPANY_NAME' | translate
+              }}"
               inputMode="text"
               clearInput="true"
               formControlName="companyName"
@@ -72,17 +78,26 @@
               interface="popover"
               class="form-control rc-form-control native-select it-form-control"
               role="combobox"
-              placeholder="Select Firm Activity"
+              placeholder="{{
+                'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_FIRM_ACTIVITY'
+                  | translate
+              }}"
               slot
               formControlName="firmActivity"
               required
             >
-              <ion-select-option value="Freight Forwarders"
-                >Freight Forwarders</ion-select-option
-              >
-              <ion-select-option value="Booking">Booking</ion-select-option>
-              <ion-select-option value="Supplier">Supplier</ion-select-option>
-              <ion-select-option value="Owner">Owner</ion-select-option>
+              <ion-select-option value="Freight Forwarders">{{
+                "APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.FREIGHT" | translate
+              }}</ion-select-option>
+              <ion-select-option value="Booking">{{
+                "APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.BOOKING" | translate
+              }}</ion-select-option>
+              <ion-select-option value="Supplier">{{
+                "APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.SUPPLIER" | translate
+              }}</ion-select-option>
+              <ion-select-option value="Owner">{{
+                "APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.OWNER" | translate
+              }}</ion-select-option>
             </ion-select>
           </div>
 
@@ -90,7 +105,10 @@
             <ion-select
               multiple="true"
               class="form-control rc-form-control native-select it-form-control"
-              placeholder="Select Service Providing"
+              placeholder="{{
+                'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_SERVICE_PROVIDING'
+                  | translate
+              }}"
               formControlName="serviceProviding"
               cancelText="cancel"
               okText="ok"
@@ -98,9 +116,9 @@
               <ion-select-option
                 *ngFor="let vehicleType of vehicleTypes"
                 selected="false"
-                value="{{ vehicleType }}"
-                title="{{ vehicleType }}"
-                >{{ vehicleType }}</ion-select-option
+                value="{{ vehicleType | translate }}"
+                title="{{ vehicleType | translate }}"
+                >{{ vehicleType | translate }}</ion-select-option
               >
             </ion-select>
           </div>
@@ -109,15 +127,17 @@
             <ion-select
               interface="popover"
               class="form-control rc-form-control native-select it-form-control"
-              placeholder="Select Location"
+              placeholder="{{
+                'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_LOCATION' | translate
+              }}"
               formControlName="location"
               required
             >
               <ion-select-option
                 *ngFor="let location of locations"
-                value="{{ location.name }}"
-                title="{{ location.name }}"
-                >{{ location.name }}</ion-select-option
+                value="{{ location.name | translate }}"
+                title="{{ location.name | translate }}"
+                >{{ location.name | translate }}</ion-select-option
               >
             </ion-select>
           </div>
@@ -125,7 +145,9 @@
           <div class="form-group mb-3">
             <ion-input
               class="form-control rc-form-control it-form-control"
-              placeholder="Mobile Number"
+              placeholder="{{
+                'APP.CREATE_ACCOUNT.PLACEHOLDER.MOBILE_NUMBER' | translate
+              }}"
               inputMode="tel"
               clearInput="true"
               formControlName="mobileNumber"
@@ -136,7 +158,9 @@
           <div class="form-group mb-3">
             <ion-input
               class="form-control rc-form-control it-form-control"
-              placeholder="Landline Number"
+              placeholder="{{
+                'APP.CREATE_ACCOUNT.PLACEHOLDER.LANDLINE_NUMBER' | translate
+              }}"
               inputMode="tel"
               clearInput="true"
               formControlName="landlineNumber"
@@ -151,18 +175,22 @@
           [disabled]="!createCompanyForm.valid"
           (click)="createCompany(createCompanyForm.value)"
         >
-          REGISTER
+          {{ "APP.CREATE_ACCOUNT.BUTTON.REGISTER" | translate }}
         </button>
       </form>
       <div class="sign-or d-flex align-items-center justify-content-center">
         <hr class="mr-4" />
-        <p class="text-muted text-center py-2 m-0">OR</p>
+        <p class="text-muted text-center py-2 m-0">
+          {{ "APP.CREATE_ACCOUNT.PLACEHOLDER.OR" | translate }}
+        </p>
         <hr class="ml-4" />
       </div>
       <div class="osahan-signin text-center text-purple p-1">
         <p class="mb-3">
-          Already a member ?
-          <a routerLink="/signin" class="text-orange ml-2">Sign In</a>
+          {{ "APP.CREATE_ACCOUNT.PLACEHOLDER.ALREADY_A_MEMBER" | translate }}
+          <a routerLink="/signin" class="text-orange ml-2">{{
+            "APP.CREATE_ACCOUNT.BUTTON.SIGN_IN" | translate
+          }}</a>
         </p>
       </div>
     </div>

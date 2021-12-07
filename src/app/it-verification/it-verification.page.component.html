@@ -100,10 +100,13 @@
         class="btn btn-purple btn-block osahanbus-btn mb-4"
         routerLink="/payment"
       >
-        VERIFICATION
+        {{ "APP.VERIFICATION.BUTTON.VERIFICATION" | translate }}
       </button>
       <p class="text-muted">
-        Didn't receive code?<a href="#" class="ml-2 text-orange">Resend</a>
+        {{ "APP.VERIFICATION.TEXT" | translate
+        }}<a href="#" class="ml-2 text-orange">{{
+          "APP.VERIFICATION.BUTTON.RESEND" | translate
+        }}</a>
       </p>
     </div>
   </div>

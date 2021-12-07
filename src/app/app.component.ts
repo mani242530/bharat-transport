@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     public fbauth: AngularFireAuth,
-    public ngroute: Router
+    public ngroute: Router,
+    public translateService: TranslateService
   ) {
     const authfbObserver = fbauth.authState.subscribe((user) => {
       if (user) {
@@ -40,6 +42,8 @@ export class AppComponent {
     //     this.user.firstName + ' ' + this.user &&
     //     this.user.lastName;
     // }
+
+    this.translateService.setDefaultLang('hi');
   }
 
   async doLogout(): Promise<void> {

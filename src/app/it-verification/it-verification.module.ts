@@ -1,17 +1,18 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
-import { Routes, RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 
-import { IonicModule } from "@ionic/angular";
+import { IonicModule } from '@ionic/angular';
 
-import { VerificationPageComponent } from "./it-verification.page.component";
-import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
-import { VerificationPageRoutingModule } from "./it-verification.routing.module";
+import { VerificationPageComponent } from './it-verification.page.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { VerificationPageRoutingModule } from './it-verification.routing.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: VerificationPageComponent,
   },
 ];
@@ -24,6 +25,7 @@ const MODULES = [
   IonicModule,
   RouterModule.forChild(routes),
   FontAwesomeModule,
+  TranslateModule,
   VerificationPageRoutingModule, // VerificationPageRoutingModule
 ];
 

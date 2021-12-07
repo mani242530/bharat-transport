@@ -12,6 +12,7 @@ import { ListingPageRoutingModule } from './it-listing.page.routing.module';
 // import { ScrollingModule } from "@angular/cdk/scrolling/public-api";
 import { environment } from 'src/environments/environment';
 import { AvatarModule } from 'ngx-avatar';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -32,8 +33,7 @@ const MODULES = [
   // ScrollingModule,
   AvatarModule,
   ListingPageRoutingModule, // ListingPageRoutingModule
-  // AngularFirestoreModule,
-  // AngularFireModule.initializeApp(environment.firebase),
+  TranslateModule,
 ];
 
 /**

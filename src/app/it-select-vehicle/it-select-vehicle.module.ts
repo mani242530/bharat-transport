@@ -9,6 +9,7 @@ import { SelectVehiclePageComponent } from './it-select-vehicle.page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SelectVehiclePageRoutingModule } from './it-select-vehicle.page.routing.module';
 import { AvatarModule } from 'ngx-avatar';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const MODULES = [
   RouterModule.forChild(routes),
   FontAwesomeModule,
   AvatarModule,
+  TranslateModule,
   SelectVehiclePageRoutingModule, // SelectVehiclePageRoutingModule
 ];
 

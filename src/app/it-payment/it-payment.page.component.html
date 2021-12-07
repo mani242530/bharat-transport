@@ -7,7 +7,7 @@
       <a class="text-purple" routerLink="/get-started"
         ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
       ></a>
-      <ion-title>Payment</ion-title>
+      <ion-title>{{ "APP.PAYMENT.TITLE" | translate }}</ion-title>
     </h5>
   </div>
   <!-- </ion-toolbar> -->
@@ -21,27 +21,6 @@
     minBufferPx="900"
     maxBufferPx="1350"
   > -->
-  <!-- <ion-header collapse="condense">
-    <ion-toolbar>
-      <div
-        class="
-          osahan-header-nav
-          shadow-sm
-          p-3
-          d-flex
-          align-items-center
-          bg-purple
-        "
-      >
-        <h5 class="font-weight-normal mb-0 text-white">
-          <a class="text-purple" routerLink="/get-started"
-            ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
-          ></a>
-          <ion-title>Payment</ion-title>
-        </h5>
-      </div>
-    </ion-toolbar>
-  </ion-header> -->
   <!-- Payment -->
   <div
     class="
@@ -82,11 +61,13 @@
                 >
                   <a class="d-flex align-items-start">
                     <div class="">
-                      <p class="mb-0 text-dark">Mastercard / Visa / Rupay</p>
-                      <small class="text-muted"
-                        >Pay from mastercard account using mastercard payment
-                        gateway</small
-                      >
+                      <p class="mb-0 text-dark">
+                        {{ "APP.PAYMENT.LABEL.MASTERCARD" | translate }} / Visa
+                        / Rupay
+                      </p>
+                      <small class="text-muted">{{
+                        "APP.PAYMENT.TEXT.PAY_FROM_MASTERCARD" | translate
+                      }}</small>
                     </div>
                     <img
                       src="assets/img/master.png"
@@ -117,11 +98,12 @@
                 >
                   <a class="d-flex align-items-start">
                     <div class="">
-                      <p class="mb-0 text-dark">Net Banking</p>
-                      <small class="text-muted"
-                        >Pay from your bank account using net banking
-                        gateway</small
-                      >
+                      <p class="mb-0 text-dark">
+                        {{ "APP.PAYMENT.LABEL.NET_BANKING" | translate }}
+                      </p>
+                      <small class="text-muted">{{
+                        "APP.PAYMENT.TEXT.PAY_FROM_BANK" | translate
+                      }}</small>
                     </div>
                     <img
                       src="assets/img/visa.png"
@@ -137,15 +119,17 @@
       <!-- Select Payment -->
       <div class="payment-borrad bg-white m-0 p-3">
         <div class="d-flex small">
-          <p>Total Payable INR</p>
-          <p class="ml-auto font-weight-bold text-danger">5,000</p>
+          <p>{{ "APP.PAYMENT.TEXT.TOTAL_PAYABLE" | translate }}</p>
+          <p class="ml-auto font-weight-bold text-danger">
+            {{ "APP.PAYMENT.TEXT.AMOUNT" | translate }}
+          </p>
         </div>
         <div class="small">
           <div class="form-group row mb-3">
             <div class="d-flex align-items-start">
-              <label for="exampleInputEmail1" class="mb-1 small text-label"
-                >Card Number</label
-              >
+              <label for="exampleInputEmail1" class="mb-1 small text-label">{{
+                "APP.PAYMENT.LABEL.CARD_NUMBER" | translate
+              }}</label>
               <img
                 src="assets/img/master-card.png"
                 class="img-fluid ml-auto rounded"
@@ -155,7 +139,7 @@
               <input
                 type="number"
                 class="form-control form-control-sm px-1 it-form-control"
-                placeholder="1234 5678 9145 4589"
+                placeholder="{{ 'APP.PAYMENT.PLACEHOLDER.NUMBER' | translate }}"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
               />
@@ -163,9 +147,9 @@
           </div>
           <div class="form-group row mb-3">
             <div class="col-8">
-              <label for="exampleInputmondate1" class="mb-1 small text-label"
-                >Month / Date</label
-              >
+              <label for="exampleInputmondate1" class="mb-1 small text-label">{{
+                "APP.PAYMENT.LABEL.DATE" | translate
+              }}</label>
               <div class="d-flex border rounded">
                 <input
                   type="number"
@@ -177,7 +161,7 @@
                     px-1
                     it-form-control
                   "
-                  placeholder="DD"
+                  placeholder="{{ 'APP.PAYMENT.PLACEHOLDER.DD' | translate }}"
                   id="exampleInputmondate1"
                   aria-describedby="mondateHelp"
                 />
@@ -192,20 +176,20 @@
                     px-1
                     it-form-control
                   "
-                  placeholder="MM"
+                  placeholder="{{ 'APP.PAYMENT.PLACEHOLDER.MM' | translate }}"
                   id="exampleInputmondate1"
                   aria-describedby="mondateHelp"
                 />
               </div>
             </div>
             <div class="col-4">
-              <label for="exampleInputcvv1" class="mb-1 small text-muted"
-                >CVV</label
-              >
+              <label for="exampleInputcvv1" class="mb-1 small text-muted">{{
+                "APP.PAYMENT.LABEL.CVV" | translate
+              }}</label>
               <input
                 type="number"
                 class="form-control text-center form-control-sm it-form-control"
-                placeholder="000"
+                placeholder="{{ 'APP.PAYMENT.PLACEHOLDER.CVV' | translate }}"
                 id="exampleInputcvv1"
                 aria-describedby="cvvHelp"
               />
@@ -221,7 +205,7 @@
                 data-target="#paymentModal"
                 routerLink="/select-vehicle"
               >
-                Pay
+                {{ "APP.PAYMENT.BUTTON.PAY" | translate }}
               </button>
             </div>
           </div>

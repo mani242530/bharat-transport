@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SplashPageComponent } from './it-splash.page.component';
 import { SplashPageRoutingModule } from './it-splash.routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const MODULES = [
   RouterModule.forChild(routes),
   SplashPageRoutingModule, // SplashPageRoutingModule
   FontAwesomeModule,
+  TranslateModule,
 ];
 
 /**

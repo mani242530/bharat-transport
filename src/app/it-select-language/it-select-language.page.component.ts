@@ -7,14 +7,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectLanguagePageComponent implements OnInit {
   languages = [
-    'ENGLISH',
-    'हिंदी',
-    'मराठी',
-    'ગુજરાતી',
-    'தமிழ்',
-    'తెలుగు',
-    'ಕೆನಡಾ',
-    'മലയാളം',
+    {
+      id: 'en',
+      name: 'ENGLISH',
+    },
+    {
+      id: 'hi',
+      name: 'हिंदी',
+    },
+    {
+      id: 'ma',
+      name: 'मराठी',
+    },
+    {
+      id: 'gu',
+      name: 'ગુજરાતી',
+    },
+    {
+      id: 'tn',
+      name: 'தமிழ்',
+    },
+    {
+      id: 'tl',
+      name: 'తెలుగు',
+    },
+    {
+      id: 'ka',
+      name: 'ಕೆನಡಾ',
+    },
+    {
+      id: 'ml',
+      name: 'മലയാളം',
+    },
   ];
   constructor() {}
 

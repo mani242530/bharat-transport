@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { SignUpPageComponent } from './it-signup.page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SignUpPageRoutingModule } from './it-signup.routing.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const MODULES = [
   ReactiveFormsModule,
   RouterModule.forChild(routes),
   FontAwesomeModule,
+  TranslateModule,
   SignUpPageRoutingModule, // SignUpPageRoutingModule
 ];
 

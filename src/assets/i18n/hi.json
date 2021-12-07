@@ -1,5 +1,166 @@
 {
-  "app": {
-    "GET_STARTED": "शुरू हो जाओ"
+  "APP": {
+    "GET_STARTED": "शुरू हो जाओ",
+    "CREATE_ACCOUNT": {
+      "HEADER": "खाता बनाएं",
+      "PLACEHOLDER": {
+        "FIRST_NAME": "पहला नाम",
+        "LAST_NAME": "उपनाम",
+        "COMPANY_NAME": "कंपनी का नाम",
+        "SELECT_FIRM_ACTIVITY": "फर्म गतिविधि का चयन करें",
+        "SELECT_SERVICE_PROVIDING": "सेवा प्रदान करना चुनें",
+        "SELECT_LOCATION": "स्थान चुनें",
+        "MOBILE_NUMBER": "मोबाइल नंबर",
+        "LANDLINE_NUMBER": "लैंडलाइन नंबर",
+        "OR": "या",
+        "ALREADY_A_MEMBER": "क्या पहले से ही सदस्य हैं ?"
+      },
+      "SELECT": {
+        "FIRM_ACTIVITY": {
+          "FREIGHT": "माल भेजने वाले",
+          "BOOKING": "बुकिंग",
+          "SUPPLIER": "प्रदायक",
+          "OWNER": "मालिक"
+        }
+      },
+      "REGISTERD": {
+        "HEADER": "सफलतापूर्वक पंजीकृत",
+        "MESSAGE": "सिस्टम अन्वेषण की प्रतीक्षा कर रहा है"
+      },
+      "BUTTON": {
+        "REGISTER": "रजिस्टर करें",
+        "SIGN_IN": "साइन इन करें",
+        "OK": "ठीक है",
+        "CANCEL": "रद्द करना"
+      }
+    },
+    "VERIFICATION": {
+      "TITLE": "सत्यापन",
+      "BUTTON": {
+        "VERIFICATION": "सत्यापन",
+        "RESEND": "पुन: भेजें"
+      },
+      "TEXT": "कोड प्राप्त नहीं हुआ?"
+    },
+    "PAYMENT": {
+      "TITLE": "भुगतान",
+      "LABEL": {
+        "MASTERCARD": "मास्टरकार्ड / वीजा / रुपे",
+        "NET_BANKING": "नेट बैंकिंग",
+        "CARD_NUMBER": "कार्ड संख्या",
+        "DATE": "महीना / दिनांक",
+        "CVV": "CVV"
+      },
+      "PLACEHOLDER": {
+        "DD": "DD",
+        "MM": "MM",
+        "NUMBER": "1234 5678 9145 4589",
+        "CVV": "000"
+      },
+      "TEXT": {
+        "PAY_FROM_MASTERCARD": "मास्टरकार्ड भुगतान गेटवे का उपयोग करके मास्टरकार्ड खाते से भुगतान करें",
+        "PAY_FROM_BANK": "नेट बैंकिंग गेटवे का उपयोग करके अपने बैंक खाते से भुगतान करें",
+        "TOTAL_PAYABLE": "कुल देय INR",
+        "AMOUNT": "5000"
+      },
+      "BUTTON": {
+        "PAY": "भुगतान करें"
+      }
+    },
+    "HOME": {
+      "BUTTON": {
+        "SEARCH": "खोज"
+      },
+      "LABEL": {
+        "FROM": "से",
+        "TO": "तक"
+      },
+      "PLACEHOLDER": {
+        "SELECT_FROM_LOCATION": "स्थान से चुनें",
+        "SELECT_TO_LOCATION": "स्थान का चयन करें"
+      },
+      "TEXT": {
+        "SAFE_AND_HYGEINIC": "सुरक्षित और स्वच्छ",
+        "VEHICLES": "वाहन",
+        "BEST_CUSTOMER": "सर्वश्रेष्ठ ग्राहक",
+        "CARE_SUPPORT": "देखभाल और समर्थन",
+        "LIVE_TRACK": "अपनी यात्रा को ",
+        "JOURNEY": "लाइव ट्रैक करें",
+        "VERIFIED_DRIVERS": "सत्यापित ड्राइवर",
+        "AND_VEHICLES": "और वाहन"
+      }
+    },
+    "LISTING": {
+      "TITLE": "खोज",
+      "LABEL": {
+        "GOING_FROM": "से जा रहे हैं",
+        "GOING_TO": "तक जा रहे हैं",
+        "FIRM_ACTIVITY": "फर्म गतिविधि",
+        "SERVICE_PROVIDING": "सेवा प्रदान करना / वाहन का प्रकार",
+        "LOCATION": "स्थान"
+      },
+      "VALUE": {
+        "LUDHIANA": "लुधियाना",
+        "GOA": "गोवा"
+      },
+      "LOADING": "लोड हो रहा है..."
+    },
+    "LISTING_DETAILS": {
+      "TITLE": "संस्थान के विवरण",
+      "ABOUT": "के बारे में",
+      "TEXT": "लोरेम इप्सम प्रिंटिंग और टाइपसेटिंग उद्योग का केवल डमी टेक्स्ट है। लोरेम इप्सम 1500 के दशक से उद्योग का मानक डमी टेक्स्ट रहा है।",
+      "LABEL": {
+        "FIRM_ACTIVITY": "फर्म गतिविधि",
+        "SERVICE_PROVIDING": "सेवा प्रदान करना",
+        "MOBILE_NUMBER": "मोबाइल नंबर",
+        "LANDLINE_NUMBER": "लैंडलाइन नंबर"
+      },
+      "BUTTON": {
+        "CALL_NOW": "अभी कॉल करें"
+      }
+    },
+    "VEHICLE_TYPE": {
+      "LCV": "एलसीवी",
+      "TRAILER": "ट्रेलर",
+      "TRUCK": "ट्रक (वृषभ)",
+      "OPEN_TRUCK": "खुले ट्रक",
+      "20_FT_CBT": "20 फीट कंटेनर (सीबीटी और ओपन)",
+      "32_FT_SINGLE_EXCEL": "32 फीट कंटेनर सिंगल एक्सेल",
+      "20_FT_IMPORT_EXPORT": "20 फीट कंटेनर (आयात और निर्यात)",
+      "40_FT_IMPORT_EXPORT": "40 फीट कंटेनर (आयात और निर्यात)",
+      "32_FT_MULTI_AXLE": "32 फीट कंटेनर मल्टी एक्सल एक्सेल"
+    },
+    "LOCATION": {
+      "MUMBAI": "मुंबई",
+      "DELHI": "दिल्ली",
+      "BENGALURU": "बेंगलुरु",
+      "AHMEDABAD": "अहमदाबाद",
+      "HYDERABAD": "हैदराबाद",
+      "CHENNAI": "चेन्नई",
+      "KOLKATA": "कोलकाता",
+      "PUNE": "पुणे",
+      "JAIPUR": "जयपुर",
+      "SURAT": "सूरत",
+      "LUCKNOW": "लखनऊ",
+      "KANPUR": "कानपुर",
+      "NAGPUR": "नागपुर",
+      "PATNA": "पटना",
+      "INDORE": "इंदौर",
+      "THANE": "ठाणे",
+      "BHOPAL": "भोपाल",
+      "VISAKHAPATNAM": "विशाखापत्तनम",
+      "VADODARA": "वडोदरा",
+      "AMRITSAR": "अमृतसर",
+      "AGRA": "आगरा",
+      "BAREILLY": "बरेली",
+      "BATHINDA": "बठिंडा",
+      "BHIWANI": "भिवानी",
+      "CHANDIGARH": "चंडीगढ़",
+      "FATEHABAD": "फतेहाबाद",
+      "GURGAON": "गुड़गांव",
+      "HISSAR": "हिसार",
+      "JODHPUR": "जोधपुर",
+      "NANDED": "नांदेड़"
+    }
   }
 }

@@ -9,6 +9,7 @@ import { HomePageComponent } from './it-home.page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomePageRoutingModule } from './it-home.routing.module';
 import { AvatarModule } from 'ngx-avatar';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -28,6 +29,7 @@ const MODULES = [
   RouterModule.forChild(routes),
   FontAwesomeModule,
   AvatarModule,
+  TranslateModule,
   HomePageRoutingModule,
 ];
 

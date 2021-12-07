@@ -9,6 +9,7 @@ import { ListingDetailPageComponent } from './it-listing-detail.page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ListingDetailPageRoutingModule } from './it-listing-detail.page.routing.module';
 import { AvatarModule } from 'ngx-avatar';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const MODULES = [
   FontAwesomeModule,
   AvatarModule,
   ListingDetailPageRoutingModule, // ListingDetailPageRoutingModule
+  TranslateModule,
 ];
 
 /**
