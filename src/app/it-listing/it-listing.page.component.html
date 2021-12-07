@@ -61,7 +61,7 @@
     </div>
   </div>
 
-  <ion-grid>
+  <!-- <ion-grid>
     <ion-row>
       <ion-col
         size="12"
@@ -69,56 +69,79 @@
         *ngFor="let company of companys; let i = index"
         [routerLink]="['/listing-detail/', company.id]"
         class="text-dark px-0 py-0"
+      > -->
+  <ion-list lines="none" *ngIf="!isLoading">
+    <ion-item-sliding
+      *ngFor="let company of companys; let i = index"
+      [routerLink]="['/listing-detail/', company.id]"
+      class="text-dark px-0 py-0"
+    >
+      <div
+        class="
+          list_item_gird
+          m-1
+          bg-white
+          shadow-sm
+          listing-item
+          border-right
+          p-3
+        "
       >
-        <div
-          class="
-            list_item_gird
-            m-1
-            bg-white
-            shadow-sm
-            listing-item
-            border-right
-            p-3
-          "
-        >
-          <div class="tic-div mb-2">
-            <p class="mb-0 l-hght-10">{{ company.companyName }}</p>
-            <span class="text-purple small text-small"
-              >{{ company.firstName }} {{ company.lastName }}</span
-            >
-          </div>
-          <div class="d-flex">
-            <div class="bus_details w-100">
-              <div class="d-flex l-hght-10">
-                <div>
-                  <small class="text-muted d-block">Firm Activity</small>
-                  <p class="l-hght-10">{{ company.firmActivity }}</p>
-                </div>
-              </div>
-              <div class="d-flex l-hght-10">
-                <div>
-                  <small class="text-muted d-block"
-                    >Service Providing / vehicle Type</small
-                  >
-                  <p class="l-hght-20">{{ company.serviceProviding }}</p>
-                </div>
-              </div>
-              <div class="d-flex l-hght-10">
-                <div>
-                  <small class="text-muted d-block">Location</small>
-                  <p class="l-hght-10">{{ company.location }}</p>
-                </div>
+        <div class="tic-div mb-2">
+          <p class="mb-0 l-hght-10">{{ company.companyName }}</p>
+          <span class="text-purple small text-small"
+            >{{ company.firstName }} {{ company.lastName }}</span
+          >
+        </div>
+        <div class="d-flex">
+          <div class="bus_details w-100">
+            <div class="d-flex l-hght-10">
+              <div>
+                <small class="text-muted d-block">Firm Activity</small>
+                <p class="l-hght-10">{{ company.firmActivity }}</p>
               </div>
             </div>
-            <fa-icon
-              icon="angle-double-right"
-              class="angle-double-right"
-            ></fa-icon>
+            <div class="d-flex l-hght-10">
+              <div>
+                <small class="text-muted d-block"
+                  >Service Providing / vehicle Type</small
+                >
+                <p class="l-hght-20">{{ company.serviceProviding }}</p>
+              </div>
+            </div>
+            <div class="d-flex l-hght-10">
+              <div>
+                <small class="text-muted d-block">Location</small>
+                <p class="l-hght-10">{{ company.location }}</p>
+              </div>
+            </div>
           </div>
+          <fa-icon
+            icon="angle-double-right"
+            class="angle-double-right"
+          ></fa-icon>
         </div>
-      </ion-col>
+      </div>
+    </ion-item-sliding>
+  </ion-list>
+  <!-- </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
+
+  <ion-list lines="none" *ngIf="isLoading">
+    <ion-item-sliding *ngFor="let company of companys">
+      <ion-item lines="none">
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 75%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
 
   <div class="d-flex justify-content-center">
     <div
