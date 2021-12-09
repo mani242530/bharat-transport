@@ -9,6 +9,7 @@ import { VerificationPageComponent } from './it-verification.page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { VerificationPageRoutingModule } from './it-verification.routing.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { NgOtpInputModule } from 'ng-otp-input';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const MODULES = [
   RouterModule.forChild(routes),
   FontAwesomeModule,
   TranslateModule,
+  NgOtpInputModule,
   VerificationPageRoutingModule, // VerificationPageRoutingModule
 ];
 

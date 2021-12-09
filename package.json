@@ -34,6 +34,7 @@
     "bootstrap": "^5.0.1",
     "cordova-plugin-stripe": "^1.5.3",
     "firebase": "^7.0 || ^8.0",
+    "ng-otp-input": "^1.8.1",
     "ngx-avatar": "^4.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

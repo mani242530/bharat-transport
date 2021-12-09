@@ -67,50 +67,6 @@ export class SignInPageComponent implements OnInit {
     );
   }
 
-  async showSuccess() {
-    const alert = await this.alertController.create({
-      header: 'Success',
-      buttons: [
-        {
-          text: 'Ok',
-          handler: (res) => {
-            alert.dismiss();
-          },
-        },
-      ],
-    });
-    alert.present();
-  }
-
-  async OtpVerification() {
-    const alert = await this.alertController.create({
-      header: 'Enter OTP',
-      backdropDismiss: false,
-      inputs: [
-        {
-          name: 'otp',
-          type: 'text',
-          placeholder: 'Enter your otp',
-        },
-      ],
-      buttons: [
-        {
-          text: 'Enter',
-          handler: (res) => {
-            this.authtenticationService
-              .enterVerificationCode(res.otp)
-              .then((userData) => {
-                this.showSuccess();
-                console.log(userData);
-                this.router.navigate(['/verification']);
-              });
-          },
-        },
-      ],
-    });
-    await alert.present();
-  }
-
   // Button event after the nmber is entered and button is clicked
 
   signinWithPhoneNumber(formvalue) {
@@ -122,7 +78,7 @@ export class SignInPageComponent implements OnInit {
           this.CountryCode + formvalue.mobileNumber
         )
         .then((success) => {
-          this.OtpVerification();
+          this.router.navigate(['/verification']);
         });
     }
   }

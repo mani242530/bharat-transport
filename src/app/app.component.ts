@@ -21,7 +21,8 @@ export class AppComponent {
     const authfbObserver = fbauth.authState.subscribe((user) => {
       if (user) {
         console.log(user);
-        this.ngroute.navigate(['home']);
+        // this.ngroute.navigate(['home']);
+        this.ngroute.navigate(['splash']);
         authfbObserver.unsubscribe();
       } else {
         console.log(user);

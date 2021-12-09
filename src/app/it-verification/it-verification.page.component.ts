@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { SmsRetriever } from '@ionic-native/sms-retriever/ngx';
-import { ToastController } from '@ionic/angular';
+import { Config } from '../models/otp.config';
+import { AuthtenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-verification',
@@ -15,63 +15,66 @@ export class VerificationPageComponent implements OnInit {
   showOTPInput: boolean = false;
   OTPmessage: string =
     'An OTP is sent to your number. You should receive it in 15 s';
+
+  otp: string;
+  showOtpComponent = true;
+  otpVerified = false;
+  @ViewChild('ngOtpInput', { static: false }) ngOtpInput: any;
+  config: Config = {
+    allowNumbersOnly: false,
+    length: 6,
+    isPasswordInput: false,
+    disableAutoFocus: false,
+    placeholder: '',
+    inputStyles: {
+      width: '50px',
+      height: '50px',
+    },
+  };
   constructor(
     private router: Router,
-    private toastCtrl: ToastController,
-    private smsRetriever: SmsRetriever
-  ) {
-    this.smsRetriever
-      .getAppHash()
-      .then((res: any) => console.log(res))
-      .catch((error: any) => console.error(error));
-  }
+    private authtenticationService: AuthtenticationService
+  ) {}
 
   ngOnInit() {}
 
-  async presentToast(message, position, duration) {
-    const toast = await this.toastCtrl.create({
-      message: message,
-      position: position,
-      duration: duration,
+  OtpVerification(res) {
+    this.authtenticationService.enterVerificationCode(res).then((userData) => {
+      console.log(userData);
+      this.otpVerified = true;
+      this.router.navigate(['/payment']);
     });
-    toast.present();
   }
 
-  next() {
-    this.showOTPInput = true;
-    this.start();
-  }
-
-  start() {
-    this.smsRetriever
-      .startWatching()
-      .then((res: any) => {
-        console.log(res);
-        this.processSMS(res);
-      })
-      .catch((error: any) => console.error(error));
-  }
-
-  processSMS(data) {
-    // Design your SMS with App hash so the retriever API can read the SMS without READ_SMS permission
-    // Attach the App hash to SMS from your server, Last 11 characters should be the App Hash
-    // After that, format the SMS so you can recognize the OTP correctly
-    // Here I put the first 6 character as OTP
-    const message = data.Message;
-    if (message != -1) {
-      this.OTP = message.slice(0, 6);
-      console.log(this.OTP);
-      this.OTPmessage = 'OTP received. Proceed to register';
-      this.presentToast('SMS received with correct app hash', 'bottom', 1500);
+  onOtpChange(otp) {
+    this.otp = otp;
+    console.log(this.otp);
+    // const otpNumber = this.otp.toString()
+    if (this.otp.length === 6) {
+      const otpNumber = this.otp.toString();
+      this.OtpVerification(otpNumber);
     }
   }
 
-  register() {
-    if (this.OTP != '') {
-      this.presentToast('You are successfully registered', 'bottom', 1500);
-      this.router.navigate(['/home']);
-    } else {
-      this.presentToast('Your OTP is not valid', 'bottom', 1500);
+  setVal(val) {
+    this.ngOtpInput.setValue(val);
+  }
+
+  toggleDisable() {
+    if (this.ngOtpInput.otpForm) {
+      if (this.ngOtpInput.otpForm.disabled) {
+        this.ngOtpInput.otpForm.enable();
+      } else {
+        this.ngOtpInput.otpForm.disable();
+      }
     }
+  }
+
+  onConfigChange() {
+    this.showOtpComponent = false;
+    this.otp = null;
+    setTimeout(() => {
+      this.showOtpComponent = true;
+    }, 0);
   }
 }

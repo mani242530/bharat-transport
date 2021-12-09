@@ -16,15 +16,16 @@ export class AuthtenticationService {
 
   public signInWithPhoneNumber(recaptchaVerifier, phoneNumber) {
     return new Promise<any>((resolve, reject) => {
+      debugger;
       this.angularFireAuth
         .signInWithPhoneNumber(phoneNumber, recaptchaVerifier)
         .then((confirmationResult) => {
           this.confirmationResult = confirmationResult;
           resolve(confirmationResult);
+          this.router.navigate(['/verification']);
         })
         .catch((error) => {
           console.log(error);
-          this.router.navigate(['/verification']);
           reject('SMS not sent');
         });
     });
