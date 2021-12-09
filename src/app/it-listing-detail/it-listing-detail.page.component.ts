@@ -15,6 +15,7 @@ export class ListingDetailPageComponent implements OnInit {
   company;
   sub1: Subscription;
   paramId: string;
+  serviceProviding: string;
 
   userData;
   user;
@@ -46,10 +47,13 @@ export class ListingDetailPageComponent implements OnInit {
         .doc('companys/' + docid)
         .valueChanges()
         .subscribe((result) => {
-          console.log('detail>>>' + result);
           if (!result) {
             this.ngroute.navigate(['/listing']);
           } else {
+            this.serviceProviding = result['serviceProviding']
+              .toString()
+              .split(',')
+              .join('\n');
             this.company = result;
           }
         });

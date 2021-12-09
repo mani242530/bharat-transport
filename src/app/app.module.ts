@@ -25,6 +25,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { AvatarModule } from 'ngx-avatar';
+import { SmsRetriever } from '@ionic-native/sms-retriever/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -49,6 +50,7 @@ import { AvatarModule } from 'ngx-avatar';
   ],
   providers: [
     Validator,
+    SmsRetriever,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],

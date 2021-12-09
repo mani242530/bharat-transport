@@ -86,8 +86,6 @@ export class ListingPageComponent implements OnInit {
         .collection('companys')
         .snapshotChanges()
         .subscribe((data) => {
-          console.log(data);
-          console.log(this.selectedVehicleType);
           // if (data.length > 0) {
           //   const filtereddata = data.filter(
           //     (x) => x.location == params.from || x.location === params.to
@@ -125,7 +123,9 @@ export class ListingPageComponent implements OnInit {
                 lastName: result.payload.doc.data()['lastName'],
                 companyName: result.payload.doc.data()['companyName'],
                 firmActivity: result.payload.doc.data()['firmActivity'],
-                serviceProviding: result.payload.doc.data()['serviceProviding'],
+                serviceProviding: result.payload.doc
+                  .data()
+                  ['serviceProviding'].toString(),
                 landlineNumber: result.payload.doc.data()['landlineNumber'],
                 mobileNumber: result.payload.doc.data()['mobileNumber'],
                 location: result.payload.doc.data()['location'],
