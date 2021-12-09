@@ -123,52 +123,6 @@ let SignInPageComponent = class SignInPageComponent {
             'expired-callback': () => { },
         });
     }
-    showSuccess() {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const alert = yield this.alertController.create({
-                header: 'Success',
-                buttons: [
-                    {
-                        text: 'Ok',
-                        handler: (res) => {
-                            alert.dismiss();
-                        },
-                    },
-                ],
-            });
-            alert.present();
-        });
-    }
-    OtpVerification() {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const alert = yield this.alertController.create({
-                header: 'Enter OTP',
-                backdropDismiss: false,
-                inputs: [
-                    {
-                        name: 'otp',
-                        type: 'text',
-                        placeholder: 'Enter your otp',
-                    },
-                ],
-                buttons: [
-                    {
-                        text: 'Enter',
-                        handler: (res) => {
-                            this.authtenticationService
-                                .enterVerificationCode(res.otp)
-                                .then((userData) => {
-                                this.showSuccess();
-                                console.log(userData);
-                                this.router.navigate(['/verification']);
-                            });
-                        },
-                    },
-                ],
-            });
-            yield alert.present();
-        });
-    }
     // Button event after the nmber is entered and button is clicked
     signinWithPhoneNumber(formvalue) {
         console.log('country', this.recaptchaVerifier);
@@ -176,7 +130,7 @@ let SignInPageComponent = class SignInPageComponent {
             this.authtenticationService
                 .signInWithPhoneNumber(this.recaptchaVerifier, this.CountryCode + formvalue.mobileNumber)
                 .then((success) => {
-                this.OtpVerification();
+                this.router.navigate(['/verification']);
             });
         }
     }
@@ -197,75 +151,6 @@ SignInPageComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         styles: [_it_signin_page_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
     })
 ], SignInPageComponent);
-
-
-
-/***/ }),
-
-/***/ "ej43":
-/*!****************************************************!*\
-  !*** ./src/app/services/authentication.service.ts ***!
-  \****************************************************/
-/*! exports provided: AuthtenticationService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthtenticationService", function() { return AuthtenticationService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/auth */ "UbJi");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "tyNb");
-
-
-
-
-let AuthtenticationService = class AuthtenticationService {
-    constructor(angularFireAuth, router) {
-        this.angularFireAuth = angularFireAuth;
-        this.router = router;
-    }
-    signInWithPhoneNumber(recaptchaVerifier, phoneNumber) {
-        return new Promise((resolve, reject) => {
-            this.angularFireAuth
-                .signInWithPhoneNumber(phoneNumber, recaptchaVerifier)
-                .then((confirmationResult) => {
-                this.confirmationResult = confirmationResult;
-                resolve(confirmationResult);
-            })
-                .catch((error) => {
-                console.log(error);
-                this.router.navigate(['/verification']);
-                reject('SMS not sent');
-            });
-        });
-    }
-    enterVerificationCode(code) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            return new Promise((resolve, reject) => {
-                this.confirmationResult
-                    .confirm(code)
-                    .then((result) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-                    console.log(result);
-                    const user = result.user;
-                    resolve(user);
-                }))
-                    .catch((error) => {
-                    reject(error.message);
-                });
-            });
-        });
-    }
-};
-AuthtenticationService.ctorParameters = () => [
-    { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_2__["AngularFireAuth"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
-];
-AuthtenticationService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root',
-    })
-], AuthtenticationService);
 
 
 

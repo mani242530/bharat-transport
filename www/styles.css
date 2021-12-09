@@ -1387,6 +1387,13 @@ sub {
 .margin-left-15 {
   margin-left: 15px !important;
 }
+.otp-input {
+  border: 1px solid #5f259f !important;
+  width: 40px !important;
+  font-size: 18px !important;
+  height: 40px !important;
+  margin-bottom: 10px;
+}
 @font-face {
   font-family: "Quicksand";
   src: url('Quicksand-Regular.ttf');

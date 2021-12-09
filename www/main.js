@@ -76,7 +76,8 @@ let AppComponent = class AppComponent {
         const authfbObserver = fbauth.authState.subscribe((user) => {
             if (user) {
                 console.log(user);
-                this.ngroute.navigate(['home']);
+                // this.ngroute.navigate(['home']);
+                this.ngroute.navigate(['splash']);
                 authfbObserver.unsubscribe();
             }
             else {
@@ -538,7 +539,7 @@ const routes = [
     },
     {
         path: 'signin',
-        loadChildren: () => __webpack_require__.e(/*! import() | it-signin-it-signin-module */ "it-signin-it-signin-module").then(__webpack_require__.bind(null, /*! ./it-signin/it-signin.module */ "qdbj")).then((m) => m.SignInPageModule),
+        loadChildren: () => Promise.all(/*! import() | it-signin-it-signin-module */[__webpack_require__.e("common"), __webpack_require__.e("it-signin-it-signin-module")]).then(__webpack_require__.bind(null, /*! ./it-signin/it-signin.module */ "qdbj")).then((m) => m.SignInPageModule),
     },
     {
         path: 'signup',
@@ -550,7 +551,7 @@ const routes = [
     },
     {
         path: 'verification',
-        loadChildren: () => __webpack_require__.e(/*! import() | it-verification-it-verification-module */ "it-verification-it-verification-module").then(__webpack_require__.bind(null, /*! ./it-verification/it-verification.module */ "g8aa")).then((m) => m.VerificationPageModule),
+        loadChildren: () => Promise.all(/*! import() | it-verification-it-verification-module */[__webpack_require__.e("common"), __webpack_require__.e("it-verification-it-verification-module")]).then(__webpack_require__.bind(null, /*! ./it-verification/it-verification.module */ "g8aa")).then((m) => m.VerificationPageModule),
     },
     {
         path: 'payment',
