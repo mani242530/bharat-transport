@@ -21,14 +21,38 @@ __webpack_require__.r(__webpack_exports__);
 let SelectLanguagePageComponent = class SelectLanguagePageComponent {
     constructor() {
         this.languages = [
-            'ENGLISH',
-            'हिंदी',
-            'मराठी',
-            'ગુજરાતી',
-            'தமிழ்',
-            'తెలుగు',
-            'ಕೆನಡಾ',
-            'മലയാളം',
+            {
+                id: 'en',
+                name: 'ENGLISH',
+            },
+            {
+                id: 'hi',
+                name: 'हिंदी',
+            },
+            {
+                id: 'ma',
+                name: 'मराठी',
+            },
+            {
+                id: 'gu',
+                name: 'ગુજરાતી',
+            },
+            {
+                id: 'tn',
+                name: 'தமிழ்',
+            },
+            {
+                id: 'tl',
+                name: 'తెలుగు',
+            },
+            {
+                id: 'ka',
+                name: 'ಕೆನಡಾ',
+            },
+            {
+                id: 'ml',
+                name: 'മലയാളം',
+            },
         ];
     }
     ngOnInit() { }
@@ -141,7 +165,7 @@ SelectLanguagePageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <!-- <ion-toolbar> -->\r\n  <div\r\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\r\n  >\r\n    <h5 class=\"font-weight-normal mb-0 text-white\">\r\n      <a class=\"text-purple\" routerLink=\"/get-started\"\r\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\r\n      ></a>\r\n      <ion-title>Choose Language</ion-title>\r\n    </h5>\r\n  </div>\r\n  <!-- </ion-toolbar> -->\r\n</ion-header>\r\n\r\n<ion-content id=\"content\" fullscreen>\r\n  <!-- <cdk-virtual-scroll-viewport\r\n    class=\"scroll-viewport\"\r\n    #scroll\r\n    itemSize=\"80\"\r\n    minBufferPx=\"900\"\r\n    maxBufferPx=\"1350\"\r\n  > -->\r\n  <div\r\n    class=\"\r\n      osahan-index\r\n      bg-c\r\n      align-items-center\r\n      justify-content-center\r\n      vh-100\r\n      index-page\r\n    \"\r\n  >\r\n    <ion-grid>\r\n      <ion-row>\r\n        <ion-col\r\n          size=\"4\"\r\n          margin\r\n          routerLink=\"/signup\"\r\n          class=\"text-dark text-center\"\r\n          *ngFor=\"let language of languages\"\r\n        >\r\n          <div\r\n            class=\"\r\n              list-item-img\r\n              language-item-list\r\n              align-items-center\r\n              d-inline-flex\r\n              justify-content-center\r\n            \"\r\n            id=\"{{ language }}\"\r\n          >\r\n            <!-- <img\r\n                src=\"../../assets/img/language//telugu.png\"\r\n                class=\"img-fluid\"\r\n              /> -->\r\n            <span class=\"mb-0 l-hght-10 text-center text-black mb-2 p-1\">\r\n              {{ language }}</span\r\n            >\r\n          </div>\r\n          <!-- <p class=\"l-hght-10 text-center text-black mb-2\">\r\n              {{ language }}\r\n            </p> -->\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <!-- <ion-toolbar> -->\r\n  <div\r\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\r\n  >\r\n    <h5 class=\"font-weight-normal mb-0 text-white\">\r\n      <a class=\"text-purple\" routerLink=\"/get-started\"\r\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\r\n      ></a>\r\n      <ion-title>Choose Language</ion-title>\r\n    </h5>\r\n  </div>\r\n  <!-- </ion-toolbar> -->\r\n</ion-header>\r\n\r\n<ion-content id=\"content\" fullscreen>\r\n  <!-- <cdk-virtual-scroll-viewport\r\n    class=\"scroll-viewport\"\r\n    #scroll\r\n    itemSize=\"80\"\r\n    minBufferPx=\"900\"\r\n    maxBufferPx=\"1350\"\r\n  > -->\r\n  <div\r\n    class=\"\r\n      osahan-index\r\n      bg-c\r\n      align-items-center\r\n      justify-content-center\r\n      vh-100\r\n      index-page\r\n    \"\r\n  >\r\n    <ion-grid>\r\n      <ion-row>\r\n        <ion-col\r\n          size=\"4\"\r\n          margin\r\n          routerLink=\"/signup\"\r\n          class=\"text-dark text-center\"\r\n          *ngFor=\"let language of languages\"\r\n        >\r\n          <div\r\n            class=\"\r\n              list-item-img\r\n              language-item-list\r\n              align-items-center\r\n              d-inline-flex\r\n              justify-content-center\r\n            \"\r\n            id=\"{{ language }}\"\r\n          >\r\n            <!-- <img\r\n                src=\"../../assets/img/language//telugu.png\"\r\n                class=\"img-fluid\"\r\n              /> -->\r\n            <span class=\"mb-0 l-hght-10 text-center text-black mb-2 p-1\">\r\n              {{ language.name }}</span\r\n            >\r\n          </div>\r\n          <!-- <p class=\"l-hght-10 text-center text-black mb-2\">\r\n              {{ language }}\r\n            </p> -->\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ }),
 

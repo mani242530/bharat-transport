@@ -68,6 +68,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _it_splash_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./it-splash.page.component */ "ODfu");
 /* harmony import */ var _it_splash_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./it-splash.routing.module */ "5oFa");
 /* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ "6NWb");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ngx-translate/core */ "sYmb");
+
 
 
 
@@ -93,6 +95,7 @@ const MODULES = [
     _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes),
     _it_splash_routing_module__WEBPACK_IMPORTED_MODULE_7__["SplashPageRoutingModule"],
     _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_8__["FontAwesomeModule"],
+    _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__["TranslateModule"],
 ];
 /**
  * COMPONENTS
@@ -180,7 +183,7 @@ SplashPageComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <!-- Osahan Index -->\r\n  <div\r\n    class=\"\r\n      osahan-index\r\n      bg-c\r\n      d-flex\r\n      align-items-center\r\n      justify-content-center\r\n      vh-100\r\n      index-page\r\n    \"\r\n  >\r\n    <div class=\"text-center\">\r\n      <a routerLink=\"/get-started\">\r\n        <fa-icon\r\n          icon=\"truck\"\r\n          class=\"text-white display-1 bg-purple p-4 rounded-circle\"\r\n        ></fa-icon></a\r\n      ><br />\r\n      <div class=\"spinner\"></div>\r\n    </div>\r\n  </div>\r\n  <div class=\"osahan-fotter fixed-bottom m-3\">\r\n    <a\r\n      class=\"\r\n        btn btn-block\r\n        px-4\r\n        py-3\r\n        d-flex\r\n        align-items-center\r\n        osahanbus-btlan\r\n        btn-purple\r\n        shadow\r\n      \"\r\n      routerLink=\"/get-started\"\r\n    >\r\n      GET STARTED\r\n      <fa-icon\r\n        icon=\"arrow-right\"\r\n        class=\"text-white splash-arrow-right\"\r\n      ></fa-icon>\r\n    </a>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <!-- Osahan Index -->\r\n  <div\r\n    class=\"\r\n      osahan-index\r\n      bg-c\r\n      d-flex\r\n      align-items-center\r\n      justify-content-center\r\n      vh-100\r\n      index-page\r\n    \"\r\n  >\r\n    <div class=\"text-center\">\r\n      <a routerLink=\"/get-started\">\r\n        <fa-icon\r\n          icon=\"truck\"\r\n          class=\"text-white display-1 bg-purple p-4 rounded-circle\"\r\n        ></fa-icon></a\r\n      ><br />\r\n      <div class=\"spinner\"></div>\r\n    </div>\r\n  </div>\r\n  <div class=\"osahan-fotter fixed-bottom m-3\">\r\n    <a\r\n      class=\"\r\n        btn btn-block\r\n        px-4\r\n        py-3\r\n        d-flex\r\n        align-items-center\r\n        osahanbus-btlan\r\n        btn-purple\r\n        shadow\r\n      \"\r\n      routerLink=\"/get-started\"\r\n    >\r\n      {{ \"APP.GET_STARTED\" | translate }}\r\n      <fa-icon\r\n        icon=\"arrow-right\"\r\n        class=\"text-white splash-arrow-right\"\r\n      ></fa-icon>\r\n    </a>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ })
 

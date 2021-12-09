@@ -28,12 +28,12 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     firebaseConfig: {
-        apiKey: 'AIzaSyD52OG3ARjNi92BFLTvabyoGzFQG9zEA',
+        apiKey: 'AIzaSyD5G2OG3ARjNi92BRFLTvabyoGzFQG9zEA',
         authDomain: 'indiantransport-7e63f.firebaseapp.com',
         projectId: 'indiantransport-7e63f',
         storageBucket: 'indiantransport-7e63f.appspot.com',
         messagingSenderId: '175158590445',
-        appId: '1:175158590445:web:d2d4f6b0ae7545285e4',
+        appId: '1:175158590445:web:d2d4f6b01b0ae7545285e4',
         measurementId: 'G-YFDPH8RTKJ',
     },
 };
@@ -58,6 +58,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/fire/auth */ "UbJi");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngx-translate/core */ "sYmb");
+
 
 
 
@@ -66,10 +68,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AppComponent = class AppComponent {
-    constructor(platform, fbauth, ngroute) {
+    constructor(platform, fbauth, ngroute, translateService) {
         this.platform = platform;
         this.fbauth = fbauth;
         this.ngroute = ngroute;
+        this.translateService = translateService;
         const authfbObserver = fbauth.authState.subscribe((user) => {
             if (user) {
                 console.log(user);
@@ -93,6 +96,7 @@ let AppComponent = class AppComponent {
         //     this.user.firstName + ' ' + this.user &&
         //     this.user.lastName;
         // }
+        this.translateService.setDefaultLang('hi');
     }
     doLogout() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
@@ -105,7 +109,8 @@ let AppComponent = class AppComponent {
 AppComponent.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"] },
     { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_6__["AngularFireAuth"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
+    { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateService"] }
 ];
 AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -171,12 +176,13 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
   \*******************************/
-/*! exports provided: AppModule */
+/*! exports provided: AppModule, HttpLoaderFactory */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpLoaderFactory", function() { return HttpLoaderFactory; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "jhN1");
@@ -194,7 +200,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "8tEE");
 /* harmony import */ var _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fortawesome/free-regular-svg-icons */ "twK/");
 /* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "wHSu");
-/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ngx-avatar */ "HWWf");
+/* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ngx-translate/http-loader */ "mqiu");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ngx-translate/core */ "sYmb");
+/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ngx-avatar */ "HWWf");
+/* harmony import */ var _ionic_native_sms_retriever_ngx__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @ionic-native/sms-retriever/ngx */ "BeAq");
 
 
 
@@ -204,6 +213,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //firebase imports
+
+
+
 
 
 
@@ -231,23 +243,31 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
             _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
             _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_12__["FontAwesomeModule"],
-            ngx_avatar__WEBPACK_IMPORTED_MODULE_17__["AvatarModule"],
+            ngx_avatar__WEBPACK_IMPORTED_MODULE_19__["AvatarModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_13__["HttpClientModule"],
             _angular_fire__WEBPACK_IMPORTED_MODULE_8__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].firebaseConfig),
             _angular_fire_auth__WEBPACK_IMPORTED_MODULE_9__["AngularFireAuthModule"],
             _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_10__["AngularFirestoreModule"],
+            _ngx_translate_core__WEBPACK_IMPORTED_MODULE_18__["TranslateModule"].forRoot({
+                loader: {
+                    provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_18__["TranslateLoader"],
+                    useFactory: HttpLoaderFactory,
+                    deps: [_angular_common_http__WEBPACK_IMPORTED_MODULE_13__["HttpClient"]],
+                },
+            }),
         ],
         providers: [
             _helpers_validation_helpers__WEBPACK_IMPORTED_MODULE_11__["Validator"],
+            _ionic_native_sms_retriever_ngx__WEBPACK_IMPORTED_MODULE_20__["SmsRetriever"],
             { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] },
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]],
     })
 ], AppModule);
 
-// export function HttpLoaderFactory(http: HttpClient) {
-//   return new TranslateHttpLoader(http, '/i18n/', '.json');
-// }
+function HttpLoaderFactory(http) {
+    return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_17__["TranslateHttpLoader"](http, './assets/i18n/', '.json');
+}
 
 
 /***/ }),

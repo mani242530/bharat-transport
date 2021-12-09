@@ -1190,11 +1190,13 @@ sub {
   background-color: #5f259f !important;
   border-color: #5f259f !important;
   color: #ffffff !important;
+  border-radius: 10px !important;
 }
 .btn-white {
   background-color: #ffffff !important;
   border-color: #5f259f !important;
   color: #5f259f !important;
+  border-radius: 10px !important;
 }
 /* margin */
 .ml-auto {
@@ -1699,6 +1701,7 @@ span.select2.select2-container {
   border-radius: 6px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  border-radius: 10px !important;
 }
 
 .osahanbus-social {

@@ -1,5 +1,166 @@
 {
-  "app": {
-    "GET_STARTED": "Get Started"
+  "APP": {
+    "GET_STARTED": "Get Started",
+    "CREATE_ACCOUNT": {
+      "HEADER": "Create Account",
+      "PLACEHOLDER": {
+        "FIRST_NAME": "First Name",
+        "LAST_NAME": "Last Name",
+        "COMPANY_NAME": "Company Name",
+        "SELECT_FIRM_ACTIVITY": "Select Firm Activity",
+        "SELECT_SERVICE_PROVIDING": "Select Service Providing",
+        "SELECT_LOCATION": "Select Location",
+        "MOBILE_NUMBER": "Mobile Number",
+        "LANDLINE_NUMBER": "Landline Number",
+        "OR": "OR",
+        "ALREADY_A_MEMBER": "Already a member ?"
+      },
+      "SELECT": {
+        "FIRM_ACTIVITY": {
+          "FREIGHT": "Freight Forwarders",
+          "BOOKING": "Booking",
+          "SUPPLIER": "Supplier",
+          "OWNER": "Owner"
+        }
+      },
+      "REGISTERD": {
+        "HEADER": "Registered Successfully",
+        "MESSAGE": "The system is waiting for the explore"
+      },
+      "BUTTON": {
+        "REGISTER": "REGISTER",
+        "SIGN_IN": "Sign In",
+        "OK": "OK",
+        "CANCEL": "CANCEL"
+      }
+    },
+    "VERIFICATION": {
+      "TITLE": "Verification",
+      "BUTTON": {
+        "VERIFICATION": "VERIFICATION",
+        "RESEND": "Resend"
+      },
+      "TEXT": "Didn't receive code?"
+    },
+    "PAYMENT": {
+      "TITLE": "Payment",
+      "LABEL": {
+        "MASTERCARD": "Mastercard / Visa / Rupay",
+        "NET_BANKING": "Net Banking",
+        "CARD_NUMBER": "Card Number",
+        "DATE": "Month / Date",
+        "CVV": "CVV"
+      },
+      "PLACEHOLDER": {
+        "DD": "DD",
+        "MM": "MM",
+        "NUMBER": "1234 5678 9145 4589",
+        "CVV": "000"
+      },
+      "TEXT": {
+        "PAY_FROM_MASTERCARD": "Pay from mastercard account using mastercard payment gateway",
+        "PAY_FROM_BANK": "Pay from your bank account using net banking gateway",
+        "TOTAL_PAYABLE": "Total Payable INR",
+        "AMOUNT": "5000"
+      },
+      "BUTTON": {
+        "PAY": "Pay"
+      }
+    },
+    "HOME": {
+      "BUTTON": {
+        "SEARCH": "Search"
+      },
+      "LABEL": {
+        "FROM": "From",
+        "TO": "To"
+      },
+      "PLACEHOLDER": {
+        "SELECT_FROM_LOCATION": "Select From Location",
+        "SELECT_TO_LOCATION": "Select To Location"
+      },
+      "TEXT": {
+        "SAFE_AND_HYGEINIC": "Safe and Hygenic",
+        "VEHICLES": "Vehicles",
+        "BEST_CUSTOMER": "Best Customer",
+        "CARE_SUPPORT": "Care and Support",
+        "LIVE_TRACK": "Live Track your",
+        "JOURNEY": "Journey",
+        "VERIFIED_DRIVERS": "Verified Drivers",
+        "AND_VEHICLES": "and Vehicles"
+      }
+    },
+    "LISTING": {
+      "TITLE": "Search",
+      "LABEL": {
+        "GOING_FROM": "GOING FROM",
+        "GOING_TO": "GOING TO",
+        "FIRM_ACTIVITY": "Firm Activity",
+        "SERVICE_PROVIDING": "Service Providing / vehicle Type",
+        "LOCATION": "Location"
+      },
+      "VALUE": {
+        "LUDHIANA": "LUDHIANA",
+        "GOA": "GOA"
+      },
+      "LOADING": "Loading..."
+    },
+    "LISTING_DETAILS": {
+      "TITLE": "Company Details",
+      "ABOUT": "About",
+      "TEXT": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "LABEL": {
+        "FIRM_ACTIVITY": "Firm Activity",
+        "SERVICE_PROVIDING": "Service Providing",
+        "MOBILE_NUMBER": "Mobile Number",
+        "LANDLINE_NUMBER": "Landline Number"
+      },
+      "BUTTON": {
+        "CALL_NOW": "Call Now"
+      }
+    },
+    "VEHICLE_TYPE": {
+      "LCV": "LCV",
+      "TRAILER": "Trailer",
+      "TRUCK": "Truck (Taurus)",
+      "OPEN_TRUCK": "Open Trucks",
+      "20_FT_CBT": "20ft Container (CBT and Open)",
+      "32_FT_SINGLE_EXCEL": "32ft Container Single Excel",
+      "20_FT_IMPORT_EXPORT": "20ft Container (Import and Export)",
+      "40_FT_IMPORT_EXPORT": "40ft Container (Import and Export)",
+      "32_FT_MULTI_AXLE": "32ft Container Multi Axle Excel"
+    },
+    "LOCATION": {
+      "MUMBAI": "Mumbai",
+      "DELHI": "Delhi",
+      "BENGALURU": "Bengaluru",
+      "AHMEDABAD": "Ahmedabad",
+      "HYDERABAD": "Hyderabad",
+      "CHENNAI": "Chennai",
+      "KOLKATA": "Kolkata",
+      "PUNE": "Pune",
+      "JAIPUR": "Jaipur",
+      "SURAT": "Surat",
+      "LUCKNOW": "Lucknow",
+      "KANPUR": "Kanpur",
+      "NAGPUR": "Nagpur",
+      "PATNA": "Patna",
+      "INDORE": "Indore",
+      "THANE": "Thane",
+      "BHOPAL": "Bhopal",
+      "VISAKHAPATNAM": "Visakhapatnam",
+      "VADODARA": "Vadodara",
+      "AMRITSAR": "Amritsar",
+      "AGRA": "Agra",
+      "BAREILLY": "Bareilly",
+      "BATHINDA": "Bathinda",
+      "BHIWANI": "Bhiwani",
+      "CHANDIGARH": "Chandigarh",
+      "FATEHABAD": "Fatehabad",
+      "GURGAON": "Gurgaon",
+      "HISSAR": "Hissar",
+      "JODHPUR": "Jodhpur",
+      "NANDED": "Nanded"
+    }
   }
 }
