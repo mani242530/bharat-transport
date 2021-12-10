@@ -34,7 +34,7 @@
     <div class="px-3 py-3">
       <form [formGroup]="createCompanyForm" #createForm>
         <ion-list>
-          <div class="form-group mb-3">
+          <div class="form-group mb-4">
             <ion-input
               class="form-control rc-form-control it-form-control"
               placeholder="{{
@@ -47,7 +47,7 @@
             ></ion-input>
           </div>
 
-          <div class="form-group mb-3">
+          <div class="form-group mb-4">
             <ion-input
               class="form-control rc-form-control it-form-control"
               placeholder="{{
@@ -60,7 +60,7 @@
             ></ion-input>
           </div>
 
-          <div class="form-group mb-3">
+          <div class="form-group mb-4">
             <ion-input
               class="form-control rc-form-control it-form-control"
               placeholder="{{
@@ -73,7 +73,7 @@
             ></ion-input>
           </div>
 
-          <div class="form-group mb-3">
+          <div class="form-group mb-4">
             <ion-select
               interface="popover"
               class="form-control rc-form-control native-select it-form-control"
@@ -101,7 +101,7 @@
             </ion-select>
           </div>
 
-          <div class="form-group mb-3">
+          <div class="form-group mb-4">
             <ion-select
               multiple="true"
               class="form-control rc-form-control native-select it-form-control"
@@ -123,7 +123,7 @@
             </ion-select>
           </div>
 
-          <div class="form-group mb-3">
+          <div class="form-group mb-4">
             <ion-select
               interface="popover"
               class="form-control rc-form-control native-select it-form-control"
@@ -142,7 +142,7 @@
             </ion-select>
           </div>
 
-          <div class="form-group mb-3">
+          <div class="form-group mb-4">
             <ion-input
               class="form-control rc-form-control it-form-control"
               placeholder="{{
@@ -155,7 +155,7 @@
             ></ion-input>
           </div>
 
-          <div class="form-group mb-3">
+          <div class="form-group mb-4">
             <ion-input
               class="form-control rc-form-control it-form-control"
               placeholder="{{
@@ -169,7 +169,7 @@
         </ion-list>
         <button
           type="submit"
-          class="btn btn-purple btn-block osahanbus-btn rounded-1"
+          class="btn btn-purple btn-block osahanbus-btn mt-2"
           slot="end"
           fill="clear"
           [disabled]="!createCompanyForm.valid"
@@ -178,7 +178,16 @@
           {{ "APP.CREATE_ACCOUNT.BUTTON.REGISTER" | translate }}
         </button>
       </form>
-      <div class="sign-or d-flex align-items-center justify-content-center">
+      <div
+        class="
+          sign-or
+          d-flex
+          align-items-center
+          justify-content-center
+          mt-4
+          mb-2
+        "
+      >
         <hr class="mr-4" />
         <p class="text-muted text-center py-2 m-0">
           {{ "APP.CREATE_ACCOUNT.PLACEHOLDER.OR" | translate }}
@@ -186,7 +195,7 @@
         <hr class="ml-4" />
       </div>
       <div class="osahan-signin text-center text-purple p-1">
-        <p class="mb-3">
+        <p class="mb-4">
           {{ "APP.CREATE_ACCOUNT.PLACEHOLDER.ALREADY_A_MEMBER" | translate }}
           <a routerLink="/signin" class="text-orange ml-2">{{
             "APP.CREATE_ACCOUNT.BUTTON.SIGN_IN" | translate

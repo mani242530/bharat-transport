@@ -19,6 +19,8 @@ export class VerificationPageComponent implements OnInit {
   otp: string;
   showOtpComponent = true;
   otpVerified = false;
+  errorOtpMsg = false;
+
   @ViewChild('ngOtpInput', { static: false }) ngOtpInput: any;
   config: Config = {
     allowNumbersOnly: false,
@@ -31,6 +33,7 @@ export class VerificationPageComponent implements OnInit {
       height: '50px',
     },
   };
+
   constructor(
     private router: Router,
     private authtenticationService: AuthtenticationService
@@ -49,11 +52,8 @@ export class VerificationPageComponent implements OnInit {
   onOtpChange(otp) {
     this.otp = otp;
     console.log(this.otp);
+    this.verifyOtp(otp);
     // const otpNumber = this.otp.toString()
-    if (this.otp.length === 6) {
-      const otpNumber = this.otp.toString();
-      this.OtpVerification(otpNumber);
-    }
   }
 
   setVal(val) {
@@ -76,5 +76,14 @@ export class VerificationPageComponent implements OnInit {
     setTimeout(() => {
       this.showOtpComponent = true;
     }, 0);
+  }
+
+  verifyOtp(otpval) {
+    if (otpval.length === 6) {
+      const otpNumber = otpval.toString();
+      this.OtpVerification(otpNumber);
+    } else {
+      this.errorOtpMsg = true;
+    }
   }
 }

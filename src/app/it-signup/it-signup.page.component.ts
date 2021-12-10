@@ -80,17 +80,24 @@ export class SignUpPageComponent implements OnInit {
   //   return await this.myModal.present();
   // }
 
-  async createCompany() {
-    let companyObj = {
+  async createCompany(formGroup: FormGroup) {
+    const companyObj = {
       firstName: this.createCompanyForm.get('firstName').value,
       lastName: this.createCompanyForm.get('lastName').value,
       companyName: this.createCompanyForm.get('companyName').value,
       firmActivity: this.createCompanyForm.get('firmActivity').value,
       serviceProviding: this.createCompanyForm.get('serviceProviding').value,
       plandlineNumberd: this.createCompanyForm.get('landlineNumber').value,
-      mobileNumber: this.createCompanyForm.get('mobileNumber').value,
+      mobileNumber: '+91' + this.createCompanyForm.get('mobileNumber').value,
       location: this.createCompanyForm.get('location').value,
     };
+    console.log(companyObj);
+    Object.keys(companyObj).forEach((k) => {
+      if (typeof companyObj[k] !== 'object') {
+        companyObj[k] = companyObj[k].trim();
+      }
+    });
+    console.log(companyObj);
     try {
       await this.fbstore
         .collection('companys')

@@ -22,7 +22,6 @@ export class AuthtenticationService {
         .then((confirmationResult) => {
           this.confirmationResult = confirmationResult;
           resolve(confirmationResult);
-          this.router.navigate(['/verification']);
         })
         .catch((error) => {
           console.log(error);

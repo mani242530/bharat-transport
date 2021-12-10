@@ -10,6 +10,8 @@ import {
 } from '@angular/forms';
 import { AuthtenticationService } from '../services/authentication.service';
 import firebase from 'firebase/app';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-signin',
@@ -36,7 +38,9 @@ export class SignInPageComponent implements OnInit {
     private router: Router,
     private alertController: AlertController,
     private formBuilder: FormBuilder,
-    private authtenticationService: AuthtenticationService
+    private authtenticationService: AuthtenticationService,
+    public fbauth: AngularFireAuth,
+    private fbstore: AngularFirestore
   ) {}
 
   ngOnInit() {
@@ -70,7 +74,7 @@ export class SignInPageComponent implements OnInit {
   // Button event after the nmber is entered and button is clicked
 
   signinWithPhoneNumber(formvalue) {
-    console.log('country', this.recaptchaVerifier);
+    this.showProgress = true;
     if (formvalue.mobileNumber) {
       this.authtenticationService
         .signInWithPhoneNumber(
@@ -78,33 +82,53 @@ export class SignInPageComponent implements OnInit {
           this.CountryCode + formvalue.mobileNumber
         )
         .then((success) => {
-          this.router.navigate(['/verification']);
+          this.showProgress = false;
+          const authfbObserver = this.fbauth.authState.subscribe((user) => {
+            console.log(user);
+            if (user) {
+              this.fbstore
+                .collection('companys')
+                .snapshotChanges()
+                .subscribe((data) => {
+                  const filteredUser = data.filter(
+                    (result) =>
+                      result.payload.doc.data()['mobileNUmber'] ===
+                      user.phoneNumber
+                  );
+                  console.log(filteredUser);
+                  if (filteredUser) {
+                    this.router.navigate(['/verification']);
+                  } else {
+                  }
+                });
+            }
+          });
         });
     }
   }
 
-  //   signinWithPhoneNumber(formvalue) {
-  //     this.dataService.signnedInUser = [];
-  //     this.showProgress = true;
-  //     const userData = this.dataService
-  //       .searchContactByLocation()
-  //       .subscribe((data: any) => {
-  //         if (data.length > 0) {
-  //           const filtereddata = data.filter(
-  //             (x) => x.mobileNumber == formvalue.mobileNumber
-  //           );
+  // signinWithPhoneNumber(formvalue) {
+  //   this.dataService.signnedInUser = [];
+  //   this.showProgress = true;
+  //   const userData = this.dataService
+  //     .searchContactByLocation()
+  //     .subscribe((data: any) => {
+  //       if (data.length > 0) {
+  //         const filtereddata = data.filter(
+  //           (x) => x.mobileNumber == formvalue.mobileNumber
+  //         );
 
-  //           if (filtereddata.length > 0) {
-  //             this.dataService.signnedInUser = filtereddata;
-  //             // this.storage.set('loggedinuser', filtereddata);
+  //         if (filtereddata.length > 0) {
+  //           this.dataService.signnedInUser = filtereddata;
+  //           // this.storage.set('loggedinuser', filtereddata);
 
-  //             this.showProgress = false;
-  //             this.router.navigate(['/verification']);
-  //           } else {
-  //             this.dataService.signnedInUser = filtereddata;
-  //             this.router.navigate(['/verification']);
-  //           }
+  //           this.showProgress = false;
+  //           this.router.navigate(['/verification']);
+  //         } else {
+  //           this.dataService.signnedInUser = filtereddata;
+  //           this.router.navigate(['/verification']);
   //         }
-  //       });
-  //   }
+  //       }
+  //     });
+  // }
 }

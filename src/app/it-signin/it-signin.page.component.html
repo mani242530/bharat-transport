@@ -44,7 +44,7 @@
           <div class="form-group mb-2">
             <ion-label class="text-muted mb-1">Mobile Number</ion-label>
             <ion-input
-              class="form-control rc-form-control it-form-control"
+              class="form-control rc-form-control it-form-control mt-2"
               inputMode="tel"
               clearInput="true"
               formControlName="mobileNumber"
@@ -53,7 +53,7 @@
         </ion-list>
         <button
           type="submit"
-          class="btn btn-purple btn-block osahanbus-btn"
+          class="btn btn-purple btn-block osahanbus-btn mt-2"
           slot="end"
           fill="clear"
           [disabled]="!signInForm.valid"
@@ -64,7 +64,14 @@
       </form>
 
       <div
-        class="sign-or d-flex align-items-center justify-content-center mb-4"
+        class="
+          sign-or
+          d-flex
+          align-items-center
+          justify-content-center
+          mt-4
+          mb-2
+        "
       >
         <hr class="mr-4" />
         <p class="text-muted text-center py-2 m-0">OR</p>

@@ -58,8 +58,9 @@
         name="submit_button"
         class="btn btn-purple btn-block osahanbus-btn mb-4"
         [disabled]="!otpVerified"
+        (click)="verifyOtp()"
       >
-        {{ "APP.VERIFICATION.BUTTON.CONTINUE" | translate }}
+        {{ "APP.VERIFICATION.BUTTON.VERIFICATION" | translate }}
       </button>
       <p class="text-muted">
         {{ "APP.VERIFICATION.TEXT" | translate
@@ -67,6 +68,9 @@
           "APP.VERIFICATION.BUTTON.RESEND" | translate
         }}</a>
       </p>
+    </div>
+    <div class="d-flex justify-content-center" *ngIf="errorOtpMsg">
+      <span>OOPs! Please enter valid OTP</span>
     </div>
   </div>
 </ion-content>
