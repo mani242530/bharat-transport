@@ -33,7 +33,7 @@
   >
     <div class="osahan-form px-3 py-5 text-center mb-5">
       <div class="row my-5 px-3 pb-2">
-        <p class="a-o-i text-muted">Enter verification code</p>
+        <p class="a-o-i text-muted">{{ "APP.VERIFICATION.ENTER_VERIFICATION_CODE" | translate }}</p>
         <div class="col px-1">
           <ng-otp-input
             #ngOtpInput
@@ -51,7 +51,7 @@
             "
           ></ng-otp-input>
         </div>
-        <p class="a-o-i text-muted p-2">{{ OTPmessage }}</p>
+        <p class="a-o-i text-muted p-2">{{ OTPmessage | translate }}</p>
       </div>
       <button
         type="submit"

@@ -15,12 +15,39 @@
         "OR": "અથવા",
         "ALREADY_A_MEMBER": "પહેલેથી જ સભ્ય છો ?"
       },
-      "SELECT": {
-        "FIRM_ACTIVITY": {
-          "FREIGHT": "ફ્રેટ ફોરવર્ડર્સ",
-          "BOOKING": "બુકિંગ",
-          "SUPPLIER": "સપ્લાયર",
-          "OWNER": "માલિક"
+      "VERIFICATION": {
+        "TITLE": "ચકાસણી",
+        "ENTER_VERIFICATION_CODE": "ચકાસણી કોડ દાખલ કરો",
+        "OTP_MESSAGE": "'તમારા નંબર પર એક OTP મોકલવામાં આવે છે. તમારે તે 15 સેકન્ડમાં પ્રાપ્ત કરવું જોઈએ'",
+        "BUTTON": {
+          "VERIFICATION": "ચકાસણી",
+          "RESEND": "ફરીથી મોકલો"
+        },
+        "TEXT": "કોડ મળ્યો નથી?"
+      },
+      "PAYMENT": {
+        "TITLE": "ચુકવણી",
+        "LABEL": {
+          "MASTERCARD": "માસ્ટરકાર્ડ / વિઝા / રુપે",
+          "NET_BANKING": "નેટ બેંકિંગ",
+          "CARD_NUMBER": "કાર્ડ નંબર",
+          "DATE": "મહિનો / તારીખ",
+          "CVV": "CVV"
+        },
+        "PLACEHOLDER": {
+          "DD": "DD",
+          "MM": "MM",
+          "NUMBER": "1234 5678 9145 4589",
+          "CVV": "000"
+        },
+        "TEXT": {
+          "PAY_FROM_MASTERCARD": "માસ્ટરકાર્ડ પેમેન્ટ ગેટવેનો ઉપયોગ કરીને માસ્ટરકાર્ડ એકાઉન્ટમાંથી ચૂકવણી કરો",
+          "PAY_FROM_BANK": "નેટ બેંકિંગ ગેટવેનો ઉપયોગ કરીને તમારા બેંક ખાતામાંથી ચૂકવણી કરો",
+          "TOTAL_PAYABLE": "કુલ ચૂકવવાપાત્ર INR",
+          "AMOUNT": "5000"
+        },
+        "BUTTON": {
+          "PAY": "ચુકવો"
         }
       },
       "REGISTERD": {

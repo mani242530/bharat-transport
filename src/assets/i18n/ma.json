@@ -36,6 +36,8 @@
       },
       "VERIFICATION": {
         "TITLE": "पडताळणी",
+        "ENTER_VERIFICATION_CODE": "सत्यापन कोड प्रविष्ट करा",
+        "OTP_MESSAGE": "'तुमच्या नंबरवर OTP पाठवला जातो. तुम्हाला ते १५ सेकंदात मिळायला हवे'",
         "BUTTON": {
           "VERIFICATION": "पडताळणी",
           "RESEND": "पुन्हा पाठवा"

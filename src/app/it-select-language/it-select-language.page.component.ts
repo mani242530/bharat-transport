@@ -46,7 +46,7 @@ export class SelectLanguagePageComponent implements OnInit {
     {
       id: 'ml',
       name: 'മലയാളം',
-      description: 'MALYALAM'
+      description: 'MALAYALAM'
     },
   ];
   constructor(private translateService: TranslateService) {}
