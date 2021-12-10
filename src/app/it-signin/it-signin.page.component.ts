@@ -30,6 +30,7 @@ export class SignInPageComponent implements OnInit {
   confirmationResult: any;
 
   showProgress = false;
+  invalidMobilenumber = false;
 
   signInForm: FormGroup;
   @ViewChild('signIn') signIn: FormGroupDirective;
@@ -75,35 +76,44 @@ export class SignInPageComponent implements OnInit {
 
   signinWithPhoneNumber(formvalue) {
     this.showProgress = true;
-    if (formvalue.mobileNumber) {
-      this.authtenticationService
-        .signInWithPhoneNumber(
-          this.recaptchaVerifier,
-          this.CountryCode + formvalue.mobileNumber
-        )
-        .then((success) => {
-          this.showProgress = false;
-          const authfbObserver = this.fbauth.authState.subscribe((user) => {
-            console.log(user);
-            if (user) {
-              this.fbstore
-                .collection('companys')
-                .snapshotChanges()
-                .subscribe((data) => {
-                  const filteredUser = data.filter(
-                    (result) =>
-                      result.payload.doc.data()['mobileNUmber'] ===
-                      user.phoneNumber
-                  );
-                  console.log(filteredUser);
-                  if (filteredUser) {
-                    this.router.navigate(['/verification']);
-                  } else {
-                  }
-                });
-            }
+    if (formvalue.mobileNumber.length === 10) {
+      return new Promise<any>((resolve, reject) => {
+        this.authtenticationService
+          .signInWithPhoneNumber(
+            this.recaptchaVerifier,
+            this.CountryCode + formvalue.mobileNumber
+          )
+          .then((success) => {
+            this.showProgress = false;
+            this.invalidMobilenumber = false;
+            const authfbObserver = this.fbauth.authState.subscribe((user) => {
+              console.log(user);
+              if (user) {
+                this.fbstore
+                  .collection('companys')
+                  .snapshotChanges()
+                  .subscribe((data) => {
+                    const filteredUser = data.filter(
+                      (result) =>
+                        result.payload.doc.data()['mobileNUmber'] ===
+                        user.phoneNumber
+                    );
+                    console.log(filteredUser);
+                    if (filteredUser) {
+                      this.router.navigate(['/verification']);
+                    } else {
+                    }
+                  });
+              }
+              resolve(user);
+            });
+          })
+          .catch((error) => {
+            this.showProgress = false;
+            this.invalidMobilenumber = true;
+            reject(error);
           });
-        });
+      });
     }
   }
 

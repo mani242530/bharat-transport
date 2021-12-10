@@ -16,7 +16,6 @@ export class AuthtenticationService {
 
   public signInWithPhoneNumber(recaptchaVerifier, phoneNumber) {
     return new Promise<any>((resolve, reject) => {
-      debugger;
       this.angularFireAuth
         .signInWithPhoneNumber(phoneNumber, recaptchaVerifier)
         .then((confirmationResult) => {

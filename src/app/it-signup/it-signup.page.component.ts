@@ -8,9 +8,12 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 import * as location from '../json/location';
 import { Company } from '../models/contact';
 import { ToastService } from '../services/toast.service';
+import firebase from 'firebase/app';
+import { AuthtenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-signup',
@@ -20,6 +23,19 @@ import { ToastService } from '../services/toast.service';
 export class SignUpPageComponent implements OnInit {
   myModal: any;
   newCompany: Company = new Company();
+
+  OTP: string = '';
+  Code: any;
+  PhoneNo: any;
+  CountryCode: any = '+91';
+  showOTPInput: boolean = false;
+  OTPmessage: string =
+    'An OTP is sent to your number. You should receive it in 15 s';
+  recaptchaVerifier: firebase.auth.RecaptchaVerifier;
+  confirmationResult: any;
+
+  showProgress = false;
+  invalidMobilenumber = false;
 
   createCompanyForm: FormGroup;
   @ViewChild('createForm') createForm: FormGroupDirective;
@@ -42,7 +58,9 @@ export class SignUpPageComponent implements OnInit {
     public addnewFormbuilder: FormBuilder,
     private toastservice: ToastService,
     public ngroute: Router,
-    private fbstore: AngularFirestore
+    private fbstore: AngularFirestore,
+    private toastController: ToastController,
+    private authtenticationService: AuthtenticationService
   ) {}
 
   ngOnInit() {
@@ -80,35 +98,85 @@ export class SignUpPageComponent implements OnInit {
   //   return await this.myModal.present();
   // }
 
+  async ionViewDidEnter() {
+    this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+      'sign-UP-button',
+      {
+        size: 'invisible',
+        callback: (response) => {},
+        'expired-callback': () => {},
+      }
+    );
+  }
+
+  ionViewDidLoad() {
+    this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+      'sign-UP-button',
+      {
+        size: 'invisible',
+        callback: (response) => {},
+        'expired-callback': () => {},
+      }
+    );
+  }
+
   async createCompany(formGroup: FormGroup) {
+    this.showProgress = true;
     const companyObj = {
       firstName: this.createCompanyForm.get('firstName').value,
       lastName: this.createCompanyForm.get('lastName').value,
       companyName: this.createCompanyForm.get('companyName').value,
       firmActivity: this.createCompanyForm.get('firmActivity').value,
       serviceProviding: this.createCompanyForm.get('serviceProviding').value,
-      plandlineNumberd: this.createCompanyForm.get('landlineNumber').value,
+      landlineNumber: this.createCompanyForm.get('landlineNumber').value,
       mobileNumber: '+91' + this.createCompanyForm.get('mobileNumber').value,
       location: this.createCompanyForm.get('location').value,
     };
-    console.log(companyObj);
     Object.keys(companyObj).forEach((k) => {
       if (typeof companyObj[k] !== 'object') {
         companyObj[k] = companyObj[k].trim();
       }
     });
-    console.log(companyObj);
     try {
       await this.fbstore
         .collection('companys')
         .add(companyObj)
         .then((data) => {
           console.log(data);
-          this.ngroute.navigate(['verification']);
+          if (data) {
+            return new Promise<any>((resolve, reject) => {
+              this.authtenticationService
+                .signInWithPhoneNumber(
+                  this.recaptchaVerifier,
+                  companyObj.mobileNumber
+                )
+                .then((success) => {
+                  resolve(success);
+                  this.invalidMobilenumber = false;
+                  this.userCretedToast();
+                  this.ngroute.navigate(['verification']);
+                })
+                .catch((error) => {
+                  this.showProgress = false;
+                  this.invalidMobilenumber = true;
+                  reject(error);
+                });
+            });
+          }
         });
     } catch (error) {
       this.toastservice.showToast(error.message, 2000);
-      //console.log(error.message);
     }
+  }
+
+  async userCretedToast() {
+    const toast = await this.toastController.create({
+      message: 'Account created successfully.',
+      duration: 2000,
+      position: 'bottom',
+      animated: true,
+      color: 'Success',
+    });
+    toast.present();
   }
 }

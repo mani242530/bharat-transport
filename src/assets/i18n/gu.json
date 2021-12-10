@@ -94,6 +94,9 @@
         "PAY": "ચુકવો"
       }
     },
+    "SELECT_VEHICLE": {
+      "TITLE": "વાહન પસંદ કરો"
+    },
     "HOME": {
       "BUTTON": {
         "SEARCH": "શોધ"

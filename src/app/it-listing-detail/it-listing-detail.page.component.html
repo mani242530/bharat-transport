@@ -147,9 +147,17 @@
                       </h3>
                     </ion-label>
 
-                    <p class="text-muted">
-                      {{ company.landlineNumber }}
-                    </p>
+                    <div
+                      *ngIf="company.landlineNumber !== ''; else other_content"
+                    >
+                      <p class="text-muted">
+                        {{ company.landlineNumber }}
+                      </p>
+                    </div>
+
+                    <ng-template #other_content
+                      ><p class="text-muted">N/A</p></ng-template
+                    >
                   </div>
                 </div>
               </div>

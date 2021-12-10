@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 import { Config } from '../models/otp.config';
 import { AuthtenticationService } from '../services/authentication.service';
 
@@ -19,6 +20,7 @@ export class VerificationPageComponent implements OnInit {
   showOtpComponent = true;
   otpVerified = false;
   errorOtpMsg = false;
+  otpNotVerified = false;
 
   @ViewChild('ngOtpInput', { static: false }) ngOtpInput: any;
   config: Config = {
@@ -35,25 +37,64 @@ export class VerificationPageComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private authtenticationService: AuthtenticationService
+    private authtenticationService: AuthtenticationService,
+    private toastController: ToastController
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.otpSentToast();
+  }
+
+  async otpSentToast() {
+    const toast = await this.toastController.create({
+      message: 'OTP Sent.',
+      duration: 2000,
+      position: 'bottom',
+      animated: true,
+      color: 'tertiary',
+    });
+    toast.present();
+  }
+
+  async otpVerifiedToast() {
+    const toast = await this.toastController.create({
+      message: 'OTP Verified.',
+      duration: 2000,
+      position: 'bottom',
+      animated: true,
+      color: 'Success',
+    });
+    toast.present();
+  }
 
   OtpVerification(res) {
     this.otpVerified = true;
-      this.router.navigate(['/payment']);
-    this.authtenticationService.enterVerificationCode(res).then((userData) => {
-      console.log(userData);
-      // this.otpVerified = true;
-      // this.router.navigate(['/payment']);
+    return new Promise<any>((resolve, reject) => {
+      this.authtenticationService
+        .enterVerificationCode(res)
+        .then(async (userData) => {
+          console.log(userData);
+          const user = userData.user;
+          this.otpVerifiedToast();
+          this.router.navigate(['/payment']);
+          resolve(user);
+        })
+        .catch((error) => {
+          this.errorOtpMsg = false;
+          this.otpNotVerified = true;
+          this.router.navigate(['/payment']);
+          reject(error.message);
+        });
     });
   }
 
   onOtpChange(otp) {
     this.otp = otp;
-    console.log(this.otp);
-    this.verifyOtp(otp);
+    if (this.otp.length === 6) {
+      this.errorOtpMsg = false;
+      this.otpVerified = true;
+    }
+    //this.verifyOtp(otp);
     // const otpNumber = this.otp.toString()
   }
 
@@ -79,11 +120,12 @@ export class VerificationPageComponent implements OnInit {
     }, 0);
   }
 
-  verifyOtp(otpval) {
-    if (otpval.length === 6) {
-      const otpNumber = otpval.toString();
+  verifyOtp() {
+    if (this.otp.length === 6) {
+      const otpNumber = this.otp.toString();
       this.OtpVerification(otpNumber);
     } else {
+      this.otpNotVerified = false;
       this.errorOtpMsg = true;
     }
   }
