@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { AppService } from '../services/app.servcie';
 
 @Component({
   selector: 'app-select-language',
@@ -11,49 +12,53 @@ export class SelectLanguagePageComponent implements OnInit {
     {
       id: 'en',
       name: 'ENGLISH',
-      description: 'ENGLISH'
+      description: 'ENGLISH',
     },
     {
       id: 'hi',
       name: 'हिंदी',
-      description: 'HINDI'
+      description: 'HINDI',
     },
     {
       id: 'ma',
       name: 'मराठी',
-      description: 'MARATHI'
+      description: 'MARATHI',
     },
     {
       id: 'gu',
       name: 'ગુજરાતી',
-      description: 'GUJARATI'
+      description: 'GUJARATI',
     },
     {
       id: 'tn',
       name: 'தமிழ்',
-      description: 'TAMIL'
+      description: 'TAMIL',
     },
     {
       id: 'tl',
       name: 'తెలుగు',
-      description: 'TELUGU'
+      description: 'TELUGU',
     },
     {
       id: 'ka',
       name: 'ಕೆನಡಾ',
-      description: 'KANADA'
+      description: 'KANADA',
     },
     {
       id: 'ml',
       name: 'മലയാളം',
-      description: 'MALAYALAM'
+      description: 'MALAYALAM',
     },
   ];
-  constructor(private translateService: TranslateService) {}
+  constructor(
+    private translateService: TranslateService,
+    public appservice: AppService
+  ) {}
 
   ngOnInit() {}
 
-  loadSelectedLanguage(language){
-this.translateService.use(language)
+  loadSelectedLanguage(language) {
+    this.appservice.selectedLanguage = language;
+    this.translateService.use(language);
   }
 }

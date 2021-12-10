@@ -14,6 +14,7 @@ import { Company } from '../models/contact';
 import { ToastService } from '../services/toast.service';
 import firebase from 'firebase/app';
 import { AuthtenticationService } from '../services/authentication.service';
+import { AppService } from '../services/app.servcie';
 
 @Component({
   selector: 'app-signup',
@@ -60,7 +61,8 @@ export class SignUpPageComponent implements OnInit {
     public ngroute: Router,
     private fbstore: AngularFirestore,
     private toastController: ToastController,
-    private authtenticationService: AuthtenticationService
+    private authtenticationService: AuthtenticationService,
+    public appservice: AppService
   ) {}
 
   ngOnInit() {
@@ -131,6 +133,7 @@ export class SignUpPageComponent implements OnInit {
       landlineNumber: this.createCompanyForm.get('landlineNumber').value,
       mobileNumber: '+91' + this.createCompanyForm.get('mobileNumber').value,
       location: this.createCompanyForm.get('location').value,
+      language: this.appservice.selectedLanguage,
     };
     Object.keys(companyObj).forEach((k) => {
       if (typeof companyObj[k] !== 'object') {
@@ -142,7 +145,7 @@ export class SignUpPageComponent implements OnInit {
         .collection('companys')
         .add(companyObj)
         .then((data) => {
-          console.log(data);
+          console.log(companyObj);
           if (data) {
             return new Promise<any>((resolve, reject) => {
               this.authtenticationService
@@ -153,7 +156,13 @@ export class SignUpPageComponent implements OnInit {
                 .then((success) => {
                   resolve(success);
                   this.invalidMobilenumber = false;
-                  this.userCretedToast();
+                  const toast = this.toastController.create({
+                    message: 'Account created successfully.',
+                    duration: 2000,
+                    position: 'bottom',
+                    animated: true,
+                    color: 'Success',
+                  });
                   this.ngroute.navigate(['verification']);
                 })
                 .catch((error) => {
@@ -167,16 +176,5 @@ export class SignUpPageComponent implements OnInit {
     } catch (error) {
       this.toastservice.showToast(error.message, 2000);
     }
-  }
-
-  async userCretedToast() {
-    const toast = await this.toastController.create({
-      message: 'Account created successfully.',
-      duration: 2000,
-      position: 'bottom',
-      animated: true,
-      color: 'Success',
-    });
-    toast.present();
   }
 }

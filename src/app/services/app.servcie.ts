@@ -6,6 +6,7 @@ import { ToastController } from '@ionic/angular';
 })
 export class AppService {
   selectedVehicleType: any;
+  selectedLanguage: any;
 
   constructor() {}
 }
