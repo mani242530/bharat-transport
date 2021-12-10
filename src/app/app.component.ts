@@ -44,7 +44,7 @@ export class AppComponent {
     //     this.user.lastName;
     // }
 
-    this.translateService.setDefaultLang('hi');
+    this.translateService.setDefaultLang('en');
   }
 
   async doLogout(): Promise<void> {

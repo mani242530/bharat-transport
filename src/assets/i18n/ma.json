@@ -1,0 +1,167 @@
+{
+    "APP": {
+      "GET_STARTED": "सुरु करूया",
+      "CREATE_ACCOUNT": {
+        "HEADER": "खाते तयार करा",
+        "PLACEHOLDER": {
+          "FIRST_NAME": "पहिले नाव",
+          "LAST_NAME": "आडनाव",
+          "COMPANY_NAME": "कंपनीचे नाव",
+          "SELECT_FIRM_ACTIVITY": "फर्म क्रियाकलाप निवडा",
+          "SELECT_SERVICE_PROVIDING": "सेवा प्रदान करणे निवडा",
+          "SELECT_LOCATION": "स्थान निवडा",
+          "MOBILE_NUMBER": "मोबाईल नंबर",
+          "LANDLINE_NUMBER": "दूरध्वनी क्रमांक",
+          "OR": "किंवा",
+          "ALREADY_A_MEMBER": "आधीपासूनच सदस्य आहात ?"
+        },
+        "SELECT": {
+          "FIRM_ACTIVITY": {
+            "FREIGHT": "फ्रेट फॉरवर्डर्स",
+            "BOOKING": "बुकिंग",
+            "SUPPLIER": "पुरवठादार",
+            "OWNER": "मालक"
+          }
+        },
+        "REGISTERD": {
+          "HEADER": "यशस्वीरित्या नोंदणी केली",
+          "MESSAGE": "यंत्रणा एक्सप्लोरच्या प्रतीक्षेत आहे"
+        },
+        "BUTTON": {
+          "REGISTER": "नोंदणी करा",
+          "SIGN_IN": "साइन इन करा",
+          "OK": "ठीक आहे",
+          "CANCEL": "रद्द करा"
+        }
+      },
+      "VERIFICATION": {
+        "TITLE": "पडताळणी",
+        "BUTTON": {
+          "VERIFICATION": "पडताळणी",
+          "RESEND": "पुन्हा पाठवा"
+        },
+        "TEXT": "कोड प्राप्त झाला नाही?"
+      },
+      "PAYMENT": {
+        "TITLE": "पेमेंट",
+        "LABEL": {
+          "MASTERCARD": "मास्टरकार्ड / व्हिसा / रुपे",
+          "NET_BANKING": "नेट बँकिंग",
+          "CARD_NUMBER": "कार्ड क्रमांक",
+          "DATE": "महिना / तारीख",
+          "CVV": "CVV"
+        },
+        "PLACEHOLDER": {
+          "DD": "DD",
+          "MM": "MM",
+          "NUMBER": "1234 5678 9145 4589",
+          "CVV": "000"
+        },
+        "TEXT": {
+          "PAY_FROM_MASTERCARD": "मास्टरकार्ड पेमेंट गेटवे वापरून मास्टरकार्ड खात्यातून पैसे द्या",
+          "PAY_FROM_BANK": "नेट बँकिंग गेटवे वापरून तुमच्या बँक खात्यातून पैसे भरा",
+          "TOTAL_PAYABLE": "एकूण देय INR",
+          "AMOUNT": "5000"
+        },
+        "BUTTON": {
+          "PAY": "पैसे द्या"
+        }
+      },
+      "HOME": {
+        "BUTTON": {
+          "SEARCH": "शोधा"
+        },
+        "LABEL": {
+          "FROM": "पासून",
+          "TO": "ला"
+        },
+        "PLACEHOLDER": {
+          "SELECT_FROM_LOCATION": "स्थानावरून निवडा",
+          "SELECT_TO_LOCATION": "स्थानासाठी निवडा"
+        },
+        "TEXT": {
+          "SAFE_AND_HYGEINIC": "सुरक्षित आणि हायजेनिक",
+          "VEHICLES": "वाहने",
+          "BEST_CUSTOMER": "सर्वोत्तम ग्राहक",
+          "CARE_SUPPORT": "काळजी आणि समर्थन",
+          "LIVE_TRACK": "आपला थेट मागोवा घ्या",
+          "JOURNEY": "प्रवास",
+          "VERIFIED_DRIVERS": "सत्यापित ड्रायव्हर्स",
+          "AND_VEHICLES": "आणि वाहने"
+        }
+      },
+      "LISTING": {
+        "TITLE": "शोधा",
+        "LABEL": {
+          "GOING_FROM": "पासून जात आहे",
+          "GOING_TO": "जात",
+          "FIRM_ACTIVITY": "फर्म क्रियाकलाप",
+          "SERVICE_PROVIDING": "सेवा प्रदान / वाहन प्रकार",
+          "LOCATION": "स्थान"
+        },
+        "VALUE": {
+          "LUDHIANA": "लुधियाना",
+          "GOA": "गोवा"
+        },
+        "LOADING": "लोड करत आहे..."
+      },
+      "LISTING_DETAILS": {
+        "TITLE": "कंपनी तपशील",
+        "ABOUT": "बद्दल",
+        "TEXT": "Lorem Ipsum हा मुद्रण आणि टाइपसेटिंग उद्योगाचा फक्त डमी मजकूर आहे. 1500 च्या दशकापासून लॉरेम इप्सम हा उद्योगाचा मानक डमी मजकूर आहे.",
+        "LABEL": {
+          "FIRM_ACTIVITY": "कठोर क्रियाकलाप",
+          "SERVICE_PROVIDING": "सेवा पुरवत आहे",
+          "MOBILE_NUMBER": "मोबाइल नंबर",
+          "LANDLINE_NUMBER": "लँडलाइन नंबर"
+        },
+        "BUTTON": {
+          "CALL_NOW": "आता कॉल करा"
+        }
+      },
+      "VEHICLE_TYPE": {
+        "LCV": "LCV",
+        "TRAILER": "झलक",
+        "TRUCK": "ट्रक (वृषभ)",
+        "OPEN_TRUCK": "उघडे ट्रक",
+        "20_FT_CBT": "20 फूट कंटेनर (सीबीटी आणि ओपन)",
+        "32_FT_SINGLE_EXCEL": "32 फूट कंटेनर सिंगल एक्सेल",
+        "20_FT_IMPORT_EXPORT": "20 फूट कंटेनर (आयात आणि निर्यात)",
+        "40_FT_IMPORT_EXPORT": "४० फूट कंटेनर (आयात आणि निर्यात)",
+        "32_FT_MULTI_AXLE": "32 फूट कंटेनर मल्टी एक्सल एक्सेल"
+      },
+      "LOCATION": {
+        "MUMBAI": "मुंबई",
+        "DELHI": "दिल्ली",
+        "BENGALURU": "बेंगळुरू",
+        "AHMEDABAD": "अहमदाबाद",
+        "HYDERABAD": "हैदराबाद",
+        "CHENNAI": "चेन्नई",
+        "KOLKATA": "कोलकाता",
+        "PUNE": "पुणे",
+        "JAIPUR": "जयपूर",
+        "SURAT": "सुरत",
+        "LUCKNOW": "लखनौ",
+        "KANPUR": "कानपूर",
+        "NAGPUR": "नागपूर",
+        "PATNA": "पाटणा",
+        "INDORE": "इंदूर",
+        "THANE": "ठाणे",
+        "BHOPAL": "भोपाळ",
+        "VISAKHAPATNAM": "विशाखापट्टणम",
+        "VADODARA": "वडोदरा",
+        "AMRITSAR": "अमृतसर",
+        "AGRA": "आग्रा",
+        "BAREILLY": "बरेली",
+        "BATHINDA": "भटिंडा",
+        "BHIWANI": "भिवानी",
+        "CHANDIGARH": "चंदीगड",
+        "FATEHABAD": "फतेहाबाद",
+        "GURGAON": "गुडगाव",
+        "HISSAR": "हिसार",
+        "JODHPUR": "जोधपूर",
+        "NANDED": "नांदेड"
+      }
+    }
+  }
+  

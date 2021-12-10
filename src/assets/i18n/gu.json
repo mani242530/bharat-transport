@@ -1,0 +1,167 @@
+{
+    "APP": {
+      "GET_STARTED": "પ્રારંભ કરો",
+      "CREATE_ACCOUNT": {
+        "HEADER": "એકાઉન્ટ બનાવો",
+        "PLACEHOLDER": {
+          "FIRST_NAME": "પ્રથમ નામ",
+          "LAST_NAME": "છેલ્લું નામ",
+          "COMPANY_NAME": "કંપનીનું નામ",
+          "SELECT_FIRM_ACTIVITY": "પેઢી પ્રવૃત્તિ પસંદ કરો",
+          "SELECT_SERVICE_PROVIDING": "સેવા પૂરી પાડતી પસંદ કરો",
+          "SELECT_LOCATION": "સ્થાન પસંદ કરો",
+          "MOBILE_NUMBER": "મોબાઇલ નંબર",
+          "LANDLINE_NUMBER": "લેન્ડલાઇન નંબર",
+          "OR": "અથવા",
+          "ALREADY_A_MEMBER": "પહેલેથી જ સભ્ય છો?"
+        },
+        "SELECT": {
+          "FIRM_ACTIVITY": {
+            "FREIGHT": "ફ્રેટ ફોરવર્ડર્સ",
+            "BOOKING": "બુકિંગ",
+            "SUPPLIER": "સપ્લાયર",
+            "OWNER": "માલિક"
+          }
+        },
+        "REGISTERD": {
+            "HEADER": "સફળતાપૂર્વક નોંધાયેલ",
+            "MESSAGE": "સિસ્ટમ શોધખોળની રાહ જોઈ રહી છે"
+          },
+          "BUTTON": {
+            "REGISTER": "નોંધણી કરો",
+            "SIGN_IN": "સાઇન ઇન",
+            "OK": "ઠીક",
+            "CANCEL": "રદ કરો"
+          }
+      },
+      "VERIFICATION": {
+        "TITLE": "ચકાસણી",
+        "BUTTON": {
+          "VERIFICATION": "ચકાસણી",
+          "RESEND": "ફરીથી મોકલો"
+        },
+        "TEXT": "કોડ મળ્યો નથી?"
+      },
+      "PAYMENT": {
+        "TITLE": "ચુકવણી",
+        "LABEL": {
+          "MASTERCARD": "માસ્ટરકાર્ડ / વિઝા / રુપે",
+          "NET_BANKING": "નેટ બેંકિંગ",
+          "CARD_NUMBER": "કાર્ડ નંબર",
+          "DATE": "મહિનો / તારીખ",
+          "CVV": "CVV"
+        },
+        "PLACEHOLDER": {
+          "DD": "DD",
+          "MM": "MM",
+          "NUMBER": "1234 5678 9145 4589",
+          "CVV": "000"
+        },
+        "TEXT": {
+          "PAY_FROM_MASTERCARD": "માસ્ટરકાર્ડ પેમેન્ટ ગેટવેનો ઉપયોગ કરીને માસ્ટરકાર્ડ એકાઉન્ટમાંથી ચૂકવણી કરો",
+          "PAY_FROM_BANK": "નેટ બેંકિંગ ગેટવેનો ઉપયોગ કરીને તમારા બેંક ખાતામાંથી ચૂકવણી કરો",
+          "TOTAL_PAYABLE": "કુલ ચૂકવવાપાત્ર INR",
+          "AMOUNT": "5000"
+        },
+        "BUTTON": {
+          "PAY": "ચુકવો"
+        }
+      },
+      "HOME": {
+        "BUTTON": {
+          "SEARCH": "શોધ"
+        },
+        "LABEL": {
+          "FROM": "માંથી",
+          "TO": "પ્રતિ"
+        },
+        "PLACEHOLDER": {
+          "SELECT_FROM_LOCATION": "સ્થાનમાંથી પસંદ કરો",
+          "SELECT_TO_LOCATION": "સ્થાન માટે પસંદ કરો"
+        },
+        "TEXT": {
+          "SAFE_AND_HYGEINIC": "સલામત અને હાઇજેનિક",
+          "વાહનો": "વાહનો",
+          "BEST_CUSTOMER": "શ્રેષ્ઠ ગ્રાહક",
+          "CARE_SUPPORT": "સંભાળ અને સમર્થન",
+          "LIVE_TRACK": "લાઇવ ટ્રૅક તમારું",
+          "JOURNEY": "જર્ની",
+          "VERIFIED_DRIVERS": "ચકાસાયેલ ડ્રાઇવરો",
+          "AND_VEHICLES": "અને વાહનો"
+        }
+      },
+      "LISTING": {
+        "TITLE": "શોધો",
+        "LABEL": {
+          "GOING_FROM": "જાઉં છું",
+          "GOING_TO": "જવુ છે",
+          "FIRM_ACTIVITY": "પેઢી પ્રવૃત્તિ",
+          "SERVICE_PROVIDING": "સેવા પૂરી પાડવી / વાહનનો પ્રકાર",
+          "LOCATION": "સ્થાન"
+        },
+        "VALUE": {
+          "LUDHIANA": "લુધિયાણા",
+          "GOA": "GOA"
+        },
+        "LOADING": "લોડ કરી રહ્યું છે..."
+      },
+      "LISTING_DETAILS": {
+        "TITLE": "કંપની વિગતો",
+        "ABOUT": "વિશે",
+        "TEXT": "લોરેમ ઇપ્સમ એ પ્રિન્ટિંગ અને ટાઇપસેટિંગ ઉદ્યોગનું ખાલી ડમી ટેક્સ્ટ છે. લોરેમ ઇપ્સમ 1500 ના દાયકાથી ઉદ્યોગનું પ્રમાણભૂત ડમી ટેક્સ્ટ છે.",
+        "LABEL": {
+          "FIRM_ACTIVITY": "પેઢી પ્રવૃત્તિ",
+          "SERVICE_PROVIDING": "સેવા પૂરી પાડવી",
+          "MOBILE_NUMBER": "મોબાઇલ નંબર",
+          "LANDLINE_NUMBER": "લેન્ડલાઇન નંબર"
+        },
+        "BUTTON": {
+          "CALL_NOW": "હમણાં કૉલ કરો"
+        }
+      },
+      "VEHICLE_TYPE": {
+        "LCV": "LCV",
+        "TRAILER": "ટ્રેલર",
+        "TRUCK": "ટ્રક (વૃષભ)",
+        "OPEN_TRUCK": "ઓપન ટ્રક",
+        "20_FT_CBT": "20ft કન્ટેનર (CBT અને ઓપન)",
+        "32_FT_SINGLE_EXCEL": "32ft કન્ટેનર સિંગલ એક્સેલ",
+        "20_FT_IMPORT_EXPORT": "20ft કન્ટેનર (આયાત અને નિકાસ)",
+        "40_FT_IMPORT_EXPORT": "40ft કન્ટેનર (આયાત અને નિકાસ)",
+        "32_FT_MULTI_AXLE": "32ft કન્ટેનર મલ્ટી એક્સલ એક્સેલ"
+      },
+      "LOCATION": {
+        "MUMBAI": "મુંબઈ",
+        "DELHI": "દિલ્હી",
+        "BENGALURU": "બેંગાલુરુ",
+        "AHMEDABAD": "અમદાવાદ",
+        "HYDERABAD": "હૈદરાબાદ",
+        "CHENNAI": "ચેન્નાઈ",
+        "KOLKATA": "કોલકાતા",
+        "PUNE": "પુણે",
+        "JAIPUR": "જયપુર",
+        "SURAT": "સુરત",
+        "LUCKNOW": "લખનૌ",
+        "KANPUR": "કાનપુર",
+        "NAGPUR": "નાગપુર",
+        "PATNA": "પટના",
+        "INDORE": "ઈન્દોર",
+        "THANE": "થાણે",
+        "BHOPAL": "ભોપાલ",
+        "VISAKHAPATNAM": "વિશાખાપટ્ટનમ",
+        "VADODARA": "વડોદરા",
+        "AMRITSAR": "અમૃતસર",
+        "AGRA": "આગ્રા",
+        "BAREILLY": "બરેલી",
+        "BATHINDA": "ભટિંડા",
+        "BHIWANI": "ભિવાની",
+        "CHANDIGARH": "ચંદીગઢ",
+        "FATEHABAD": "ફતેહાબાદ",
+        "GURGAON": "ગુડગાંવ",
+        "HISSAR": "હિસાર",
+        "JODHPUR": "જોધપુર",
+        "NANDED": "નાંદેડ"
+      }
+    }
+  }
+  

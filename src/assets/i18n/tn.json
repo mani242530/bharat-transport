@@ -1,0 +1,167 @@
+{
+    "APP": {
+      "GET_STARTED": "தொடங்குக",
+      "CREATE_ACCOUNT": {
+        "HEADER": "கணக்கை உருவாக்கு",
+        "PLACEHOLDER": {
+          "FIRST_NAME": "முதல் பெயர்",
+          "LAST_NAME": "கடைசி பெயர்",
+          "COMPANY_NAME": "நிறுவனத்தின் பெயர்",
+          "SELECT_FIRM_ACTIVITY": "நிறுவன செயல்பாட்டைத் தேர்ந்தெடு",
+          "SELECT_SERVICE_PROVIDING": "சேவை வழங்குதலைத் தேர்ந்தெடு",
+          "SELECT_LOCATION": "இருப்பிடத்தைத் தேர்ந்தெடு",
+          "MOBILE_NUMBER": "மொபைல் எண்",
+          "LANDLINE_NUMBER": "லேண்ட்லைன் எண்",
+          "OR": "அல்லது",
+          "ALREADY_A_MEMBER": "ஏற்கனவே உறுப்பினர் ?"
+        },
+        "SELECT": {
+          "FIRM_ACTIVITY": {
+            "FREIGHT": "சரக்கு அனுப்புபவர்கள்",
+            "BOOKING": "புக்கிங்",
+            "SUPPLIER": "சப்ளையர்",
+            "OWNER": "உரிமையாளர்"
+          }
+        },
+        "REGISTERD": {
+            "HEADER": "பதிவுசெய்யப்பட்டது",
+            "MESSAGE": "கணினி ஆய்வுக்காகக் காத்திருக்கிறது"
+          },
+        "BUTTON": {
+            "REGISTER": "பதிவு",
+            "SIGN_IN": "உள்நுழை",
+            "OK": "சரி",
+            "CANCEL": "ரத்துசெய்"
+          }
+      },
+      "VERIFICATION": {
+        "TITLE": "சரிபார்ப்பு",
+        "BUTTON": {
+          "VERIFICATION": "சரிபார்ப்பு",
+          "RESEND": "மீண்டும் அனுப்பு"
+        },
+        "TEXT": "குறியீடு கிடைக்கவில்லையா?"
+      },
+      "PAYMENT": {
+        "TITLE": "பணம் செலுத்துதல்",
+        "LABEL": {
+            "MASTERCARD": "மாஸ்டர்கார்டு / விசா / ரூபாய்",
+            "NET_BANKING": "நெட் பேங்கிங்",
+            "CARD_NUMBER": "அட்டை எண்",
+            "DATE": "மாதம் / தேதி",
+            "CVV": "CVV"
+          },
+        "PLACEHOLDER": {
+            "DD": "DD",
+            "MM": "எம்எம்",
+            "NUMBER": "1234 5678 9145 4589",
+            "CVV": "000"
+          },
+        "TEXT": {
+            "PAY_FROM_MASTERCARD": "மாஸ்டர்கார்டு பேமெண்ட் கேட்வேயைப் பயன்படுத்தி மாஸ்டர்கார்டு கணக்கிலிருந்து பணம் செலுத்துங்கள்",
+            "PAY_FROM_BANK": "நெட் பேங்கிங் கேட்வேயைப் பயன்படுத்தி உங்கள் வங்கிக் கணக்கிலிருந்து பணம் செலுத்துங்கள்",
+            "TOTAL_PAYABLE": "மொத்தம் செலுத்த வேண்டிய INR",
+            "AMOUNT": "5000"
+        },
+        "BUTTON": {
+          "PAY": "செலுத்து"
+        }
+      },
+      "HOME": {
+        "BUTTON": {
+          "SEARCH": "தேடு"
+        },
+        "LABEL": {
+          "FROM": "இருந்து",
+          "TO": "செய்ய"
+        },
+        "PLACEHOLDER": {
+            "SELECT_FROM_LOCATION": "இருப்பிலிருந்து தேர்ந்தெடு",
+            "SELECT_TO_LOCATION": "இருப்பிடம் தேர்ந்தெடு"
+        },
+        "TEXT": {
+          "SAFE_AND_HYGEINIC": "பாதுகாப்பான மற்றும் ஹைஜெனிக்",
+          "VEHICLES": "வாகனங்கள்",
+          "BEST_CUSTOMER": "சிறந்த வாடிக்கையாளர்",
+          "CARE_SUPPORT": "கவனிப்பு மற்றும் ஆதரவு",
+          "LIVE_TRACK": "உங்களை நேரலையில் கண்காணிக்கவும்",
+          "JOURNEY": "பயணம்",
+          "VERIFIED_DRIVERS": "சரிபார்க்கப்பட்ட இயக்கிகள்",
+          "AND_VEHICLES": "மற்றும் வாகனங்கள்"
+        }
+      },
+      "LISTING": {
+        "TITLE": "தேடு",
+        "LABEL": {
+          "GOING_FROM": "GOING_FROM",
+          "GOING_TO": "போகிறது",
+          "FIRM_ACTIVITY": "நிறுவன செயல்பாடு",
+          "SERVICE_PROVIDING": "சேவை வழங்குதல் / வாகன வகை",
+          "LOCATION": "இடம்"
+        },
+        "VALUE": {
+          "LUDHIANA": "லூதியானா",
+          "GOA": "GOA"
+        },
+        "LOADING": "ஏற்றுகிறது..."
+      },
+      "LISTING_DETAILS": {
+        "TITLE": "நிறுவனத்தின் விவரங்கள்",
+        "ABOUT": "பற்றி",
+        "TEXT": "லோரெம் இப்சம் என்பது அச்சிடும் மற்றும் தட்டச்சுத் துறையின் போலி உரை. லோரெம் இப்சம் 1500களில் இருந்து தொழில்துறையின் நிலையான போலி உரையாக இருந்து வருகிறது.",
+        "LABEL": {
+            "FIRM_ACTIVITY": "நிறுவன செயல்பாடு",
+            "SERVICE_PROVIDING": "சேவை வழங்குதல்",
+            "MOBILE_NUMBER": "மொபைல் எண்",
+            "LANDLINE_NUMBER": "லேண்ட்லைன் எண்"
+        },
+        "BUTTON": {
+          "CALL_NOW": "இப்போது அழைக்கவும்"
+        }
+      },
+      "VEHICLE_TYPE": {
+        "LCV": "LCV",
+        "TRAILER": "டிரெய்லர்",
+        "TRUCK": "டிரக் (டாரஸ்)",
+        "OPEN_TRUCK": "திறந்த டிரக்குகள்",
+        "20_FT_CBT": "20 அடி கொள்கலன் (CBT மற்றும் திறந்தது)",
+        "32_FT_SINGLE_EXCEL": "32 அடி கண்டெய்னர் சிங்கிள் எக்செல்",
+        "20_FT_IMPORT_EXPORT": "20 அடி கொள்கலன் (இறக்குமதி மற்றும் ஏற்றுமதி)",
+        "40_FT_IMPORT_EXPORT": "40 அடி கொள்கலன் (இறக்குமதி மற்றும் ஏற்றுமதி)",
+        "32_FT_MULTI_AXLE": "32 அடி கன்டெய்னர் மல்டி ஆக்சில் எக்செல்"
+      },
+      "LOCATION": {
+        "MUMBAI": "மும்பை",
+        "DELHI": "டெல்லி",
+        "BENGALURU": "பெங்களூரு",
+        "AHMEDABAD": "அகமதாபாத்",
+        "HYDERABAD": "ஹைதராபாத்",
+        "CHENNAI": "சென்னை",
+        "KOLKATA": "கொல்கத்தா",
+        "PUNE": "புனே",
+        "JAIPUR": "ஜெய்ப்பூர்",
+        "SURAT": "சூரத்",
+        "LUCKNOW": "லக்னோ",
+        "KANPUR": "கான்பூர்",
+        "NAGPUR": "நாக்பூர்",
+        "PATNA": "பாட்னா",
+        "INDORE": "இந்தூர்",
+        "THANE": "தானே",
+        "BHOPAL": "போபால்",
+        "VISAKHAPATNAM": "விசாகப்பட்டினம்",
+        "VADODARA": "வதோதரா",
+        "AMRITSAR": "அமிர்தசரஸ்",
+        "AGRA": "ஆக்ரா",
+        "BAREILLY": "பரேலி",
+        "BATHINDA": "பதிண்டா",
+        "BHIWANI": "பிவானி",
+        "CHANDIGARH": "சண்டிகர்",
+        "FATEHABAD": "பதேஹாபாத்",
+        "GURGAON": "குர்கான்",
+        "HISSAR": "ஹிஸ்ஸார்",
+        "JODHPUR": "ஜோத்பூர்",
+        "NANDED": "நாண்டேட்"
+      }
+    }
+  }
+  

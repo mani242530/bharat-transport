@@ -48,7 +48,8 @@
               d-inline-flex
               justify-content-center
             "
-            id="{{ language }}"
+            id="{{ language.id }}"
+            (click)= "loadSelectedLanguage(language.id)"
           >
             <!-- <img
                 src="../../assets/img/language//telugu.png"
@@ -56,6 +57,9 @@
               /> -->
             <span class="mb-0 l-hght-10 text-center text-black mb-2 p-1">
               {{ language.name }}</span
+            >
+            <span class="mb-0 l-hght-10 text-center text-black mb-2 p-1">
+              {{ language.description }}</span
             >
           </div>
           <!-- <p class="l-hght-10 text-center text-black mb-2">
