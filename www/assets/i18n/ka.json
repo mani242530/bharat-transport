@@ -1,0 +1,171 @@
+{
+  "APP": {
+    "GET_STARTED": "ಪ್ರಾರಂಭಿಸಿ",
+    "CREATE_ACCOUNT": {
+      "HEADER": "ಖಾತೆ ರಚಿಸಿ",
+      "PLACEHOLDER": {
+        "FIRST_NAME": "ಮೊದಲ ಹೆಸರು",
+        "LAST_NAME": "ಕೊನೆಯ ಹೆಸರು",
+        "COMPANY_NAME": "ಕಂಪೆನಿ ಹೆಸರು",
+        "SELECT_FIRM_ACTIVITY": "ಸಂಸ್ಥೆಯ ಚಟುವಟಿಕೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+        "SELECT_SERVICE_PROVIDING": "ಸೇವಾ ಒದಗಿಸುವಿಕೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+        "SELECT_LOCATION": "ಸ್ಥಳವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+        "MOBILE_NUMBER": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+        "LANDLINE_NUMBER": "ಲ್ಯಾಂಡ್‌ಲೈನ್ ಸಂಖ್ಯೆ",
+        "OR": "ಅಥವಾ",
+        "ALREADY_A_MEMBER": "ಈಗಾಗಲೇ ಸದಸ್ಯರೇ ?"
+      },
+      "SELECT": {
+        "FIRM_ACTIVITY": {
+          "FREIGHT": "ಸರಕು ಸಾಗಣೆದಾರರು",
+          "BOOKING": "ಬುಕಿಂಗ್",
+          "SUPPLIER": "ಪೂರೈಕೆದಾರ",
+          "OWNER": "ಮಾಲೀಕ"
+        }
+      },
+      "REGISTERD": {
+        "HEADER": "ಯಶಸ್ವಿಯಾಗಿ ನೋಂದಾಯಿಸಲಾಗಿದೆ",
+        "MESSAGE": "ಸಿಸ್ಟಮ್ ಅನ್ವೇಷಣೆಗಾಗಿ ಕಾಯುತ್ತಿದೆ"
+      },
+      "BUTTON": {
+        "REGISTER": "ರಿಜಿಸ್ಟರ್",
+        "SIGN_IN": "ಸೈನ್ ಇನ್",
+        "OK": "ಸರಿ",
+        "CANCEL": "ರದ್ದುಮಾಡು"
+      }
+    },
+    "VERIFICATION": {
+      "TITLE": "ಪರಿಶೀಲನೆ",
+      "ENTER_VERIFICATION_CODE": "ಪರೀಶೀಲನಾ ಕೋಡನ್ನು ನಮೂದಿಸಿರಿ",
+      "OTP_MESSAGE": "'ನಿಮ್ಮ ಸಂಖ್ಯೆಗೆ OTP ಕಳುಹಿಸಲಾಗಿದೆ. ನೀವು ಅದನ್ನು 15 ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಸ್ವೀಕರಿಸಬೇಕು'",
+      "BUTTON": {
+        "VERIFICATION": "ಪರಿಶೀಲನೆ",
+        "RESEND": "ಮರುಕಳುಹಿಸಿ"
+      },
+      "TEXT": "ಕೋಡ್ ಸ್ವೀಕರಿಸಲಿಲ್ಲವೇ?"
+    },
+    "PAYMENT": {
+      "TITLE": "ಪಾವತಿ",
+      "LABEL": {
+        "MASTERCARD": "ಮಾಸ್ಟರ್ ಕಾರ್ಡ್ / ವೀಸಾ / ರೂಪಾಯಿ",
+        "NET_BANKING": "ನೆಟ್ ಬ್ಯಾಂಕಿಂಗ್",
+        "CARD_NUMBER": "ಕಾರ್ಡ್ ಸಂಖ್ಯೆ",
+        "DATE": "ತಿಂಗಳು / ದಿನಾಂಕ",
+        "CVV": "CVV"
+      },
+      "PLACEHOLDER": {
+        "DD": "DD",
+        "MM": "MM",
+        "NUMBER": "1234 5678 9145 4589",
+        "CVV": "000"
+      },
+      "TEXT": {
+        "PAY_FROM_MASTERCARD": "ಮಾಸ್ಟರ್‌ಕಾರ್ಡ್ ಪಾವತಿ ಗೇಟ್‌ವೇ ಬಳಸಿಕೊಂಡು ಮಾಸ್ಟರ್‌ಕಾರ್ಡ್ ಖಾತೆಯಿಂದ ಪಾವತಿಸಿ",
+        "PAY_FROM_BANK": "ನಿವ್ವಳ ಬ್ಯಾಂಕಿಂಗ್ ಗೇಟ್‌ವೇ ಬಳಸಿ ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಖಾತೆಯಿಂದ ಪಾವತಿಸಿ",
+        "TOTAL_PAYABLE": "ಒಟ್ಟು ಪಾವತಿಸಬೇಕಾದ INR",
+        "AMOUNT": "5000"
+      },
+      "BUTTON": {
+        "PAY": "ಪಾವತಿ"
+      }
+    },
+    "SELECT_VEHICLE": {
+      "TITLE": "ವಾಹನವನ್ನು ಆರಿಸಿ"
+    },
+    "HOME": {
+      "BUTTON": {
+        "SEARCH": "ಹುಡುಕಿ"
+      },
+      "LABEL": {
+        "FROM": "ಇಂದ",
+        "TO": "ಗೆ"
+      },
+      "PLACEHOLDER": {
+        "SELECT_FROM_LOCATION": "ಸ್ಥಳದಿಂದ ಆಯ್ಕೆಮಾಡಿ",
+        "SELECT_TO_LOCATION": "ಸ್ಥಳಕ್ಕೆ ಆಯ್ಕೆಮಾಡಿ"
+      },
+      "TEXT": {
+        "SAFE_AND_HYGEINIC": "ಸುರಕ್ಷಿತ ಮತ್ತು ಹೈಜೆನಿಕ್",
+        "VEHICLES": "ವಾಹನಗಳು",
+        "BEST_CUSTOMER": "ಅತ್ಯುತ್ತಮ ಗ್ರಾಹಕ",
+        "CARE_SUPPORT": "ಕೇರ್ ಮತ್ತು ಬೆಂಬಲ",
+        "LIVE_TRACK": "ನಿಮ್ಮನ್ನು ಲೈವ್ ಟ್ರ್ಯಾಕ್ ಮಾಡಿ",
+        "JOURNEY": "ಪ್ರಯಾಣ",
+        "VERIFIED_DRIVERS": "ಪರಿಶೀಲಿಸಿದ ಚಾಲಕರು",
+        "AND_VEHICLES": "ಮತ್ತು ವಾಹನಗಳು"
+      }
+    },
+    "LISTING": {
+      "TITLE": "ಹುಡುಕಿ",
+      "LABEL": {
+        "GOING_FROM": "ಇಂದ ಹೋಗುತ್ತಿದೆ",
+        "GOING_TO": "ಹೋಗುತ್ತಿದೆ",
+        "FIRM_ACTIVITY": "ಸಂಸ್ಥೆಯ ಚಟುವಟಿಕೆ",
+        "SERVICE_PROVIDING": "ಸೇವೆ ಒದಗಿಸುವಿಕೆ / ವಾಹನದ ಪ್ರಕಾರ",
+        "LOCATION": "ಸ್ಥಳ"
+      },
+      "VALUE": {
+        "LUDHIANA": "ಲುಧಿಯಾನ",
+        "GOA": "GOA"
+      },
+      "LOADING": "ಲೋಡ್ ಆಗುತ್ತಿದೆ..."
+    },
+    "LISTING_DETAILS": {
+      "TITLE": "ಕಂಪನಿ ವಿವರಗಳು",
+      "ABOUT": "ಬಗ್ಗೆ",
+      "TEXT": "ಲೋರೆಮ್ ಇಪ್ಸಮ್ ಮುದ್ರಣ ಮತ್ತು ಟೈಪ್‌ಸೆಟ್ಟಿಂಗ್ ಉದ್ಯಮದ ನಕಲಿ ಪಠ್ಯವಾಗಿದೆ. ಲೊರೆಮ್ ಇಪ್ಸಮ್ 1500 ರ ದಶಕದಿಂದಲೂ ಉದ್ಯಮದ ಪ್ರಮಾಣಿತ ನಕಲಿ ಪಠ್ಯವಾಗಿದೆ.",
+      "LABEL": {
+        "FIRM_ACTIVITY": "ಸಂಸ್ಥೆಯ ಚಟುವಟಿಕೆ",
+        "SERVICE_PROVIDING": "ಸೇವೆ ಒದಗಿಸುವುದು",
+        "MOBILE_NUMBER": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+        "LANDLINE_NUMBER": "ಲ್ಯಾಂಡ್‌ಲೈನ್ ಸಂಖ್ಯೆ"
+      },
+      "BUTTON": {
+        "CALL_NOW": "ಈಗ ಕರೆ ಮಾಡು"
+      }
+    },
+    "VEHICLE_TYPE": {
+      "LCV": "LCV",
+      "TRAILER": "ಟ್ರೇಲರ್",
+      "TRUCK": "ಟ್ರಕ್ (ಟಾರಸ್)",
+      "OPEN_TRUCK": "ಓಪನ್ ಟ್ರಕ್‌ಗಳು",
+      "20_FT_CBT": "20 ಅಡಿ ಕಂಟೈನರ್ (CBT ಮತ್ತು ಓಪನ್)",
+      "32_FT_SINGLE_EXCEL": "32 ಅಡಿ ಕಂಟೈನರ್ ಸಿಂಗಲ್ ಎಕ್ಸೆಲ್",
+      "20_FT_IMPORT_EXPORT": "20 ಅಡಿ ಕಂಟೈನರ್ (ಆಮದು ಮತ್ತು ರಫ್ತು)",
+      "40_FT_IMPORT_EXPORT": "40 ಅಡಿ ಕಂಟೈನರ್ (ಆಮದು ಮತ್ತು ರಫ್ತು)",
+      "32_FT_MULTI_AXLE": "32 ಅಡಿ ಕಂಟೈನರ್ ಮಲ್ಟಿ ಆಕ್ಸಲ್ ಎಕ್ಸೆಲ್"
+    },
+    "LOCATION": {
+      "MUMBAI": "ಮುಂಬೈ",
+      "DELHI": "ದೆಹಲಿ",
+      "BENGALURU": "ಬೆಂಗಳೂರು",
+      "AHMEDABAD": "ಅಹಮದಾಬಾದ್",
+      "HYDERABAD": "ಹೈದರಾಬಾದ್",
+      "CHENNAI": "ಚೆನ್ನೈ",
+      "KOLKATA": "ಕೋಲ್ಕತ್ತಾ",
+      "PUNE": "ಪುಣೆ",
+      "JAIPUR": "ಜೈಪುರ",
+      "SURAT": "ಸೂರತ್",
+      "LUCKNOW": "ಲಕ್ನೋ",
+      "KANPUR": "ಕಾನ್ಪುರ",
+      "NAGPUR": "ನಾಗ್ಪುರ",
+      "PATNA": "ಪಾಟ್ನಾ",
+      "INDORE": "ಇಂದೋರ್",
+      "THANE": "ಥಾಣೆ",
+      "BHOPAL": "ಭೋಪಾಲ್",
+      "VISAKHAPATNAM": "ವಿಶಾಖಪಟ್ಟಣಂ",
+      "VADODARA": "ವಡೋದರಾ",
+      "AMRITSAR": "ಅಮೃತಸರ",
+      "AGRA": "ಆಗ್ರಾ",
+      "BAREILLY": "ಬರೇಲಿ",
+      "BATHINDA": "ಬಟಿಂಡಾ",
+      "BHIWANI": "ಭಿವಾನಿ",
+      "CHANDIGARH": "ಚಂಡೀಗಢ",
+      "FATEHABAD": "ಫತೇಹಾಬಾದ್",
+      "GURGAON": "ಗುರಗಾಂವ್",
+      "HISSAR": "ಹಿಸ್ಸಾರ್",
+      "JODHPUR": "ಜೋಧಪುರ",
+      "NANDED": "ನಾಂದೇಡ್"
+    }
+  }
+}

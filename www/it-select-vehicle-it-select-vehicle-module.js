@@ -24,15 +24,15 @@ let SelectVehiclePageComponent = class SelectVehiclePageComponent {
     constructor(appService) {
         this.appService = appService;
         this.vehicleTypes = [
-            'LCV',
-            'Trailer',
-            'Truck (Taurus)',
-            'Open Trucks',
-            '20ft Container (CBT and Open)',
-            '32ft Container Single Excel',
-            '20ft Container (Import and Export)',
-            '40ft Container (Import and Export)',
-            '32ft Container Multi Axle Excel',
+            'APP.VEHICLE_TYPE.LCV',
+            'APP.VEHICLE_TYPE.TRAILER',
+            'APP.VEHICLE_TYPE.TRUCK',
+            'APP.VEHICLE_TYPE.OPEN_TRUCK',
+            'APP.VEHICLE_TYPE.20_FT_CBT',
+            'APP.VEHICLE_TYPE.32_FT_SINGLE_EXCEL',
+            'APP.VEHICLE_TYPE.20_FT_IMPORT_EXPORT',
+            'APP.VEHICLE_TYPE.40_FT_IMPORT_EXPORT',
+            'APP.VEHICLE_TYPE.32_FT_MULTI_AXLE',
         ];
     }
     ngOnInit() {

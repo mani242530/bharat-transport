@@ -27,11 +27,9 @@ export class AppComponent {
         console.log(user.phoneNumber);
         // this.ngroute.navigate(['home']);
         this.ngroute.navigate(['select-vehicle']);
-        this.authfbObserver.unsubscribe();
       } else {
         console.log(user);
         this.ngroute.navigate(['splash']);
-        this.authfbObserver.unsubscribe();
       }
     });
 

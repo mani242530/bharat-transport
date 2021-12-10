@@ -1,33 +1,5 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["common"],{
 
-/***/ "+hHy":
-/*!*****************************************!*\
-  !*** ./src/app/services/app.servcie.ts ***!
-  \*****************************************/
-/*! exports provided: AppService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppService", function() { return AppService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-let AppService = class AppService {
-    constructor() { }
-};
-AppService.ctorParameters = () => [];
-AppService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root',
-    })
-], AppService);
-
-
-
-/***/ }),
-
 /***/ "2g2N":
 /*!*******************************************!*\
   !*** ./src/app/services/toast.service.ts ***!
@@ -285,13 +257,11 @@ let AuthtenticationService = class AuthtenticationService {
     }
     signInWithPhoneNumber(recaptchaVerifier, phoneNumber) {
         return new Promise((resolve, reject) => {
-            debugger;
             this.angularFireAuth
                 .signInWithPhoneNumber(phoneNumber, recaptchaVerifier)
                 .then((confirmationResult) => {
                 this.confirmationResult = confirmationResult;
                 resolve(confirmationResult);
-                this.router.navigate(['/verification']);
             })
                 .catch((error) => {
                 console.log(error);

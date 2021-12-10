@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <!-- <ion-toolbar> -->\r\n  <div\r\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\r\n  >\r\n    <h5 class=\"font-weight-normal mb-0 text-white\">\r\n      <a class=\"text-purple\" routerLink=\"/get-started\"\r\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\r\n      ></a>\r\n      <ion-title>{{ \"APP.VERIFICATION.TITLE\" | translate }}</ion-title>\r\n    </h5>\r\n  </div>\r\n  <!-- </ion-toolbar> -->\r\n</ion-header>\r\n\r\n<ion-content id=\"content\" fullscreen>\r\n  <!-- <cdk-virtual-scroll-viewport\r\n    class=\"scroll-viewport\"\r\n    #scroll\r\n    itemSize=\"80\"\r\n    minBufferPx=\"900\"\r\n    maxBufferPx=\"1350\"\r\n  > -->\r\n  <div\r\n    class=\"\r\n      osahan-index\r\n      bg-c\r\n      align-items-center\r\n      justify-content-center\r\n      vh-100\r\n      index-page\r\n    \"\r\n  >\r\n    <div class=\"osahan-form px-3 py-5 text-center mb-5\">\r\n      <div class=\"row my-5 px-3 pb-2\">\r\n        <p class=\"a-o-i text-muted\">Enter verification code</p>\r\n        <div class=\"col px-1\">\r\n          <ng-otp-input\r\n            #ngOtpInput\r\n            (onInputChange)=\"onOtpChange($event)\"\r\n            *ngIf=\"showOtpComponent\"\r\n            [config]=\"config\"\r\n            class=\"\r\n              form-control\r\n              otp\r\n              text-purple\r\n              form-control-lg\r\n              text-center\r\n              pb-0\r\n              px-0\r\n            \"\r\n          ></ng-otp-input>\r\n        </div>\r\n        <p class=\"a-o-i text-muted p-2\">{{ OTPmessage }}</p>\r\n      </div>\r\n      <button\r\n        type=\"submit\"\r\n        name=\"submit_button\"\r\n        class=\"btn btn-purple btn-block osahanbus-btn mb-4\"\r\n        [disabled]=\"!otpVerified\"\r\n      >\r\n        {{ \"APP.VERIFICATION.BUTTON.CONTINUE\" | translate }}\r\n      </button>\r\n      <p class=\"text-muted\">\r\n        {{ \"APP.VERIFICATION.TEXT\" | translate\r\n        }}<a href=\"#\" class=\"ml-2 text-orange\">{{\r\n          \"APP.VERIFICATION.BUTTON.RESEND\" | translate\r\n        }}</a>\r\n      </p>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <!-- <ion-toolbar> -->\r\n  <div\r\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\r\n  >\r\n    <h5 class=\"font-weight-normal mb-0 text-white\">\r\n      <a class=\"text-purple\" routerLink=\"/get-started\"\r\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\r\n      ></a>\r\n      <ion-title>{{ \"APP.VERIFICATION.TITLE\" | translate }}</ion-title>\r\n    </h5>\r\n  </div>\r\n  <!-- </ion-toolbar> -->\r\n</ion-header>\r\n\r\n<ion-content id=\"content\" fullscreen>\r\n  <!-- <cdk-virtual-scroll-viewport\r\n    class=\"scroll-viewport\"\r\n    #scroll\r\n    itemSize=\"80\"\r\n    minBufferPx=\"900\"\r\n    maxBufferPx=\"1350\"\r\n  > -->\r\n  <div\r\n    class=\"\r\n      osahan-index\r\n      bg-c\r\n      align-items-center\r\n      justify-content-center\r\n      vh-100\r\n      index-page\r\n    \"\r\n  >\r\n    <div class=\"osahan-form px-3 py-5 text-center mb-5\">\r\n      <div class=\"row my-3 px-3 pb-2\">\r\n        <p class=\"a-o-i text-muted\">\r\n          {{ \"APP.VERIFICATION.ENTER_VERIFICATION_CODE\" | translate }}\r\n        </p>\r\n        <div class=\"col px-1\">\r\n          <ng-otp-input\r\n            #ngOtpInput\r\n            (onInputChange)=\"onOtpChange($event)\"\r\n            *ngIf=\"showOtpComponent\"\r\n            [config]=\"config\"\r\n            class=\"\r\n              form-control\r\n              otp\r\n              text-purple\r\n              form-control-lg\r\n              text-center\r\n              pb-0\r\n              px-0\r\n            \"\r\n          ></ng-otp-input>\r\n        </div>\r\n        <p class=\"a-o-i text-muted p-2 mt-2\">{{ OTPmessage | translate }}</p>\r\n      </div>\r\n      <button\r\n        type=\"submit\"\r\n        name=\"submit_button\"\r\n        class=\"btn btn-purple btn-block osahanbus-btn mb-4\"\r\n        [disabled]=\"!otpVerified\"\r\n        (click)=\"verifyOtp()\"\r\n      >\r\n        {{ \"APP.VERIFICATION.BUTTON.VERIFICATION\" | translate }}\r\n      </button>\r\n      <p class=\"text-muted\">\r\n        {{ \"APP.VERIFICATION.TEXT\" | translate\r\n        }}<a href=\"#\" class=\"ml-2 text-orange\">{{\r\n          \"APP.VERIFICATION.BUTTON.RESEND\" | translate\r\n        }}</a>\r\n      </p>\r\n      <div class=\"d-flex justify-content-center pt-3 m-5\" *ngIf=\"errorOtpMsg\">\r\n        <span class=\"text-muted\">OOPs! Please enter valid OTP.</span>\r\n      </div>\r\n      <div\r\n        class=\"d-flex justify-content-center pt-3 m-5\"\r\n        *ngIf=\"otpNotVerified\"\r\n      >\r\n        <span class=\"text-muted\"\r\n          >Sorry! Entered OTP is not correct. Please try again</span\r\n        >\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -412,7 +412,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _it_verification_page_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./it-verification.page.component.scss */ "2/GC");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _services_authentication_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/authentication.service */ "ej43");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _services_authentication_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/authentication.service */ "ej43");
+
 
 
 
@@ -420,14 +422,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let VerificationPageComponent = class VerificationPageComponent {
-    constructor(router, authtenticationService) {
+    constructor(router, authtenticationService, toastController) {
         this.router = router;
         this.authtenticationService = authtenticationService;
+        this.toastController = toastController;
         this.OTP = '';
         this.showOTPInput = false;
-        this.OTPmessage = 'An OTP is sent to your number. You should receive it in 15 s';
+        this.OTPmessage = 'APP.VERIFICATION.OTP_MESSAGE';
         this.showOtpComponent = true;
         this.otpVerified = false;
+        this.errorOtpMsg = false;
+        this.otpNotVerified = false;
         this.config = {
             allowNumbersOnly: false,
             length: 6,
@@ -440,22 +445,61 @@ let VerificationPageComponent = class VerificationPageComponent {
             },
         };
     }
-    ngOnInit() { }
+    ngOnInit() {
+        this.otpSentToast();
+    }
+    otpSentToast() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const toast = yield this.toastController.create({
+                message: 'OTP Sent.',
+                duration: 2000,
+                position: 'bottom',
+                animated: true,
+                color: 'tertiary',
+            });
+            toast.present();
+        });
+    }
+    otpVerifiedToast() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const toast = yield this.toastController.create({
+                message: 'OTP Verified.',
+                duration: 2000,
+                position: 'bottom',
+                animated: true,
+                color: 'Success',
+            });
+            toast.present();
+        });
+    }
     OtpVerification(res) {
-        this.authtenticationService.enterVerificationCode(res).then((userData) => {
-            console.log(userData);
-            this.otpVerified = true;
-            this.router.navigate(['/payment']);
+        this.otpVerified = true;
+        return new Promise((resolve, reject) => {
+            this.authtenticationService
+                .enterVerificationCode(res)
+                .then((userData) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                console.log(userData);
+                const user = userData.user;
+                this.otpVerifiedToast();
+                this.router.navigate(['/payment']);
+                resolve(user);
+            }))
+                .catch((error) => {
+                this.errorOtpMsg = false;
+                this.otpNotVerified = true;
+                this.router.navigate(['/payment']);
+                reject(error.message);
+            });
         });
     }
     onOtpChange(otp) {
         this.otp = otp;
-        console.log(this.otp);
-        // const otpNumber = this.otp.toString()
         if (this.otp.length === 6) {
-            const otpNumber = this.otp.toString();
-            this.OtpVerification(otpNumber);
+            this.errorOtpMsg = false;
+            this.otpVerified = true;
         }
+        //this.verifyOtp(otp);
+        // const otpNumber = this.otp.toString()
     }
     setVal(val) {
         this.ngOtpInput.setValue(val);
@@ -477,10 +521,21 @@ let VerificationPageComponent = class VerificationPageComponent {
             this.showOtpComponent = true;
         }, 0);
     }
+    verifyOtp() {
+        if (this.otp.length === 6) {
+            const otpNumber = this.otp.toString();
+            this.OtpVerification(otpNumber);
+        }
+        else {
+            this.otpNotVerified = false;
+            this.errorOtpMsg = true;
+        }
+    }
 };
 VerificationPageComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
-    { type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_5__["AuthtenticationService"] }
+    { type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_6__["AuthtenticationService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ToastController"] }
 ];
 VerificationPageComponent.propDecorators = {
     ngOtpInput: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: ['ngOtpInput', { static: false },] }]

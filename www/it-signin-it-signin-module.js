@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <!-- <ion-toolbar> -->\r\n  <div\r\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\r\n  >\r\n    <h5 class=\"font-weight-normal mb-0 text-white\">\r\n      <a class=\"text-purple\" routerLink=\"/get-started\"\r\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\r\n      ></a>\r\n      <ion-title>Sign In</ion-title>\r\n    </h5>\r\n  </div>\r\n  <ion-progress-bar\r\n    *ngIf=\"showProgress\"\r\n    color=\"secondary\"\r\n    type=\"indeterminate\"\r\n  ></ion-progress-bar>\r\n  <!-- </ion-toolbar> -->\r\n</ion-header>\r\n\r\n<ion-content id=\"content\" fullscreen>\r\n  <!-- <cdk-virtual-scroll-viewport\r\n    class=\"scroll-viewport\"\r\n    #scroll\r\n    itemSize=\"80\"\r\n    minBufferPx=\"900\"\r\n    maxBufferPx=\"1350\"\r\n  > -->\r\n  <div id=\"sign-in-button\"></div>\r\n  <div\r\n    class=\"\r\n      osahan-index\r\n      bg-c\r\n      align-items-center\r\n      justify-content-center\r\n      vh-100\r\n      index-page\r\n      py-5\r\n    \"\r\n  >\r\n    <div class=\"px-3\">\r\n      <form [formGroup]=\"signInForm\" #signIn>\r\n        <ion-list>\r\n          <div class=\"form-group mb-2\">\r\n            <ion-label class=\"text-muted mb-1\">Mobile Number</ion-label>\r\n            <ion-input\r\n              class=\"form-control rc-form-control it-form-control\"\r\n              inputMode=\"tel\"\r\n              clearInput=\"true\"\r\n              formControlName=\"mobileNumber\"\r\n            ></ion-input>\r\n          </div>\r\n        </ion-list>\r\n        <button\r\n          type=\"submit\"\r\n          class=\"btn btn-purple btn-block osahanbus-btn\"\r\n          slot=\"end\"\r\n          fill=\"clear\"\r\n          [disabled]=\"!signInForm.valid\"\r\n          (click)=\"signinWithPhoneNumber(signInForm.value)\"\r\n        >\r\n          SIGN IN\r\n        </button>\r\n      </form>\r\n\r\n      <div\r\n        class=\"sign-or d-flex align-items-center justify-content-center mb-4\"\r\n      >\r\n        <hr class=\"mr-4\" />\r\n        <p class=\"text-muted text-center py-2 m-0\">OR</p>\r\n        <hr class=\"ml-4\" />\r\n      </div>\r\n      <div class=\"osahan-signin text-center text-purple p-1\">\r\n        <p class=\"m-0\">\r\n          Not a member ?\r\n          <a routerLink=\"/signup\" class=\"text-orange ml-2\">Sign Up</a>\r\n        </p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <!-- <ion-toolbar> -->\r\n  <div\r\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\r\n  >\r\n    <h5 class=\"font-weight-normal mb-0 text-white\">\r\n      <a class=\"text-purple\" routerLink=\"/get-started\"\r\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\r\n      ></a>\r\n      <ion-title>Sign In</ion-title>\r\n    </h5>\r\n  </div>\r\n  <ion-progress-bar\r\n    *ngIf=\"showProgress\"\r\n    color=\"warning\"\r\n    type=\"indeterminate\"\r\n  ></ion-progress-bar>\r\n  <!-- </ion-toolbar> -->\r\n</ion-header>\r\n\r\n<ion-content id=\"content\" fullscreen>\r\n  <!-- <cdk-virtual-scroll-viewport\r\n    class=\"scroll-viewport\"\r\n    #scroll\r\n    itemSize=\"80\"\r\n    minBufferPx=\"900\"\r\n    maxBufferPx=\"1350\"\r\n  > -->\r\n  <div id=\"sign-in-button\"></div>\r\n  <div\r\n    class=\"\r\n      osahan-index\r\n      bg-c\r\n      align-items-center\r\n      justify-content-center\r\n      vh-100\r\n      index-page\r\n      py-5\r\n    \"\r\n  >\r\n    <div class=\"px-3\">\r\n      <form [formGroup]=\"signInForm\" #signIn>\r\n        <ion-list>\r\n          <div class=\"form-group mb-4\">\r\n            <ion-label class=\"text-muted mb-1\">Mobile Number</ion-label>\r\n            <ion-input\r\n              class=\"form-control rc-form-control it-form-control mt-4\"\r\n              inputMode=\"tel\"\r\n              clearInput=\"true\"\r\n              formControlName=\"mobileNumber\"\r\n              autofocus=\"true\"\r\n              maxlength=\"10\"\r\n              minlength=\"10\"\r\n              placeholder=\"Ex: 1234567890\"\r\n            ></ion-input>\r\n          </div>\r\n        </ion-list>\r\n        <button\r\n          type=\"submit\"\r\n          class=\"btn btn-purple btn-block osahanbus-btn mt-2\"\r\n          slot=\"end\"\r\n          fill=\"clear\"\r\n          [disabled]=\"!signInForm.valid\"\r\n          (click)=\"signinWithPhoneNumber(signInForm.value)\"\r\n        >\r\n          SIGN IN\r\n        </button>\r\n      </form>\r\n\r\n      <div\r\n        class=\"\r\n          sign-or\r\n          d-flex\r\n          align-items-center\r\n          justify-content-center\r\n          mt-4\r\n          mb-2\r\n        \"\r\n      >\r\n        <hr class=\"mr-4\" />\r\n        <p class=\"text-muted text-center py-2 m-0\">OR</p>\r\n        <hr class=\"ml-4\" />\r\n      </div>\r\n      <div class=\"osahan-signin text-center text-purple p-1\">\r\n        <p class=\"m-0\">\r\n          Not a member ?\r\n          <a routerLink=\"/select-language\" class=\"text-orange ml-2\">Sign Up</a>\r\n        </p>\r\n      </div>\r\n    </div>\r\n    <div\r\n      class=\"osahan-signin text-center text-muted p-1\"\r\n      *ngIf=\"invalidMobilenumber\"\r\n    >\r\n      <p class=\"m-5 pt-2\">Invalid mobile number. Please check and try again.</p>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -81,6 +81,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _services_authentication_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../services/authentication.service */ "ej43");
 /* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! firebase/app */ "Jgta");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/fire/auth */ "UbJi");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/fire/firestore */ "I/3d");
+
+
 
 
 
@@ -91,16 +95,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let SignInPageComponent = class SignInPageComponent {
-    constructor(router, alertController, formBuilder, authtenticationService) {
+    constructor(router, alertController, formBuilder, authtenticationService, fbauth, fbstore) {
         this.router = router;
         this.alertController = alertController;
         this.formBuilder = formBuilder;
         this.authtenticationService = authtenticationService;
+        this.fbauth = fbauth;
+        this.fbstore = fbstore;
         this.OTP = '';
         this.CountryCode = '+91';
         this.showOTPInput = false;
         this.OTPmessage = 'An OTP is sent to your number. You should receive it in 15 s';
         this.showProgress = false;
+        this.invalidMobilenumber = false;
     }
     ngOnInit() {
         this.signInForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormGroup"]({
@@ -125,12 +132,39 @@ let SignInPageComponent = class SignInPageComponent {
     }
     // Button event after the nmber is entered and button is clicked
     signinWithPhoneNumber(formvalue) {
-        console.log('country', this.recaptchaVerifier);
-        if (formvalue.mobileNumber) {
-            this.authtenticationService
-                .signInWithPhoneNumber(this.recaptchaVerifier, this.CountryCode + formvalue.mobileNumber)
-                .then((success) => {
-                this.router.navigate(['/verification']);
+        this.showProgress = true;
+        if (formvalue.mobileNumber.length === 10) {
+            return new Promise((resolve, reject) => {
+                this.authtenticationService
+                    .signInWithPhoneNumber(this.recaptchaVerifier, this.CountryCode + formvalue.mobileNumber)
+                    .then((success) => {
+                    this.showProgress = false;
+                    this.invalidMobilenumber = false;
+                    const authfbObserver = this.fbauth.authState.subscribe((user) => {
+                        console.log(user);
+                        if (user) {
+                            this.fbstore
+                                .collection('companys')
+                                .snapshotChanges()
+                                .subscribe((data) => {
+                                const filteredUser = data.filter((result) => result.payload.doc.data()['mobileNUmber'] ===
+                                    user.phoneNumber);
+                                console.log(filteredUser);
+                                if (filteredUser) {
+                                    this.router.navigate(['/verification']);
+                                }
+                                else {
+                                }
+                            });
+                        }
+                        resolve(user);
+                    });
+                })
+                    .catch((error) => {
+                    this.showProgress = false;
+                    this.invalidMobilenumber = true;
+                    reject(error);
+                });
             });
         }
     }
@@ -139,7 +173,9 @@ SignInPageComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"] },
-    { type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_7__["AuthtenticationService"] }
+    { type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_7__["AuthtenticationService"] },
+    { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_9__["AngularFireAuth"] },
+    { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_10__["AngularFirestore"] }
 ];
 SignInPageComponent.propDecorators = {
     signIn: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: ['signIn',] }]

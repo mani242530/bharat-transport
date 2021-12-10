@@ -86,7 +86,7 @@ SignUpPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <!-- <ion-toolbar> -->\r\n  <div\r\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\r\n  >\r\n    <h5 class=\"font-weight-normal mb-0 text-white\">\r\n      <a class=\"text-purple\" routerLink=\"/get-started\"\r\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\r\n      ></a>\r\n      <ion-title>Create an Account</ion-title>\r\n    </h5>\r\n  </div>\r\n  <!-- </ion-toolbar> -->\r\n</ion-header>\r\n\r\n<ion-content id=\"content\" fullscreen>\r\n  <!-- <cdk-virtual-scroll-viewport\r\n    class=\"scroll-viewport\"\r\n    #scroll\r\n    itemSize=\"80\"\r\n    minBufferPx=\"900\"\r\n    maxBufferPx=\"1350\"\r\n  > -->\r\n  <div\r\n    class=\"\r\n      osahan-index\r\n      bg-c\r\n      align-items-center\r\n      justify-content-center\r\n      vh-100\r\n      index-page\r\n    \"\r\n  >\r\n    <div class=\"px-3 py-3\">\r\n      <form [formGroup]=\"createCompanyForm\" #createForm>\r\n        <ion-list>\r\n          <div class=\"form-group mb-3\">\r\n            <ion-input\r\n              class=\"form-control rc-form-control it-form-control\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.FIRST_NAME' | translate\r\n              }}\"\r\n              inputMode=\"text\"\r\n              clearInput=\"true\"\r\n              formControlName=\"firstName\"\r\n              required\r\n            ></ion-input>\r\n          </div>\r\n\r\n          <div class=\"form-group mb-3\">\r\n            <ion-input\r\n              class=\"form-control rc-form-control it-form-control\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.LAST_NAME' | translate\r\n              }}\"\r\n              inputMode=\"text\"\r\n              clearInput=\"true\"\r\n              formControlName=\"lastName\"\r\n              required\r\n            ></ion-input>\r\n          </div>\r\n\r\n          <div class=\"form-group mb-3\">\r\n            <ion-input\r\n              class=\"form-control rc-form-control it-form-control\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.COMPANY_NAME' | translate\r\n              }}\"\r\n              inputMode=\"text\"\r\n              clearInput=\"true\"\r\n              formControlName=\"companyName\"\r\n              required\r\n            ></ion-input>\r\n          </div>\r\n\r\n          <div class=\"form-group mb-3\">\r\n            <ion-select\r\n              interface=\"popover\"\r\n              class=\"form-control rc-form-control native-select it-form-control\"\r\n              role=\"combobox\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_FIRM_ACTIVITY'\r\n                  | translate\r\n              }}\"\r\n              slot\r\n              formControlName=\"firmActivity\"\r\n              required\r\n            >\r\n              <ion-select-option value=\"Freight Forwarders\">{{\r\n                \"APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.FREIGHT\" | translate\r\n              }}</ion-select-option>\r\n              <ion-select-option value=\"Booking\">{{\r\n                \"APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.BOOKING\" | translate\r\n              }}</ion-select-option>\r\n              <ion-select-option value=\"Supplier\">{{\r\n                \"APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.SUPPLIER\" | translate\r\n              }}</ion-select-option>\r\n              <ion-select-option value=\"Owner\">{{\r\n                \"APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.OWNER\" | translate\r\n              }}</ion-select-option>\r\n            </ion-select>\r\n          </div>\r\n\r\n          <div class=\"form-group mb-3\">\r\n            <ion-select\r\n              multiple=\"true\"\r\n              class=\"form-control rc-form-control native-select it-form-control\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_SERVICE_PROVIDING'\r\n                  | translate\r\n              }}\"\r\n              formControlName=\"serviceProviding\"\r\n              cancelText=\"cancel\"\r\n              okText=\"ok\"\r\n            >\r\n              <ion-select-option\r\n                *ngFor=\"let vehicleType of vehicleTypes\"\r\n                selected=\"false\"\r\n                value=\"{{ vehicleType | translate }}\"\r\n                title=\"{{ vehicleType | translate }}\"\r\n                >{{ vehicleType | translate }}</ion-select-option\r\n              >\r\n            </ion-select>\r\n          </div>\r\n\r\n          <div class=\"form-group mb-3\">\r\n            <ion-select\r\n              interface=\"popover\"\r\n              class=\"form-control rc-form-control native-select it-form-control\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_LOCATION' | translate\r\n              }}\"\r\n              formControlName=\"location\"\r\n              required\r\n            >\r\n              <ion-select-option\r\n                *ngFor=\"let location of locations\"\r\n                value=\"{{ location.name | translate }}\"\r\n                title=\"{{ location.name | translate }}\"\r\n                >{{ location.name | translate }}</ion-select-option\r\n              >\r\n            </ion-select>\r\n          </div>\r\n\r\n          <div class=\"form-group mb-3\">\r\n            <ion-input\r\n              class=\"form-control rc-form-control it-form-control\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.MOBILE_NUMBER' | translate\r\n              }}\"\r\n              inputMode=\"tel\"\r\n              clearInput=\"true\"\r\n              formControlName=\"mobileNumber\"\r\n              required\r\n            ></ion-input>\r\n          </div>\r\n\r\n          <div class=\"form-group mb-3\">\r\n            <ion-input\r\n              class=\"form-control rc-form-control it-form-control\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.LANDLINE_NUMBER' | translate\r\n              }}\"\r\n              inputMode=\"tel\"\r\n              clearInput=\"true\"\r\n              formControlName=\"landlineNumber\"\r\n            ></ion-input>\r\n          </div>\r\n        </ion-list>\r\n        <button\r\n          type=\"submit\"\r\n          class=\"btn btn-purple btn-block osahanbus-btn rounded-1\"\r\n          slot=\"end\"\r\n          fill=\"clear\"\r\n          [disabled]=\"!createCompanyForm.valid\"\r\n          (click)=\"createCompany(createCompanyForm.value)\"\r\n        >\r\n          {{ \"APP.CREATE_ACCOUNT.BUTTON.REGISTER\" | translate }}\r\n        </button>\r\n      </form>\r\n      <div class=\"sign-or d-flex align-items-center justify-content-center\">\r\n        <hr class=\"mr-4\" />\r\n        <p class=\"text-muted text-center py-2 m-0\">\r\n          {{ \"APP.CREATE_ACCOUNT.PLACEHOLDER.OR\" | translate }}\r\n        </p>\r\n        <hr class=\"ml-4\" />\r\n      </div>\r\n      <div class=\"osahan-signin text-center text-purple p-1\">\r\n        <p class=\"mb-3\">\r\n          {{ \"APP.CREATE_ACCOUNT.PLACEHOLDER.ALREADY_A_MEMBER\" | translate }}\r\n          <a routerLink=\"/signin\" class=\"text-orange ml-2\">{{\r\n            \"APP.CREATE_ACCOUNT.BUTTON.SIGN_IN\" | translate\r\n          }}</a>\r\n        </p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <!-- <ion-toolbar> -->\r\n  <div\r\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\r\n  >\r\n    <h5 class=\"font-weight-normal mb-0 text-white\">\r\n      <a class=\"text-purple\" routerLink=\"/get-started\"\r\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\r\n      ></a>\r\n      <ion-title>{{ \"APP.CREATE_ACCOUNT.HEADER\" | translate }}</ion-title>\r\n    </h5>\r\n  </div>\r\n  <ion-progress-bar\r\n    *ngIf=\"showProgress\"\r\n    color=\"warning\"\r\n    type=\"indeterminate\"\r\n  ></ion-progress-bar>\r\n  <!-- </ion-toolbar> -->\r\n</ion-header>\r\n\r\n<ion-content id=\"content\" fullscreen>\r\n  <!-- <cdk-virtual-scroll-viewport\r\n    class=\"scroll-viewport\"\r\n    #scroll\r\n    itemSize=\"80\"\r\n    minBufferPx=\"900\"\r\n    maxBufferPx=\"1350\"\r\n  > -->\r\n  <div id=\"sign-UP-button\"></div>\r\n  <div\r\n    class=\"\r\n      osahan-index\r\n      bg-c\r\n      align-items-center\r\n      justify-content-center\r\n      vh-100\r\n      index-page\r\n    \"\r\n  >\r\n    <div class=\"px-3 py-3\">\r\n      <form [formGroup]=\"createCompanyForm\" #createForm>\r\n        <ion-list>\r\n          <div class=\"form-group mb-4\">\r\n            <ion-input\r\n              class=\"form-control rc-form-control it-form-control\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.FIRST_NAME' | translate\r\n              }}\"\r\n              inputMode=\"text\"\r\n              clearInput=\"true\"\r\n              formControlName=\"firstName\"\r\n              required\r\n            ></ion-input>\r\n          </div>\r\n\r\n          <div class=\"form-group mb-4\">\r\n            <ion-input\r\n              class=\"form-control rc-form-control it-form-control\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.LAST_NAME' | translate\r\n              }}\"\r\n              inputMode=\"text\"\r\n              clearInput=\"true\"\r\n              formControlName=\"lastName\"\r\n              required\r\n            ></ion-input>\r\n          </div>\r\n\r\n          <div class=\"form-group mb-4\">\r\n            <ion-input\r\n              class=\"form-control rc-form-control it-form-control\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.COMPANY_NAME' | translate\r\n              }}\"\r\n              inputMode=\"text\"\r\n              clearInput=\"true\"\r\n              formControlName=\"companyName\"\r\n              required\r\n            ></ion-input>\r\n          </div>\r\n\r\n          <div class=\"form-group mb-4\">\r\n            <ion-select\r\n              interface=\"popover\"\r\n              class=\"form-control rc-form-control native-select it-form-control\"\r\n              role=\"combobox\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_FIRM_ACTIVITY'\r\n                  | translate\r\n              }}\"\r\n              slot\r\n              formControlName=\"firmActivity\"\r\n              required\r\n            >\r\n              <ion-select-option value=\"Freight Forwarders\">{{\r\n                \"APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.FREIGHT\" | translate\r\n              }}</ion-select-option>\r\n              <ion-select-option value=\"Booking\">{{\r\n                \"APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.BOOKING\" | translate\r\n              }}</ion-select-option>\r\n              <ion-select-option value=\"Supplier\">{{\r\n                \"APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.SUPPLIER\" | translate\r\n              }}</ion-select-option>\r\n              <ion-select-option value=\"Owner\">{{\r\n                \"APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.OWNER\" | translate\r\n              }}</ion-select-option>\r\n            </ion-select>\r\n          </div>\r\n\r\n          <div class=\"form-group mb-4\">\r\n            <ion-select\r\n              multiple=\"true\"\r\n              class=\"form-control rc-form-control native-select it-form-control\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_SERVICE_PROVIDING'\r\n                  | translate\r\n              }}\"\r\n              formControlName=\"serviceProviding\"\r\n              cancelText=\"cancel\"\r\n              okText=\"ok\"\r\n            >\r\n              <ion-select-option\r\n                *ngFor=\"let vehicleType of vehicleTypes\"\r\n                selected=\"false\"\r\n                value=\"{{ vehicleType | translate }}\"\r\n                title=\"{{ vehicleType | translate }}\"\r\n                >{{ vehicleType | translate }}</ion-select-option\r\n              >\r\n            </ion-select>\r\n          </div>\r\n\r\n          <div class=\"form-group mb-4\">\r\n            <ion-select\r\n              interface=\"popover\"\r\n              class=\"form-control rc-form-control native-select it-form-control\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_LOCATION' | translate\r\n              }}\"\r\n              formControlName=\"location\"\r\n              required\r\n            >\r\n              <ion-select-option\r\n                *ngFor=\"let location of locations\"\r\n                value=\"{{ location.name | translate }}\"\r\n                title=\"{{ location.name | translate }}\"\r\n                >{{ location.name | translate }}</ion-select-option\r\n              >\r\n            </ion-select>\r\n          </div>\r\n\r\n          <div class=\"form-group mb-4\">\r\n            <ion-input\r\n              class=\"form-control rc-form-control it-form-control\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.MOBILE_NUMBER' | translate\r\n              }}\"\r\n              inputMode=\"tel\"\r\n              clearInput=\"true\"\r\n              formControlName=\"mobileNumber\"\r\n              required\r\n              maxlength=\"10\"\r\n              minlength=\"10\"\r\n            ></ion-input>\r\n          </div>\r\n\r\n          <div class=\"form-group mb-4\">\r\n            <ion-input\r\n              class=\"form-control rc-form-control it-form-control\"\r\n              placeholder=\"{{\r\n                'APP.CREATE_ACCOUNT.PLACEHOLDER.LANDLINE_NUMBER' | translate\r\n              }}\"\r\n              inputMode=\"tel\"\r\n              clearInput=\"true\"\r\n              formControlName=\"landlineNumber\"\r\n            ></ion-input>\r\n          </div>\r\n        </ion-list>\r\n        <button\r\n          type=\"submit\"\r\n          class=\"btn btn-purple btn-block osahanbus-btn mt-2\"\r\n          slot=\"end\"\r\n          fill=\"clear\"\r\n          [disabled]=\"!createCompanyForm.valid\"\r\n          (click)=\"createCompany(createCompanyForm.value)\"\r\n        >\r\n          {{ \"APP.CREATE_ACCOUNT.BUTTON.REGISTER\" | translate }}\r\n        </button>\r\n      </form>\r\n      <div\r\n        class=\"\r\n          sign-or\r\n          d-flex\r\n          align-items-center\r\n          justify-content-center\r\n          mt-4\r\n          mb-2\r\n        \"\r\n      >\r\n        <hr class=\"mr-4\" />\r\n        <p class=\"text-muted text-center py-2 m-0\">\r\n          {{ \"APP.CREATE_ACCOUNT.PLACEHOLDER.OR\" | translate }}\r\n        </p>\r\n        <hr class=\"ml-4\" />\r\n      </div>\r\n      <div class=\"osahan-signin text-center text-purple p-1\">\r\n        <p class=\"mb-4\">\r\n          {{ \"APP.CREATE_ACCOUNT.PLACEHOLDER.ALREADY_A_MEMBER\" | translate }}\r\n          <a routerLink=\"/signin\" class=\"text-orange ml-2\">{{\r\n            \"APP.CREATE_ACCOUNT.BUTTON.SIGN_IN\" | translate\r\n          }}</a>\r\n        </p>\r\n      </div>\r\n      <div\r\n        class=\"osahan-signin text-center text-muted p-1\"\r\n        *ngIf=\"invalidMobilenumber\"\r\n      >\r\n        <p class=\"pt-2\">Invalid mobile number. Please check and try again.</p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -145,9 +145,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire/firestore */ "I/3d");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _json_location__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../json/location */ "wEno");
-/* harmony import */ var _models_contact__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../models/contact */ "RPWk");
-/* harmony import */ var _services_toast_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../services/toast.service */ "2g2N");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _json_location__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../json/location */ "wEno");
+/* harmony import */ var _models_contact__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../models/contact */ "RPWk");
+/* harmony import */ var _services_toast_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../services/toast.service */ "2g2N");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! firebase/app */ "Jgta");
+/* harmony import */ var _services_authentication_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../services/authentication.service */ "ej43");
+/* harmony import */ var _services_app_servcie__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/app.servcie */ "+hHy");
+
+
+
+
 
 
 
@@ -159,27 +167,36 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let SignUpPageComponent = class SignUpPageComponent {
-    constructor(addnewFormbuilder, toastservice, ngroute, fbstore) {
+    constructor(addnewFormbuilder, toastservice, ngroute, fbstore, toastController, authtenticationService, appservice) {
         this.addnewFormbuilder = addnewFormbuilder;
         this.toastservice = toastservice;
         this.ngroute = ngroute;
         this.fbstore = fbstore;
-        this.newCompany = new _models_contact__WEBPACK_IMPORTED_MODULE_8__["Company"]();
+        this.toastController = toastController;
+        this.authtenticationService = authtenticationService;
+        this.appservice = appservice;
+        this.newCompany = new _models_contact__WEBPACK_IMPORTED_MODULE_9__["Company"]();
+        this.OTP = '';
+        this.CountryCode = '+91';
+        this.showOTPInput = false;
+        this.OTPmessage = 'An OTP is sent to your number. You should receive it in 15 s';
+        this.showProgress = false;
+        this.invalidMobilenumber = false;
         this.vehicleTypes = [
-            'LCV',
-            'Trailer',
-            'Truck (Taurus)',
-            'Open Trucks',
-            '20ft Container (CBT and Open)',
-            '32ft Container Single Excel',
-            '20ft Container (Import and Export)',
-            '40ft Container (Import and Export)',
-            '32ft Container Multi Axle Excel',
+            'APP.VEHICLE_TYPE.LCV',
+            'APP.VEHICLE_TYPE.TRAILER',
+            'APP.VEHICLE_TYPE.TRUCK',
+            'APP.VEHICLE_TYPE.OPEN_TRUCK',
+            'APP.VEHICLE_TYPE.20_FT_CBT',
+            'APP.VEHICLE_TYPE.32_FT_SINGLE_EXCEL',
+            'APP.VEHICLE_TYPE.20_FT_IMPORT_EXPORT',
+            'APP.VEHICLE_TYPE.40_FT_IMPORT_EXPORT',
+            'APP.VEHICLE_TYPE.32_FT_MULTI_AXLE',
         ];
         this.locations = [];
     }
     ngOnInit() {
-        this.locations = _json_location__WEBPACK_IMPORTED_MODULE_7__["locationData"];
+        this.locations = _json_location__WEBPACK_IMPORTED_MODULE_8__["locationData"];
         this.initializeForm();
     }
     initializeForm() {
@@ -209,39 +226,86 @@ let SignUpPageComponent = class SignUpPageComponent {
     //   });
     //   return await this.myModal.present();
     // }
-    createCompany() {
+    ionViewDidEnter() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            let companyObj = {
+            this.recaptchaVerifier = new firebase_app__WEBPACK_IMPORTED_MODULE_11__["default"].auth.RecaptchaVerifier('sign-UP-button', {
+                size: 'invisible',
+                callback: (response) => { },
+                'expired-callback': () => { },
+            });
+        });
+    }
+    ionViewDidLoad() {
+        this.recaptchaVerifier = new firebase_app__WEBPACK_IMPORTED_MODULE_11__["default"].auth.RecaptchaVerifier('sign-UP-button', {
+            size: 'invisible',
+            callback: (response) => { },
+            'expired-callback': () => { },
+        });
+    }
+    createCompany(formGroup) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            this.showProgress = true;
+            const companyObj = {
                 firstName: this.createCompanyForm.get('firstName').value,
                 lastName: this.createCompanyForm.get('lastName').value,
                 companyName: this.createCompanyForm.get('companyName').value,
                 firmActivity: this.createCompanyForm.get('firmActivity').value,
                 serviceProviding: this.createCompanyForm.get('serviceProviding').value,
-                plandlineNumberd: this.createCompanyForm.get('landlineNumber').value,
-                mobileNumber: this.createCompanyForm.get('mobileNumber').value,
+                landlineNumber: this.createCompanyForm.get('landlineNumber').value,
+                mobileNumber: '+91' + this.createCompanyForm.get('mobileNumber').value,
                 location: this.createCompanyForm.get('location').value,
+                language: this.appservice.selectedLanguage,
             };
+            Object.keys(companyObj).forEach((k) => {
+                if (typeof companyObj[k] !== 'object') {
+                    companyObj[k] = companyObj[k].trim();
+                }
+            });
             try {
                 yield this.fbstore
                     .collection('companys')
                     .add(companyObj)
                     .then((data) => {
-                    console.log(data);
-                    this.ngroute.navigate(['verification']);
+                    console.log(companyObj);
+                    if (data) {
+                        return new Promise((resolve, reject) => {
+                            this.authtenticationService
+                                .signInWithPhoneNumber(this.recaptchaVerifier, companyObj.mobileNumber)
+                                .then((success) => {
+                                resolve(success);
+                                this.invalidMobilenumber = false;
+                                const toast = this.toastController.create({
+                                    message: 'Account created successfully.',
+                                    duration: 2000,
+                                    position: 'bottom',
+                                    animated: true,
+                                    color: 'Success',
+                                });
+                                this.ngroute.navigate(['verification']);
+                            })
+                                .catch((error) => {
+                                this.showProgress = false;
+                                this.invalidMobilenumber = true;
+                                reject(error);
+                            });
+                        });
+                    }
                 });
             }
             catch (error) {
                 this.toastservice.showToast(error.message, 2000);
-                //console.log(error.message);
             }
         });
     }
 };
 SignUpPageComponent.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"] },
-    { type: _services_toast_service__WEBPACK_IMPORTED_MODULE_9__["ToastService"] },
+    { type: _services_toast_service__WEBPACK_IMPORTED_MODULE_10__["ToastService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
-    { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__["AngularFirestore"] }
+    { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__["AngularFirestore"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__["ToastController"] },
+    { type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_12__["AuthtenticationService"] },
+    { type: _services_app_servcie__WEBPACK_IMPORTED_MODULE_13__["AppService"] }
 ];
 SignUpPageComponent.propDecorators = {
     createForm: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: ['createForm',] }]

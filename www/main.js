@@ -1,5 +1,33 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
+/***/ "+hHy":
+/*!*****************************************!*\
+  !*** ./src/app/services/app.servcie.ts ***!
+  \*****************************************/
+/*! exports provided: AppService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppService", function() { return AppService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+let AppService = class AppService {
+    constructor() { }
+};
+AppService.ctorParameters = () => [];
+AppService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root',
+    })
+], AppService);
+
+
+
+/***/ }),
+
 /***/ 0:
 /*!***************************!*\
   !*** multi ./src/main.ts ***!
@@ -59,6 +87,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/fire/auth */ "UbJi");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngx-translate/core */ "sYmb");
+/* harmony import */ var _services_app_servcie__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/app.servcie */ "+hHy");
+
 
 
 
@@ -68,22 +98,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AppComponent = class AppComponent {
-    constructor(platform, fbauth, ngroute, translateService) {
+    constructor(platform, fbauth, ngroute, translateService, appservice) {
         this.platform = platform;
         this.fbauth = fbauth;
         this.ngroute = ngroute;
         this.translateService = translateService;
-        const authfbObserver = fbauth.authState.subscribe((user) => {
+        this.appservice = appservice;
+        this.authfbObserver = fbauth.authState.subscribe((user) => {
             if (user) {
                 console.log(user);
+                console.log(user.phoneNumber);
                 // this.ngroute.navigate(['home']);
-                this.ngroute.navigate(['splash']);
-                authfbObserver.unsubscribe();
+                this.ngroute.navigate(['select-vehicle']);
             }
             else {
                 console.log(user);
                 this.ngroute.navigate(['splash']);
-                authfbObserver.unsubscribe();
             }
         });
         this.platform.ready().then(() => {
@@ -97,12 +127,13 @@ let AppComponent = class AppComponent {
         //     this.user.firstName + ' ' + this.user &&
         //     this.user.lastName;
         // }
-        this.translateService.setDefaultLang('hi');
+        this.translateService.setDefaultLang('en');
     }
     doLogout() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             yield this.fbauth.signOut().then(() => {
-                this.ngroute.navigate(['signin']);
+                this.appservice.selectedLanguage = '';
+                this.authfbObserver.unsubscribe();
             });
         });
     }
@@ -111,7 +142,8 @@ AppComponent.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"] },
     { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_6__["AngularFireAuth"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
-    { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateService"] }
+    { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateService"] },
+    { type: _services_app_servcie__WEBPACK_IMPORTED_MODULE_8__["AppService"] }
 ];
 AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -169,7 +201,7 @@ Validator = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\n  <ion-menu side=\"start\" contentId=\"app-content\">\n    <ion-content>\n      <a\n        href=\"#\"\n        class=\"\n          bg-purple\n          sidebar-user\n          d-flex\n          align-items-center\n          py-4\n          px-3\n          border-0\n          mb-0\n        \"\n        [routerDirection]=\"'root'\"\n        routerLink=\"/\"\n      >\n        <ngx-avatar name=\"{{ userName }}\" size=\"50\"></ngx-avatar>\n        <div class=\"text-white ml-2\">\n          <h6 class=\"mb-0\">\n            {{ user && user.firstName }} {{ user && user.lastName }}\n          </h6>\n          <small>{{ user && user.mobileNumber }}</small\n          ><br />\n          <span class=\"f-10 text-white-50\">{{\n            currentDate | date: \"yyyy-MM-dd\"\n          }}</span>\n        </div>\n      </a>\n      <ion-list>\n        <ion-item detail=\"false\" [routerDirection]=\"'root'\" routerLink=\"/\">\n          <ion-icon name=\"mail\" slot=\"start\"></ion-icon>\n          <ion-label>Inbox</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-icon name=\"paper-plane\" slot=\"start\"></ion-icon>\n          <ion-label>Outbox</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-icon name=\"heart\" slot=\"start\"></ion-icon>\n          <ion-label>Favorites</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-icon name=\"archive\" slot=\"start\"></ion-icon>\n          <ion-label>Archived</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-icon name=\"trash\" slot=\"start\"></ion-icon>\n          <ion-label>Trash</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-icon name=\"warning\" slot=\"start\"></ion-icon>\n          <ion-label>Spam</ion-label>\n        </ion-item>\n      </ion-list>\n      <a\n        href=\"#\"\n        class=\"\n          bg-purple\n          sidebar-user\n          py-2\n          px-2border-0\n          mb-0\n          fixed-bottom\n          text-align-center\n        \"\n        [routerDirection]=\"'root'\"\n        routerLink=\"/\"\n      >\n        <div class=\"text-white\">\n          <h6 class=\"mb-0\">Logout</h6>\n        </div>\n      </a>\n    </ion-content>\n  </ion-menu>\n  <ion-router-outlet\n    id=\"app-content\"\n    overflow-scroll=\"true\"\n  ></ion-router-outlet>\n</ion-app>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\n  <ion-menu side=\"start\" contentId=\"app-content\">\n    <ion-content>\n      <a\n        href=\"#\"\n        class=\"\n          bg-purple\n          sidebar-user\n          d-flex\n          align-items-center\n          py-4\n          px-3\n          border-0\n          mb-0\n        \"\n        [routerDirection]=\"'root'\"\n        routerLink=\"/\"\n      >\n        <ngx-avatar name=\"{{ userName }}\" size=\"50\"></ngx-avatar>\n        <div class=\"text-white ml-2\">\n          <h6 class=\"mb-0\">\n            {{ user && user.firstName }} {{ user && user.lastName }}\n          </h6>\n          <small>{{ user && user.mobileNumber }}</small\n          ><br />\n          <span class=\"f-10 text-white-50\">{{\n            currentDate | date: \"yyyy-MM-dd\"\n          }}</span>\n        </div>\n      </a>\n      <ion-list>\n        <ion-item detail=\"false\" [routerDirection]=\"'root'\" routerLink=\"/\">\n          <ion-icon name=\"mail\" slot=\"start\"></ion-icon>\n          <ion-label>Inbox</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-icon name=\"paper-plane\" slot=\"start\"></ion-icon>\n          <ion-label>Outbox</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-icon name=\"heart\" slot=\"start\"></ion-icon>\n          <ion-label>Favorites</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-icon name=\"archive\" slot=\"start\"></ion-icon>\n          <ion-label>Archived</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-icon name=\"trash\" slot=\"start\"></ion-icon>\n          <ion-label>Trash</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-icon name=\"warning\" slot=\"start\"></ion-icon>\n          <ion-label>Spam</ion-label>\n        </ion-item>\n      </ion-list>\n      <a\n        href=\"#\"\n        class=\"\n          bg-purple\n          sidebar-user\n          py-2\n          px-2border-0\n          mb-0\n          fixed-bottom\n          text-align-center\n        \"\n        [routerDirection]=\"'root'\"\n        (click)=\"doLogout()\"\n      >\n        <div class=\"text-white\">\n          <h6 class=\"mb-0\">Logout</h6>\n        </div>\n      </a>\n    </ion-content>\n  </ion-menu>\n  <ion-router-outlet\n    id=\"app-content\"\n    overflow-scroll=\"true\"\n  ></ion-router-outlet>\n</ion-app>\n");
 
 /***/ }),
 
@@ -559,7 +591,7 @@ const routes = [
     },
     {
         path: 'select-vehicle',
-        loadChildren: () => Promise.all(/*! import() | it-select-vehicle-it-select-vehicle-module */[__webpack_require__.e("common"), __webpack_require__.e("it-select-vehicle-it-select-vehicle-module")]).then(__webpack_require__.bind(null, /*! ./it-select-vehicle/it-select-vehicle.module */ "oNt0")).then((m) => m.SelectVehiclePageModule),
+        loadChildren: () => __webpack_require__.e(/*! import() | it-select-vehicle-it-select-vehicle-module */ "it-select-vehicle-it-select-vehicle-module").then(__webpack_require__.bind(null, /*! ./it-select-vehicle/it-select-vehicle.module */ "oNt0")).then((m) => m.SelectVehiclePageModule),
     },
     {
         path: 'home',

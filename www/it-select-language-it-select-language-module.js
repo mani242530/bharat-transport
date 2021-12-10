@@ -14,50 +14,71 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw_loader_it_select_language_page_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./it-select-language.page.component.html */ "LX5y");
 /* harmony import */ var _it_select_language_page_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./it-select-language.page.component.scss */ "/ia7");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "sYmb");
+/* harmony import */ var _services_app_servcie__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/app.servcie */ "+hHy");
+
+
 
 
 
 
 let SelectLanguagePageComponent = class SelectLanguagePageComponent {
-    constructor() {
+    constructor(translateService, appservice) {
+        this.translateService = translateService;
+        this.appservice = appservice;
         this.languages = [
             {
                 id: 'en',
                 name: 'ENGLISH',
+                description: 'ENGLISH',
             },
             {
                 id: 'hi',
                 name: 'हिंदी',
+                description: 'HINDI',
             },
             {
                 id: 'ma',
                 name: 'मराठी',
+                description: 'MARATHI',
             },
             {
                 id: 'gu',
                 name: 'ગુજરાતી',
+                description: 'GUJARATI',
             },
             {
                 id: 'tn',
                 name: 'தமிழ்',
+                description: 'TAMIL',
             },
             {
                 id: 'tl',
                 name: 'తెలుగు',
+                description: 'TELUGU',
             },
             {
                 id: 'ka',
                 name: 'ಕೆನಡಾ',
+                description: 'KANADA',
             },
             {
                 id: 'ml',
                 name: 'മലയാളം',
+                description: 'MALAYALAM',
             },
         ];
     }
     ngOnInit() { }
+    loadSelectedLanguage(language) {
+        this.appservice.selectedLanguage = language;
+        this.translateService.use(language);
+    }
 };
-SelectLanguagePageComponent.ctorParameters = () => [];
+SelectLanguagePageComponent.ctorParameters = () => [
+    { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"] },
+    { type: _services_app_servcie__WEBPACK_IMPORTED_MODULE_5__["AppService"] }
+];
 SelectLanguagePageComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
         selector: 'app-select-language',
@@ -165,7 +186,7 @@ SelectLanguagePageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <!-- <ion-toolbar> -->\r\n  <div\r\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\r\n  >\r\n    <h5 class=\"font-weight-normal mb-0 text-white\">\r\n      <a class=\"text-purple\" routerLink=\"/get-started\"\r\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\r\n      ></a>\r\n      <ion-title>Choose Language</ion-title>\r\n    </h5>\r\n  </div>\r\n  <!-- </ion-toolbar> -->\r\n</ion-header>\r\n\r\n<ion-content id=\"content\" fullscreen>\r\n  <!-- <cdk-virtual-scroll-viewport\r\n    class=\"scroll-viewport\"\r\n    #scroll\r\n    itemSize=\"80\"\r\n    minBufferPx=\"900\"\r\n    maxBufferPx=\"1350\"\r\n  > -->\r\n  <div\r\n    class=\"\r\n      osahan-index\r\n      bg-c\r\n      align-items-center\r\n      justify-content-center\r\n      vh-100\r\n      index-page\r\n    \"\r\n  >\r\n    <ion-grid>\r\n      <ion-row>\r\n        <ion-col\r\n          size=\"4\"\r\n          margin\r\n          routerLink=\"/signup\"\r\n          class=\"text-dark text-center\"\r\n          *ngFor=\"let language of languages\"\r\n        >\r\n          <div\r\n            class=\"\r\n              list-item-img\r\n              language-item-list\r\n              align-items-center\r\n              d-inline-flex\r\n              justify-content-center\r\n            \"\r\n            id=\"{{ language }}\"\r\n          >\r\n            <!-- <img\r\n                src=\"../../assets/img/language//telugu.png\"\r\n                class=\"img-fluid\"\r\n              /> -->\r\n            <span class=\"mb-0 l-hght-10 text-center text-black mb-2 p-1\">\r\n              {{ language.name }}</span\r\n            >\r\n          </div>\r\n          <!-- <p class=\"l-hght-10 text-center text-black mb-2\">\r\n              {{ language }}\r\n            </p> -->\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </div>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <!-- <ion-toolbar> -->\r\n  <div\r\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\r\n  >\r\n    <h5 class=\"font-weight-normal mb-0 text-white\">\r\n      <a class=\"text-purple\" routerLink=\"/get-started\"\r\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\r\n      ></a>\r\n      <ion-title>Choose Language</ion-title>\r\n    </h5>\r\n  </div>\r\n  <!-- </ion-toolbar> -->\r\n</ion-header>\r\n\r\n<ion-content id=\"content\" fullscreen>\r\n  <!-- <cdk-virtual-scroll-viewport\r\n    class=\"scroll-viewport\"\r\n    #scroll\r\n    itemSize=\"80\"\r\n    minBufferPx=\"900\"\r\n    maxBufferPx=\"1350\"\r\n  > -->\r\n  <div\r\n    class=\"\r\n      osahan-index\r\n      bg-c\r\n      align-items-center\r\n      justify-content-center\r\n      vh-100\r\n      index-page\r\n      py-5\r\n    \"\r\n  >\r\n    <ion-grid>\r\n      <ion-row>\r\n        <ion-col\r\n          size=\"4\"\r\n          margin\r\n          routerLink=\"/signup\"\r\n          class=\"text-dark text-center\"\r\n          *ngFor=\"let language of languages\"\r\n        >\r\n          <div\r\n            class=\"\r\n              list-item-img\r\n              language-item-list\r\n              align-items-center\r\n              d-inline-flex\r\n              justify-content-center\r\n            \"\r\n            id=\"{{ language.id }}\"\r\n            (click)=\"loadSelectedLanguage(language.id)\"\r\n          >\r\n            <!-- <img\r\n                src=\"../../assets/img/language//telugu.png\"\r\n                class=\"img-fluid\"\r\n              /> -->\r\n            <p class=\"mb-0 l-hght-10 text-center text-black mb-2 p-1\">\r\n              {{ language.name }}\r\n            </p>\r\n            <br />\r\n            <!-- <p class=\"mb-0 l-hght-10 text-center text-black mb-2 p-1\">\r\n              {{ language.description }}\r\n            </p> -->\r\n          </div>\r\n          <p class=\"mb-0 l-hght-10 text-center text-black mb-2 p-1\">\r\n            {{ language.description }}\r\n          </p>\r\n          <!-- <p class=\"l-hght-10 text-center text-black mb-2\">\r\n              {{ language }}\r\n            </p> -->\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ }),
 
