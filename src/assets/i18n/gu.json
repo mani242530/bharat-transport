@@ -36,6 +36,8 @@
       },
       "VERIFICATION": {
         "TITLE": "ચકાસણી",
+        "ENTER_VERIFICATION_CODE": "ચકાસણી કોડ દાખલ કરો",
+        "OTP_MESSAGE": "'તમારા નંબર પર એક OTP મોકલવામાં આવે છે. તમારે તે 15 સેકન્ડમાં પ્રાપ્ત કરવું જોઈએ'",
         "BUTTON": {
           "VERIFICATION": "ચકાસણી",
           "RESEND": "ફરીથી મોકલો"

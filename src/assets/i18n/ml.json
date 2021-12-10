@@ -1,0 +1,169 @@
+{
+    "APP": {
+      "GET_STARTED": "ആരംഭിക്കുക",
+      "CREATE_ACCOUNT": {
+        "HEADER": "അക്കൗണ്ട് സൃഷ്‌ടിക്കുക",
+        "PLACEHOLDER": {
+          "FIRST_NAME": "ആദ്യ പേര്",
+          "LAST_NAME": "അവസാന നാമം",
+          "COMPANY_NAME": "കമ്പനിയുടെ പേര്",
+          "SELECT_FIRM_ACTIVITY": "സ്ഥാപന പ്രവർത്തനം തിരഞ്ഞെടുക്കുക",
+          "SELECT_SERVICE_PROVIDING": "സേവനം നൽകൽ തിരഞ്ഞെടുക്കുക",
+          "SELECT_LOCATION": "ലൊക്കേഷൻ തിരഞ്ഞെടുക്കുക",
+          "MOBILE_NUMBER": "മൊബൈൽ നമ്പർ",
+          "LANDLINE_NUMBER": "ലാൻഡ്‌ലൈൻ നമ്പർ",
+          "OR": "അഥവാ",
+          "ALREADY_A_MEMBER": "ഇതിനകം അംഗമാണോ ?"
+        },
+        "SELECT": {
+          "FIRM_ACTIVITY": {
+            "FREIGHT": "ചരക്ക് കൈമാറുന്നവർ",
+            "BOOKING": "ബുക്കിംഗ്",
+            "SUPPLIER": "വിതരണക്കാരൻ",
+            "OWNER": "ഉടമ"
+          }
+        },
+        "REGISTERD": {
+          "HEADER": "രജിസ്റ്റർ ചെയ്തു",
+          "MESSAGE": "സിസ്റ്റം പര്യവേക്ഷണത്തിനായി കാത്തിരിക്കുന്നു"
+        },
+        "BUTTON": {
+          "REGISTER": "രജിസ്റ്റർ",
+          "SIGN_IN": "സൈൻ ഇൻ",
+          "OK": "ശരി",
+          "CANCEL": "റദ്ദാക്കുക"
+        }
+      },
+      "VERIFICATION": {
+        "TITLE": "സ്ഥിരീകരണം",
+        "ENTER_VERIFICATION_CODE": "സ്ഥിരീകരണ കോഡ് നൽകുക",
+        "OTP_MESSAGE": "'നിങ്ങളുടെ നമ്പറിലേക്ക് ഒരു OTP അയച്ചു. നിങ്ങൾക്ക് ഇത് 15 സെക്കൻഡിനുള്ളിൽ ലഭിക്കും'",
+        "BUTTON": {
+          "VERIFICATION": "സ്ഥിരീകരണം",
+          "RESEND": "വീണ്ടും അയയ്ക്കുക"
+        },
+        "TEXT": "കോഡ് ലഭിച്ചില്ലേ?"
+      },
+      "PAYMENT": {
+        "TITLE": "പേയ്മെന്റ്",
+        "LABEL": {
+          "MASTERCARD": "മാസ്റ്റർകാർഡ് / വിസ / റുപേ",
+          "NET_BANKING": "നെറ്റ് ബാങ്കിംഗ്",
+          "CARD_NUMBER": "കാർഡ് നമ്പർ",
+          "DATE": "മാസം / തീയതി",
+          "CVV": "CVV"
+        },
+        "PLACEHOLDER": {
+          "DD": "DD",
+          "MM": "MM",
+          "NUMBER": "1234 5678 9145 4589",
+          "CVV": "000"
+        },
+        "TEXT": {
+          "PAY_FROM_MASTERCARD": "മാസ്റ്റർകാർഡ് പേയ്‌മെന്റ് ഗേറ്റ്‌വേ ഉപയോഗിച്ച് മാസ്റ്റർകാർഡ് അക്കൗണ്ടിൽ നിന്ന് പണമടയ്ക്കുക",
+          "PAY_FROM_BANK": "നെറ്റ് ബാങ്കിംഗ് ഗേറ്റ്‌വേ ഉപയോഗിച്ച് നിങ്ങളുടെ ബാങ്ക് അക്കൗണ്ടിൽ നിന്ന് പണമടയ്ക്കുക",
+          "TOTAL_PAYABLE": "ആകെ അടയ്‌ക്കേണ്ട INR",
+          "AMOUNT": "5000"
+        },
+        "BUTTON": {
+          "PAY": "പണം നൽകുക"
+        }
+      },
+      "HOME": {
+        "BUTTON": {
+          "SEARCH": "തിരയുക"
+        },
+        "LABEL": {
+          "FROM": "നിന്ന്",
+          "TO": "ലേക്ക്"
+        },
+        "PLACEHOLDER": {
+          "SELECT_FROM_LOCATION": "ലൊക്കേഷനിൽ നിന്ന് തിരഞ്ഞെടുക്കുക",
+          "SELECT_TO_LOCATION": "ലൊക്കേഷനിലേക്ക് തിരഞ്ഞെടുക്കുക"
+        },
+        "TEXT": {
+          "SAFE_AND_HYGEINIC": "സുരക്ഷിതവും ശുചിത്വവും",
+          "VEHICLES": "വാഹനങ്ങൾ",
+          "BEST_CUSTOMER": "മികച്ച ഉപഭോക്താവ്",
+          "CARE_SUPPORT": "പരിപാലനവും പിന്തുണയും",
+          "LIVE_TRACK": "നിങ്ങളുടെ ലൈവ് ട്രാക്ക്",
+          "JOURNEY": "യാത്ര",
+          "VERIFIED_DRIVERS": "പരിശോധിച്ച ഡ്രൈവറുകൾ",
+          "AND_VEHICLES": "ഒപ്പം വാഹനങ്ങളും"
+        }
+      },
+      "LISTING": {
+        "TITLE": "തിരയുക",
+        "LABEL": {
+          "GOING_FROM": "നിന്ന് പോകുന്നു",
+          "GOING_TO": "GOING_TO",
+          "FIRM_ACTIVITY": "സ്ഥിര പ്രവർത്തനം",
+          "SERVICE_PROVIDING": "സേവനം നൽകുന്ന / വാഹന തരം",
+          "LOCATION": "ലൊക്കേഷൻ"
+        },
+        "VALUE": {
+          "LUDHIANA": "ലുധിയാന",
+          "GOA": "GOA"
+        },
+        "LOADING": "ലോഡിംഗ്..."
+      },
+      "LISTING_DETAILS": {
+        "TITLE": "കമ്പനി വിശദാംശങ്ങൾ",
+        "ABOUT": "കുറിച്ച്",
+        "TEXT": "ലോറെം ഇപ്‌സം എന്നത് പ്രിന്റിംഗ്, ടൈപ്പ് സെറ്റിംഗ് വ്യവസായത്തിന്റെ കേവലം വ്യാജ വാചകമാണ്. 1500 മുതൽ ലോറെം ഇപ്‌സം വ്യവസായത്തിന്റെ സ്റ്റാൻഡേർഡ് ഡമ്മി ടെക്‌സ്‌റ്റാണ്.",
+        "LABEL": {
+          "FIRM_ACTIVITY": "സ്ഥിര പ്രവർത്തനം",
+          "SERVICE_PROVIDING": "സേവനം നൽകുന്നു",
+          "MOBILE_NUMBER": "മൊബൈൽ നമ്പർ",
+          "LANDLINE_NUMBER": "ലാൻഡ്‌ലൈൻ നമ്പർ"
+        },
+        "BUTTON": {
+          "CALL_NOW": "ഇപ്പോൾ വിളിക്കൂ"
+        }
+      },
+      "VEHICLE_TYPE": {
+        "LCV": "LCV",
+        "TRAILER": "ട്രെയിലർ",
+        "TRUCK": "ട്രക്ക് (ടോറസ്)",
+        "OPEN_TRUCK": "ഓപ്പൺ ട്രക്കുകൾ",
+        "20_FT_CBT": "20 അടി കണ്ടെയ്നർ (CBT ഉം തുറന്നതും)",
+        "32_FT_SINGLE_EXCEL": "32 അടി കണ്ടെയ്നർ സിംഗിൾ എക്സൽ",
+        "20_FT_IMPORT_EXPORT": "20 അടി കണ്ടെയ്നർ (ഇറക്കുമതിയും കയറ്റുമതിയും)",
+        "40_FT_IMPORT_EXPORT": "40 അടി കണ്ടെയ്നർ (ഇറക്കുമതിയും കയറ്റുമതിയും)",
+        "32_FT_MULTI_AXLE": "32 അടി കണ്ടെയ്നർ മൾട്ടി ആക്സിൽ എക്സൽ"
+      },
+      "LOCATION": {
+        "MUMBAI": "മുംബൈ",
+        "DELHI": "ഡൽഹി",
+        "BENGALURU": "ബെംഗളൂരു",
+        "AHMEDABAD": "അഹമ്മദാബാദ്",
+        "HYDERABAD": "ഹൈദരാബാദ്",
+        "CHENNAI": "ചെന്നൈ",
+        "KOLKATA": "കൊൽക്കത്ത",
+        "PUNE": "പൂനെ",
+        "JAIPUR": "ജയ്പൂർ",
+        "SURAT": "സൂറത്ത്",
+        "LUCKNOW": "ലഖ്‌നൗ",
+        "KANPUR": "കാൺപൂർ",
+        "NAGPUR": "നാഗ്പൂർ",
+        "PATNA": "പട്ന",
+        "INDORE": "ഇൻഡോർ",
+        "THANE": "താനെ",
+        "BHOPAL": "ഭോപ്പാൽ",
+        "VISAKHAPATNAM": "വിശാഖപട്ടണം",
+        "VADODARA": "വഡോദര",
+        "AMRITSAR": "അമൃത്സർ",
+        "AGRA": "ആഗ്ര",
+        "BAREILLY": "ബറേലി",
+        "BATHINDA": "ബതിന്ദാ",
+        "BHIWANI": "ഭിവാനി",
+        "CHANDIGARH": "ചണ്ഡീഗഡ്",
+        "FATEHABAD": "ഫത്തേഹാബാദ്",
+        "GURGAON": "ഗുഡ്ഗാവ്",
+        "HISSAR": "ഹിസ്സാർ",
+        "JODHPUR": "ജോധ്പൂർ",
+        "NANDED": "നന്ദേഡ്"
+      }
+    }
+  }
+  

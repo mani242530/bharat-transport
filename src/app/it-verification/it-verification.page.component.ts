@@ -13,8 +13,7 @@ export class VerificationPageComponent implements OnInit {
 
   OTP: string = '';
   showOTPInput: boolean = false;
-  OTPmessage: string =
-    'An OTP is sent to your number. You should receive it in 15 s';
+  OTPmessage: string = 'APP.VERIFICATION.OTP_MESSAGE';
 
   otp: string;
   showOtpComponent = true;
@@ -39,10 +38,12 @@ export class VerificationPageComponent implements OnInit {
   ngOnInit() {}
 
   OtpVerification(res) {
+    this.otpVerified = true;
+      this.router.navigate(['/payment']);
     this.authtenticationService.enterVerificationCode(res).then((userData) => {
       console.log(userData);
-      this.otpVerified = true;
-      this.router.navigate(['/payment']);
+      // this.otpVerified = true;
+      // this.router.navigate(['/payment']);
     });
   }
 

@@ -36,6 +36,8 @@
       },
       "VERIFICATION": {
         "TITLE": "சரிபார்ப்பு",
+        "ENTER_VERIFICATION_CODE": "சரிபார்ப்புக் குறியீட்டை உள்ளிடவும்",
+        "OTP_MESSAGE": "'உங்கள் எண்ணுக்கு OTP அனுப்பப்பட்டது. நீங்கள் அதை 15 வினாடிகளில் பெற வேண்டும்'",
         "BUTTON": {
           "VERIFICATION": "சரிபார்ப்பு",
           "RESEND": "மீண்டும் அனுப்பு"
@@ -93,7 +95,7 @@
       "LISTING": {
         "TITLE": "தேடு",
         "LABEL": {
-          "GOING_FROM": "GOING_FROM",
+          "GOING_FROM": "இருந்து செல்கிறது",
           "GOING_TO": "போகிறது",
           "FIRM_ACTIVITY": "நிறுவன செயல்பாடு",
           "SERVICE_PROVIDING": "சேவை வழங்குதல் / வாகன வகை",
