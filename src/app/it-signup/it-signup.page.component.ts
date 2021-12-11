@@ -156,13 +156,7 @@ export class SignUpPageComponent implements OnInit {
                 .then((success) => {
                   resolve(success);
                   this.invalidMobilenumber = false;
-                  const toast = this.toastController.create({
-                    message: 'Account created successfully.',
-                    duration: 2000,
-                    position: 'bottom',
-                    animated: true,
-                    color: 'Success',
-                  });
+                  this.registerSuccessToast();
                   this.ngroute.navigate(['verification']);
                 })
                 .catch((error) => {
@@ -176,5 +170,16 @@ export class SignUpPageComponent implements OnInit {
     } catch (error) {
       this.toastservice.showToast(error.message, 2000);
     }
+  }
+
+  async registerSuccessToast() {
+    const toast = await this.toastController.create({
+      message: 'Account created successfully.',
+      duration: 2000,
+      position: 'bottom',
+      animated: true,
+      color: 'Success',
+    });
+    toast.present();
   }
 }

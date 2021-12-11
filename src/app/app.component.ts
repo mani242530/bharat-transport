@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { TranslateService } from '@ngx-translate/core';
 import { AppService } from './services/app.servcie';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-root',
@@ -14,21 +15,41 @@ import { AppService } from './services/app.servcie';
 })
 export class AppComponent {
   authfbObserver;
+  userDetails;
+  username;
+
   constructor(
     private platform: Platform,
     public fbauth: AngularFireAuth,
     public ngroute: Router,
     public translateService: TranslateService,
-    public appservice: AppService
+    public appservice: AppService,
+    private fbstore: AngularFirestore
   ) {
     this.authfbObserver = fbauth.authState.subscribe((user) => {
       if (user) {
-        console.log(user);
-        console.log(user.phoneNumber);
-        // this.ngroute.navigate(['home']);
+        if (user) {
+          this.fbstore
+            .collection('companys')
+            .snapshotChanges()
+            .subscribe((data) => {
+              const filteredUser = data.filter(
+                (result) =>
+                  result.payload.doc.data()['mobileNUmber'] === user.phoneNumber
+              );
+              console.log(filteredUser);
+              if (filteredUser) {
+                this.userDetails = filteredUser;
+                this.username =
+                  this.userDetails.firstName + '' + this.userDetails.lastName;
+              } else {
+                console.log('user not found in db');
+              }
+            });
+        }
         this.ngroute.navigate(['select-vehicle']);
       } else {
-        console.log(user);
+        console.log('user not logged in');
         this.ngroute.navigate(['splash']);
       }
     });
@@ -37,14 +58,6 @@ export class AppComponent {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
     });
-
-    // if (this.userData) {
-    //   [this.user] = this.userData && this.userData.map((item) => item);
-    //   this.userName =
-    //     this.user &&
-    //     this.user.firstName + ' ' + this.user &&
-    //     this.user.lastName;
-    // }
 
     this.translateService.setDefaultLang('en');
   }

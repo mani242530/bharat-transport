@@ -13,47 +13,21 @@
           border-0
           mb-0
         "
-        [routerDirection]="'root'"
-        routerLink="/"
       >
         <ngx-avatar name="{{ userName }}" size="50"></ngx-avatar>
         <div class="text-white ml-2">
           <h6 class="mb-0">
-            {{ user && user.firstName }} {{ user && user.lastName }}
+            {{ userDetails && userDetails.firstName }}
+            {{ userDetails && userDetails.lastName }}
           </h6>
-          <small>{{ user && user.mobileNumber }}</small
+          <small>{{ userDetails && userDetails.mobileNumber }}</small
           ><br />
           <span class="f-10 text-white-50">{{
             currentDate | date: "yyyy-MM-dd"
           }}</span>
         </div>
       </a>
-      <ion-list>
-        <ion-item detail="false" [routerDirection]="'root'" routerLink="/">
-          <ion-icon name="mail" slot="start"></ion-icon>
-          <ion-label>Inbox</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="paper-plane" slot="start"></ion-icon>
-          <ion-label>Outbox</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="heart" slot="start"></ion-icon>
-          <ion-label>Favorites</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="archive" slot="start"></ion-icon>
-          <ion-label>Archived</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="trash" slot="start"></ion-icon>
-          <ion-label>Trash</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="warning" slot="start"></ion-icon>
-          <ion-label>Spam</ion-label>
-        </ion-item>
-      </ion-list>
+
       <a
         href="#"
         class="
@@ -65,7 +39,6 @@
           fixed-bottom
           text-align-center
         "
-        [routerDirection]="'root'"
         (click)="doLogout()"
       >
         <div class="text-white">

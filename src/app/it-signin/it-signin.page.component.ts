@@ -31,6 +31,7 @@ export class SignInPageComponent implements OnInit {
 
   showProgress = false;
   invalidMobilenumber = false;
+  mobileNumberNotFound = false;
 
   signInForm: FormGroup;
   @ViewChild('signIn') signIn: FormGroupDirective;
@@ -84,32 +85,35 @@ export class SignInPageComponent implements OnInit {
             this.CountryCode + formvalue.mobileNumber
           )
           .then((success) => {
-            this.showProgress = false;
             this.invalidMobilenumber = false;
-            const authfbObserver = this.fbauth.authState.subscribe((user) => {
-              console.log(user);
-              if (user) {
-                this.fbstore
-                  .collection('companys')
-                  .snapshotChanges()
-                  .subscribe((data) => {
-                    const filteredUser = data.filter(
-                      (result) =>
-                        result.payload.doc.data()['mobileNUmber'] ===
-                        user.phoneNumber
-                    );
-                    console.log(filteredUser);
-                    if (filteredUser) {
-                      this.router.navigate(['/verification']);
-                    } else {
-                    }
-                  });
-              }
-              resolve(user);
-            });
+            // const authfbObserver = this.fbauth.authState.subscribe((user) => {
+            // console.log(user);
+            // if (user) {
+            this.mobileNumberNotFound = false;
+            this.fbstore
+              .collection('companys')
+              .snapshotChanges()
+              .subscribe((data) => {
+                const filteredUser = data.filter(
+                  (result) =>
+                    result.payload.doc.data()['mobileNUmber'] ===
+                    this.CountryCode + formvalue.mobileNumber
+                );
+                console.log(filteredUser);
+                this.showProgress = false;
+                if (filteredUser.length > 0) {
+                  this.router.navigate(['/verification']);
+                } else {
+                  this.mobileNumberNotFound = true;
+                }
+              });
+            // }
+            resolve(success);
+            // });
           })
           .catch((error) => {
             this.showProgress = false;
+            this.mobileNumberNotFound = false;
             this.invalidMobilenumber = true;
             reject(error);
           });
