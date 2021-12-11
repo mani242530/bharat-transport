@@ -10,11 +10,7 @@
       <ion-title>{{ "APP.LISTING_DETAILS.TITLE" | translate }}</ion-title>
     </h5>
     <div class="ml-auto d-flex align-items-center">
-      <ngx-avatar
-        name="{{ userName }}"
-        (clickOnAvatar)="avatarClicked($event)"
-        size="50"
-      ></ngx-avatar>
+      <ngx-avatar name="{{ userName }}" size="50"></ngx-avatar>
       <ion-buttons slot="end">
         <ion-menu-button
           ><fa-icon icon="bars" class="icofont-navigation-menu"></fa-icon
@@ -52,7 +48,6 @@
                     cornerRadius="4"
                     [round]="false"
                     name="{{ company.firstName }} {{ company.lastName }}"
-                    [style]="initials"
                   ></ngx-avatar>
                   <div class="w-100 margin-left-15">
                     <ion-label>
@@ -176,7 +171,7 @@
   </ion-list>
 
   <ion-list lines="none" *ngIf="isLoading">
-    <ion-item-sliding *ngFor="let company of companys">
+    <ion-item-sliding>
       <ion-item lines="none">
         <ion-label>
           <h3>

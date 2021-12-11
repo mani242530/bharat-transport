@@ -22,14 +22,6 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.userData = this.dataService.signnedInUser;
-    // if (this.userData) {
-    //   [this.user] = this.userData && this.userData.map((item) => item);
-    //   if (this.user) {
-    //     this.userName = this.user.firstName + ' ' + this.user.lastName;
-    //   }
-    // }
-
     this.initializeForm();
   }
 

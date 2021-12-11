@@ -36,14 +36,6 @@ export class ListingPageComponent implements OnInit {
     private fbstore: AngularFirestore,
     private toastservice: ToastService
   ) {
-    // this.userData = this.dataService.signnedInUser;
-    // if (this.userData) {
-    //   [this.user] = this.userData && this.userData.map((item) => item);
-    //   if (this.user) {
-    //     this.userName = this.user.firstName + ' ' + this.user.lastName;
-    //   }
-    // }
-
     this.isLoading = true;
     this.route.queryParams.subscribe((params) => {
       this.searchParam = params;

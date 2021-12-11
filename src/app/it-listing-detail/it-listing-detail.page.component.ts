@@ -16,6 +16,7 @@ export class ListingDetailPageComponent implements OnInit {
   sub1: Subscription;
   paramId: string;
   serviceProviding: string;
+  isLoading = true;
 
   userData;
   user;
@@ -31,13 +32,6 @@ export class ListingDetailPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    // if (this.userData) {
-    //   [this.user] = this.userData && this.userData.map((item) => item);
-    //   if (this.user) {
-    //     this.userName = this.user.firstName + ' ' + this.user.lastName;
-    //   }
-    // }
-
     this.getProduct(this.paramId);
   }
 
@@ -47,6 +41,7 @@ export class ListingDetailPageComponent implements OnInit {
         .doc('companys/' + docid)
         .valueChanges()
         .subscribe((result) => {
+          this.isLoading = false;
           if (!result) {
             this.ngroute.navigate(['/listing']);
           } else {

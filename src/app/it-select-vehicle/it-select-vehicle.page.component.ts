@@ -23,15 +23,7 @@ export class SelectVehiclePageComponent implements OnInit {
   ];
   constructor(private appService: AppService) {}
 
-  ngOnInit() {
-    // this.userData = this.dataService.signnedInUser;
-    // if (this.userData) {
-    //   [this.user] = this.userData && this.userData.map((item) => item);
-    //   if (this.user) {
-    //     this.userName = this.user.firstName + ' ' + this.user.lastName;
-    //   }
-    // }
-  }
+  ngOnInit() {}
 
   selectVehicleType(vehicleType) {
     this.appService.selectedVehicleType = vehicleType;

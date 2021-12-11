@@ -17,6 +17,7 @@ export class AppComponent {
   authfbObserver;
   userDetails;
   username;
+  currentDate = new Date();
 
   constructor(
     private platform: Platform,

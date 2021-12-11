@@ -10,14 +10,10 @@
           class="icofont-truck text-white h2 bg-purple p-2 rounded-circle"
         ></fa-icon
       ></a>
-      <ion-title>{{"APP.HOME.BUTTON.SEARCH" | translate}}</ion-title>
+      <ion-title>{{ "APP.HOME.BUTTON.SEARCH" | translate }}</ion-title>
     </h5>
     <div class="ml-auto d-flex align-items-center">
-      <ngx-avatar
-        name="{{ userName }}"
-        (clickOnAvatar)="avatarClicked($event)"
-        size="50"
-      ></ngx-avatar>
+      <ngx-avatar name="{{ userName }}" size="50"></ngx-avatar>
 
       <ion-buttons slot="end">
         <ion-menu-button
@@ -58,7 +54,9 @@
                   native-select
                   it-form-control
                 "
-                placeholder="{{ 'APP.HOME.PLACEHOLDER.SELECT_FROM_LOCATION' | translate }}"
+                placeholder="{{
+                  'APP.HOME.PLACEHOLDER.SELECT_FROM_LOCATION' | translate
+                }}"
                 formControlName="from"
                 required
               >
@@ -86,7 +84,9 @@
                   native-select
                   it-form-control
                 "
-                placeholder="{{ 'APP.HOME.PLACEHOLDER.SELECT_TO_LOCATION' | translate }}"
+                placeholder="{{
+                  'APP.HOME.PLACEHOLDER.SELECT_TO_LOCATION' | translate
+                }}"
                 formControlName="to"
                 required
               >
@@ -116,7 +116,9 @@
           <div class="p-3 bg-white shadow-sm rounded-1">
             <img class="img-fluid" src="assets/img/safe-vehicles.svg" alt="" />
             <p class="mb-0 mt-4 font-weight-bold">
-              {{ "APP.HOME.TEXT.SAFE_AND_HYGEINIC" | translate }}<br />{{ "APP.HOME.TEXT.VEHICLES" | translate }}
+              {{ "APP.HOME.TEXT.SAFE_AND_HYGEINIC" | translate }}<br />{{
+                "APP.HOME.TEXT.VEHICLES" | translate
+              }}
             </p>
           </div>
         </div>
@@ -128,7 +130,9 @@
               alt=""
             />
             <p class="mb-0 mt-4 font-weight-bold">
-              {{ "APP.HOME.TEXT.BEST_CUSTOMER" | translate }}<br />{{ "APP.HOME.TEXT.CARE_SUPPORT" | translate }}
+              {{ "APP.HOME.TEXT.BEST_CUSTOMER" | translate }}<br />{{
+                "APP.HOME.TEXT.CARE_SUPPORT" | translate
+              }}
             </p>
           </div>
         </div>
@@ -136,7 +140,9 @@
           <div class="p-3 bg-white shadow-sm rounded-1">
             <img class="img-fluid" src="assets/img/live-tracking.svg" alt="" />
             <p class="mb-0 mt-4 font-weight-bold">
-              {{ "APP.HOME.TEXT.LIVE_TRACK" | translate }}<br />{{ "APP.HOME.TEXT.JOURNEY" | translate }}
+              {{ "APP.HOME.TEXT.LIVE_TRACK" | translate }}<br />{{
+                "APP.HOME.TEXT.JOURNEY" | translate
+              }}
             </p>
           </div>
         </div>
@@ -148,7 +154,9 @@
               alt=""
             />
             <p class="mb-0 mt-4 font-weight-bold">
-              {{ "APP.HOME.TEXT.VERIFIED_DRIVERS" | translate }}<br />{{ "APP.HOME.TEXT.AND_VEHICLES" | translate }}
+              {{ "APP.HOME.TEXT.VERIFIED_DRIVERS" | translate }}<br />{{
+                "APP.HOME.TEXT.AND_VEHICLES" | translate
+              }}
             </p>
           </div>
         </div>
