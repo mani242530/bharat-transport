@@ -198,12 +198,20 @@
 
           <div class="form-group row mb-3">
             <div class="col-12">
-              <button
+              <!-- <button
                 type="submit"
                 class="btn btn-purple btn-block"
                 data-toggle="modal"
                 data-target="#paymentModal"
                 routerLink="/select-vehicle"
+              >
+                {{ "APP.PAYMENT.BUTTON.PAY" | translate }}
+              </button> -->
+              <button
+                type="submit"
+                class="btn btn-purple btn-block"
+                style="padding-left: 2%"
+                (click)="payWithRazorpay()"
               >
                 {{ "APP.PAYMENT.BUTTON.PAY" | translate }}
               </button>

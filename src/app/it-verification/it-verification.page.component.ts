@@ -82,7 +82,6 @@ export class VerificationPageComponent implements OnInit {
         .catch((error) => {
           this.errorOtpMsg = false;
           this.otpNotVerified = true;
-          this.router.navigate(['/payment']);
           reject(error.message);
         });
     });

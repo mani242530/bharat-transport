@@ -88,19 +88,13 @@
         </p>
       </div>
     </div>
-    <div
-      class="osahan-signin text-center text-muted p-1"
-      *ngIf="invalidMobilenumber"
-    >
+    <div class="osahan-signin text-center p-1" *ngIf="invalidMobilenumber">
       <p class="m-5 pt-2 text-danger">
         Invalid mobile number. Please check and try again.
       </p>
     </div>
-    <div
-      class="osahan-signin text-center text-muted p-1"
-      *ngIf="mobileNumberNotFound"
-    >
-      <p class="m-5 pt-2 text-muted text-danger">
+    <div class="osahan-signin text-center p-1" *ngIf="mobileNumberNotFound">
+      <p class="m-5 pt-2 text-danger">
         Sorry! Mobile number is not registered with us. Please Sign Up to create
         account
       </p>

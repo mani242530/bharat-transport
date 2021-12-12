@@ -87,8 +87,8 @@ export class SignInPageComponent implements OnInit {
           .then((success) => {
             this.invalidMobilenumber = false;
             // const authfbObserver = this.fbauth.authState.subscribe((user) => {
-            // console.log(user);
-            // if (user) {
+            //   console.log(user);
+            //   if (user) {
             this.mobileNumberNotFound = false;
             this.fbstore
               .collection('companys')
@@ -96,7 +96,7 @@ export class SignInPageComponent implements OnInit {
               .subscribe((data) => {
                 const filteredUser = data.filter(
                   (result) =>
-                    result.payload.doc.data()['mobileNUmber'] ===
+                    result.payload.doc.data()['mobileNumber'] ===
                     this.CountryCode + formvalue.mobileNumber
                 );
                 console.log(filteredUser);
@@ -107,8 +107,10 @@ export class SignInPageComponent implements OnInit {
                   this.mobileNumberNotFound = true;
                 }
               });
+            // } else {
+            //   console.log('user data is not retrived');
             // }
-            resolve(success);
+            // resolve(success);
             // });
           })
           .catch((error) => {
