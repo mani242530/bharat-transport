@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppService } from '../services/app.servcie';
 
 @Component({
@@ -21,11 +22,12 @@ export class SelectVehiclePageComponent implements OnInit {
     'APP.VEHICLE_TYPE.40_FT_IMPORT_EXPORT',
     'APP.VEHICLE_TYPE.32_FT_MULTI_AXLE',
   ];
-  constructor(private appService: AppService) {}
+  constructor(private appService: AppService, private router: Router) {}
 
   ngOnInit() {}
 
   selectVehicleType(vehicleType) {
     this.appService.selectedVehicleType = vehicleType;
+    this.router.navigate(['/home']);
   }
 }

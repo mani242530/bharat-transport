@@ -32,7 +32,9 @@
         "SIGN_IN": "साइन इन करा",
         "OK": "ठीक आहे",
         "CANCEL": "रद्द करा"
-      }
+      },
+      "INVALID_MOBILE": " Invalid mobile number. Please check and try again.",
+      "MOBILE_EXISTS": "Your mobile number is already registered."
     },
     "VERIFICATION": {
       "TITLE": "पडताळणी",
@@ -108,7 +110,8 @@
         "LUDHIANA": "लुधियाना",
         "GOA": "गोवा"
       },
-      "LOADING": "लोड करत आहे..."
+      "LOADING": "लोड करत आहे...",
+      "NO_RESULTS": "No results found"
     },
     "LISTING_DETAILS": {
       "TITLE": "कंपनी तपशील",

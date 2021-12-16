@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { Config } from '../models/otp.config';
+import { AppService } from '../services/app.servcie';
 import { AuthtenticationService } from '../services/authentication.service';
 
 @Component({
@@ -21,6 +24,7 @@ export class VerificationPageComponent implements OnInit {
   otpVerified = false;
   errorOtpMsg = false;
   otpNotVerified = false;
+  authfbObserver;
 
   @ViewChild('ngOtpInput', { static: false }) ngOtpInput: any;
   config: Config = {
@@ -38,10 +42,18 @@ export class VerificationPageComponent implements OnInit {
   constructor(
     private router: Router,
     private authtenticationService: AuthtenticationService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private appService: AppService,
+    public fbauth: AngularFireAuth,
+    private fbstore: AngularFirestore
   ) {}
 
   ngOnInit() {
+    this.authfbObserver = this.fbauth.authState.subscribe((user) => {
+      if (user) {
+        this.otpSentToast();
+      }
+    });
     this.otpSentToast();
   }
 
@@ -75,9 +87,25 @@ export class VerificationPageComponent implements OnInit {
         .then(async (userData) => {
           console.log(userData);
           const user = userData.user;
-          this.otpVerifiedToast();
-          this.router.navigate(['/payment']);
+          this.appService.otpVerifiedToast();
           resolve(user);
+          this.fbstore
+            .collection('companys')
+            .snapshotChanges()
+            .subscribe((data) => {
+              const filteredUser = data.filter(
+                (result) =>
+                  result.payload.doc.data()['mobileNumber'] === user.phoneNumber
+              );
+              console.log(filteredUser[0].payload.doc.data());
+              if (filteredUser[0].payload.doc.data()['paymentPaid']) {
+                console.log('user did pay');
+                this.router.navigate(['/select-vehicle']);
+              } else {
+                console.log('user did not pay');
+                this.router.navigate(['/payment']);
+              }
+            });
         })
         .catch((error) => {
           this.errorOtpMsg = false;
@@ -93,8 +121,6 @@ export class VerificationPageComponent implements OnInit {
       this.errorOtpMsg = false;
       this.otpVerified = true;
     }
-    //this.verifyOtp(otp);
-    // const otpNumber = this.otp.toString()
   }
 
   setVal(val) {

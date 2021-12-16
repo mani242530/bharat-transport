@@ -12,6 +12,7 @@ import { AuthtenticationService } from '../services/authentication.service';
 import firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AppService } from '../services/app.servcie';
 
 @Component({
   selector: 'app-signin',
@@ -42,7 +43,8 @@ export class SignInPageComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authtenticationService: AuthtenticationService,
     public fbauth: AngularFireAuth,
-    private fbstore: AngularFirestore
+    private fbstore: AngularFirestore,
+    private appService: AppService
   ) {}
 
   ngOnInit() {
@@ -79,72 +81,44 @@ export class SignInPageComponent implements OnInit {
     this.showProgress = true;
     if (formvalue.mobileNumber.length === 10) {
       return new Promise<any>((resolve, reject) => {
-        this.authtenticationService
-          .signInWithPhoneNumber(
-            this.recaptchaVerifier,
-            this.CountryCode + formvalue.mobileNumber
-          )
-          .then((success) => {
-            this.invalidMobilenumber = false;
-            // const authfbObserver = this.fbauth.authState.subscribe((user) => {
-            //   console.log(user);
-            //   if (user) {
-            this.mobileNumberNotFound = false;
-            this.fbstore
-              .collection('companys')
-              .snapshotChanges()
-              .subscribe((data) => {
-                const filteredUser = data.filter(
-                  (result) =>
-                    result.payload.doc.data()['mobileNumber'] ===
-                    this.CountryCode + formvalue.mobileNumber
-                );
-                console.log(filteredUser);
-                this.showProgress = false;
-                if (filteredUser.length > 0) {
-                  this.router.navigate(['/verification']);
-                } else {
-                  this.mobileNumberNotFound = true;
-                }
+        this.mobileNumberNotFound = false;
+        const mobile = this.CountryCode + formvalue.mobileNumber;
+        const loggedInUser = this.appService.loggedInUser(mobile);
+
+        console.log(loggedInUser);
+
+        if (loggedInUser) {
+          this.authtenticationService
+            .signInWithPhoneNumber(
+              this.recaptchaVerifier,
+              this.CountryCode + formvalue.mobileNumber
+            )
+            .then((success) => {
+              this.showProgress = false;
+              this.invalidMobilenumber = false;
+              const authfbObserver = this.fbauth.authState.subscribe((user) => {
+                console.log(user);
+                // if (user) {
+                this.mobileNumberNotFound = false;
+                this.router.navigate(['/verification']);
+                resolve(success);
+                // } else {
+                //   this.mobileNumberNotFound = false;
+                // }
               });
-            // } else {
-            //   console.log('user data is not retrived');
-            // }
-            // resolve(success);
-            // });
-          })
-          .catch((error) => {
-            this.showProgress = false;
-            this.mobileNumberNotFound = false;
-            this.invalidMobilenumber = true;
-            reject(error);
-          });
+            })
+            .catch((error) => {
+              this.showProgress = false;
+              this.mobileNumberNotFound = false;
+              this.invalidMobilenumber = true;
+              reject(error);
+            });
+        } else {
+          this.mobileNumberNotFound = true;
+          console.log('Mobile number not found in db');
+        }
+        // });
       });
     }
   }
-
-  // signinWithPhoneNumber(formvalue) {
-  //   this.dataService.signnedInUser = [];
-  //   this.showProgress = true;
-  //   const userData = this.dataService
-  //     .searchContactByLocation()
-  //     .subscribe((data: any) => {
-  //       if (data.length > 0) {
-  //         const filtereddata = data.filter(
-  //           (x) => x.mobileNumber == formvalue.mobileNumber
-  //         );
-
-  //         if (filtereddata.length > 0) {
-  //           this.dataService.signnedInUser = filtereddata;
-  //           // this.storage.set('loggedinuser', filtereddata);
-
-  //           this.showProgress = false;
-  //           this.router.navigate(['/verification']);
-  //         } else {
-  //           this.dataService.signnedInUser = filtereddata;
-  //           this.router.navigate(['/verification']);
-  //         }
-  //       }
-  //     });
-  // }
 }

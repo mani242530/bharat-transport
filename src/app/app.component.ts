@@ -29,25 +29,23 @@ export class AppComponent {
   ) {
     this.authfbObserver = fbauth.authState.subscribe((user) => {
       if (user) {
-        if (user) {
-          this.fbstore
-            .collection('companys')
-            .snapshotChanges()
-            .subscribe((data) => {
-              const filteredUser = data.filter(
-                (result) =>
-                  result.payload.doc.data()['mobileNUmber'] === user.phoneNumber
-              );
-              console.log(filteredUser);
-              if (filteredUser) {
-                this.userDetails = filteredUser;
-                this.username =
-                  this.userDetails.firstName + '' + this.userDetails.lastName;
-              } else {
-                console.log('user not found in db');
-              }
-            });
-        }
+        this.fbstore
+          .collection('companys')
+          .snapshotChanges()
+          .subscribe((data) => {
+            const filteredUser = data.filter(
+              (result) =>
+                result.payload.doc.data()['mobileNumber'] === user.phoneNumber
+            );
+            console.log(filteredUser[0].payload.doc.data());
+            if (filteredUser[0].payload.doc.data()) {
+              this.userDetails = filteredUser[0].payload.doc.data();
+              this.username =
+                this.userDetails.firstName + '' + this.userDetails.lastName;
+            } else {
+              console.log('user not found in db');
+            }
+          });
         this.ngroute.navigate(['select-vehicle']);
       } else {
         console.log('user not logged in');

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppService } from '../services/app.servcie';
 declare var RazorpayCheckout: any;
 @Component({
   selector: 'app-payment',
@@ -7,9 +8,11 @@ declare var RazorpayCheckout: any;
   styleUrls: ['./it-payment.page.component.scss'],
 })
 export class PaymentPageComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private appService: AppService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.appService.otpVerifiedToast();
+  }
 
   payWithRazorpay() {
     var options = {

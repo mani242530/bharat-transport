@@ -136,7 +136,7 @@ export class ListingPageComponent implements OnInit {
         });
     } catch (error) {
       this.toastservice.showToast(error.message, 2000);
-      //console.log(error.message);
+      console.log(error.message);
     }
   }
 }

@@ -37,6 +37,7 @@ export class SignUpPageComponent implements OnInit {
 
   showProgress = false;
   invalidMobilenumber = false;
+  userExists = false;
 
   createCompanyForm: FormGroup;
   @ViewChild('createForm') createForm: FormGroupDirective;
@@ -134,42 +135,59 @@ export class SignUpPageComponent implements OnInit {
       mobileNumber: '+91' + this.createCompanyForm.get('mobileNumber').value,
       location: this.createCompanyForm.get('location').value,
       language: this.appservice.selectedLanguage,
+      paymentPaid: false,
     };
     Object.keys(companyObj).forEach((k) => {
       if (typeof companyObj[k] !== 'object') {
         companyObj[k] = companyObj[k].trim();
       }
     });
-    try {
-      await this.fbstore
-        .collection('companys')
-        .add(companyObj)
-        .then((data) => {
-          console.log(companyObj);
-          if (data) {
-            return new Promise<any>((resolve, reject) => {
-              this.authtenticationService
-                .signInWithPhoneNumber(
-                  this.recaptchaVerifier,
-                  companyObj.mobileNumber
-                )
-                .then((success) => {
-                  resolve(success);
-                  this.invalidMobilenumber = false;
-                  this.registerSuccessToast();
-                  this.ngroute.navigate(['verification']);
-                })
-                .catch((error) => {
-                  this.showProgress = false;
-                  this.invalidMobilenumber = true;
-                  reject(error);
-                });
-            });
+    this.fbstore
+      .collection('companys', (ref) =>
+        ref.where('mobileNumber', '==', companyObj.mobileNumber).limit(1)
+      )
+      .get()
+      .subscribe((users) => {
+        console.log(users.size);
+        if (users.size === 0) {
+          try {
+            this.fbstore
+              .collection('companys')
+              .add(companyObj)
+              .then((data) => {
+                console.log(companyObj);
+                if (data) {
+                  return new Promise<any>((resolve, reject) => {
+                    this.authtenticationService
+                      .signInWithPhoneNumber(
+                        this.recaptchaVerifier,
+                        companyObj.mobileNumber
+                      )
+                      .then((success) => {
+                        resolve(success);
+                        this.showProgress = false;
+                        this.invalidMobilenumber = false;
+                        this.registerSuccessToast();
+                        this.ngroute.navigate(['verification']);
+                      })
+                      .catch((error) => {
+                        this.showProgress = false;
+                        this.invalidMobilenumber = true;
+                        reject(error);
+                      });
+                  });
+                }
+              });
+          } catch (error) {
+            this.showProgress = false;
+            console.log(error);
           }
-        });
-    } catch (error) {
-      this.toastservice.showToast(error.message, 2000);
-    }
+        } else {
+          this.showProgress = false;
+          this.userRegisteredAlreadyToast();
+          this.userExists = true;
+        }
+      });
   }
 
   async registerSuccessToast() {
@@ -179,6 +197,17 @@ export class SignUpPageComponent implements OnInit {
       position: 'bottom',
       animated: true,
       color: 'Success',
+    });
+    toast.present();
+  }
+
+  async userRegisteredAlreadyToast() {
+    const toast = await this.toastController.create({
+      message: 'Your mobile number is already registered.',
+      duration: 2000,
+      position: 'top',
+      animated: true,
+      color: 'warning',
     });
     toast.present();
   }

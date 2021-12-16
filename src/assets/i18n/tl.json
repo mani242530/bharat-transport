@@ -32,7 +32,9 @@
         "SIGN_IN": "సైన్ ఇన్",
         "OK": "అలాగె",
         "CANCEL": "రద్దు"
-      }
+      },
+      "INVALID_MOBILE": " Invalid mobile number. Please check and try again.",
+      "MOBILE_EXISTS": "Your mobile number is already registered."
     },
     "VERIFICATION": {
       "TITLE": "ధృవీకరణ",
@@ -108,7 +110,8 @@
         "LUDHIANA": "లుధియానా",
         "GOA": "GOA"
       },
-      "LOADING": "లోడ్..."
+      "LOADING": "లోడ్...",
+      "NO_RESULTS": "No results found"
     },
     "LISTING_DETAILS": {
       "TITLE": "కంపెనీ వివరాలు",

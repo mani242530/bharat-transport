@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AppService } from '../services/app.servcie';
 
@@ -52,7 +53,8 @@ export class SelectLanguagePageComponent implements OnInit {
   ];
   constructor(
     private translateService: TranslateService,
-    public appservice: AppService
+    public appservice: AppService,
+    private router: Router
   ) {}
 
   ngOnInit() {}
@@ -60,5 +62,6 @@ export class SelectLanguagePageComponent implements OnInit {
   loadSelectedLanguage(language) {
     this.appservice.selectedLanguage = language;
     this.translateService.use(language);
+    this.router.navigate(['/signup']);
   }
 }
