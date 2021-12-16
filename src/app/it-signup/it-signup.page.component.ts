@@ -135,7 +135,7 @@ export class SignUpPageComponent implements OnInit {
       mobileNumber: '+91' + this.createCompanyForm.get('mobileNumber').value,
       location: this.createCompanyForm.get('location').value,
       language: this.appservice.selectedLanguage,
-      paymentPaid: false,
+      paymentStatus: 'Not Paid',
     };
     Object.keys(companyObj).forEach((k) => {
       if (typeof companyObj[k] !== 'object') {

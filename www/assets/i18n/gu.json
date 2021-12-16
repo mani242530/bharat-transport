@@ -59,7 +59,9 @@
         "SIGN_IN": "સાઇન ઇન",
         "OK": "ઠીક",
         "CANCEL": "રદ કરો"
-      }
+      },
+      "INVALID_MOBILE": " Invalid mobile number. Please check and try again.",
+      "MOBILE_EXISTS": "Your mobile number is already registered."
     },
     "VERIFICATION": {
       "TITLE": "ચકાસણી",
@@ -133,7 +135,8 @@
         "LUDHIANA": "લુધિયાણા",
         "GOA": "GOA"
       },
-      "LOADING": "લોડ કરી રહ્યું છે..."
+      "LOADING": "લોડ કરી રહ્યું છે...",
+      "NO_RESULTS": "No results found"
     },
     "LISTING_DETAILS": {
       "TITLE": "કંપની વિગતો",

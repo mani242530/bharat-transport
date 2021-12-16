@@ -32,7 +32,9 @@
         "SIGN_IN": "Sign In",
         "OK": "OK",
         "CANCEL": "CANCEL"
-      }
+      },
+      "INVALID_MOBILE": " Invalid mobile number. Please check and try again.",
+      "MOBILE_EXISTS": "Your mobile number is already registered."
     },
     "VERIFICATION": {
       "TITLE": "Verification",
@@ -108,7 +110,8 @@
         "LUDHIANA": "LUDHIANA",
         "GOA": "GOA"
       },
-      "LOADING": "Loading..."
+      "LOADING": "Loading...",
+      "NO_RESULTS": "No results found"
     },
     "LISTING_DETAILS": {
       "TITLE": "Company Details",
