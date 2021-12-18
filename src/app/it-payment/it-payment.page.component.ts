@@ -8,6 +8,12 @@ declare var RazorpayCheckout: any;
   styleUrls: ['./it-payment.page.component.scss'],
 })
 export class PaymentPageComponent implements OnInit {
+  paymentAmount: number = 100;
+  currency: string = 'INR';
+  currencyIcon: string = '$';
+  razor_key = 'rzp_test_0Pzav9uuhHbTsd,Qj9LUgkFApQzr1zM9YJ3eoOR';
+  cardDetails: any = {};
+
   constructor(private router: Router, private appService: AppService) {}
 
   ngOnInit() {
@@ -19,13 +25,13 @@ export class PaymentPageComponent implements OnInit {
       description: 'Credits towards consultation',
       image: 'https://i.imgur.com/3g7nmJC.png',
       currency: 'INR', // your 3 letter currency code
-      key: 'rzp_test_4VXE7p6AKT8az8,X2218z4UrTzRGmQhNlSrmKRK', // your Key Id from Razorpay dashboard
-      amount: 100, // Payment amount in smallest denomiation e.g. cents for USD
-      name: 'Razorpay',
+      key: this.razor_key, // your Key Id from Razorpay dashboard
+      amount: this.paymentAmount, // Payment amount in smallest denomiation e.g. cents for USD
+      name: 'IndianTransport pay',
       prefill: {
         email: 'mabblesoft@gmail.com',
         contact: '9944634307',
-        name: 'Razorpay',
+        name: 'MabbleSoft',
       },
       theme: {
         color: '#F37254',

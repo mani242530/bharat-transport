@@ -144,7 +144,7 @@
             }
           }
         },
-        "ionic-cordova-build": {
+        "indian-transport-build": {
           "builder": "@ionic/angular-toolkit:cordova-build",
           "options": {
             "browserTarget": "app:build"
@@ -155,15 +155,15 @@
             }
           }
         },
-        "ionic-cordova-serve": {
+        "indian-transport-serve": {
           "builder": "@ionic/angular-toolkit:cordova-serve",
           "options": {
-            "cordovaBuildTarget": "app:ionic-cordova-build",
+            "cordovaBuildTarget": "app:indian-transport-build",
             "devServerTarget": "app:serve"
           },
           "configurations": {
             "production": {
-              "cordovaBuildTarget": "app:ionic-cordova-build:production",
+              "cordovaBuildTarget": "app:indian-transport-build:production",
               "devServerTarget": "app:serve:production"
             }
           }
