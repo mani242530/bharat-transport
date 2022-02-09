@@ -68,6 +68,13 @@ const routes: Routes = [
         (m) => m.ListingDetailPageModule
       ),
   },
+  {
+    path: 'profile/:id',
+    loadChildren: () =>
+      import('./it-profile/it-profile.module').then(
+        (p) => p.ProfilePageModule
+      ),
+  },
   // {
   //   path: 'home',
   //   loadChildren: () =>

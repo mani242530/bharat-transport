@@ -24,7 +24,7 @@ export class AuthtenticationService {
         })
         .catch((error) => {
           console.log(error);
-          reject('SMS not sent');
+          reject('We have blocked all requests from this device due to unusual activity. Please try again later and OTP not sent');
         });
     });
   }

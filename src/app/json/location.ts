@@ -1,3 +1,11 @@
+export const puneData = [
+  {
+      id: '1',
+      name: 'APP.LOCATION.PUNE',
+      state: 'Maharashtra',
+    },
+]
+
 export const locationData = [
   {
     id: '1',

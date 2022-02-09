@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
@@ -13,6 +13,7 @@ import { ListingPageRoutingModule } from './it-listing.page.routing.module';
 import { environment } from 'src/environments/environment';
 import { AvatarModule } from 'ngx-avatar';
 import { TranslateModule } from '@ngx-translate/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
   {
@@ -30,6 +31,7 @@ const MODULES = [
   IonicModule,
   RouterModule.forChild(routes),
   FontAwesomeModule,
+  ReactiveFormsModule,
   // ScrollingModule,
   AvatarModule,
   ListingPageRoutingModule, // ListingPageRoutingModule

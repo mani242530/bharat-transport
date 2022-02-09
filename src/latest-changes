@@ -1,0 +1,211 @@
+// // 1. sardaji remove and add truck image (vishal)
+// // 2. otp only when register not require when signin
+// // 3. payment option refer image shared by vishal
+// // 4. 20ft container CBT and OPEN - rename as 20ft Container CBT
+// // 5. 32ft Container Single Excel - rename as 32ft Container
+// // 6. merge 20ft / 40ft Container Import and Export - remove 40ft containerImport and export
+// // 7. listing - company name and mobile number - call option
+// // 8. import pune data  
+// // 9. create account - check first mobile exists - YES - pay / home, NO - create account page
+// // 10. edit profile
+
+
+
+// var res1 = data.filter(function(item) {
+//   return item.vehicleType === 'LCV';
+// });
+
+// const res2 = res1.filter((item) => {
+//   return item.firmActivity === 'Booking';
+// });
+
+// function checkThisList(list1,list2){  
+// 	let result  = false; 
+// 	if(list2.split(',').filter(n => list1.split(',').includes(n)).join(',')){
+// 		result = true;
+// 	}
+// 	return result ;
+// }
+
+// var fresult= [];
+// for(let res of res2){
+//   if(checkThisList("CHENNAI,BANGLORE",res.serviceProvidedLocation))
+//   {
+// 	fresult.push(res);
+//   }
+// }
+
+
+
+// LCV, Trailer, Truck (Taurus), Open Trucks, Part Load, ODC, 20ft Container CBT,32ft Container, 20ft/40ft Container (Import and Export)
+
+// console.log(res1);
+
+
+// AGARTALA
+// AGRA
+// AHMEDABAD
+// AHMEDNAGAR
+// AJMER
+// AKOLA
+// ALIGARH
+// ALWAR
+// AMBALA
+// Amravati
+// AMRITSAR
+// ANAND
+// ANGUL
+// ANJAR
+// ANKLESHWAR
+// ASANSOL
+// AURANGABAD
+// BADDI
+// BANGALORE
+// BANGLORE
+// BARAMATI
+// BAREILY
+// BARODA
+// BEAWER
+// BELGAON
+// BELLARY
+// Bengal
+// BETUL
+// BHAVNAGAR
+// BHILAI
+// BHILWADA
+// BHIWANI
+// BHOPAL
+// BHUJ
+// BHUVNESHWAR
+// BIKANER
+// BILASPUR
+// BOKARO
+// CALICUT
+// CHANDIGARH
+// CHANDRAPUR
+// CHENNAI
+// CHHATRAL
+// COCHIN
+// COIMBATORE
+// CUTTACK
+// DARBHANGA
+// Delhi + NCR ALIGARH
+// DEWAS
+// DHANBAD
+// DHULE
+// DURGAPUR
+// ERODE
+// GANDHIDHAM
+// GANJBASODA
+// GORAKHPR
+// GUNTUR
+// GUWAHATI
+// GWALIOR
+// HALDIA
+// HALOL
+// HIMMATNAGAR
+// HISSAR
+// HOLAL
+// HOSPET
+// HOSUR
+// HUBLI
+// HYDERABAD
+// ICHALKARANJI
+// INDORE
+// JABALPUR
+// JAIPUR
+// JALANDHAR
+// JALGAON
+// JALNA
+// JAMMU
+// JAMNAGAR
+// JHANSI
+// JODHPUR
+// KALA-AMB
+// KANPUR
+// KARIMNAGAR
+// KARNAL
+// KATNI
+// KHARAGPUR
+// Kolhapur
+// KOLKATA
+// KORBA
+// KOTA
+// LUCKNOW
+// LUCKNOWMURADABAD
+// LUDHIANA
+// MADURAI
+// MANDI GOBINDGARH
+// MEERUT
+// MEHSANA
+// MORBI
+// MUJJAFARPUR
+// MULTAI
+// MUMBAI
+// MURADABAD
+// MURADABADPRAYAGRAJ
+// MYSORE
+// NAGPUR
+// NAMAKKAL
+// NASHIK
+// NASIRABAD
+// NEEMACH
+// NIZAMABAD
+// NOIDA
+// PAN India
+// PANIPAT
+// PATNA
+// PITHAMPUR
+// PONDICHERRY
+// PRAYAGRAJ
+// PUNE
+// RAICHUR
+// RAIGARH
+// RAIPUR
+// RAJCOAT
+// RAJPURA
+// RAJSTHAN
+// RAMGARH
+// RANCHI
+// RATLAM
+// ROHTAK
+// ROURKELA
+// SAGAR
+// SAHARANPUR
+// SALEM
+// SAMBALPUR
+// SANGLI
+// SATARA
+// SHILLONG
+// SILLIGURI
+// SOLAPUR
+// SRINAGAR
+// SURAT
+// THIRUVANTPURAM
+// THISSUR
+// TINSUKHIYA
+// TIRCHI
+// TIRUPATI
+// UDAIPUR
+// UJJAIN
+// UMERGAON
+// UNJHA
+// VAPI
+// VARANASI
+// VIDISHA
+// VIJAYWADA
+// VISHAKHAPATANAM
+// WARANGAL
+
+
+
+
+
+
+
+
+
+
+AAPP.PREFERED_LOCATION.TIRCHI, APP.PREFERED_LOCATION.RAJASTHAN, 
+APP.PREFERED_LOCATION.MANDI_GOBINDGARH, 
+APP.PREFERED_LOCATION.DAMAN_DIU, APP.PREFERED_LOCATION.MAHANA

@@ -1,0 +1,237 @@
+<ion-header>
+  <!-- <ion-toolbar> -->
+  <div
+    class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple"
+  >
+    <h5 class="font-weight-normal mb-0 text-white">
+      <a class="text-purple" routerLink="/home"
+        ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
+      ></a>
+      <ion-title>{{ "APP.UPDATE_ACCOUNT.HEADER" | translate }}</ion-title>
+    </h5>
+  </div>
+  <ion-progress-bar
+    *ngIf="showProgress"
+    color="warning"
+    type="indeterminate"
+  ></ion-progress-bar>
+  <!-- </ion-toolbar> -->
+</ion-header>
+
+<ion-content id="content" fullscreen>
+  <!-- <cdk-virtual-scroll-viewport
+    class="scroll-viewport"
+    #scroll
+    itemSize="80"
+    minBufferPx="900"
+    maxBufferPx="1350"
+  > -->
+  <div id="sign-UP-button"></div>
+  <div
+    class="
+      osahan-index
+      bg-c
+      align-items-center
+      justify-content-center
+      vh-100
+      index-page
+    "
+  >
+    <div class="px-3 py-3">
+      <form [formGroup]="modifyCompanyForm" #modifyForm>
+        <ion-list>
+
+          <div class="form-group mb-3">
+            <ion-label class="text-muted mb-1">{{
+              'APP.CREATE_ACCOUNT.PLACEHOLDER.COMPANY_NAME' | translate
+            }}<span class="required-field"></span></ion-label>
+            <ion-input
+              class="form-control rc-form-control it-form-control"
+              inputMode="text"
+              clearInput="true"
+              formControlName="companyName"
+              required
+            ></ion-input>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-label class="text-muted mb-1">{{
+              'APP.CREATE_ACCOUNT.PLACEHOLDER.OWNER_NAME' | translate
+            }}<span class="required-field"></span></ion-label>
+            <ion-input
+              class="form-control rc-form-control it-form-control"
+              inputMode="text"
+              clearInput="true"
+              formControlName="ownerName"
+              required
+            ></ion-input>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-label class="text-muted mb-1">{{
+              'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_FIRM_ACTIVITY'
+                | translate
+            }}<span class="required-field"></span></ion-label>
+            <ion-select
+              interface="popover"
+              class="form-control rc-form-control native-select it-form-control"
+              role="combobox"
+              slot
+              formControlName="firmActivity"
+              required
+              placeholder="Select"
+            >
+              <ion-select-option
+                *ngFor="let firmActivity of firmActivitys"
+                selected="false"
+                value="{{ firmActivity | translate }}"
+                title="{{ firmActivity | translate }}"
+                >{{ firmActivity | translate }}</ion-select-option
+              >
+            </ion-select>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-label class="text-muted mb-1">{{
+              'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_LOCATION' | translate
+            }}<span class="required-field"></span></ion-label>
+            <ion-select
+              interface="popover"
+              class="form-control rc-form-control native-select it-form-control"
+              formControlName="location"
+              required
+              placeholder="Select"
+            >
+              <ion-select-option
+                *ngFor="let location of locations"
+                value="{{ location.name | translate }}"
+                title="{{ location.name | translate }}"
+                >{{ location.name | translate }}</ion-select-option
+              >
+            </ion-select>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-label class="text-muted mb-1">{{
+              'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_SERVICE_PROVIDED_LOCATION' | translate
+            }}<span class="required-field"></span></ion-label>
+            <ion-select
+              multiple="true"
+              interface="popover"
+              class="form-control rc-form-control native-select it-form-control"
+              formControlName="serviceProvidedLocation"
+              required
+              placeholder="Select"
+            >
+              <ion-select-option
+                *ngFor="let serviceProvidedLocation of serviceProvidedLocations"
+                value="{{ serviceProvidedLocation.name | translate }}"
+                title="{{ serviceProvidedLocation.name | translate }}"
+                >{{ serviceProvidedLocation.name | translate }}</ion-select-option
+              >
+            </ion-select>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-label class="text-muted mb-1">{{
+              'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_VEHICLE_TYPE'
+                | translate
+            }}<span class="required-field"></span></ion-label>
+            <ion-select
+              multiple="true"
+              class="form-control rc-form-control native-select it-form-control"
+              formControlName="vehicleType"
+              cancelText="cancel"
+              okText="ok"
+              required
+              placeholder="Select"
+            >
+              <ion-select-option
+                *ngFor="let vehicleType of vehicleTypes"
+                selected="false"
+                value="{{ vehicleType | translate }}"
+                title="{{ vehicleType | translate }}"
+                >{{ vehicleType | translate }}</ion-select-option
+              >
+            </ion-select>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-label class="text-muted mb-1">{{
+              'APP.CREATE_ACCOUNT.PLACEHOLDER.MOBILE_NUMBER' | translate
+            }}<span class="required-field"></span></ion-label>
+            <ion-input
+              class="form-control rc-form-control it-form-control"
+              inputMode="tel"
+              clearInput="true"
+              formControlName="mobileNumber"
+              required
+            ></ion-input>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-label class="text-muted mb-1">{{
+              'APP.CREATE_ACCOUNT.PLACEHOLDER.ALTERNATE_MOBILE_NUMBER' | translate
+            }}</ion-label>
+            <ion-input
+              class="form-control rc-form-control it-form-control"
+              inputMode="tel"
+              clearInput="true"
+              formControlName="alternateMobileNumber"
+            ></ion-input>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-label class="text-muted mb-1">{{
+              'APP.CREATE_ACCOUNT.PLACEHOLDER.LANDLINE_NUMBER' | translate
+            }}</ion-label>
+            <ion-input
+              class="form-control rc-form-control it-form-control"
+              inputMode="tel"
+              clearInput="true"
+              formControlName="landlineNumber"
+            ></ion-input>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-label class="text-muted mb-1">{{
+              'APP.CREATE_ACCOUNT.PLACEHOLDER.REFERENCE_NAME' | translate
+            }}<span class="required-field"></span></ion-label>
+            <ion-input
+              class="form-control rc-form-control it-form-control"
+              inputMode="text"
+              clearInput="true"
+              formControlName="referenceName"
+              type="text"
+              required
+            ></ion-input>
+          </div>
+
+        </ion-list>
+        <button
+          type="submit"
+          class="btn btn-purple btn-block osahanbus-btn mt-2"
+          slot="end"
+          fill="clear"
+          [disabled]="!modifyCompanyForm.valid"
+          (click)="doModify()"
+        >
+          {{ "APP.CREATE_ACCOUNT.BUTTON.UPDATE" | translate }}
+        </button>
+      </form>
+      <div
+        class="osahan-signin text-center text-muted p-1"
+        *ngIf="invalidMobilenumber"
+      >
+        <p class="pt-2 text-danger">
+          {{ "APP.CREATE_ACCOUNT.INVALID_MOBILE" | translate }}
+        </p>
+      </div>
+      <div class="osahan-signin text-center text-muted p-1" *ngIf="userExists">
+        <p class="pt-2 text-info">
+          {{ "APP.CREATE_ACCOUNT.MOBILE_EXISTS" | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -17,7 +17,7 @@ export class PaymentPageComponent implements OnInit {
   constructor(private router: Router, private appService: AppService) {}
 
   ngOnInit() {
-    this.appService.otpVerifiedToast();
+    // this.appService.otpVerifiedToast();
   }
 
   payWithRazorpay() {
@@ -45,7 +45,7 @@ export class PaymentPageComponent implements OnInit {
 
     var successCallback = function (payment_id) {
       alert('payment_id: ' + payment_id);
-      this.router.navigate(['/select-vehicle']);
+      // this.router.navigate(['/select-vehicle']);
     };
 
     var cancelCallback = function (error) {

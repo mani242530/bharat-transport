@@ -1,5 +1,4 @@
 <ion-header>
-  <!-- <ion-toolbar> -->
   <div
     class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple"
   >
@@ -10,25 +9,14 @@
       <ion-title>{{ "APP.LISTING.TITLE" | translate }}</ion-title>
     </h5>
     <div class="ml-auto d-flex align-items-center">
-      <!-- <a class="text-white h6 mb-0" routerLink="/home"
-          ><fa-icon icon="search" class="icofont-search-1"></fa-icon
-        ></a>
-        <a
-          href="#"
-          class="mx-4 text-white h6 mb-0"
-          data-toggle="modal"
-          data-target="#filterModal"
-          ><fa-icon icon="filter" class="icofont-filter"></fa-icon
-        ></a> -->
-      <ngx-avatar name="{{ userName }}" size="50"></ngx-avatar>
       <ion-buttons slot="end">
-        <ion-menu-button
-          ><fa-icon icon="bars" class="icofont-navigation-menu"></fa-icon
-        ></ion-menu-button>
+        <a [routerLink]="['/profile/', docId]"><fa-icon icon="user-circle" class="icofont-user-circle"
+        style="color: #ffffff; font-size: 26px;"></fa-icon></a>
+        <a style="margin-left: 20px;"  (click)="doLogout()"><fa-icon icon="sign-out-alt" class="sign-out-alt"
+          style="color: #ffffff; font-size: 26px;"></fa-icon></a>
       </ion-buttons>
     </div>
   </div>
-  <!-- </ion-toolbar> -->
 </ion-header>
 
 <ion-content id="content" fullscreen>
@@ -61,19 +49,15 @@
     </div>
   </div>
 
-  <!-- <ion-grid>
-    <ion-row>
-      <ion-col
-        size="12"
-        margin
-        *ngFor="let company of companys; let i = index"
-        [routerLink]="['/listing-detail/', company.id]"
-        class="text-dark px-0 py-0"
-      > -->
+  <div class="row mx-0 px-1">
+    <div class="col-12 p-0">
+        <ion-searchbar (keyup)="setFilteredItems($event)" placeholder="Filter by Company Name"></ion-searchbar>
+    </div>
+  </div>
+
   <ion-list lines="none" *ngIf="!isLoading">
     <ion-item-sliding
-      *ngFor="let company of companys; let i = index"
-      [routerLink]="['/listing-detail/', company.id]"
+      *ngFor="let company of companyLists; let i = index"
       class="text-dark px-0 py-0"
     >
       <div
@@ -87,50 +71,37 @@
           p-3
         "
       >
+     
         <div class="tic-div mb-2">
-          <p class="mb-0 l-hght-10">{{ company.companyName }}</p>
-          <span class="text-purple small text-small"
-            >{{ company.firstName }} {{ company.lastName }}</span
-          >
+          <small class="text-muted d-block">{{
+            "APP.LISTING.LABEL.COMPANY_NAME" | translate
+          }}</small>
+          <p class="mb-0 l-hght-10">{{ company.companyName }} </p>
+          
         </div>
-        <div class="d-flex">
-          <div class="bus_details w-100">
-            <div class="d-flex l-hght-10">
-              <div>
-                <small class="text-muted d-block">{{
-                  "APP.LISTING.LABEL.FIRM_ACTIVITY" | translate
-                }}</small>
-                <p class="l-hght-10">{{ company.firmActivity }}</p>
-              </div>
-            </div>
-            <div class="d-flex l-hght-10">
-              <div>
-                <small class="text-muted d-block">{{
-                  "APP.LISTING.LABEL.SERVICE_PROVIDING" | translate
-                }}</small>
-                <p class="l-hght-20">{{ company.serviceProviding }}</p>
-              </div>
-            </div>
-            <div class="d-flex l-hght-10">
-              <div>
-                <small class="text-muted d-block">{{
-                  "APP.LISTING.LABEL.LOCATION" | translate
-                }}</small>
-                <p class="l-hght-10">{{ company.location }}</p>
-              </div>
-            </div>
-          </div>
+        <ion-item class="top-border-line">
           <fa-icon
-            icon="angle-double-right"
-            class="angle-double-right"
+            icon="phone-alt"
+            class="phone-alt"
+            style="font-size: 24px; margin-right: 20px; color: #5f259f !important;"
           ></fa-icon>
-        </div>
+          <ion-label>
+            <h2>{{
+              "APP.LISTING.LABEL.MOBILE" | translate
+            }}</h2>
+            <p>
+              {{ company.mobileNumber }}
+            </p>
+          </ion-label>
+          <fa-icon
+              icon="angle-double-right"
+              class="angle-double-right"
+              [routerLink]="['/listing-detail/', company.id]"
+            ></fa-icon>
+        </ion-item>
       </div>
     </ion-item-sliding>
   </ion-list>
-  <!-- </ion-col>
-    </ion-row>
-  </ion-grid> -->
 
   <ion-list lines="none" *ngIf="isLoading">
     <ion-item-sliding *ngFor="let company of companys">

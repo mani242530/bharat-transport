@@ -99,7 +99,7 @@ export class VerificationPageComponent implements OnInit {
               );
               console.log(filteredUser[0].payload.doc.data());
               if (
-                filteredUser[0].payload.doc.data()['paymentStatus'] === 'Paid'
+                filteredUser[0].payload.doc.data()['paymentStatus'] === 'PAID'
               ) {
                 console.log('user did pay');
                 this.router.navigate(['/select-vehicle']);

@@ -37,14 +37,17 @@ export class AppComponent {
               (result) =>
                 result.payload.doc.data()['mobileNumber'] === user.phoneNumber
             );
-            console.log(filteredUser[0].payload.doc.data());
-            if (filteredUser[0].payload.doc.data()) {
-              this.userDetails = filteredUser[0].payload.doc.data();
-              this.username =
-                this.userDetails.firstName + '' + this.userDetails.lastName;
-            } else {
-              console.log('user not found in db');
+            debugger;
+            if(filteredUser.length > 0) {
+              console.log(filteredUser[0].payload.doc.data());
+              if (filteredUser[0].payload.doc.data()) {
+                this.userDetails = filteredUser[0].payload.doc.data();
+                this.username = this.userDetails.companyName ;
+              } else {
+                console.log('user not found in db');
+              }
             }
+            
           });
         this.ngroute.navigate(['select-vehicle']);
       } else {

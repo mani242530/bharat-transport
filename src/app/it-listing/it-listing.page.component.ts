@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabase } from '@angular/fire/database'
 import { ActivatedRoute, Router } from '@angular/router';
 import { IonRouterOutlet, ModalController } from '@ionic/angular';
 import { of } from 'rxjs';
@@ -7,6 +8,8 @@ import { delay } from 'rxjs/operators';
 import { Company } from '../models/contact';
 import { AppService } from '../services/app.servcie';
 import { ToastService } from '../services/toast.service';
+import { FormGroup, FormGroupDirective, FormControl } from '@angular/forms';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-listing',
@@ -15,29 +18,32 @@ import { ToastService } from '../services/toast.service';
 })
 export class ListingPageComponent implements OnInit {
   companys: Company[];
+  finalResultForCompanys: Company[];
+  companyLists: Company[];
   isLoading = true;
   searchParam;
   noresults = false;
   selectedVehicleType: string;
+  searchCompanyModel;
+  docId: string;
 
-  userData;
-  user;
-  userName;
 
   // @ViewChild(CdkVirtualScrollViewport, { static: true })
   // viewport: CdkVirtualScrollViewport;
 
   constructor(
     public modalController: ModalController,
-    private routerOutlet: IonRouterOutlet,
-    private route: ActivatedRoute,
+    private router: ActivatedRoute,
     private appService: AppService,
     public ngroute: Router,
     private fbstore: AngularFirestore,
-    private toastservice: ToastService
+    private toastservice: ToastService,
+    public fbauth: AngularFireAuth,
   ) {
     this.isLoading = true;
-    this.route.queryParams.subscribe((params) => {
+    this.docId = this.appService.docId;
+    this.router.queryParams.subscribe((params) => {
+      console.log(params);
       this.searchParam = params;
       this.searchContactByLocation(this.searchParam);
     });
@@ -51,26 +57,15 @@ export class ListingPageComponent implements OnInit {
     return item.id;
   }
 
-  // searchContactByLocation(params) {
-  // this.dataService.searchContactByLocation().subscribe((data: any) => {
-  //   if (data.length > 0) {
-  //     const filtereddata = data.filter(
-  //       (x) => x.location == params.from || x.location === params.to
-  //     );
-  //     const filteredVehicle = filtereddata.filter(
-  //       (v) => (v.serviceProviding = this.selectedVehicleType)
-  //     );
-  //     if (filteredVehicle.length > 0) {
-  //       this.showLoading = false;
-  //       this.noresults = false;
-  //       this.companys = filteredVehicle;
-  //     } else {
-  //       this.showLoading = false;
-  //       this.noresults = true;
-  //     }
-  //   }
-  // });
-  // }
+  checkThisList(list1,list2){  
+    let result  = false; 
+    var hasValue = list2.indexOf(list1) != -1;
+    if(hasValue){
+    result = true;
+    }
+    
+    return result ;
+    }
 
   async searchContactByLocation(params) {
     try {
@@ -78,51 +73,58 @@ export class ListingPageComponent implements OnInit {
         .collection('companys')
         .snapshotChanges()
         .subscribe((data) => {
-          // if (data.length > 0) {
-          //   const filtereddata = data.filter(
-          //     (x) => x.location == params.from || x.location === params.to
-          //   );
-          //   const filteredVehicle = filtereddata.filter(
-          //     (v) => (v.serviceProviding = this.selectedVehicleType)
-          //   );
-          //   if (filteredVehicle.length > 0) {
-          //     this.isLoading = false;
-          //     this.noresults = false;
-          //     this.companys = filteredVehicle;
-          //   } else {
-          //     this.isLoading = false;
-          //     this.noresults = true;
-          //   }
-          // }
-          const filteredLocation = data.filter(
-            (result) =>
-              result.payload.doc.data()['location'] === params.from ||
-              result.payload.doc.data()['location'] === params.to
-          );
-          // const filteredVehicleType = filteredLocation.filter((result) =>
-          //   result.payload.doc
-          //     .data()
-          //     ['serviceProviding'].includes(this.selectedVehicleType)
-          // );
-          // people.filter(person => id_filter.includes(person.id))
 
-          if (filteredLocation.length > 0) {
+          // VEHICLE TYPE
+          let fresult= [];
+          let sresult = [];
+          for(let res of data){
+              if(this.checkThisList(this.selectedVehicleType, res.payload.doc.data()['vehicleType']))
+              {
+                fresult.push(res);
+              }
+          }
+
+          // FROM LOCATION
+          const locresult = fresult.filter(function(item) {
+            return item.payload.doc.data()['location'] === params.from;
+          });
+
+          // TO LOCATION
+          let serviceresult= [];
+          for(let lres of locresult){
+              if(this.checkThisList(params.to, lres.payload.doc.data()['serviceProvidedLocation']))
+              {
+                serviceresult.push(lres);
+              }
+          }
+
+          // FIRM ACTIVITY
+          const activityresult = serviceresult.filter(function(item) {
+            return item.payload.doc.data()['firmActivity'] === params.firmActivity;
+          });
+
+          if (activityresult.length > 0) {
+            console.log(activityresult);
             this.noresults = false;
-            this.companys = data.map((result) => {
+            this.companys = activityresult.map((result) => {
               return {
                 id: result.payload.doc.id,
-                firstName: result.payload.doc.data()['firstName'],
-                lastName: result.payload.doc.data()['lastName'],
                 companyName: result.payload.doc.data()['companyName'],
+                ownerName: result.payload.doc.data()['ownerName'],
                 firmActivity: result.payload.doc.data()['firmActivity'],
-                serviceProviding: result.payload.doc
+                vehicleType: result.payload.doc
                   .data()
-                  ['serviceProviding'].toString(),
+                  ['vehicleType'],
                 landlineNumber: result.payload.doc.data()['landlineNumber'],
                 mobileNumber: result.payload.doc.data()['mobileNumber'],
+                alternateMobileNumber: result.payload.doc.data()['alternateMobileNumber'],
                 location: result.payload.doc.data()['location'],
+                serviceProvidedLocation: result.payload.doc.data()['serviceProvidedLocation'],
+                referenceName: result.payload.doc.data()['referenceName'],
               };
             });
+            this.companyLists = this.companys;
+            this.finalResultForCompanys = this.companys;
           } else {
             this.noresults = true;
           }
@@ -136,7 +138,21 @@ export class ListingPageComponent implements OnInit {
         });
     } catch (error) {
       this.toastservice.showToast(error.message, 2000);
-      console.log(error.message);
     }
+  }
+
+  async setFilteredItems(event) {
+    console.log('before', this.finalResultForCompanys);
+    const searchCompanyResult = this.finalResultForCompanys;
+    const duplicateResult = searchCompanyResult.filter(item => item.companyName.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1);
+    this.companyLists = duplicateResult;
+    console.log('after', this.companyLists);
+  }
+
+  async doLogout(): Promise<void> {
+    await this.fbauth.signOut().then(() => {
+      this.appService.selectedLanguage = '';
+      this.ngroute.navigate(['splash']);
+    });
   }
 }

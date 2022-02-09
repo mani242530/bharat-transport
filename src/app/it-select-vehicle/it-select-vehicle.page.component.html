@@ -17,9 +17,10 @@
       <ngx-avatar name="{{ userName }}" size="50"></ngx-avatar>
 
       <ion-buttons slot="end">
-        <ion-menu-button
-          ><fa-icon icon="bars" class="icofont-navigation-menu"></fa-icon
-        ></ion-menu-button>
+        <a [routerLink]="['/profile/', docId]"><fa-icon icon="user-circle" class="icofont-user-circle"
+        style="color: #ffffff; font-size: 26px;"></fa-icon></a>
+        <a style="margin-left: 20px;"  (click)="doLogout()"><fa-icon icon="sign-out-alt" class="sign-out-alt"
+          style="color: #ffffff; font-size: 26px;"></fa-icon></a>
       </ion-buttons>
     </div>
   </div>
@@ -65,10 +66,10 @@
               id="vehicleType"
               (click)="selectVehicleType(vehicleType)"
             >
-              <img src="assets/img/listing/item1.png" class="img-fluid" />
+              <img src="assets/images/{{vehicleType.img}}.png" class="img-fluid" />
             </div>
             <p class="l-hght-10 text-center text-black mb-2">
-              {{ vehicleType | translate }}
+              {{ vehicleType.name | translate }}
             </p>
           </ion-col>
         </ion-row>

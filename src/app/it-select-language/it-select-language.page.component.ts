@@ -14,41 +14,55 @@ export class SelectLanguagePageComponent implements OnInit {
       id: 'en',
       name: 'ENGLISH',
       description: 'ENGLISH',
+      img: 'english'
     },
     {
       id: 'hi',
       name: 'हिंदी',
       description: 'HINDI',
+      img: 'hindi'
     },
     {
       id: 'ma',
       name: 'मराठी',
       description: 'MARATHI',
+      img: 'marathi'
     },
     {
       id: 'gu',
       name: 'ગુજરાતી',
       description: 'GUJARATI',
+      img: 'gujarati'
     },
     {
       id: 'tn',
       name: 'தமிழ்',
       description: 'TAMIL',
+      img: 'tamil'
     },
     {
       id: 'tl',
       name: 'తెలుగు',
       description: 'TELUGU',
+      img: 'telugu'
     },
     {
       id: 'ka',
       name: 'ಕೆನಡಾ',
       description: 'KANADA',
+      img: 'kanada'
     },
     {
       id: 'ml',
       name: 'മലയാളം',
       description: 'MALAYALAM',
+      img: 'malayalam'
+    },
+    {
+      id: 'pn',
+      name: 'മലയാളം',
+      description: 'PUNJABI',
+      img: 'telugu'
     },
   ];
   constructor(

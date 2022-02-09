@@ -33,6 +33,8 @@ export class SignInPageComponent implements OnInit {
   showProgress = false;
   invalidMobilenumber = false;
   mobileNumberNotFound = false;
+  tryagain: string;
+  authfbObserver;
 
   signInForm: FormGroup;
   @ViewChild('signIn') signIn: FormGroupDirective;
@@ -79,45 +81,50 @@ export class SignInPageComponent implements OnInit {
 
   signinWithPhoneNumber(formvalue) {
     this.showProgress = true;
+    const mobileNumber = this.CountryCode + formvalue.mobileNumber
     if (formvalue.mobileNumber.length === 10) {
-      return new Promise<any>((resolve, reject) => {
-        this.mobileNumberNotFound = false;
-        const mobile = this.CountryCode + formvalue.mobileNumber;
-        const loggedInUser = this.appService.loggedInUser(mobile);
+      this.authfbObserver = this.fbauth.authState.subscribe((user) => {
+        // if (user) {
+          this.fbstore
+            .collection('companys')
+            .snapshotChanges()
+            .subscribe((data) => {
+              const filteredUser = data.filter(
+                (result) =>
+                  result.payload.doc.data()['mobileNumber'] === mobileNumber
+              );
+              if(filteredUser.length > 0) {
+                console.log(filteredUser[0].payload.doc.data());
+                if (filteredUser[0].payload.doc.data()) {
+                  this.appService.docId = filteredUser[0].payload.doc.id;
+                  console.log(filteredUser[0].payload.doc.id);
+                  if (
+                    filteredUser[0].payload.doc.data()['paymentStatus'] === 'PAID'
+                  ) {
+                    console.log('user did pay');
+                    this.showProgress = false;
+                    this.mobileNumberNotFound = false;
+                   
+                    this.router.navigate(['/select-vehicle']);
+                  } else {
+                    console.log('user did not pay');
+                    this.showProgress = false;
+                    this.mobileNumberNotFound = false;
+                    this.router.navigate(['/payment']);
+                  }
 
-        console.log(loggedInUser);
-
-        if (loggedInUser) {
-          this.authtenticationService
-            .signInWithPhoneNumber(
-              this.recaptchaVerifier,
-              this.CountryCode + formvalue.mobileNumber
-            )
-            .then((success) => {
-              this.showProgress = false;
-              this.invalidMobilenumber = false;
-              const authfbObserver = this.fbauth.authState.subscribe((user) => {
-                console.log(user);
-                // if (user) {
-                this.mobileNumberNotFound = false;
-                this.router.navigate(['/verification']);
-                resolve(success);
-                // } else {
-                //   this.mobileNumberNotFound = false;
-                // }
-              });
-            })
-            .catch((error) => {
-              this.showProgress = false;
-              this.mobileNumberNotFound = false;
-              this.invalidMobilenumber = true;
-              reject(error);
+                } else {
+                  this.showProgress = false;
+                  this.mobileNumberNotFound = true;
+                  console.log('user not found in db');
+                }
+              } else {
+                this.showProgress = false;
+                this.mobileNumberNotFound = true;
+                console.log('user not found in db');
+              }
+              
             });
-        } else {
-          this.mobileNumberNotFound = true;
-          console.log('Mobile number not found in db');
-        }
-        // });
       });
     }
   }

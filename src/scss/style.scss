@@ -118,7 +118,7 @@
   padding: 5px 10px !important;
   height: 35px !important;
 }
-.icofont-navigation-menu {
+.icofont-sign-out-alt{
   color: #ffffff;
 }
 .input-wrapper {
@@ -217,7 +217,8 @@
 }
 
 .map-marker-alt,
-.search-location {
+.search-location,
+.building {
   margin-right: 5px;
   color: #5f259f !important;
 }
@@ -248,4 +249,23 @@
   font-size: 18px !important;
   height: 40px !important;
   margin-bottom: 10px;
+}
+
+.wrapper {
+  padding: 0px !important;
+}
+.required-field::before {
+  content: "*";
+  color: red;
+}
+
+.location-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+.item-native {
+  padding: 0px !important;
 }

@@ -1,25 +1,13 @@
 export class Company {
   id: string;
-  firstName: string;
-  lastName: string;
   companyName: string;
+  ownerName: string;
   firmActivity: string;
-  serviceProviding: string[];
+  vehicleType: string[];
   landlineNumber: string;
   mobileNumber: string;
+  alternateMobileNumber: string;
   location: string;
-}
-
-export enum ContactCategory {
-  FRIEND = 'Friend',
-  FAMILY = 'Family',
-}
-
-export class Contact {
-  id: string;
-  firstName: string;
-  lastName: string;
-  phone: string;
-  email: string;
-  category: ContactCategory;
+  serviceProvidedLocation: string[];
+  referenceName: string;
 }

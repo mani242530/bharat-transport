@@ -39,7 +39,7 @@
         <div class="p-0">
           <!-- Select Payment -->
           <div class="payment-borrad bg-white m-0 p-3">
-            <div class="border p-3">
+            <div class="border p-3 mb-2">
               <div
                 class="
                   w-100
@@ -61,23 +61,17 @@
                 >
                   <a class="d-flex align-items-start">
                     <div class="">
-                      <p class="mb-0 text-dark">
-                        {{ "APP.PAYMENT.LABEL.MASTERCARD" | translate }} / Visa
-                        / Rupay
-                      </p>
-                      <small class="text-muted">{{
-                        "APP.PAYMENT.TEXT.PAY_FROM_MASTERCARD" | translate
-                      }}</small>
+                      <fa-icon icon="rupee-sign" class="rupee-sign" style="color: #5f259f !important; font-size: 18px;"></fa-icon>
+                      <span class="mb-0 text-muted" style="font-size: 32px;">
+                        Rs. 299/-
+                      </span>
+                      <p class="text-muted" style="font-size: 14px;">Charged Quarterly. Non-Refundable</p>
                     </div>
-                    <img
-                      src="assets/img/master.png"
-                      class="img-fluid rounded ml-auto"
-                    />
                   </a>
                 </label>
               </div>
             </div>
-            <div class="border p-3">
+            <div class="border p-3 mb-2">
               <div
                 class="
                   w-100
@@ -98,17 +92,43 @@
                 >
                   <a class="d-flex align-items-start">
                     <div class="">
-                      <p class="mb-0 text-dark">
-                        {{ "APP.PAYMENT.LABEL.NET_BANKING" | translate }}
-                      </p>
-                      <small class="text-muted">{{
-                        "APP.PAYMENT.TEXT.PAY_FROM_BANK" | translate
-                      }}</small>
+                      <fa-icon icon="rupee-sign" class="rupee-sign" style="color: #5f259f !important; font-size: 18px;"></fa-icon>
+                      <span class="mb-0 text-muted" style="font-size: 32px;">
+                        Rs. 499/-
+                      </span>
+                      <p class="text-muted" style="font-size: 14px;">Charged Half yearly. Non-Refundable</p>
                     </div>
-                    <img
-                      src="assets/img/visa.png"
-                      class="img-fluid rounded ml-auto"
-                    />
+                  </a>
+                </label>
+              </div>
+            </div>
+            <div class="border p-3 mb-2">
+              <div
+                class="
+                  w-100
+                  visa
+                  custom-control custom-radio custom-control-inline
+                  mr-0
+                "
+              >
+                <input
+                  type="radio"
+                  id="customRadiovisa1"
+                  name="customRadiocard1"
+                  class="custom-control-input"
+                />
+                <label
+                  class="custom-control-label small w-100"
+                  for="customRadiovisa1"
+                >
+                  <a class="d-flex align-items-start">
+                    <div class="">
+                      <fa-icon icon="rupee-sign" class="rupee-sign" style="color: #5f259f !important; font-size: 18px;"></fa-icon>
+                      <span class="mb-0 text-muted" style="font-size: 32px;">
+                        Rs. 999/-
+                      </span>
+                      <p class="text-muted" style="font-size: 14px;">Charged Yearly. Non-Refundable</p>
+                    </div>
                   </a>
                 </label>
               </div>
@@ -119,106 +139,34 @@
       <!-- Select Payment -->
       <div class="payment-borrad bg-white m-0 p-3">
         <div class="d-flex small">
-          <p>{{ "APP.PAYMENT.TEXT.TOTAL_PAYABLE" | translate }}</p>
-          <p class="ml-auto font-weight-bold text-danger">
+          <p style="font-size: 18px;">{{ "APP.PAYMENT.TEXT.TOTAL_PAYABLE" | translate }}</p>
+          <p class="ml-auto font-weight-bold text-purple" style="font-size: 24px;">
             {{ "APP.PAYMENT.TEXT.AMOUNT" | translate }}
           </p>
         </div>
-        <div class="small">
-          <div class="form-group row mb-3">
-            <div class="d-flex align-items-start">
-              <label for="exampleInputEmail1" class="mb-1 small text-label">{{
-                "APP.PAYMENT.LABEL.CARD_NUMBER" | translate
-              }}</label>
-              <img
-                src="assets/img/master-card.png"
-                class="img-fluid ml-auto rounded"
-              />
-            </div>
-            <div class="d-flex align-items-start">
-              <input
-                type="number"
-                class="form-control form-control-sm px-1 it-form-control"
-                placeholder="{{ 'APP.PAYMENT.PLACEHOLDER.NUMBER' | translate }}"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-              />
-            </div>
-          </div>
-          <div class="form-group row mb-3">
-            <div class="col-8">
-              <label for="exampleInputmondate1" class="mb-1 small text-label">{{
-                "APP.PAYMENT.LABEL.DATE" | translate
-              }}</label>
-              <div class="d-flex border rounded">
-                <input
-                  type="number"
-                  class="
-                    form-control
-                    text-center
-                    form-control-sm
-                    border-0
-                    px-1
-                    it-form-control
-                  "
-                  placeholder="{{ 'APP.PAYMENT.PLACEHOLDER.DD' | translate }}"
-                  id="exampleInputmondate1"
-                  aria-describedby="mondateHelp"
-                />
-                <span class="pt-2">/</span>
-                <input
-                  type="number"
-                  class="
-                    form-control
-                    text-center
-                    form-control-sm
-                    border-0
-                    px-1
-                    it-form-control
-                  "
-                  placeholder="{{ 'APP.PAYMENT.PLACEHOLDER.MM' | translate }}"
-                  id="exampleInputmondate1"
-                  aria-describedby="mondateHelp"
-                />
-              </div>
-            </div>
-            <div class="col-4">
-              <label for="exampleInputcvv1" class="mb-1 small text-muted">{{
-                "APP.PAYMENT.LABEL.CVV" | translate
-              }}</label>
-              <input
-                type="number"
-                class="form-control text-center form-control-sm it-form-control"
-                placeholder="{{ 'APP.PAYMENT.PLACEHOLDER.CVV' | translate }}"
-                id="exampleInputcvv1"
-                aria-describedby="cvvHelp"
-              />
-            </div>
-          </div>
+      </div>
 
-          <div class="form-group row mb-3">
-            <div class="col-12">
-              <button
-                type="submit"
-                class="btn btn-purple btn-block"
-                data-toggle="modal"
-                data-target="#paymentModal"
-                routerLink="/select-vehicle"
-              >
-                {{ "APP.PAYMENT.BUTTON.PAY" | translate }}
-              </button>
-              <button
+    <div class="osahan-fotter fixed-bottom px-3 py-3">
+      <div class="col-12">
+        <button
+          type="submit"
+          class="btn btn-purple btn-block"
+          data-toggle="modal"
+          data-target="#paymentModal"
+          routerLink="/select-vehicle"
+        >
+          {{ "APP.PAYMENT.BUTTON.PAY" | translate }}
+        </button>
+              <!-- <button
                 type="submit"
                 class="btn btn-purple btn-block"
                 style="padding-left: 2%"
                 (click)="payWithRazorpay()"
               >
                 LIVE TEST {{ "APP.PAYMENT.BUTTON.PAY" | translate }}
-              </button>
-            </div>
-          </div>
-        </div>
+              </button> -->
       </div>
+    </div>
     </div>
   </div>
 </ion-content>

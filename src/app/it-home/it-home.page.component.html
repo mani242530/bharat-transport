@@ -4,7 +4,7 @@
     class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple"
   >
     <h5 class="font-weight-normal mb-0 text-white">
-      <a class="text-purple"
+      <a class="text-purple" routerLink="/select-vehicle"
         ><fa-icon
           icon="bus"
           class="icofont-truck text-white h2 bg-purple p-2 rounded-circle"
@@ -13,12 +13,12 @@
       <ion-title>{{ "APP.HOME.BUTTON.SEARCH" | translate }}</ion-title>
     </h5>
     <div class="ml-auto d-flex align-items-center">
-      <ngx-avatar name="{{ userName }}" size="50"></ngx-avatar>
 
       <ion-buttons slot="end">
-        <ion-menu-button
-          ><fa-icon icon="bars" class="icofont-navigation-menu"></fa-icon
-        ></ion-menu-button>
+        <a [routerLink]="['/profile/', docId]"><fa-icon icon="user-circle" class="icofont-user-circle"
+        style="color: #ffffff; font-size: 26px;"></fa-icon></a>
+        <a style="margin-left: 20px;"  (click)="doLogout()"><fa-icon icon="sign-out-alt" class="sign-out-alt"
+          style="color: #ffffff; font-size: 26px;"></fa-icon></a>
       </ion-buttons>
     </div>
   </div>
@@ -91,11 +91,42 @@
                 required
               >
                 <ion-select-option
-                  *ngFor="let location of locations"
+                  *ngFor="let location of serviceProvidedLocations"
                   value="{{ location.name | translate }}"
                   title="{{ location.name | translate }}"
                   >{{ location.name | translate }}</ion-select-option
                 >
+              </ion-select>
+            </div>
+          </div>
+          <div class="form-group border-bottom">
+            <fa-icon icon="building" class="building"></fa-icon>
+            <label for="exampleFormControlSelect1" class="mb-2"
+              ><span class="icofont-google-map text-purple"></span>
+              {{ "APP.HOME.LABEL.FIRM_ACTIVITY" | translate }}</label
+            ><br />
+            <div class="form-group mb-3">
+              <ion-select
+                interface="popover"
+                class="
+                  form-control
+                  rc-form-control
+                  native-select
+                  it-form-control
+                "
+                placeholder="{{
+                  'APP.HOME.PLACEHOLDER.SELECT_FIRM_ACTIVITY' | translate
+                }}"
+                formControlName="firmActivity"
+                required
+              >
+              <ion-select-option
+                *ngFor="let firmActivity of firmActivitys"
+                selected="false"
+                value="{{ firmActivity | translate }}"
+                title="{{ firmActivity | translate }}"
+                >{{ firmActivity | translate }}</ion-select-option
+              >
               </ion-select>
             </div>
           </div>
@@ -112,55 +143,29 @@
     </div>
     <div class="p-3 bg-warning">
       <div class="row m-0">
-        <div class="col-6 py-1 pr-1 pl-0">
+        <div class="col-12 py-1 pr-1 pl-0">
           <div class="p-3 bg-white shadow-sm rounded-1">
-            <img class="img-fluid" src="assets/img/safe-vehicles.svg" alt="" />
+            <!-- <img class="img-fluid" src="assets/images/ad1.jpg" alt="" /> -->
             <p class="mb-0 mt-4 font-weight-bold">
-              {{ "APP.HOME.TEXT.SAFE_AND_HYGEINIC" | translate }}<br />{{
-                "APP.HOME.TEXT.VEHICLES" | translate
-              }}
+             Advertisement Panel
             </p>
           </div>
-        </div>
-        <div class="col-6 py-1 pl-1 pr-0">
+        </div> 
+      </div>
+      <div class="row m-0">
+        <div class="col-12 py-1 pl-1 pr-0">
           <div class="p-3 bg-white shadow-sm rounded-1">
-            <img
+            <!-- <img
               class="img-fluid"
-              src="assets/img/customer-support.svg"
+              src="assets/images/ad2.jpg"
               alt=""
-            />
+            /> -->
             <p class="mb-0 mt-4 font-weight-bold">
-              {{ "APP.HOME.TEXT.BEST_CUSTOMER" | translate }}<br />{{
-                "APP.HOME.TEXT.CARE_SUPPORT" | translate
-              }}
-            </p>
-          </div>
-        </div>
-        <div class="col-6 py-1 pr-1 pl-0">
-          <div class="p-3 bg-white shadow-sm rounded-1">
-            <img class="img-fluid" src="assets/img/live-tracking.svg" alt="" />
-            <p class="mb-0 mt-4 font-weight-bold">
-              {{ "APP.HOME.TEXT.LIVE_TRACK" | translate }}<br />{{
-                "APP.HOME.TEXT.JOURNEY" | translate
-              }}
-            </p>
-          </div>
-        </div>
-        <div class="col-6 py-1 pl-1 pr-0">
-          <div class="p-3 bg-white shadow-sm rounded-1">
-            <img
-              class="img-fluid"
-              src="assets/img/verified-drivers.svg"
-              alt=""
-            />
-            <p class="mb-0 mt-4 font-weight-bold">
-              {{ "APP.HOME.TEXT.VERIFIED_DRIVERS" | translate }}<br />{{
-                "APP.HOME.TEXT.AND_VEHICLES" | translate
-              }}
-            </p>
+              Advertisement Panel
+             </p>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div>ß
 </ion-content>

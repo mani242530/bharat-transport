@@ -51,7 +51,7 @@
               autofocus="true"
               maxlength="10"
               minlength="10"
-              placeholder="Ex: 1234567890"
+              placeholder="Ex: 9900000000"
             ></ion-input>
           </div>
         </ion-list>
@@ -88,15 +88,14 @@
         </p>
       </div>
     </div>
-    <div class="osahan-signin text-center p-1" *ngIf="invalidMobilenumber">
+    <!-- <div class="osahan-signin text-center p-1" *ngIf="invalidMobilenumber">
       <p class="m-5 pt-2 text-danger">
-        Invalid mobile number. Please check and try again.
+        {{ tryagain }}
       </p>
-    </div>
+    </div> -->
     <div class="osahan-signin text-center p-1" *ngIf="mobileNumberNotFound">
       <p class="m-5 pt-2 text-danger">
-        Sorry! Mobile number is not registered with us. Please Sign Up to create
-        account
+        Sorry! Your mobile number is not registered with us. Please sign up to create account
       </p>
     </div>
   </div>

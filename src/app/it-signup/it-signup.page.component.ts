@@ -10,6 +10,7 @@ import {
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import * as location from '../json/location';
+import * as serviceProvidedLocation from '../json/service-provided-location';
 import { Company } from '../models/contact';
 import { ToastService } from '../services/toast.service';
 import firebase from 'firebase/app';
@@ -47,14 +48,23 @@ export class SignUpPageComponent implements OnInit {
     'APP.VEHICLE_TYPE.TRAILER',
     'APP.VEHICLE_TYPE.TRUCK',
     'APP.VEHICLE_TYPE.OPEN_TRUCK',
+    'APP.VEHICLE_TYPE.PART_LOAD',
+    'APP.VEHICLE_TYPE.ODC',
     'APP.VEHICLE_TYPE.20_FT_CBT',
     'APP.VEHICLE_TYPE.32_FT_SINGLE_EXCEL',
     'APP.VEHICLE_TYPE.20_FT_IMPORT_EXPORT',
-    'APP.VEHICLE_TYPE.40_FT_IMPORT_EXPORT',
-    'APP.VEHICLE_TYPE.32_FT_MULTI_AXLE',
+  ];
+
+  firmActivitys = [
+    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.FREIGHT',
+    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.BOOKING',
+    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.SUPPLIER',
+    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.OWNER',
+    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.DRIVER'
   ];
 
   locations = [];
+  serviceProvidedLocations = [];
 
   constructor(
     public addnewFormbuilder: FormBuilder,
@@ -67,39 +77,29 @@ export class SignUpPageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.locations = location.locationData;
+    const serviceLocations = serviceProvidedLocation.serviceProvidedLocationData
+    this.locations = serviceLocations.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
+    this.serviceProvidedLocations = serviceLocations.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
+
+    this.firmActivitys = this.firmActivitys.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
+    this.vehicleTypes = this.vehicleTypes.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
     this.initializeForm();
   }
 
   initializeForm(): void {
     this.createCompanyForm = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
       companyName: new FormControl('', Validators.required),
+      ownerName: new FormControl('', Validators.required),
       firmActivity: new FormControl('', Validators.required),
-      serviceProviding: new FormControl('', Validators.required),
+      vehicleType: new FormControl('', Validators.required),
       landlineNumber: new FormControl(''),
       mobileNumber: new FormControl('', Validators.required),
+      alternateMobileNumber: new FormControl(''),
       location: new FormControl('', Validators.required),
+      serviceProvidedLocation: new FormControl('', Validators.required),
+      referenceName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z \-\']+')]),
     });
   }
-
-  // createCompany(values: any) {
-  //   // copy all the form values into the new contact
-  //   const newCompany: Company = { ...values };
-  //   console.log(newCompany);
-  //   this.dataService.createContact(newCompany);
-  //   this.presentModal();
-  // }
-
-  // async presentModal() {
-  //   this.myModal = await this.modalController.create({
-  //     component: AccountSuccessModalComponent,
-  //     swipeToClose: true,
-  //     backdropDismiss: true,
-  //   });
-  //   return await this.myModal.present();
-  // }
 
   async ionViewDidEnter() {
     this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
@@ -126,16 +126,18 @@ export class SignUpPageComponent implements OnInit {
   async createCompany(formGroup: FormGroup) {
     this.showProgress = true;
     const companyObj = {
-      firstName: this.createCompanyForm.get('firstName').value,
-      lastName: this.createCompanyForm.get('lastName').value,
       companyName: this.createCompanyForm.get('companyName').value,
+      ownerName: this.createCompanyForm.get('ownerName').value,
       firmActivity: this.createCompanyForm.get('firmActivity').value,
-      serviceProviding: this.createCompanyForm.get('serviceProviding').value,
+      vehicleType: this.createCompanyForm.get('vehicleType').value,
       landlineNumber: this.createCompanyForm.get('landlineNumber').value,
       mobileNumber: '+91' + this.createCompanyForm.get('mobileNumber').value,
+      alternateMobileNumber: '+91' + this.createCompanyForm.get('alternateMobileNumber').value,
       location: this.createCompanyForm.get('location').value,
+      serviceProvidedLocation: this.createCompanyForm.get('serviceProvidedLocation').value,
+      referenceName: this.createCompanyForm.get('referenceName').value,
       language: this.appservice.selectedLanguage,
-      paymentStatus: 'Not Paid',
+      paymentStatus: 'NOT PAID',
     };
     Object.keys(companyObj).forEach((k) => {
       if (typeof companyObj[k] !== 'object') {

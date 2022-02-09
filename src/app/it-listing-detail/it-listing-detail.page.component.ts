@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Company } from '../models/contact';
+import { AppService } from '../services/app.servcie';
 import { ToastService } from '../services/toast.service';
 
 @Component({
@@ -15,19 +17,22 @@ export class ListingDetailPageComponent implements OnInit {
   company;
   sub1: Subscription;
   paramId: string;
-  serviceProviding: string;
+  vehicleType: string;
   isLoading = true;
 
   userData;
   user;
   userName;
+  docId: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private toastservice: ToastService,
     public ngroute: Router,
-    private fbstore: AngularFirestore
+    private fbstore: AngularFirestore,
+    public appService: AppService,  public fbauth: AngularFireAuth
   ) {
+    this.docId = this.appService.docId;
     this.paramId = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
@@ -45,7 +50,7 @@ export class ListingDetailPageComponent implements OnInit {
           if (!result) {
             this.ngroute.navigate(['/listing']);
           } else {
-            this.serviceProviding = result['serviceProviding']
+            this.vehicleType = result['vehicleType']
               .toString()
               .split(',')
               .join('\n');
@@ -58,5 +63,10 @@ export class ListingDetailPageComponent implements OnInit {
     }
   }
 
-  ngOnDestroy() {}
+  async doLogout(): Promise<void> {
+    await this.fbauth.signOut().then(() => {
+      this.appService.selectedLanguage = '';
+      this.ngroute.navigate(['splash']);
+    });
+  }
 }
