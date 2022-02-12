@@ -74,32 +74,7 @@ const routes: Routes = [
       import('./it-profile/it-profile.module').then(
         (p) => p.ProfilePageModule
       ),
-  },
-  // {
-  //   path: 'home',
-  //   loadChildren: () =>
-  //     import('./home/home.module').then((m) => m.HomePageModule),
-  // },
-  // {
-  //   path: 'login',
-  //   loadChildren: () =>
-  //     import('./login/login.module').then((m) => m.LoginPageModule),
-  // },
-  // {
-  //   path: 'signup',
-  //   loadChildren: () =>
-  //     import('./signup/signup.module').then((m) => m.SignupPageModule),
-  // },
-  // {
-  //   path: 'modify/:id',
-  //   loadChildren: () =>
-  //     import('./modify/modify.module').then((m) => m.ModifyPageModule),
-  // },
-  // {
-  //   path: 'addnew',
-  //   loadChildren: () =>
-  //     import('./addnew/addnew.module').then((m) => m.AddnewPageModule),
-  // },
+  }
 ];
 
 @NgModule({

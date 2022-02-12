@@ -18,7 +18,8 @@
         "ALTERNATE_MOBILE_NUMBER": "மாற்று மொபைல் எண்",       
         "REFERENCE_NAME": "குறிப்பு பெயர்",
         "OR": "அல்லது",
-        "ALREADY_A_MEMBER": "ஏற்கனவே உறுப்பினர் ?"
+        "ALREADY_A_MEMBER": "ஏற்கனவே உறுப்பினர் ?",
+        "SELECT_LANGUAGE": "Language"
       },
       "SELECT": {
         "FIRM_ACTIVITY": {
@@ -107,7 +108,7 @@
       }
     },
     "LISTING": {
-      "TITLE": "தேடு",
+      "TITLE": "Search Results",
       "LABEL": {
         "GOING_FROM": "இருந்து செல்கிறது",
         "GOING_TO": "போகிறது",

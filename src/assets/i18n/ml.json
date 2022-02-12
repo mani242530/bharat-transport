@@ -18,7 +18,8 @@
         "ALTERNATE_MOBILE_NUMBER": "ഓപ്ഷണൽ മൊബൈൽ നമ്പർ",       
         "REFERENCE_NAME": "റഫറൻസ് ബോട്ട്",
         "OR": "അഥവാ",
-        "ALREADY_A_MEMBER": "ഇതിനകം അംഗമാണോ ?"
+        "ALREADY_A_MEMBER": "ഇതിനകം അംഗമാണോ ?",
+        "SELECT_LANGUAGE": "Language"
       },
       "SELECT": {
         "FIRM_ACTIVITY": {
@@ -107,7 +108,7 @@
       }
     },
     "LISTING": {
-      "TITLE": "തിരയുക",
+      "TITLE": "Search Results",
       "LABEL": {
         "GOING_FROM": "നിന്ന് പോകുന്നു",
         "GOING_TO": "GOING_TO",

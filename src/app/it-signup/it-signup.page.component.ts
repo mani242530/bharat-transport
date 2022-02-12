@@ -186,7 +186,7 @@ export class SignUpPageComponent implements OnInit {
           }
         } else {
           this.showProgress = false;
-          this.userRegisteredAlreadyToast();
+          // this.userRegisteredAlreadyToast();
           this.userExists = true;
         }
       });

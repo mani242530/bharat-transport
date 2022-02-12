@@ -18,7 +18,8 @@
         "ALTERNATE_MOBILE_NUMBER": "ప్రత్యామ్నాయ మొబైల్ నంబర్",       
         "REFERENCE_NAME": "సూచన పేరు",
         "OR": "లేదా",
-        "ALREADY_A_MEMBER": "ఇప్పటికే సభ్యులుగా ఉన్నారా ?"
+        "ALREADY_A_MEMBER": "ఇప్పటికే సభ్యులుగా ఉన్నారా ?",
+        "SELECT_LANGUAGE": "Language"
       },
       "SELECT": {
         "FIRM_ACTIVITY": {
@@ -107,7 +108,7 @@
       }
     },
     "LISTING": {
-      "TITLE": "వెతకండి",
+      "TITLE": "Search Results",
       "LABEL": {
         "GOING_FROM": "నుండి వెళ్తున్నారు",
         "GOING_TO": "వెళ్తున్నారు",

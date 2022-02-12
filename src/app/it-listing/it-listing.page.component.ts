@@ -145,6 +145,10 @@ export class ListingPageComponent implements OnInit {
     console.log('before', this.finalResultForCompanys);
     const searchCompanyResult = this.finalResultForCompanys;
     const duplicateResult = searchCompanyResult.filter(item => item.companyName.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1);
+
+    // const duplicateResult = searchCompanyResult.filter(function(v, i) {
+    //   return ((v['mobileNumber'] == '+91'+event.target.value || v['companyName'] == event.target.value.toLowerCase()));
+    // })
     this.companyLists = duplicateResult;
     console.log('after', this.companyLists);
   }

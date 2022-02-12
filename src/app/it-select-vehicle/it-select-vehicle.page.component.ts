@@ -47,7 +47,7 @@ export class SelectVehiclePageComponent implements OnInit {
     {
       id: '6',
       name: 'APP.VEHICLE_TYPE.ODC',
-      img: 'trailar-truck',
+      img: 'odc',
       select: 'ODC'
     },
     {

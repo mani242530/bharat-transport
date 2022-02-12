@@ -54,6 +54,63 @@ export class ProfileComponent implements OnInit {
     'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.DRIVER',
   ];
 
+  languages = [
+    {
+      id: 'en',
+      name: 'ENGLISH',
+      description: 'ENGLISH',
+      img: 'english'
+    },
+    {
+      id: 'hi',
+      name: 'हिंदी',
+      description: 'HINDI',
+      img: 'hindi'
+    },
+    {
+      id: 'ma',
+      name: 'मराठी',
+      description: 'MARATHI',
+      img: 'marathi'
+    },
+    {
+      id: 'gu',
+      name: 'ગુજરાતી',
+      description: 'GUJARATI',
+      img: 'gujarati'
+    },
+    {
+      id: 'tn',
+      name: 'தமிழ்',
+      description: 'TAMIL',
+      img: 'tamil'
+    },
+    {
+      id: 'tl',
+      name: 'తెలుగు',
+      description: 'TELUGU',
+      img: 'telugu'
+    },
+    {
+      id: 'ka',
+      name: 'ಕೆನಡಾ',
+      description: 'KANADA',
+      img: 'kanada'
+    },
+    {
+      id: 'ml',
+      name: 'മലയാളം',
+      description: 'MALAYALAM',
+      img: 'malayalam'
+    },
+    {
+      id: 'pn',
+      name: 'മലയാളം',
+      description: 'PUNJABI',
+      img: 'telugu'
+    },
+  ];
+
   locations = [];
   serviceProvidedLocations = [];
 
@@ -63,7 +120,6 @@ export class ProfileComponent implements OnInit {
     public ngroute: Router,
     private fbstore: AngularFirestore,
     private toastController: ToastController,
-    private authtenticationService: AuthtenticationService,
     public appservice: AppService,
     public route: ActivatedRoute,
   ) {
@@ -77,7 +133,6 @@ export class ProfileComponent implements OnInit {
 
     this.getCompanys(this.docid);
     
-
   }
 
   initializeModifyForm(): void {
@@ -92,6 +147,7 @@ export class ProfileComponent implements OnInit {
       location: new FormControl('', Validators.required),
       serviceProvidedLocation: new FormControl('', Validators.required),
       referenceName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z \-\']+')]),
+      language: new FormControl(''),
     });
   }
 
@@ -103,13 +159,14 @@ export class ProfileComponent implements OnInit {
         this.modifyCompanyForm.controls['companyName'].setValue(result["companyName"]);
         this.modifyCompanyForm.controls['ownerName'].setValue(result["ownerName"]);
         this.modifyCompanyForm.controls['firmActivity'].setValue(result["firmActivity"]);
-        this.modifyCompanyForm.controls['vehicleType'].setValue(result["vehicleType"].split(","));
+        this.modifyCompanyForm.controls['vehicleType'].setValue(result["vehicleType"]);
         this.modifyCompanyForm.controls['landlineNumber'].setValue(result["landlineNumber"]);
         this.modifyCompanyForm.controls['mobileNumber'].setValue(result["mobileNumber"]);
         this.modifyCompanyForm.controls['alternateMobileNumber'].setValue(result["alternateMobileNumber"]);
         this.modifyCompanyForm.controls['location'].setValue(result["location"]);
-        this.modifyCompanyForm.controls['serviceProvidedLocation'].setValue(result["serviceProvidedLocation"].split(","));
+        this.modifyCompanyForm.controls['serviceProvidedLocation'].setValue(result["serviceProvidedLocation"]);
         this.modifyCompanyForm.controls['referenceName'].setValue(result["referenceName"]);
+        this.modifyCompanyForm.controls['language'].setValue(result["language"]);
       });
     }catch(error){
       this.toastservice.showToast(error.message, 2000);
@@ -145,13 +202,14 @@ export class ProfileComponent implements OnInit {
       companyName: this.modifyCompanyForm.get('companyName').value,
       ownerName: this.modifyCompanyForm.get('ownerName').value,
       firmActivity: this.modifyCompanyForm.get('firmActivity').value,
-      vehicleType: this.modifyCompanyForm.get('vehicleType').value.toString(),
+      vehicleType: this.modifyCompanyForm.get('vehicleType').value.toString().split(','),
       landlineNumber: this.modifyCompanyForm.get('landlineNumber').value,
       mobileNumber: this.modifyCompanyForm.get('mobileNumber').value,
       alternateMobileNumber: this.modifyCompanyForm.get('alternateMobileNumber').value,
       location: this.modifyCompanyForm.get('location').value,
-      serviceProvidedLocation: this.modifyCompanyForm.get('serviceProvidedLocation').value.toString(),
+      serviceProvidedLocation: this.modifyCompanyForm.get('serviceProvidedLocation').value.toString().split(','),
       referenceName: this.modifyCompanyForm.get('referenceName').value,
+      language: this.modifyCompanyForm.get('language').value,
       paymentStatus: 'NOT PAID'
     }
     try{
