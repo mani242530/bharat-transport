@@ -26,7 +26,7 @@
           "FREIGHT": "माल भेजने वाले",
           "BOOKING": "बुकिंग",
           "SUPPLIER": "प्रदायक",
-          "OWNER": "मालिक",
+          "OWNER_DRIVER": "Owner / Driver",
           "DRIVER": "Driver"
         }
       },

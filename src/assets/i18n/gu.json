@@ -25,7 +25,7 @@
             "FREIGHT": "Freight Forwarders",
             "BOOKING": "Booking",
             "SUPPLIER": "Supplier",
-            "OWNER": "Owner",
+            "OWNER_DRIVER": "Owner / Driver",
             "DRIVER": "Driver"
           }
         },

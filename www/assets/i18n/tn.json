@@ -18,14 +18,16 @@
         "ALTERNATE_MOBILE_NUMBER": "மாற்று மொபைல் எண்",       
         "REFERENCE_NAME": "குறிப்பு பெயர்",
         "OR": "அல்லது",
-        "ALREADY_A_MEMBER": "ஏற்கனவே உறுப்பினர் ?"
+        "ALREADY_A_MEMBER": "ஏற்கனவே உறுப்பினர் ?",
+        "SELECT_LANGUAGE": "Language"
       },
       "SELECT": {
         "FIRM_ACTIVITY": {
           "FREIGHT": "சரக்கு அனுப்புபவர்கள்",
           "BOOKING": "புக்கிங்",
           "SUPPLIER": "சப்ளையர்",
-          "OWNER": "உரிமையாளர்"
+          "OWNER": "உரிமையாளர்",
+          "DRIVER": "Driver"
         }
       },
       "REGISTERD": {
@@ -106,7 +108,7 @@
       }
     },
     "LISTING": {
-      "TITLE": "தேடு",
+      "TITLE": "Search Results",
       "LABEL": {
         "GOING_FROM": "இருந்து செல்கிறது",
         "GOING_TO": "போகிறது",

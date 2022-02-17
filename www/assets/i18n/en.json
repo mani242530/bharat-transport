@@ -13,12 +13,11 @@
         "SELECT_LOCATION": "Select Location",
         "LANDLINE_NUMBER": "Landline Number",
         "MOBILE_NUMBER": "Mobile Number",
-
+        "SELECT_LANGUAGE": "Language",
         "SELECT_SERVICE_PROVIDED_LOCATION": "Select Service Provided Location",
         "OWNER_NAME": "Owner Name",
         "ALTERNATE_MOBILE_NUMBER": "Alternate Mobile Number",       
         "REFERENCE_NAME": "Reference Name",
-
         "OR": "OR",
         "ALREADY_A_MEMBER": "Already a member ?"
       },
@@ -27,7 +26,8 @@
           "FREIGHT": "Freight Forwarders",
           "BOOKING": "Booking",
           "SUPPLIER": "Supplier",
-          "OWNER": "Owner"
+          "OWNER_DRIVER": "Owner / Driver",
+          "DRIVER": "Driver"
         }
       },
       "REGISTERD": {
@@ -42,7 +42,7 @@
         "UPDATE": "UPDATE"
       },
       "INVALID_MOBILE": " Invalid mobile number. Please check and try again.",
-      "MOBILE_EXISTS": "Your mobile number is already registered."
+      "MOBILE_EXISTS": "Your mobile number is already registered. Please"
     },
     "VERIFICATION": {
       "TITLE": "Verification",
@@ -108,7 +108,7 @@
       }
     },
     "LISTING": {
-      "TITLE": "Search",
+      "TITLE": "Search Results",
       "LABEL": {
         "GOING_FROM": "GOING FROM",
         "GOING_TO": "GOING TO",

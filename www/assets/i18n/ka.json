@@ -18,14 +18,16 @@
         "ALTERNATE_MOBILE_NUMBER": "ಪರ್ಯಾಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",       
         "REFERENCE_NAME": "ಉಲ್ಲೇಖದ ಹೆಸರು",
         "OR": "ಅಥವಾ",
-        "ALREADY_A_MEMBER": "ಈಗಾಗಲೇ ಸದಸ್ಯರೇ ?"
+        "ALREADY_A_MEMBER": "ಈಗಾಗಲೇ ಸದಸ್ಯರೇ ?",
+        "SELECT_LANGUAGE": "Language"
       },
       "SELECT": {
         "FIRM_ACTIVITY": {
           "FREIGHT": "ಸರಕು ಸಾಗಣೆದಾರರು",
           "BOOKING": "ಬುಕಿಂಗ್",
           "SUPPLIER": "ಪೂರೈಕೆದಾರ",
-          "OWNER": "ಮಾಲೀಕ"
+          "OWNER": "ಮಾಲೀಕ",
+          "DRIVER": "Driver"
         }
       },
       "REGISTERD": {
@@ -106,7 +108,7 @@
       }
     },
     "LISTING": {
-      "TITLE": "ಹುಡುಕಿ",
+      "TITLE": "Search Results",
       "LABEL": {
         "GOING_FROM": "ಇಂದ ಹೋಗುತ್ತಿದೆ",
         "GOING_TO": "ಹೋಗುತ್ತಿದೆ",

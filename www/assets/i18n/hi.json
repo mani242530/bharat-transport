@@ -18,14 +18,16 @@
         "ALTERNATE_MOBILE_NUMBER": "वैकल्पिक मोबाइल नंबर",       
         "REFERENCE_NAME": "संदर्भ नाम",
         "OR": "या",
-        "ALREADY_A_MEMBER": "क्या पहले से ही सदस्य हैं ?"
+        "ALREADY_A_MEMBER": "क्या पहले से ही सदस्य हैं ?",
+        "SELECT_LANGUAGE": "Language"
       },
       "SELECT": {
         "FIRM_ACTIVITY": {
           "FREIGHT": "माल भेजने वाले",
           "BOOKING": "बुकिंग",
           "SUPPLIER": "प्रदायक",
-          "OWNER": "मालिक"
+          "OWNER": "मालिक",
+          "DRIVER": "Driver"
         }
       },
       "REGISTERD": {
@@ -106,7 +108,7 @@
       }
     },
     "LISTING": {
-      "TITLE": "खोज",
+      "TITLE": "Search Results",
       "LABEL": {
         "GOING_FROM": "से जा रहे हैं",
         "GOING_TO": "तक जा रहे हैं",

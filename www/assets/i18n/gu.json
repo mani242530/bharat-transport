@@ -17,8 +17,31 @@
         "OWNER_NAME": "માલીકનું નામ",
         "ALTERNATE_MOBILE_NUMBER": "વૈકલ્પિક મોબાઇલ નંબર",       
         "REFERENCE_NAME": "સંદર્ભ નામ",
+        "SELECT_LANGUAGE": "Language",
         "OR": "અથવા",
-        "ALREADY_A_MEMBER": "પહેલેથી જ સભ્ય છો ?"
+        "ALREADY_A_MEMBER": "પહેલેથી જ સભ્ય છો ?",
+        "SELECT": {
+          "FIRM_ACTIVITY": {
+            "FREIGHT": "Freight Forwarders",
+            "BOOKING": "Booking",
+            "SUPPLIER": "Supplier",
+            "OWNER_DRIVER": "Owner / Driver",
+            "DRIVER": "Driver"
+          }
+        },
+        "REGISTERD": {
+          "HEADER": "Registered Successfully",
+          "MESSAGE": "The system is waiting for the explore"
+        },
+        "BUTTON": {
+          "REGISTER": "REGISTER",
+          "SIGN_IN": "Sign In",
+          "OK": "OK",
+          "CANCEL": "CANCEL",
+          "UPDATE": "UPDATE"
+        },
+        "INVALID_MOBILE": " Invalid mobile number. Please check and try again.",
+        "MOBILE_EXISTS": "Your mobile number is already registered."
       },
       "VERIFICATION": {
         "TITLE": "ચકાસણી",
@@ -131,7 +154,7 @@
       }
     },
     "LISTING": {
-      "TITLE": "શોધો",
+      "TITLE": "Search Results",
       "LABEL": {
         "GOING_FROM": "જાઉં છું",
         "GOING_TO": "જવુ છે",

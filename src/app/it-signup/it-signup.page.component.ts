@@ -59,8 +59,7 @@ export class SignUpPageComponent implements OnInit {
     'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.FREIGHT',
     'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.BOOKING',
     'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.SUPPLIER',
-    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.OWNER',
-    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.DRIVER'
+    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.OWNER_DRIVER'
   ];
 
   locations = [];
@@ -97,7 +96,7 @@ export class SignUpPageComponent implements OnInit {
       alternateMobileNumber: new FormControl(''),
       location: new FormControl('', Validators.required),
       serviceProvidedLocation: new FormControl('', Validators.required),
-      referenceName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z \-\']+')]),
+      referenceName: new FormControl('', [Validators.pattern('^[a-zA-Z \-\']+')]),
     });
   }
 

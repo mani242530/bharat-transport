@@ -60,9 +60,9 @@ export class SelectLanguagePageComponent implements OnInit {
     },
     {
       id: 'pn',
-      name: 'മലയാളം',
+      name: 'ਪੰਜਾਬੀ',
       description: 'PUNJABI',
-      img: 'telugu'
+      img: 'punjabi'
     },
   ];
   constructor(

@@ -172,7 +172,7 @@
 }
 
 .osahan-listing {
-  background: #ffffff !important;
+  background: transparent !important;
 }
 
 .language-item-list {
@@ -268,4 +268,12 @@
 
 .item-native {
   padding: 0px !important;
+}
+
+.bg-c {
+  background: url('../assets/images/background.jpg') no-repeat;
+}
+
+.list-ios {
+  background-color: #f6f6f6;
 }

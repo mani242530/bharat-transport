@@ -18,14 +18,16 @@
         "ALTERNATE_MOBILE_NUMBER": "पर्यायी मोबाईल नंबर",       
         "REFERENCE_NAME": "संदर्भ नाव",
         "OR": "किंवा",
-        "ALREADY_A_MEMBER": "आधीपासूनच सदस्य आहात ?"
+        "ALREADY_A_MEMBER": "आधीपासूनच सदस्य आहात ?",
+        "SELECT_LANGUAGE": "Language"
       },
       "SELECT": {
         "FIRM_ACTIVITY": {
           "FREIGHT": "फ्रेट फॉरवर्डर्स",
           "BOOKING": "बुकिंग",
           "SUPPLIER": "पुरवठादार",
-          "OWNER": "मालक"
+          "OWNER": "मालक",
+          "DRIVER": "Driver"
         }
       },
       "REGISTERD": {
@@ -106,7 +108,7 @@
       }
     },
     "LISTING": {
-      "TITLE": "शोधा",
+      "TITLE": "Search Results",
       "LABEL": {
         "GOING_FROM": "पासून जात आहे",
         "GOING_TO": "जात",

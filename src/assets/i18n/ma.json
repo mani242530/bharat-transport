@@ -26,7 +26,7 @@
           "FREIGHT": "फ्रेट फॉरवर्डर्स",
           "BOOKING": "बुकिंग",
           "SUPPLIER": "पुरवठादार",
-          "OWNER": "मालक",
+          "OWNER_DRIVER": "Owner / Driver",
           "DRIVER": "Driver"
         }
       },
