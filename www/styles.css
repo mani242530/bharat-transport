@@ -1328,7 +1328,7 @@ sub {
   font-weight: 700 !important;
 }
 .osahan-listing {
-  background: #ffffff !important;
+  background: transparent !important;
 }
 .language-item-list {
   background-color: #eeecec;
@@ -1407,6 +1407,12 @@ sub {
 }
 .item-native {
   padding: 0px !important;
+}
+.bg-c {
+  background: url('background.jpg') no-repeat;
+}
+.list-ios {
+  background-color: #f6f6f6;
 }
 @font-face {
   font-family: "Quicksand";

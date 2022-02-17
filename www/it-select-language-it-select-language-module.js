@@ -80,9 +80,9 @@ let SelectLanguagePageComponent = class SelectLanguagePageComponent {
             },
             {
                 id: 'pn',
-                name: 'മലയാളം',
+                name: 'ਪੰਜਾਬੀ',
                 description: 'PUNJABI',
-                img: 'telugu'
+                img: 'punjabi'
             },
         ];
     }

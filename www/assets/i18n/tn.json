@@ -26,7 +26,7 @@
           "FREIGHT": "சரக்கு அனுப்புபவர்கள்",
           "BOOKING": "புக்கிங்",
           "SUPPLIER": "சப்ளையர்",
-          "OWNER": "உரிமையாளர்",
+          "OWNER_DRIVER": "Owner / Driver",
           "DRIVER": "Driver"
         }
       },
