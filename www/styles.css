@@ -1331,7 +1331,6 @@ sub {
   background: transparent !important;
 }
 .language-item-list {
-  background-color: #eeecec;
   width: 100%;
   height: 122px;
   border-radius: 15px;
@@ -1897,7 +1896,6 @@ h1.success-icon {
 .list-item-img {
   text-align: center;
   padding: 8px;
-  background: #ffffff;
   margin-bottom: 13px;
   border-radius: 8px;
 }
