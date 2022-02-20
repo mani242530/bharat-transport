@@ -33,7 +33,6 @@
       bg-c
       align-items-center
       justify-content-center
-      vh-100
       index-page
     "
   >
@@ -222,14 +221,13 @@
           <div class="form-group mb-3">
             <ion-label class="text-muted mb-1">{{
               'APP.CREATE_ACCOUNT.PLACEHOLDER.REFERENCE_NAME' | translate
-            }}<span class="required-field"></span></ion-label>
+            }}</ion-label>
             <ion-input
               class="form-control rc-form-control it-form-control"
               inputMode="text"
               clearInput="true"
               formControlName="referenceName"
               type="text"
-              required
               placeholder="Enter reference name"
             ></ion-input>
           </div>

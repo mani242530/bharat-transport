@@ -37,7 +37,7 @@
         <ion-row>
           <ion-col size="12">
             <div class="Bus-Details padding-bt">
-              <div class="list_item m-0 bg-white">
+              <div class="list_item m-0">
                 <div class="px-2 py-3 tic-div border-bottom d-flex">
                   <ngx-avatar
                     size="40"
@@ -179,9 +179,13 @@
 
               <!-- Button -->
               <div class="osahan-fotter fixed-bottom px-3 mb-3">
-                <a class="btn btn-purple btn-block osahanbus-btn">{{
+                <!-- <a class="btn btn-purple btn-block osahanbus-btn">{{
                   "APP.LISTING_DETAILS.BUTTON.CALL_NOW" | translate
-                }}</a>
+                }}</a> -->
+                <button class="btn btn-purple btn-block osahanbus-btn" 
+                  ion-button (click)="callNow(company.mobileNumber)">{{
+                  "APP.LISTING_DETAILS.BUTTON.CALL_NOW" | translate
+                }}</button>
               </div>
             </div>
           </ion-col>

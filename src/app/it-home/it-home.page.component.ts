@@ -40,6 +40,8 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
     this.initializeForm();
+
+    this.firmActivitys = this.firmActivitys.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
   }
 
   initializeForm(): void {

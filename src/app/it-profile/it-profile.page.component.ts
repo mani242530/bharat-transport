@@ -50,8 +50,7 @@ export class ProfileComponent implements OnInit {
     'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.FREIGHT',
     'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.BOOKING',
     'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.SUPPLIER',
-    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.OWNER',
-    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.DRIVER',
+    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.OWNER_DRIVER',
   ];
 
   languages = [
@@ -128,8 +127,13 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.locations = location.locationData;
-    this.serviceProvidedLocations = serviceProvidedLocation.serviceProvidedLocationData;
+    const serviceLocations = serviceProvidedLocation.serviceProvidedLocationData
+
+    this.locations = serviceLocations.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
+    this.serviceProvidedLocations = serviceLocations.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
+
+    this.firmActivitys = this.firmActivitys.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
+    this.vehicleTypes = this.vehicleTypes.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
 
     this.getCompanys(this.docid);
     
@@ -146,7 +150,7 @@ export class ProfileComponent implements OnInit {
       alternateMobileNumber: new FormControl(''),
       location: new FormControl('', Validators.required),
       serviceProvidedLocation: new FormControl('', Validators.required),
-      referenceName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z \-\']+')]),
+      referenceName: new FormControl('', [Validators.pattern('^[a-zA-Z \-\']+')]),
       language: new FormControl(''),
     });
   }

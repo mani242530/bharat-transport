@@ -275,6 +275,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ngx-translate/core */ "sYmb");
 /* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ngx-avatar */ "HWWf");
 /* harmony import */ var _ionic_native_sms_retriever_ngx__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @ionic-native/sms-retriever/ngx */ "BeAq");
+/* harmony import */ var _ionic_native_call_number_ngx__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @ionic-native/call-number/ngx */ "Wwn5");
 
 
 
@@ -284,6 +285,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //firebase imports
+
 
 
 
@@ -330,6 +332,7 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         providers: [
             _helpers_validation_helpers__WEBPACK_IMPORTED_MODULE_11__["Validator"],
             _ionic_native_sms_retriever_ngx__WEBPACK_IMPORTED_MODULE_20__["SmsRetriever"],
+            _ionic_native_call_number_ngx__WEBPACK_IMPORTED_MODULE_21__["CallNumber"],
             { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] },
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]],
@@ -633,7 +636,7 @@ const routes = [
     },
     {
         path: 'home',
-        loadChildren: () => Promise.all(/*! import() | it-home-it-home-module */[__webpack_require__.e("default~it-home-it-home-module~it-profile-it-profile-module~it-signup-it-signup-module"), __webpack_require__.e("common"), __webpack_require__.e("it-home-it-home-module")]).then(__webpack_require__.bind(null, /*! ./it-home/it-home.module */ "P+C6")).then((m) => m.HomePageModule),
+        loadChildren: () => Promise.all(/*! import() | it-home-it-home-module */[__webpack_require__.e("default~it-home-it-home-module~it-profile-it-profile-module~it-signup-it-signup-module"), __webpack_require__.e("it-home-it-home-module")]).then(__webpack_require__.bind(null, /*! ./it-home/it-home.module */ "P+C6")).then((m) => m.HomePageModule),
     },
     {
         path: 'listing',

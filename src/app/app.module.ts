@@ -26,6 +26,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { AvatarModule } from 'ngx-avatar';
 import { SmsRetriever } from '@ionic-native/sms-retriever/ngx';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -51,6 +52,7 @@ import { SmsRetriever } from '@ionic-native/sms-retriever/ngx';
   providers: [
     Validator,
     SmsRetriever,
+    CallNumber,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],

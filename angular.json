@@ -144,7 +144,7 @@
             }
           }
         },
-        "indian-transport-build": {
+        "bharat-transport-build": {
           "builder": "@ionic/angular-toolkit:cordova-build",
           "options": {
             "browserTarget": "app:build"
@@ -155,15 +155,15 @@
             }
           }
         },
-        "indian-transport-serve": {
+        "bharat-transport-serve": {
           "builder": "@ionic/angular-toolkit:cordova-serve",
           "options": {
-            "cordovaBuildTarget": "app:indian-transport-build",
+            "cordovaBuildTarget": "app:bharat-transport-build",
             "devServerTarget": "app:serve"
           },
           "configurations": {
             "production": {
-              "cordovaBuildTarget": "app:indian-transport-build:production",
+              "cordovaBuildTarget": "app:bharat-transport-build:production",
               "devServerTarget": "app:serve:production"
             }
           }

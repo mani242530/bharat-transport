@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 import { Company } from '../models/contact';
 import { AppService } from '../services/app.servcie';
 import { ToastService } from '../services/toast.service';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 
 @Component({
   selector: 'app-listing',
@@ -30,17 +31,19 @@ export class ListingDetailPageComponent implements OnInit {
     private toastservice: ToastService,
     public ngroute: Router,
     private fbstore: AngularFirestore,
-    public appService: AppService,  public fbauth: AngularFireAuth
+    public appService: AppService, 
+    public fbauth: AngularFireAuth,
+    private callNumber: CallNumber
   ) {
     this.docId = this.appService.docId;
     this.paramId = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
   ngOnInit() {
-    this.getProduct(this.paramId);
+    this.getCompany(this.paramId);
   }
 
-  async getProduct(docid: string) {
+  async getCompany(docid: string) {
     try {
       await this.fbstore
         .doc('companys/' + docid)
@@ -68,5 +71,12 @@ export class ListingDetailPageComponent implements OnInit {
       this.appService.selectedLanguage = '';
       this.ngroute.navigate(['splash']);
     });
+  }
+
+  callNow(number) {
+    console.log(number);
+    this.callNumber.callNumber(number, true)
+      .then(res => console.log('Launched dialer!', res))
+      .catch(err => console.log('Error launching dialer', err));
   }
 }
