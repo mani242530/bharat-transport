@@ -1,0 +1,391 @@
+{
+  "APP": {
+    "GET_STARTED": "પ્રારંભ કરો",
+    "UPDATE_ACCOUNT": {
+      "HEADER": "Update Account"
+    },
+    "CREATE_ACCOUNT": {
+      "HEADER": "એકાઉન્ટ બનાવો",
+      "PLACEHOLDER": {
+        "COMPANY_NAME": "કંપનીનું નામ",
+        "SELECT_FIRM_ACTIVITY": "પેઢી પ્રવૃત્તિ પસંદ કરો",
+        "SELECT_VEHICLE_TYPE": "વાહનનો પ્રકાર પસંદ કરો",
+        "SELECT_LOCATION": "સ્થાન પસંદ કરો",
+        "MOBILE_NUMBER": "મોબાઇલ નંબર",
+        "LANDLINE_NUMBER": "લેન્ડલાઇન નંબર",
+        "SELECT_SERVICE_PROVIDED_LOCATION": "સેવા પ્રદાન કરેલ સ્થાન પસંદ કરો",
+        "OWNER_NAME": "માલીકનું નામ",
+        "ALTERNATE_MOBILE_NUMBER": "વૈકલ્પિક મોબાઇલ નંબર",       
+        "REFERENCE_NAME": "સંદર્ભ નામ",
+        "SELECT_LANGUAGE": "Language",
+        "OR": "અથવા",
+        "ALREADY_A_MEMBER": "પહેલેથી જ સભ્ય છો ?",
+        "SELECT": {
+          "FIRM_ACTIVITY": {
+            "FREIGHT": "Freight Forwarders",
+            "BOOKING": "Booking",
+            "SUPPLIER": "Supplier",
+            "OWNER_DRIVER": "Owner / Driver",
+            "DRIVER": "Driver"
+          }
+        },
+        "REGISTERD": {
+          "HEADER": "Registered Successfully",
+          "MESSAGE": "The system is waiting for the explore"
+        },
+        "BUTTON": {
+          "REGISTER": "REGISTER",
+          "SIGN_IN": "Sign In",
+          "OK": "OK",
+          "CANCEL": "CANCEL",
+          "UPDATE": "UPDATE"
+        },
+        "INVALID_MOBILE": " Invalid mobile number. Please check and try again.",
+        "MOBILE_EXISTS": "Your mobile number is already registered."
+      },
+      "VERIFICATION": {
+        "TITLE": "ચકાસણી",
+        "ENTER_VERIFICATION_CODE": "ચકાસણી કોડ દાખલ કરો",
+        "OTP_MESSAGE": "'તમારા નંબર પર એક OTP મોકલવામાં આવે છે. તમારે તે 15 સેકન્ડમાં પ્રાપ્ત કરવું જોઈએ'",
+        "BUTTON": {
+          "VERIFICATION": "ચકાસણી",
+          "RESEND": "ફરીથી મોકલો"
+        },
+        "TEXT": "કોડ મળ્યો નથી?"
+      },
+      "PAYMENT": {
+        "TITLE": "ચુકવણી",
+        "LABEL": {
+          "MASTERCARD": "માસ્ટરકાર્ડ / વિઝા / રુપે",
+          "NET_BANKING": "નેટ બેંકિંગ",
+          "CARD_NUMBER": "કાર્ડ નંબર",
+          "DATE": "મહિનો / તારીખ",
+          "CVV": "CVV"
+        },
+        "PLACEHOLDER": {
+          "DD": "DD",
+          "MM": "MM",
+          "NUMBER": "1234 5678 9145 4589",
+          "CVV": "000"
+        },
+        "TEXT": {
+          "PAY_FROM_MASTERCARD": "માસ્ટરકાર્ડ પેમેન્ટ ગેટવેનો ઉપયોગ કરીને માસ્ટરકાર્ડ એકાઉન્ટમાંથી ચૂકવણી કરો",
+          "PAY_FROM_BANK": "નેટ બેંકિંગ ગેટવેનો ઉપયોગ કરીને તમારા બેંક ખાતામાંથી ચૂકવણી કરો",
+          "TOTAL_PAYABLE": "કુલ ચૂકવવાપાત્ર INR",
+          "AMOUNT": "299"
+        },
+        "BUTTON": {
+          "PAY": "ચુકવો"
+        }
+      },
+      "REGISTERD": {
+        "HEADER": "સફળતાપૂર્વક નોંધાયેલ",
+        "MESSAGE": "સિસ્ટમ શોધખોળની રાહ જોઈ રહી છે"
+      },
+      "BUTTON": {
+        "REGISTER": "નોંધણી કરો",
+        "SIGN_IN": "સાઇન ઇન",
+        "OK": "ઠીક",
+        "CANCEL": "રદ કરો",
+        "UPDATE": "UPDATE"
+      },
+      "INVALID_MOBILE": "અમાન્ય મોબાઇલ નંબર. કૃપા કરીને તપાસો અને ફરી પ્રયાસ કરો.",
+      "MOBILE_EXISTS": "તમારો મોબાઈલ નંબર પહેલેથી જ નોંધાયેલ છે."
+    },
+    "VERIFICATION": {
+      "TITLE": "ચકાસણી",
+      "BUTTON": {
+        "VERIFICATION": "ચકાસણી",
+        "RESEND": "ફરીથી મોકલો"
+      },
+      "TEXT": "કોડ મળ્યો નથી?"
+    },
+    "PAYMENT": {
+      "TITLE": "ચુકવણી",
+      "LABEL": {
+        "MASTERCARD": "માસ્ટરકાર્ડ / વિઝા / રુપે",
+        "NET_BANKING": "નેટ બેંકિંગ",
+        "CARD_NUMBER": "કાર્ડ નંબર",
+        "DATE": "મહિનો / તારીખ",
+        "CVV": "CVV"
+      },
+      "PLACEHOLDER": {
+        "DD": "DD",
+        "MM": "MM",
+        "NUMBER": "1234 5678 9145 4589",
+        "CVV": "000"
+      },
+      "TEXT": {
+        "PAY_FROM_MASTERCARD": "માસ્ટરકાર્ડ પેમેન્ટ ગેટવેનો ઉપયોગ કરીને માસ્ટરકાર્ડ એકાઉન્ટમાંથી ચૂકવણી કરો",
+        "PAY_FROM_BANK": "નેટ બેંકિંગ ગેટવેનો ઉપયોગ કરીને તમારા બેંક ખાતામાંથી ચૂકવણી કરો",
+        "TOTAL_PAYABLE": "કુલ ચૂકવવાપાત્ર INR",
+        "AMOUNT": "299"
+      },
+      "BUTTON": {
+        "PAY": "ચુકવો"
+      }
+    },
+    "SELECT_VEHICLE": {
+      "TITLE": "વાહન પસંદ કરો"
+    },
+    "HOME": {
+      "BUTTON": {
+        "SEARCH": "શોધ"
+      },
+      "LABEL": {
+        "FROM": "માંથી",
+        "TO": "પ્રતિ",
+        "FIRM_ACTIVITY": "પેઢી પ્રવૃત્તિ"
+      },
+      "PLACEHOLDER": {
+        "SELECT_FROM_LOCATION": "સ્થાનમાંથી પસંદ કરો",
+        "SELECT_TO_LOCATION": "સ્થાન માટે પસંદ કરો",
+        "SELECT_FIRM_ACTIVITY": "પેઢી પ્રવૃત્તિ પસંદ કરો"
+      },
+      "TEXT": {
+        "SAFE_AND_HYGEINIC": "સલામત અને હાઇજેનિક",
+        "વાહનો": "વાહનો",
+        "BEST_CUSTOMER": "શ્રેષ્ઠ ગ્રાહક",
+        "CARE_SUPPORT": "સંભાળ અને સમર્થન",
+        "LIVE_TRACK": "લાઇવ ટ્રૅક તમારું",
+        "JOURNEY": "જર્ની",
+        "VERIFIED_DRIVERS": "ચકાસાયેલ ડ્રાઇવરો",
+        "AND_VEHICLES": "અને વાહનો"
+      }
+    },
+    "LISTING": {
+      "TITLE": "Search Results",
+      "LABEL": {
+        "GOING_FROM": "જાઉં છું",
+        "GOING_TO": "જવુ છે",
+        "FIRM_ACTIVITY": "પેઢી પ્રવૃત્તિ",
+        "SERVICE_PROVIDING": "સેવા પૂરી પાડવી / વાહનનો પ્રકાર",
+        "SERVICE_PROVIDING_CITY": "સેવા પૂરી પાડતા શહેરો",
+        "MOBILE": "મોબાઈલ નંબર(ઓ)",
+        "LOCATION": "સ્થાન",
+        "COMPANY_NAME": "કંપની નું નામ"
+      },
+      "VALUE": {
+        "LUDHIANA": "લુધિયાણા",
+        "GOA": "GOA"
+      },
+      "LOADING": "લોડ કરી રહ્યું છે...",
+      "NO_RESULTS": "No results found"
+    },
+    "LISTING_DETAILS": {
+      "TITLE": "કંપની વિગતો",
+      "ABOUT": "વિશે",
+      "TEXT": "લોરેમ ઇપ્સમ એ પ્રિન્ટિંગ અને ટાઇપસેટિંગ ઉદ્યોગનું ખાલી ડમી ટેક્સ્ટ છે. લોરેમ ઇપ્સમ 1500 ના દાયકાથી ઉદ્યોગનું પ્રમાણભૂત ડમી ટેક્સ્ટ છે.",
+      "LABEL": {
+        "FIRM_ACTIVITY": "પેઢી પ્રવૃત્તિ",
+        "SERVICE_PROVIDING": "સેવા પૂરી પાડવી / વાહનનો પ્રકાર",
+        "MOBILE_NUMBER": "મોબાઈલ નંબર(ઓ)",
+        "LANDLINE_NUMBER": "લેન્ડલાઇન નંબર",
+        "SERVICE_PROVIDING_CITIES": "સેવા પ્રદાન કરેલ શહેર(ઓ)",
+        "ALTERNATE_MOBILE_NUMBER": "અન્ય મોબાઈલ નંબર(ઓ)",
+        "OWNER_NAME": "અન્ય મોબાઈલ નંબર(ઓ)"
+      },
+      "BUTTON": {
+        "CALL_NOW": "હમણાં કૉલ કરો"
+      }
+    },
+    "VEHICLE_TYPE": {
+      "LCV": "LCV",
+      "TRAILER": "ટ્રેલર",
+      "TRUCK": "ટ્રક (વૃષભ)",
+      "OPEN_TRUCK": "ઓપન ટ્રક",
+      "PART_LOAD": "ભાગ લોડ",
+      "ODC": "ODC",
+      "20_FT_CBT": "20ft કન્ટેનર CBT",
+      "20_FT_IMPORT_EXPORT": "20ft/40ft કન્ટેનર (આયાત અને નિકાસ)",
+      "32_FT_SINGLE_EXCEL": "32ft કન્ટેનર"
+    },
+    "LOCATION": {
+      "MUMBAI": "મુંબઈ",
+      "DELHI": "દિલ્હી",
+      "BENGALURU": "બેંગાલુરુ",
+      "AHMEDABAD": "અમદાવાદ",
+      "HYDERABAD": "હૈદરાબાદ",
+      "CHENNAI": "ચેન્નાઈ",
+      "KOLKATA": "કોલકાતા",
+      "PUNE": "પુણે",
+      "JAIPUR": "જયપુર",
+      "SURAT": "સુરત",
+      "LUCKNOW": "લખનૌ",
+      "KANPUR": "કાનપુર",
+      "NAGPUR": "નાગપુર",
+      "PATNA": "પટના",
+      "INDORE": "ઈન્દોર",
+      "THANE": "થાણે",
+      "BHOPAL": "ભોપાલ",
+      "VISAKHAPATNAM": "વિશાખાપટ્ટનમ",
+      "VADODARA": "વડોદરા",
+      "AMRITSAR": "અમૃતસર",
+      "AGRA": "આગ્રા",
+      "BAREILY": "બરેલી",
+      "BATHINDA": "ભટિંડા",
+      "BHIWANI": "ભિવાની",
+      "CHANDIGARH": "ચંદીગઢ",
+      "FATEHABAD": "ફતેહાબાદ",
+      "GURGAON": "ગુડગાંવ",
+      "HISSAR": "હિસાર",
+      "JODHPUR": "જોધપુર",
+      "NANDED": "નાંદેડ"
+    },
+    "PREFERED_LOCATION": {
+      "AGARTALA":"Agartala",
+      "AGRA":"Agra",
+      "AHMEDABAD":"Ahmedabad",
+      "AHMEDNAGAR":"Ahmednagar",
+      "AJMER":"Ajmer",
+      "AKOLA":"Akola",
+      "ALIGARH":"Aligarh",
+      "ALWAR":"Alwar",
+      "AMARAVATI":"Amaravati",
+      "AMBALA":"Ambala",
+      "AMRITSAR":"Amritsar",
+      "ANAND":"Anand",
+      "ANGUL":"Angul",
+      "ANJAR":"Anjar",
+      "ANKLESHWAR":"Ankleshwar",
+      "ASANSOL":"Asansol",
+      "AURANGABAD":"Aurangabad",
+      "BADDI":"Baddi",
+      "BANGALORE":"Bangalore",
+      "BARAMATI":"Baramati",
+      "BAREILY":"Bareily",
+      "BARODA":"Baroda",
+      "BEAWER":"Beawer",
+      "BELGAON":"Belgaon",
+      "BELLARY":"Bellary",
+      "BETUL":"Betul",
+      "BHAVNAGAR":"Bhavnagar",
+      "BHILAI":"Bhilai",
+      "BHILWADA":"Bhilwada",
+      "BHIWANI":"Bhiwani",
+      "BHOPAL":"Bhopal",
+      "BHUBANESWAR":"Bhubaneswar",
+      "BHUJ":"Bhuj",
+      "BIKANER":"Bikaner",
+      "BILASPUR":"Bilaspur",
+      "BOKARO":"Bokaro",
+      "CALICUT":"Calicut",
+      "CHANDIGARH":"Chandigarh",
+      "CHANDRAPUR":"Chandrapur",
+      "CHENNAI":"Chennai",
+      "CHHATRAL":"Chhatral",
+      "COCHIN":"Cochin",
+      "COIMBATORE":"Coimbatore",
+      "CUTTACK":"Cuttack",
+      "DAMAN_DIU":"Daman Diu",
+      "DARBHANGA":"Darbhanga",
+      "DEHRADHUN":"Dehradhun",
+      "DEWAS":"Dewas",
+      "DHANBAD":"Dhanbad",
+      "DHULE":"Dhule",
+      "DURGAPUR":"Durgapur",
+      "ERODE":"Erode",
+      "FARIDABAD":"Faridabad",
+      "GANDHIDHAM":"Gandhidham",
+      "GANJBASODA":"Ganjbasoda",
+      "GHAZIABAD":"Ghaziabad",
+      "GOA":"Goa",
+      "GORAKHPUR":"Gorakhpur",
+      "GUNTUR":"Guntur",
+      "GURGAON":"Gurgaon",
+      "GUWAHATI":"Guwahati",
+      "GWALIOR":"Gwalior",
+      "HALDWANI":"Haldwani",
+      "HALOL":"Halol",
+      "HARIDWAR":"Haridwar",
+      "HIMMATNAGAR":"Himmatnagar",
+      "HISSAR":"Hissar",
+      "HOSPET":"Hospet",
+      "HOSUR":"Hosur",
+      "HUBLI":"Hubli",
+      "HYDERABAD":"Hyderabad",
+      "ICHALKARANJI":"Ichalkaranji",
+      "INDORE":"Indore",
+      "JABALPUR":"Jabalpur",
+      "JAIPUR":"Jaipur",
+      "JALANDHAR":"Jalandhar",
+      "JALGAON":"Jalgaon",
+      "JALNA":"Jalna",
+      "JAMMU":"Jammu",
+      "JAMNAGAR":"Jamnagar",
+      "JHANSI":"Jhansi",
+      "JODHPUR":"Jodhpur",
+      "KALA-AMB":"Kala-Amb",
+      "KANPUR":"Kanpur",
+      "KARIMNAGAR":"Karimnagar",
+      "KARNAL":"Karnal",
+      "KASHIPUR":"Kashipur",
+      "KATNI":"Katni",
+      "KHARAGPUR":"Kharagpur",
+      "KOLKATA":"Kolkata",
+      "KORBA":"Korba",
+      "KOTA":"Kota",
+      "LUCKNOW":"Lucknow",
+      "LUDHIANA":"Ludhiana",
+      "MADURAI":"Madurai",
+      "MANDI_GOBINDGARH":"Mandi Gobindgarh",
+      "MEERUT":"Meerut",
+      "MEHSANA":"Mehsana",
+      "MORBI":"Morbi",
+      "MULTAI":"Multai",
+      "MUMBAI":"Mumbai",
+      "MURADABAD":"Muradabad",
+      "MUZAFFARPUR":"Muzaffarpur",
+      "MYSORE":"Mysore",
+      "NAGPUR":"Nagpur",
+      "NAMAKKAL":"Namakkal",
+      "NASHIK":"Nashik",
+      "NASIRABAD":"Nasirabad",
+      "NEEMACH":"Neemach",
+      "NIZAMABAD":"Nizamabad",
+      "NOIDA":"Noida",
+      "PAN_INDIA": "Pan India",
+      "PANIPAT":"Panipat",
+      "PATNA":"Patna",
+      "PITHAMPUR":"Pithampur",
+      "PONDICHERRY":"Pondicherry",
+      "PRAYAGRAJ":"Prayagraj",
+      "PUNE":"Pune",
+      "RAICHUR":"Raichur",
+      "RAIGARH":"Raigarh",
+      "RAIPUR":"Raipur",
+      "RAJKOT":"Rajkot",
+      "RAJPURA":"Rajpura",
+      "RAMGARH":"Ramgarh",
+      "RANCHI":"Ranchi",
+      "RATLAM":"Ratlam",
+      "ROHTAK":"Rohtak",
+      "ROURKELA":"Rourkela",
+      "RUDRAPUR":"Rudrapur",
+      "SAGAR":"Sagar",
+      "SAHARANPUR":"Saharanpur",
+      "SALEM":"Salem",
+      "SANGLI":"Sangli",
+      "SATARA":"Satara",
+      "SHILLONG":"Shillong",
+      "SILLIGURI":"Silliguri",
+      "SILVASA":"Silvasa",
+      "SOLAPUR":"Solapur",
+      "SRINAGAR":"Srinagar",
+      "SURAT":"Surat",
+      "THIRUVANTHAPURAM":"Thiruvanthapuram",
+      "THISSUR":"Thissur",
+      "TINSUKHIYA":"Tinsukhiya",
+      "TIRUPATI":"Tirupati",
+      "UDAIPUR":"Udaipur",
+      "UJJAIN":"Ujjain",
+      "UNJHA":"Unjha",
+      "VAPI":"Vapi",
+      "VARANASI":"Varanasi",
+      "VIDISHA":"Vidisha",
+      "VIJAYWADA":"Vijaywada",
+      "VISHAKHAPATANAM":"Vishakhapatanam",
+      "WARANGAL":"Warangal"
+    }
+  }
+}
