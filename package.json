@@ -1,8 +1,8 @@
 {
   "name": "bharat-transport",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "mabblesoft",
+  "homepage": "https://www.mabblesoft.com/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -63,6 +63,8 @@
     "@types/node": "^12.11.1",
     "call-number": "^1.0.1",
     "codelyzer": "^6.0.0",
+    "cordova-ios": "^6.2.0",
+    "cordova-plugin-cocoapod-support": "^1.6.2",
     "firebase-tools": "^8.0.0",
     "fuzzy": "^0.1.3",
     "inquirer": "^6.2.2",
@@ -96,8 +98,9 @@
     },
     "platforms": [
       "android",
-      "browser"
+      "browser",
+      "ios"
     ]
   },
-  "description": "An Indian Transport"
+  "description": "Bharat Transport"
 }

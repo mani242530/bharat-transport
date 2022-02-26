@@ -1,10 +1,10 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "defaultProject": "app",
+  "defaultProject": "bharat-transport",
   "newProjectRoot": "projects",
   "projects": {
-    "app": {
+    "bharat-transport": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -51,6 +51,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
+              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -72,11 +73,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app:build"
+            "browserTarget": "bharat-transport:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app:build:production"
+              "browserTarget": "bharat-transport:build:production"
             },
             "ci": {
               "progress": false
@@ -86,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app:build"
+            "browserTarget": "bharat-transport:build"
           }
         },
         "test": {
@@ -126,51 +127,49 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "app:serve"
+            "devServerTarget": "bharat-transport:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "app:serve:production"
+              "devServerTarget": "bharat-transport:serve:production"
             },
             "ci": {
-              "devServerTarget": "app:serve:ci"
+              "devServerTarget": "bharat-transport:serve:ci"
             }
           }
         },
-        "bharat-transport-build": {
+        "ionic-cordova-build": {
           "builder": "@ionic/angular-toolkit:cordova-build",
           "options": {
-            "browserTarget": "app:build"
+            "browserTarget": "bharat-transport:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app:build:production"
+              "browserTarget": "bharat-transport:build:production"
             }
           }
         },
-        "bharat-transport-serve": {
+        "ionic-cordova-serve": {
           "builder": "@ionic/angular-toolkit:cordova-serve",
           "options": {
-            "cordovaBuildTarget": "app:bharat-transport-build",
-            "devServerTarget": "app:serve"
+            "cordovaBuildTarget": "bharat-transport:ionic-cordova-build",
+            "devServerTarget": "bharat-transport:serve"
           },
           "configurations": {
             "production": {
-              "cordovaBuildTarget": "app:bharat-transport-build:production",
-              "devServerTarget": "app:serve:production"
+              "cordovaBuildTarget": "bharat-transport:ionic-cordova-build:production",
+              "devServerTarget": "bharat-transport:serve:production"
             }
           }
-        },
-        "deploy": {
-          "builder": "@angular/fire:deploy",
-          "options": {}
         }
       }
     }

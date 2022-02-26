@@ -1,7 +1,12 @@
 {
-  "name": "bharat-transport",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
+  "defaultProject": "bharat-transport",
+  "projects": {
+    "bharat-transport": {
+      "name": "bharat-transport",
+      "integrations": {
+        "cordova": {}
+      },
+      "type": "angular"
+    }
+  }
 }
