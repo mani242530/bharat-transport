@@ -173,7 +173,8 @@ let SignUpPageComponent = class SignUpPageComponent {
             'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.FREIGHT',
             'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.BOOKING',
             'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.SUPPLIER',
-            'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.OWNER_DRIVER'
+            'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.OWNER',
+            'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.DRIVER'
         ];
         this.locations = [];
         this.serviceProvidedLocations = [];

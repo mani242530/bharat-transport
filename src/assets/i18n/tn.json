@@ -2,7 +2,7 @@
   "APP": {
     "GET_STARTED": "தொடங்குக",
     "UPDATE_ACCOUNT": {
-      "HEADER": "Update Account"
+      "HEADER": "கணக்கைப் புதுப்பிக்கவும்"
     },
     "CREATE_ACCOUNT": {
       "HEADER": "கணக்கை உருவாக்கு",
@@ -19,15 +19,15 @@
         "REFERENCE_NAME": "குறிப்பு பெயர்",
         "OR": "அல்லது",
         "ALREADY_A_MEMBER": "ஏற்கனவே உறுப்பினர் ?",
-        "SELECT_LANGUAGE": "Language"
+        "SELECT_LANGUAGE": "மொழி"
       },
       "SELECT": {
         "FIRM_ACTIVITY": {
           "FREIGHT": "சரக்கு அனுப்புபவர்கள்",
           "BOOKING": "புக்கிங்",
           "SUPPLIER": "சப்ளையர்",
-          "OWNER_DRIVER": "Owner / Driver",
-          "DRIVER": "Driver"
+          "OWNER": "உரிமையாளர்",
+          "DRIVER": "இயக்கி"
         }
       },
       "REGISTERD": {
@@ -39,7 +39,7 @@
         "SIGN_IN": "உள்நுழை",
         "OK": "சரி",
         "CANCEL": "ரத்துசெய்",
-        "UPDATE": "UPDATE"
+        "UPDATE": "புதுப்பிக்கவும்"
       },
       "INVALID_MOBILE": "தவறான மொபைல் எண். சரிபார்த்து மீண்டும் முயற்சிக்கவும்.",
       "MOBILE_EXISTS": "உங்கள் மொபைல் எண் ஏற்கனவே பதிவு செய்யப்பட்டுள்ளது."
@@ -73,7 +73,7 @@
         "PAY_FROM_MASTERCARD": "மாஸ்டர்கார்டு பேமெண்ட் கேட்வேயைப் பயன்படுத்தி மாஸ்டர்கார்டு கணக்கிலிருந்து பணம் செலுத்துங்கள்",
         "PAY_FROM_BANK": "நெட் பேங்கிங் கேட்வேயைப் பயன்படுத்தி உங்கள் வங்கிக் கணக்கிலிருந்து பணம் செலுத்துங்கள்",
         "TOTAL_PAYABLE": "மொத்தம் செலுத்த வேண்டிய INR",
-        "AMOUNT": "299"
+        "AMOUNT": "99"
       },
       "BUTTON": {
         "PAY": "செலுத்து"
@@ -108,7 +108,7 @@
       }
     },
     "LISTING": {
-      "TITLE": "Search Results",
+      "TITLE": "தேடல் முடிவுகள்",
       "LABEL": {
         "GOING_FROM": "இருந்து செல்கிறது",
         "GOING_TO": "போகிறது",

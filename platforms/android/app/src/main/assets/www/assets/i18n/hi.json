@@ -26,7 +26,7 @@
           "FREIGHT": "माल भेजने वाले",
           "BOOKING": "बुकिंग",
           "SUPPLIER": "प्रदायक",
-          "OWNER_DRIVER": "Owner / Driver",
+          "OWNER": "Owner",
           "DRIVER": "Driver"
         }
       },
@@ -73,7 +73,7 @@
         "PAY_FROM_MASTERCARD": "मास्टरकार्ड भुगतान गेटवे का उपयोग करके मास्टरकार्ड खाते से भुगतान करें",
         "PAY_FROM_BANK": "नेट बैंकिंग गेटवे का उपयोग करके अपने बैंक खाते से भुगतान करें",
         "TOTAL_PAYABLE": "कुल देय INR",
-        "AMOUNT": "299"
+        "AMOUNT": "99"
       },
       "BUTTON": {
         "PAY": "भुगतान करें"

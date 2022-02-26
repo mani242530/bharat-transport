@@ -26,7 +26,7 @@
           "FREIGHT": "फ्रेट फॉरवर्डर्स",
           "BOOKING": "बुकिंग",
           "SUPPLIER": "पुरवठादार",
-          "OWNER_DRIVER": "Owner / Driver",
+          "OWNER": "Owner",
           "DRIVER": "Driver"
         }
       },
@@ -73,7 +73,7 @@
         "PAY_FROM_MASTERCARD": "मास्टरकार्ड पेमेंट गेटवे वापरून मास्टरकार्ड खात्यातून पैसे द्या",
         "PAY_FROM_BANK": "नेट बँकिंग गेटवे वापरून तुमच्या बँक खात्यातून पैसे भरा",
         "TOTAL_PAYABLE": "एकूण देय INR",
-        "AMOUNT": "299"
+        "AMOUNT": "99"
       },
       "BUTTON": {
         "PAY": "पैसे द्या"

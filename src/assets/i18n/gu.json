@@ -2,7 +2,7 @@
   "APP": {
     "GET_STARTED": "પ્રારંભ કરો",
     "UPDATE_ACCOUNT": {
-      "HEADER": "Update Account"
+      "HEADER": "એકાઉન્ટ અપડેટ કરો"
     },
     "CREATE_ACCOUNT": {
       "HEADER": "એકાઉન્ટ બનાવો",
@@ -17,31 +17,31 @@
         "OWNER_NAME": "માલીકનું નામ",
         "ALTERNATE_MOBILE_NUMBER": "વૈકલ્પિક મોબાઇલ નંબર",       
         "REFERENCE_NAME": "સંદર્ભ નામ",
-        "SELECT_LANGUAGE": "Language",
+        "SELECT_LANGUAGE": "ભાષા",
         "OR": "અથવા",
         "ALREADY_A_MEMBER": "પહેલેથી જ સભ્ય છો ?",
         "SELECT": {
           "FIRM_ACTIVITY": {
-            "FREIGHT": "Freight Forwarders",
-            "BOOKING": "Booking",
-            "SUPPLIER": "Supplier",
-            "OWNER_DRIVER": "Owner / Driver",
-            "DRIVER": "Driver"
+            "FREIGHT": "નૂર ફોરવર્ડર્સs",
+            "BOOKING": "બુકિંગ",
+            "SUPPLIER": "સપ્લાયર",
+            "OWNER": "માલિક",
+            "DRIVER": "ડ્રાઈવર"
           }
         },
         "REGISTERD": {
-          "HEADER": "Registered Successfully",
-          "MESSAGE": "The system is waiting for the explore"
+          "HEADER": "સફળતાપૂર્વક નોંધણી થઈ",
+          "MESSAGE": "તંત્ર શોધખોળની રાહ જોઈ રહ્યું છે"
         },
         "BUTTON": {
-          "REGISTER": "REGISTER",
-          "SIGN_IN": "Sign In",
-          "OK": "OK",
-          "CANCEL": "CANCEL",
-          "UPDATE": "UPDATE"
+          "REGISTER": "નોંધણી કરો",
+          "SIGN_IN": "સાઇન ઇન કરો",
+          "OK": "બરાબર",
+          "CANCEL": "રદ કરો",
+          "UPDATE": "અપડેટ કરો"
         },
-        "INVALID_MOBILE": " Invalid mobile number. Please check and try again.",
-        "MOBILE_EXISTS": "Your mobile number is already registered."
+        "INVALID_MOBILE": "અમાન્ય મોબાઇલ નંબર. કૃપા કરીને તપાસો અને ફરી પ્રયાસ કરો.",
+        "MOBILE_EXISTS": "તમારો મોબાઈલ નંબર પહેલેથી જ નોંધાયેલ છે."
       },
       "VERIFICATION": {
         "TITLE": "ચકાસણી",
@@ -72,7 +72,7 @@
           "PAY_FROM_MASTERCARD": "માસ્ટરકાર્ડ પેમેન્ટ ગેટવેનો ઉપયોગ કરીને માસ્ટરકાર્ડ એકાઉન્ટમાંથી ચૂકવણી કરો",
           "PAY_FROM_BANK": "નેટ બેંકિંગ ગેટવેનો ઉપયોગ કરીને તમારા બેંક ખાતામાંથી ચૂકવણી કરો",
           "TOTAL_PAYABLE": "કુલ ચૂકવવાપાત્ર INR",
-          "AMOUNT": "299"
+          "AMOUNT": "99"
         },
         "BUTTON": {
           "PAY": "ચુકવો"
@@ -87,7 +87,7 @@
         "SIGN_IN": "સાઇન ઇન",
         "OK": "ઠીક",
         "CANCEL": "રદ કરો",
-        "UPDATE": "UPDATE"
+        "UPDATE": "અપડેટ કરો"
       },
       "INVALID_MOBILE": "અમાન્ય મોબાઇલ નંબર. કૃપા કરીને તપાસો અને ફરી પ્રયાસ કરો.",
       "MOBILE_EXISTS": "તમારો મોબાઈલ નંબર પહેલેથી જ નોંધાયેલ છે."
@@ -119,7 +119,7 @@
         "PAY_FROM_MASTERCARD": "માસ્ટરકાર્ડ પેમેન્ટ ગેટવેનો ઉપયોગ કરીને માસ્ટરકાર્ડ એકાઉન્ટમાંથી ચૂકવણી કરો",
         "PAY_FROM_BANK": "નેટ બેંકિંગ ગેટવેનો ઉપયોગ કરીને તમારા બેંક ખાતામાંથી ચૂકવણી કરો",
         "TOTAL_PAYABLE": "કુલ ચૂકવવાપાત્ર INR",
-        "AMOUNT": "299"
+        "AMOUNT": "99"
       },
       "BUTTON": {
         "PAY": "ચુકવો"

@@ -195,7 +195,8 @@ let HomePageComponent = class HomePageComponent {
             'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.FREIGHT',
             'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.BOOKING',
             'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.SUPPLIER',
-            'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.OWNER_DRIVER',
+            'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.OWNER',
+            'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.DRIVER',
         ];
         this.docId = this.appService.docId;
         this.locations = _json_location__WEBPACK_IMPORTED_MODULE_7__["puneData"];

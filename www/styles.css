@@ -1351,6 +1351,9 @@ sub {
 .payment-borrad {
   border-radius: 10px;
   border: 1px solid #ced4da;
+  position: fixed;
+  bottom: 10%;
+  width: 90%;
 }
 .list_item_gird {
   border: 1px solid #e0e0e0 !important;
@@ -1410,6 +1413,28 @@ sub {
 .bg-c, .ion-page, .list-md, .list-ios {
   background: url('background.jpg') no-repeat;
   background-size: cover;
+}
+.owner-payment {
+  background: url('999.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-size: 310px 100px;
+}
+.driver-payment {
+  background: url('99.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-size: 310px 100px;
+}
+.custom-control-input {
+  margin-top: 15px;
+  width: 3rem !important;
+}
+.onemonth-tag, .oneyear-tag {
+  margin-left: 40%;
+  width: 160px;
+  position: relative;
+  left: 30px;
 }
 @font-face {
   font-family: "Quicksand";

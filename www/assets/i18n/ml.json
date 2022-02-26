@@ -2,7 +2,7 @@
   "APP": {
     "GET_STARTED": "ആരംഭിക്കുക",
     "UPDATE_ACCOUNT": {
-      "HEADER": "Update Account"
+      "HEADER": "അക്കൗണ്ട് അപ്ഡേറ്റ് ചെയ്യുക"
     },
     "CREATE_ACCOUNT": {
       "HEADER": "അക്കൗണ്ട് സൃഷ്‌ടിക്കുക",
@@ -19,15 +19,15 @@
         "REFERENCE_NAME": "റഫറൻസ് ബോട്ട്",
         "OR": "അഥവാ",
         "ALREADY_A_MEMBER": "ഇതിനകം അംഗമാണോ ?",
-        "SELECT_LANGUAGE": "Language"
+        "SELECT_LANGUAGE": "ഭാഷ"
       },
       "SELECT": {
         "FIRM_ACTIVITY": {
           "FREIGHT": "ചരക്ക് കൈമാറുന്നവർ",
           "BOOKING": "ബുക്കിംഗ്",
           "SUPPLIER": "വിതരണക്കാരൻ",
-          "OWNER_DRIVER": "Owner / Driver",
-          "DRIVER": "Driver"
+          "OWNER": "ഉടമ",
+          "DRIVER": "ഡ്രൈവർ"
         }
       },
       "REGISTERD": {
@@ -39,7 +39,7 @@
         "SIGN_IN": "സൈൻ ഇൻ",
         "OK": "ശരി",
         "CANCEL": "റദ്ദാക്കുക",
-        "UPDATE": "UPDATE"
+        "UPDATE": "അപ്ഡേറ്റ് ചെയ്യുക"
       },
       "INVALID_MOBILE": "മൊബൈൽ നമ്പർ അസാധുവാണ്. ദയവായി പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.",
       "MOBILE_EXISTS": "നിങ്ങളുടെ മൊബൈൽ നമ്പർ ഇതിനകം രജിസ്റ്റർ ചെയ്തിട്ടുണ്ട്."
@@ -73,7 +73,7 @@
         "PAY_FROM_MASTERCARD": "മാസ്റ്റർകാർഡ് പേയ്‌മെന്റ് ഗേറ്റ്‌വേ ഉപയോഗിച്ച് മാസ്റ്റർകാർഡ് അക്കൗണ്ടിൽ നിന്ന് പണമടയ്ക്കുക",
         "PAY_FROM_BANK": "നെറ്റ് ബാങ്കിംഗ് ഗേറ്റ്‌വേ ഉപയോഗിച്ച് നിങ്ങളുടെ ബാങ്ക് അക്കൗണ്ടിൽ നിന്ന് പണമടയ്ക്കുക",
         "TOTAL_PAYABLE": "ആകെ അടയ്‌ക്കേണ്ട INR",
-        "AMOUNT": "299"
+        "AMOUNT": "99"
       },
       "BUTTON": {
         "PAY": "പണം നൽകുക"
@@ -108,10 +108,10 @@
       }
     },
     "LISTING": {
-      "TITLE": "Search Results",
+      "TITLE": "തിരയൽ ഫലങ്ങൾ",
       "LABEL": {
         "GOING_FROM": "നിന്ന് പോകുന്നു",
-        "GOING_TO": "GOING_TO",
+        "GOING_TO": "പോകുന്നു",
         "FIRM_ACTIVITY": "സ്ഥിര പ്രവർത്തനം",
         "SERVICE_PROVIDING": "സേവനം നൽകുന്ന / വാഹന തരം",
         "SERVICE_PROVIDING_CITY": "സേവന നഗരങ്ങൾ",
@@ -144,12 +144,12 @@
       }
     },
     "VEHICLE_TYPE": {
-      "LCV": "LCV",
+      "LCV": "എൽസിവി",
       "TRAILER": "ട്രെയിലർ",
       "TRUCK": "ട്രക്ക് (ടോറസ്)",
       "OPEN_TRUCK": "ഓപ്പൺ ട്രക്കുകൾ",
       "PART_LOAD": "ഭാഗം ലോഡ്",
-      "ODC": "ODC",
+      "ODC": "ഒ.ഡി.സി",
       "20_FT_CBT": "20 അടി കണ്ടെയ്നർ CBT",
       "20_FT_IMPORT_EXPORT": "20 അടി/40 അടി കണ്ടെയ്നർ (ഇറക്കുമതിയും കയറ്റുമതിയും)",
       "32_FT_SINGLE_EXCEL": "32 അടി കണ്ടെയ്നർ"

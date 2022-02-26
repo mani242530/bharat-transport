@@ -2,14 +2,14 @@
   "APP": {
     "GET_STARTED": "ಪ್ರಾರಂಭಿಸಿ",
     "UPDATE_ACCOUNT": {
-      "HEADER": "Update Account"
+      "HEADER": "ಖಾತೆಯನ್ನು ನವೀಕರಿಸಿ"
     },
     "CREATE_ACCOUNT": {
       "HEADER": "ಖಾತೆ ರಚಿಸಿ",
       "PLACEHOLDER": {
         "COMPANY_NAME": "ಕಂಪೆನಿ ಹೆಸರು",
         "SELECT_FIRM_ACTIVITY": "ಸಂಸ್ಥೆಯ ಚಟುವಟಿಕೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
-        "SELECT_VEHICLE_TYPE": "Select Vehicle Type",
+        "SELECT_VEHICLE_TYPE": "ವಾಹನದ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
         "SELECT_LOCATION": "ಸ್ಥಳವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
         "MOBILE_NUMBER": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
         "LANDLINE_NUMBER": "ಲ್ಯಾಂಡ್‌ಲೈನ್ ಸಂಖ್ಯೆ",
@@ -19,15 +19,15 @@
         "REFERENCE_NAME": "ಉಲ್ಲೇಖದ ಹೆಸರು",
         "OR": "ಅಥವಾ",
         "ALREADY_A_MEMBER": "ಈಗಾಗಲೇ ಸದಸ್ಯರೇ ?",
-        "SELECT_LANGUAGE": "Language"
+        "SELECT_LANGUAGE": "ಭಾಷೆ"
       },
       "SELECT": {
         "FIRM_ACTIVITY": {
           "FREIGHT": "ಸರಕು ಸಾಗಣೆದಾರರು",
           "BOOKING": "ಬುಕಿಂಗ್",
           "SUPPLIER": "ಪೂರೈಕೆದಾರ",
-          "OWNER_DRIVER": "Owner / Driver",
-          "DRIVER": "Driver"
+          "OWNER": "ಮಾಲೀಕ",
+          "DRIVER": "ಚಾಲಕ"
         }
       },
       "REGISTERD": {
@@ -73,7 +73,7 @@
         "PAY_FROM_MASTERCARD": "ಮಾಸ್ಟರ್‌ಕಾರ್ಡ್ ಪಾವತಿ ಗೇಟ್‌ವೇ ಬಳಸಿಕೊಂಡು ಮಾಸ್ಟರ್‌ಕಾರ್ಡ್ ಖಾತೆಯಿಂದ ಪಾವತಿಸಿ",
         "PAY_FROM_BANK": "ನಿವ್ವಳ ಬ್ಯಾಂಕಿಂಗ್ ಗೇಟ್‌ವೇ ಬಳಸಿ ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಖಾತೆಯಿಂದ ಪಾವತಿಸಿ",
         "TOTAL_PAYABLE": "ಒಟ್ಟು ಪಾವತಿಸಬೇಕಾದ INR",
-        "AMOUNT": "299"
+        "AMOUNT": "99"
       },
       "BUTTON": {
         "PAY": "ಪಾವತಿ"
@@ -108,7 +108,7 @@
       }
     },
     "LISTING": {
-      "TITLE": "Search Results",
+      "TITLE": "ಹುಡುಕಾಟ ಫಲಿತಾಂಶಗಳು",
       "LABEL": {
         "GOING_FROM": "ಇಂದ ಹೋಗುತ್ತಿದೆ",
         "GOING_TO": "ಹೋಗುತ್ತಿದೆ",

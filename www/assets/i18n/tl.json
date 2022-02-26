@@ -2,7 +2,7 @@
   "APP": {
     "GET_STARTED": "ప్రారంభించండి",
     "UPDATE_ACCOUNT": {
-      "HEADER": "Update Account"
+      "HEADER": "ఖాతాను నవీకరించండి"
     },
     "CREATE_ACCOUNT": {
       "HEADER": "ఖాతా సృష్టించు",
@@ -19,15 +19,15 @@
         "REFERENCE_NAME": "సూచన పేరు",
         "OR": "లేదా",
         "ALREADY_A_MEMBER": "ఇప్పటికే సభ్యులుగా ఉన్నారా ?",
-        "SELECT_LANGUAGE": "Language"
+        "SELECT_LANGUAGE": "భాష"
       },
       "SELECT": {
         "FIRM_ACTIVITY": {
           "FREIGHT": "సరుకు ఫార్వార్డర్లు",
           "BOOKING": "బుకింగ్",
           "SUPPLIER": "సప్లయర్",
-          "OWNER_DRIVER": "Owner / Driver",
-          "DRIVER": "Driver"
+          "OWNER": "యజమాని",
+          "DRIVER": "డ్రైవర్"
         }
       },
       "REGISTERD": {
@@ -39,7 +39,7 @@
         "SIGN_IN": "సైన్ ఇన్",
         "OK": "అలాగె",
         "CANCEL": "రద్దు",
-        "UPDATE": "UPDATE"
+        "UPDATE": "నవీకరణ"
       },
       "INVALID_MOBILE": "చెల్లని మొబైల్ నంబర్. దయచేసి తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి.",
       "MOBILE_EXISTS": "మీ మొబైల్ నంబర్ ఇప్పటికే నమోదు చేయబడింది."
@@ -73,7 +73,7 @@
         "PAY_FROM_MASTERCARD": "మాస్టర్‌కార్డ్ చెల్లింపు గేట్‌వేని ఉపయోగించి మాస్టర్ కార్డ్ ఖాతా నుండి చెల్లించండి",
         "PAY_FROM_BANK": "నెట్ బ్యాంకింగ్ గేట్‌వేని ఉపయోగించి మీ బ్యాంక్ ఖాతా నుండి చెల్లించండి",
         "TOTAL_PAYABLE": "మొత్తం చెల్లించవలసిన INR",
-        "AMOUNT": "299"
+        "AMOUNT": "99"
       },
       "BUTTON": {
         "PAY": "చెల్లించండి"
@@ -108,7 +108,7 @@
       }
     },
     "LISTING": {
-      "TITLE": "Search Results",
+      "TITLE": "శోధన ఫలితాలు",
       "LABEL": {
         "GOING_FROM": "నుండి వెళ్తున్నారు",
         "GOING_TO": "వెళ్తున్నారు",
@@ -124,7 +124,7 @@
         "GOA": "GOA"
       },
       "LOADING": "లోడ్...",
-      "NO_RESULTS": "No results found"
+      "NO_RESULTS": "ఎటువంటి ఫలితాలు లభించలేదు"
     },
     "LISTING_DETAILS": {
       "TITLE": "కంపెనీ వివరాలు",

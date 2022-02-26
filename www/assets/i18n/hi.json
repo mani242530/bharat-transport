@@ -2,14 +2,14 @@
   "APP": {
     "GET_STARTED": "शुरू हो जाओ",
     "UPDATE_ACCOUNT": {
-      "HEADER": "Update Account"
+      "HEADER": "खाता अद्यतन करें"
     },
     "CREATE_ACCOUNT": {
       "HEADER": "खाता बनाएं",
       "PLACEHOLDER": {
         "COMPANY_NAME": "कंपनी का नाम",
         "SELECT_FIRM_ACTIVITY": "फर्म गतिविधि का चयन करें",
-        "SELECT_VEHICLE_TYPE": "Select Vehicle Type",
+        "SELECT_VEHICLE_TYPE": "वाहन का प्रकार चुनें",
         "SELECT_LOCATION": "स्थान चुनें",
         "MOBILE_NUMBER": "मोबाइल नंबर",
         "LANDLINE_NUMBER": "लैंडलाइन नंबर",
@@ -26,8 +26,8 @@
           "FREIGHT": "माल भेजने वाले",
           "BOOKING": "बुकिंग",
           "SUPPLIER": "प्रदायक",
-          "OWNER_DRIVER": "Owner / Driver",
-          "DRIVER": "Driver"
+          "OWNER": "मालिक",
+          "DRIVER": "चालक"
         }
       },
       "REGISTERD": {
@@ -73,7 +73,7 @@
         "PAY_FROM_MASTERCARD": "मास्टरकार्ड भुगतान गेटवे का उपयोग करके मास्टरकार्ड खाते से भुगतान करें",
         "PAY_FROM_BANK": "नेट बैंकिंग गेटवे का उपयोग करके अपने बैंक खाते से भुगतान करें",
         "TOTAL_PAYABLE": "कुल देय INR",
-        "AMOUNT": "299"
+        "AMOUNT": "99"
       },
       "BUTTON": {
         "PAY": "भुगतान करें"
@@ -89,7 +89,7 @@
       "LABEL": {
         "FROM": "से",
         "TO": "तक",
-        "FIRM_ACTIVITY": "Firm Activity"
+        "FIRM_ACTIVITY": "फर्म गतिविधि"
       },
       "PLACEHOLDER": {
         "SELECT_FROM_LOCATION": "स्थान से चुनें",
@@ -108,7 +108,7 @@
       }
     },
     "LISTING": {
-      "TITLE": "Search Results",
+      "TITLE": "खोज के परिणाम",
       "LABEL": {
         "GOING_FROM": "से जा रहे हैं",
         "GOING_TO": "तक जा रहे हैं",
@@ -124,7 +124,7 @@
         "GOA": "गोवा"
       },
       "LOADING": "लोड हो रहा है...",
-      "NO_RESULTS": "No results found"
+      "NO_RESULTS": "कोई परिणाम नहीं मिला"
     },
     "LISTING_DETAILS": {
       "TITLE": "संस्थान के विवरण",
