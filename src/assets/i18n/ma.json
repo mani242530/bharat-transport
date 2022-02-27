@@ -118,7 +118,8 @@
         "SERVICE_PROVIDING_CITY": "सेवा देणारी शहरे",
         "MOBILE": "मोबाईल नंबर",
         "LOCATION": "स्थान",
-        "COMPANY_NAME": "कंपनीचे नाव"
+        "COMPANY_NAME": "कंपनीचे नाव",
+        "TOTAL_RECORDS": "Total Records"
       },
       "VALUE": {
         "LUDHIANA": "लुधियाना",

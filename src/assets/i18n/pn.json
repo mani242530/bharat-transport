@@ -120,7 +120,8 @@
           "SERVICE_PROVIDING_CITY": "ਸੇਵਾ ਪ੍ਰਦਾਨ ਕਰਨ ਵਾਲੇ ਸ਼ਹਿਰ",
           "MOBILE": "ਮੋਬਾਈਲ ਨੰਬਰ",
           "LOCATION": "ਟਿਕਾਣਾ",
-          "COMPANY_NAME": "ਕੰਪਨੀ ਦਾ ਨਾਂ"
+          "COMPANY_NAME": "ਕੰਪਨੀ ਦਾ ਨਾਂ",
+          "TOTAL_RECORDS": "Total Records"
         },
         "VALUE": {
           "LUDHIANA": "LUDHIANA",

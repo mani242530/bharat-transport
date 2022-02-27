@@ -27,9 +27,9 @@
     minBufferPx="900"
     maxBufferPx="1350"
   > -->
-  <div class="osahan-listing p-0 m-0 row border-top">
+  <div class="osahan-listing p-0 m-0 row border-top background-image">
     <div class="p-2 w-100">
-      <div class="border border-warning rounded-1 shadow-sm p-2">
+      <div class="border border-warning rounded-1 shadow-sm p-2 bg-white">
         <div class="row mx-0 px-1">
           <div class="col-6 p-0">
             <small class="text-muted mb-1 f-10 pr-1">{{
@@ -49,7 +49,12 @@
     </div>
   </div>
 
-  <div class="row mx-0 px-1">
+  <div class="row mx-0 px-1 background-image">
+    <div class="col-12">
+      <small class="text-muted d-block record-text-right">{{
+        "APP.LISTING.LABEL.TOTAL_RECORDS" | translate
+      }} - {{ companyLists.length }}</small>
+  </div>
     <div class="col-12 p-0">
         <ion-searchbar (keyup)="setFilteredItems($event)" placeholder="Filter by Company Name"></ion-searchbar>
     </div>
@@ -77,7 +82,6 @@
             "APP.LISTING.LABEL.COMPANY_NAME" | translate
           }}</small>
           <p class="mb-0 l-hght-10">{{ company.companyName }} </p>
-          
         </div>
         <ion-item class="top-border-line">
           <fa-icon

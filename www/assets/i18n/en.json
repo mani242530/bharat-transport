@@ -74,7 +74,7 @@
         "PAY_FROM_BANK": "Pay from your bank account using net banking gateway",
         "TOTAL_PAYABLE": "Total Payable INR",
         "DRIVER_AMOUNT": "99",
-"OTHER_AMOUNT": "999"
+        "OTHER_AMOUNT": "999"
       },
       "BUTTON": {
         "PAY": "Pay"

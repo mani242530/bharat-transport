@@ -272,9 +272,9 @@
   padding: 0px !important;
 }
 
-.bg-c, .ion-page, .list-md, .list-ios   {
-  background: url('../assets/images/background.jpg') no-repeat;
-  background-size: cover;
+.bg-c, .ion-page, .list-md, .list-ios, .background-image    {
+  background: url('../assets/images/background.jpg') no-repeat !important;
+  background-size: cover !important;
 }
 
 .owner-payment  {
@@ -302,4 +302,8 @@
   width: 160px;
   position: relative;
   left: 30px
+}
+
+.record-text-right {
+  text-align: right;
 }

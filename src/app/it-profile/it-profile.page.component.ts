@@ -31,6 +31,8 @@ export class ProfileComponent implements OnInit {
   userExists = false;
   docid: string;
 
+  disabledFlag = true;
+
   modifyCompanyForm: FormGroup;
   @ViewChild('modifyForm') modifyForm: FormGroupDirective;
 

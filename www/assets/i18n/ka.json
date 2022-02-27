@@ -74,7 +74,7 @@
         "PAY_FROM_BANK": "ನಿವ್ವಳ ಬ್ಯಾಂಕಿಂಗ್ ಗೇಟ್‌ವೇ ಬಳಸಿ ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಖಾತೆಯಿಂದ ಪಾವತಿಸಿ",
         "TOTAL_PAYABLE": "ಒಟ್ಟು ಪಾವತಿಸಬೇಕಾದ INR",
         "DRIVER_AMOUNT": "99",
-"OTHER_AMOUNT": "999"
+        "OTHER_AMOUNT": "999"
       },
       "BUTTON": {
         "PAY": "ಪಾವತಿ"

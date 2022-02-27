@@ -118,7 +118,8 @@
         "SERVICE_PROVIDING_CITY": "സേവന നഗരങ്ങൾ",
         "MOBILE": "മൊബൈൽ നമ്പർ",
         "LOCATION": "ലൊക്കേഷൻ",
-        "COMPANY_NAME": "കമ്പനി പേര്"
+        "COMPANY_NAME": "കമ്പനി പേര്",
+        "TOTAL_RECORDS": "Total Records"
       },
       "VALUE": {
         "LUDHIANA": "ലുധിയാന",

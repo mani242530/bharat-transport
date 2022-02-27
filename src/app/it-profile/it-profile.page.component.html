@@ -4,7 +4,7 @@
     class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple"
   >
     <h5 class="font-weight-normal mb-0 text-white">
-      <a class="text-purple" routerLink="/home"
+      <a class="text-purple" routerLink="/select-vehicle"
         ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
       ></a>
       <ion-title>{{ "APP.UPDATE_ACCOUNT.HEADER" | translate }}</ion-title>
@@ -187,7 +187,7 @@
               clearInput="true"
               formControlName="mobileNumber"
               required
-              disabled="true"
+              [disabled]=disabledFlag
               placeholder="Enter 10 digit mobile number"
             ></ion-input>
           </div>

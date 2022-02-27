@@ -121,7 +121,7 @@
         "PAY_FROM_BANK": "નેટ બેંકિંગ ગેટવેનો ઉપયોગ કરીને તમારા બેંક ખાતામાંથી ચૂકવણી કરો",
         "TOTAL_PAYABLE": "કુલ ચૂકવવાપાત્ર INR",
         "DRIVER_AMOUNT": "99",
-"OTHER_AMOUNT": "999"
+        "OTHER_AMOUNT": "999"
       },
       "BUTTON": {
         "PAY": "ચુકવો"

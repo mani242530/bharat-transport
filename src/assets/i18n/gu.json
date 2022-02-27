@@ -165,7 +165,8 @@
         "SERVICE_PROVIDING_CITY": "સેવા પૂરી પાડતા શહેરો",
         "MOBILE": "મોબાઈલ નંબર(ઓ)",
         "LOCATION": "સ્થાન",
-        "COMPANY_NAME": "કંપની નું નામ"
+        "COMPANY_NAME": "કંપની નું નામ",
+        "TOTAL_RECORDS": "Total Records"
       },
       "VALUE": {
         "LUDHIANA": "લુધિયાણા",

@@ -118,7 +118,8 @@
         "SERVICE_PROVIDING_CITY": "Service Providing Cities",
         "MOBILE": "Mobile Number(s)",
         "LOCATION": "Location",
-        "COMPANY_NAME": "Company Name"
+        "COMPANY_NAME": "Company Name",
+        "TOTAL_RECORDS": "Total Records"
       },
       "VALUE": {
         "LUDHIANA": "LUDHIANA",

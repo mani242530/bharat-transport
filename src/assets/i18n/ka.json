@@ -118,7 +118,8 @@
         "SERVICE_PROVIDING_CITY": "ಸೇವೆ ಒದಗಿಸುವ ನಗರಗಳು",
         "MOBILE": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ(ಗಳು)",
         "LOCATION": "ಸ್ಥಳ",
-        "COMPANY_NAME": "ಸಂಸ್ಥೆಯ ಹೆಸರು"
+        "COMPANY_NAME": "ಸಂಸ್ಥೆಯ ಹೆಸರು",
+        "TOTAL_RECORDS": "Total Records"
       },
       "VALUE": {
         "LUDHIANA": "ಲುಧಿಯಾನ",

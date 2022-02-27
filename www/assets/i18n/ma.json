@@ -74,7 +74,7 @@
         "PAY_FROM_BANK": "नेट बँकिंग गेटवे वापरून तुमच्या बँक खात्यातून पैसे भरा",
         "TOTAL_PAYABLE": "एकूण देय INR",
         "DRIVER_AMOUNT": "99",
-"OTHER_AMOUNT": "999"
+        "OTHER_AMOUNT": "999"
       },
       "BUTTON": {
         "PAY": "पैसे द्या"
