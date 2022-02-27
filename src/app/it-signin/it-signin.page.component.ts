@@ -97,6 +97,8 @@ export class SignInPageComponent implements OnInit {
                 console.log(filteredUser[0].payload.doc.data());
                 if (filteredUser[0].payload.doc.data()) {
                   this.appService.docId = filteredUser[0].payload.doc.id;
+                  this.appService.userSelectedFirmActivity = filteredUser[0].payload.doc.data()['firmActivity'];
+                  console.log(this.appService.userSelectedFirmActivity);
                   console.log(filteredUser[0].payload.doc.id);
                   if (
                     filteredUser[0].payload.doc.data()['paymentStatus'] === 'PAID'

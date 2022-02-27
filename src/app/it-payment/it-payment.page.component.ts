@@ -14,10 +14,14 @@ export class PaymentPageComponent implements OnInit {
   razor_key = 'rzp_test_0Pzav9uuhHbTsd,Qj9LUgkFApQzr1zM9YJ3eoOR';
   cardDetails: any = {};
 
+  userFirmActivity: string;
+
   constructor(private router: Router, private appService: AppService) {}
 
   ngOnInit() {
     // this.appService.otpVerifiedToast();
+    this.userFirmActivity = this.appService.userSelectedFirmActivity
+    console.log(this.userFirmActivity)
   }
 
   payWithRazorpay() {

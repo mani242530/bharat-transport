@@ -105,6 +105,7 @@ export class VerificationPageComponent implements OnInit {
                 this.router.navigate(['/select-vehicle']);
               } else {
                 console.log('user did not pay');
+                this.appService.userSelectedFirmActivity = filteredUser[0].payload.doc.data()['firmActivity'];
                 this.router.navigate(['/payment']);
               }
             });

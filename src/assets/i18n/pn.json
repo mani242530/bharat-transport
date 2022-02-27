@@ -75,7 +75,8 @@
           "PAY_FROM_MASTERCARD": "Pay from mastercard account using mastercard payment gateway",
           "PAY_FROM_BANK": "Pay from your bank account using net banking gateway",
           "TOTAL_PAYABLE": "Total Payable INR",
-          "AMOUNT": "99"
+          "DRIVER_AMOUNT": "99",
+          "OTHER_AMOUNT": "999"
         },
         "BUTTON": {
           "PAY": "ਭੁਗਤਾਨ ਕਰੋ"
