@@ -129,7 +129,7 @@
 
     <div class="osahan-fotter fixed-bottom px-3 py-3">
       <div class="col-12">
-        <button
+        <!-- <button
           type="submit"
           class="btn btn-purple btn-block"
           data-toggle="modal"
@@ -137,15 +137,17 @@
           routerLink="/select-vehicle"
         >
           {{ "APP.PAYMENT.BUTTON.PAY" | translate }}
+        </button> -->
+        <button
+          type="submit"
+          class="btn btn-purple btn-block"
+          style="padding-left: 2%"
+          (click)="payWithRazorpay()"
+        >
+          {{ "APP.PAYMENT.BUTTON.PAY" | translate }}
         </button>
-              <!-- <button
-                type="submit"
-                class="btn btn-purple btn-block"
-                style="padding-left: 2%"
-                (click)="payWithRazorpay()"
-              >
-                LIVE TEST {{ "APP.PAYMENT.BUTTON.PAY" | translate }}
-              </button> -->
+
+        <!-- <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_J1pFvmDAT9lJsO" async> </script> </form> -->
       </div>
     </div>
     </div>

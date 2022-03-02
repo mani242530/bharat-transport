@@ -8,10 +8,10 @@ declare var RazorpayCheckout: any;
   styleUrls: ['./it-payment.page.component.scss'],
 })
 export class PaymentPageComponent implements OnInit {
-  paymentAmount: number = 100;
+  paymentAmount: number = 999.00;
   currency: string = 'INR';
   currencyIcon: string = '$';
-  razor_key = 'rzp_test_0Pzav9uuhHbTsd,Qj9LUgkFApQzr1zM9YJ3eoOR';
+  razor_key = 'rzp_live_hP98k48bLAaoBC';
   cardDetails: any = {};
 
   userFirmActivity: string;
@@ -49,7 +49,7 @@ export class PaymentPageComponent implements OnInit {
 
     var successCallback = function (payment_id) {
       alert('payment_id: ' + payment_id);
-      // this.router.navigate(['/select-vehicle']);
+      this.router.navigate(['/select-vehicle']);
     };
 
     var cancelCallback = function (error) {
