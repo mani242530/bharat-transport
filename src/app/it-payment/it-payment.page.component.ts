@@ -8,9 +8,9 @@ declare var RazorpayCheckout: any;
   styleUrls: ['./it-payment.page.component.scss'],
 })
 export class PaymentPageComponent implements OnInit {
-  paymentAmount: number = 999.00;
+  paymentAmount: number = 9900.00;
   currency: string = 'INR';
-  currencyIcon: string = '$';
+  currencyIcon: string = '₹';
   razor_key = 'rzp_live_hP98k48bLAaoBC';
   cardDetails: any = {};
 
@@ -20,25 +20,24 @@ export class PaymentPageComponent implements OnInit {
 
   ngOnInit() {
     // this.appService.otpVerifiedToast();
-    this.userFirmActivity = this.appService.userSelectedFirmActivity
-    console.log(this.userFirmActivity)
+    this.userFirmActivity = this.appService.userSelectedFirmActivity;
   }
 
   payWithRazorpay() {
     var options = {
-      description: 'Credits towards consultation',
-      image: 'https://i.imgur.com/3g7nmJC.png',
+      description: 'Credit towards Service',
+      image: 'https://mabblesoft.com/works/bharat-transport/app_logo.png',
       currency: 'INR', // your 3 letter currency code
       key: this.razor_key, // your Key Id from Razorpay dashboard
       amount: this.paymentAmount, // Payment amount in smallest denomiation e.g. cents for USD
-      name: 'IndianTransport pay',
+      name: 'Bharat Transport App',
       prefill: {
-        email: 'mabblesoft@gmail.com',
-        contact: '9944634307',
-        name: 'MabbleSoft',
+        email: 'info@privid.net.in',
+        contact: '9081486846',
+        name: 'Bharat Transport App',
       },
       theme: {
-        color: '#F37254',
+        color: '#5f259f',
       },
       modal: {
         ondismiss: function () {

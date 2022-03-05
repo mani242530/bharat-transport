@@ -1,14 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireDatabase } from '@angular/fire/database'
 import { ActivatedRoute, Router } from '@angular/router';
-import { IonRouterOutlet, ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { Company } from '../models/contact';
 import { AppService } from '../services/app.servcie';
 import { ToastService } from '../services/toast.service';
-import { FormGroup, FormGroupDirective, FormControl } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
@@ -16,6 +14,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
   templateUrl: './it-listing.page.component.html',
   styleUrls: ['./it-listing.page.component.scss'],
 })
+
 export class ListingPageComponent implements OnInit {
   companys: Company[];
   finalResultForCompanys: Company[];
@@ -26,10 +25,6 @@ export class ListingPageComponent implements OnInit {
   selectedVehicleType: string;
   searchCompanyModel;
   docId: string;
-
-
-  // @ViewChild(CdkVirtualScrollViewport, { static: true })
-  // viewport: CdkVirtualScrollViewport;
 
   constructor(
     public modalController: ModalController,
@@ -43,7 +38,6 @@ export class ListingPageComponent implements OnInit {
     this.isLoading = true;
     this.docId = this.appService.docId;
     this.router.queryParams.subscribe((params) => {
-      console.log(params);
       this.searchParam = params;
       this.searchContactByLocation(this.searchParam);
     });
@@ -104,7 +98,6 @@ export class ListingPageComponent implements OnInit {
           });
 
           if (activityresult.length > 0) {
-            console.log(activityresult);
             this.noresults = false;
             this.companys = activityresult.map((result) => {
               return {
@@ -115,12 +108,16 @@ export class ListingPageComponent implements OnInit {
                 vehicleType: result.payload.doc
                   .data()
                   ['vehicleType'],
-                landlineNumber: result.payload.doc.data()['landlineNumber'],
                 mobileNumber: result.payload.doc.data()['mobileNumber'],
                 alternateMobileNumber: result.payload.doc.data()['alternateMobileNumber'],
                 location: result.payload.doc.data()['location'],
                 serviceProvidedLocation: result.payload.doc.data()['serviceProvidedLocation'],
                 referenceName: result.payload.doc.data()['referenceName'],
+                vehicleNos: result.payload.doc.data()['vehicleNos'],
+                aadharNumber: result.payload.doc.data()['aadharNumber'],
+                drivingLicenseNumber: result.payload.doc.data()['drivingLicenseNumber'],
+                paymentStatus: result.payload.doc.data()['paymentStatus'],
+                accountStatus: result.payload.doc.data()['accountStatus'],
               };
             });
             this.companyLists = this.companys;
@@ -142,7 +139,6 @@ export class ListingPageComponent implements OnInit {
   }
 
   async setFilteredItems(event) {
-    console.log('before', this.finalResultForCompanys);
     const searchCompanyResult = this.finalResultForCompanys;
     const duplicateResult = searchCompanyResult.filter(item => item.companyName.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1);
 
@@ -150,7 +146,6 @@ export class ListingPageComponent implements OnInit {
     //   return ((v['mobileNumber'] == '+91'+event.target.value || v['companyName'] == event.target.value.toLowerCase()));
     // })
     this.companyLists = duplicateResult;
-    console.log('after', this.companyLists);
   }
 
   async doLogout(): Promise<void> {

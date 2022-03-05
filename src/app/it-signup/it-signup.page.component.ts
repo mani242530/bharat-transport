@@ -9,7 +9,6 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import * as location from '../json/location';
 import * as serviceProvidedLocation from '../json/service-provided-location';
 import { Company } from '../models/contact';
 import { ToastService } from '../services/toast.service';
@@ -39,6 +38,8 @@ export class SignUpPageComponent implements OnInit {
   showProgress = false;
   invalidMobilenumber = false;
   userExists = false;
+  checkFirmActivityIsDriver = false;
+  checkFirmActivityIsOwner = false;
 
   createCompanyForm: FormGroup;
   @ViewChild('createForm') createForm: FormGroupDirective;
@@ -68,7 +69,6 @@ export class SignUpPageComponent implements OnInit {
 
   constructor(
     public addnewFormbuilder: FormBuilder,
-    private toastservice: ToastService,
     public ngroute: Router,
     private fbstore: AngularFirestore,
     private toastController: ToastController,
@@ -81,7 +81,6 @@ export class SignUpPageComponent implements OnInit {
     this.locations = serviceLocations.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
     this.serviceProvidedLocations = serviceLocations.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
 
-    this.firmActivitys = this.firmActivitys.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
     this.vehicleTypes = this.vehicleTypes.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
     this.initializeForm();
   }
@@ -92,12 +91,14 @@ export class SignUpPageComponent implements OnInit {
       ownerName: new FormControl('', Validators.required),
       firmActivity: new FormControl('', Validators.required),
       vehicleType: new FormControl('', Validators.required),
-      landlineNumber: new FormControl(''),
       mobileNumber: new FormControl('', Validators.required),
       alternateMobileNumber: new FormControl(''),
       location: new FormControl('', Validators.required),
       serviceProvidedLocation: new FormControl('', Validators.required),
       referenceName: new FormControl('', [Validators.pattern('^[a-zA-Z \-\']+')]),
+      vehicleNos: new FormControl(''),
+      aadharNumber: new FormControl(''),
+      drivingLicenseNumber: new FormControl(''),
     });
   }
 
@@ -123,6 +124,19 @@ export class SignUpPageComponent implements OnInit {
     );
   }
 
+  onFirmActivityChange(value) {
+    if(value.detail.value === 'Driver') {
+      this.checkFirmActivityIsOwner = false;
+      this.checkFirmActivityIsDriver = true;
+    } else if (value.detail.value === 'Owner') {
+      this.checkFirmActivityIsDriver = false;
+      this.checkFirmActivityIsOwner = true;
+    } else {
+      this.checkFirmActivityIsDriver = false;
+      this.checkFirmActivityIsOwner = false;
+    }
+  }
+
   async createCompany(formGroup: FormGroup) {
     this.showProgress = true;
     const companyObj = {
@@ -130,14 +144,16 @@ export class SignUpPageComponent implements OnInit {
       ownerName: this.createCompanyForm.get('ownerName').value,
       firmActivity: this.createCompanyForm.get('firmActivity').value,
       vehicleType: this.createCompanyForm.get('vehicleType').value,
-      landlineNumber: this.createCompanyForm.get('landlineNumber').value,
       mobileNumber: '+91' + this.createCompanyForm.get('mobileNumber').value,
       alternateMobileNumber: '+91' + this.createCompanyForm.get('alternateMobileNumber').value,
       location: this.createCompanyForm.get('location').value,
       serviceProvidedLocation: this.createCompanyForm.get('serviceProvidedLocation').value,
       referenceName: this.createCompanyForm.get('referenceName').value,
+      vehicleNos: this.createCompanyForm.get('vehicleNos').value,
+      aadharNumber: this.createCompanyForm.get('aadharNumber').value,
+      drivingLicenseNumber: this.createCompanyForm.get('drivingLicenseNumber').value,
       language: this.appservice.selectedLanguage,
-      paymentStatus: 'NOT PAID',
+      paymentStatus: 'Not Paid',
     };
     Object.keys(companyObj).forEach((k) => {
       if (typeof companyObj[k] !== 'object') {
@@ -150,14 +166,12 @@ export class SignUpPageComponent implements OnInit {
       )
       .get()
       .subscribe((users) => {
-        console.log(users.size);
         if (users.size === 0) {
           try {
             this.fbstore
               .collection('companys')
               .add(companyObj)
               .then((data) => {
-                console.log(companyObj);
                 if (data) {
                   return new Promise<any>((resolve, reject) => {
                     this.authtenticationService
@@ -182,7 +196,6 @@ export class SignUpPageComponent implements OnInit {
               });
           } catch (error) {
             this.showProgress = false;
-            console.log(error);
           }
         } else {
           this.showProgress = false;

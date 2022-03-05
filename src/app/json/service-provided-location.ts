@@ -81,7 +81,7 @@ export const serviceProvidedLocationData = [
     },
     {
     id: '1',
-    name: 'APP.PREFERED_LOCATION.NEEMACH',
+    name: 'APP.PREFERED_LOCATION.NEEMUCH',
     },
     {
     id: '1',
@@ -97,10 +97,6 @@ export const serviceProvidedLocationData = [
     },
     {
     id: '1',
-    name: 'APP.PREFERED_LOCATION.MEHSANA',
-    },
-    {
-    id: '1',
     name: 'APP.PREFERED_LOCATION.MADURAI',
     },
     {
@@ -113,7 +109,7 @@ export const serviceProvidedLocationData = [
     },
     {
     id: '1',
-    name: 'APP.PREFERED_LOCATION.HISSAR',
+    name: 'APP.PREFERED_LOCATION.HISAR',
     },
     {
     id: '1',
@@ -165,7 +161,7 @@ export const serviceProvidedLocationData = [
     },
     {
     id: '1',
-    name: 'APP.PREFERED_LOCATION.BEAWER',
+    name: 'APP.PREFERED_LOCATION.BEAWAR',
     },
     {
     id: '1',
@@ -181,7 +177,7 @@ export const serviceProvidedLocationData = [
     },
     {
     id: '1',
-    name: 'APP.PREFERED_LOCATION.ANGUL',
+    name: 'APP.PREFERED_LOCATION.ANGOL',
     },
     {
     id: '1',
@@ -221,7 +217,7 @@ export const serviceProvidedLocationData = [
     },
     {
     id: '2',
-    name: 'APP.PREFERED_LOCATION.DAMAN_DIU',
+    name: 'APP.PREFERED_LOCATION.DAMAN',
     },
     {
     id: '2',
@@ -525,7 +521,7 @@ export const serviceProvidedLocationData = [
     },
     {
     id: '13',
-    name: 'APP.PREFERED_LOCATION.NIZAMABAD',
+    name: 'APP.PREFERED_LOCATION.NIZAMBAD',
     },
     {
     id: '14',

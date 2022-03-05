@@ -94,22 +94,17 @@ export class SignInPageComponent implements OnInit {
                   result.payload.doc.data()['mobileNumber'] === mobileNumber
               );
               if(filteredUser.length > 0) {
-                console.log(filteredUser[0].payload.doc.data());
                 if (filteredUser[0].payload.doc.data()) {
                   this.appService.docId = filteredUser[0].payload.doc.id;
                   this.appService.userSelectedFirmActivity = filteredUser[0].payload.doc.data()['firmActivity'];
-                  console.log(this.appService.userSelectedFirmActivity);
-                  console.log(filteredUser[0].payload.doc.id);
                   if (
-                    filteredUser[0].payload.doc.data()['paymentStatus'] === 'PAID'
+                    filteredUser[0].payload.doc.data()['paymentStatus'] === 'Paid'
                   ) {
-                    console.log('user did pay');
                     this.showProgress = false;
                     this.mobileNumberNotFound = false;
                    
                     this.router.navigate(['/select-vehicle']);
                   } else {
-                    console.log('user did not pay');
                     this.showProgress = false;
                     this.mobileNumberNotFound = false;
                     this.router.navigate(['/payment']);
@@ -118,12 +113,10 @@ export class SignInPageComponent implements OnInit {
                 } else {
                   this.showProgress = false;
                   this.mobileNumberNotFound = true;
-                  console.log('user not found in db');
                 }
               } else {
                 this.showProgress = false;
                 this.mobileNumberNotFound = true;
-                console.log('user not found in db');
               }
               
             });

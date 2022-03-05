@@ -9,12 +9,9 @@ import {
 } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import * as location from '../json/location';
 import * as serviceProvidedLocation from '../json/service-provided-location';
 import { Company } from '../models/contact';
 import { ToastService } from '../services/toast.service';
-import firebase from 'firebase/app';
-import { AuthtenticationService } from '../services/authentication.service';
 import { AppService } from '../services/app.servcie';
 
 @Component({
@@ -22,6 +19,7 @@ import { AppService } from '../services/app.servcie';
   templateUrl: './it-profile.page.component.html',
   styleUrls: ['./it-profile.page.component.scss'],
 })
+
 export class ProfileComponent implements OnInit {
   myModal: any;
   newCompany: Company = new Company();
@@ -32,6 +30,8 @@ export class ProfileComponent implements OnInit {
   docid: string;
 
   disabledFlag = true;
+  checkFirmActivityIsDriver = false;
+  checkFirmActivityIsOwner = false;
 
   modifyCompanyForm: FormGroup;
   @ViewChild('modifyForm') modifyForm: FormGroupDirective;
@@ -135,7 +135,6 @@ export class ProfileComponent implements OnInit {
     this.locations = serviceLocations.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
     this.serviceProvidedLocations = serviceLocations.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
 
-    this.firmActivitys = this.firmActivitys.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
     this.vehicleTypes = this.vehicleTypes.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
 
     this.getCompanys(this.docid);
@@ -148,36 +147,53 @@ export class ProfileComponent implements OnInit {
       ownerName: new FormControl('', Validators.required),
       firmActivity: new FormControl('', Validators.required),
       vehicleType: new FormControl('', Validators.required),
-      landlineNumber: new FormControl(''),
       mobileNumber: new FormControl('', Validators.required),
       alternateMobileNumber: new FormControl(''),
       location: new FormControl('', Validators.required),
       serviceProvidedLocation: new FormControl('', Validators.required),
       referenceName: new FormControl('', [Validators.pattern('^[a-zA-Z \-\']+')]),
       language: new FormControl(''),
+      vehicleNos: new FormControl(''),
+      aadharNumber: new FormControl(''),
+      drivingLicenseNumber: new FormControl(''),
+
     });
   }
 
   async getCompanys(docid: string){
     try{
       await this.fbstore.doc("companys/"+docid).valueChanges()
-      .subscribe(result => { 
-        console.log("modify>>>" + result)
+      .subscribe(result => {
+        this.onFirmActivityValue(result);
         this.modifyCompanyForm.controls['companyName'].setValue(result["companyName"]);
         this.modifyCompanyForm.controls['ownerName'].setValue(result["ownerName"]);
         this.modifyCompanyForm.controls['firmActivity'].setValue(result["firmActivity"]);
         this.modifyCompanyForm.controls['vehicleType'].setValue(result["vehicleType"]);
-        this.modifyCompanyForm.controls['landlineNumber'].setValue(result["landlineNumber"]);
         this.modifyCompanyForm.controls['mobileNumber'].setValue(result["mobileNumber"]);
         this.modifyCompanyForm.controls['alternateMobileNumber'].setValue(result["alternateMobileNumber"]);
         this.modifyCompanyForm.controls['location'].setValue(result["location"]);
         this.modifyCompanyForm.controls['serviceProvidedLocation'].setValue(result["serviceProvidedLocation"]);
         this.modifyCompanyForm.controls['referenceName'].setValue(result["referenceName"]);
         this.modifyCompanyForm.controls['language'].setValue(result["language"]);
+        this.modifyCompanyForm.controls['vehicleNos'].setValue(result["vehicleNos"]);
+        this.modifyCompanyForm.controls['aadharNumber'].setValue(result["aadharNumber"]);
+        this.modifyCompanyForm.controls['drivingLicenseNumber'].setValue(result["drivingLicenseNumber"]);
       });
     }catch(error){
       this.toastservice.showToast(error.message, 2000);
-      //console.log(error.message);
+    }
+  }
+
+  onFirmActivityValue(result) {
+    if(result["firmActivity"] === 'Driver') {
+      this.checkFirmActivityIsOwner = false;
+      this.checkFirmActivityIsDriver = true;
+    } else if (result["firmActivity"] === 'Owner') {
+      this.checkFirmActivityIsDriver = false;
+      this.checkFirmActivityIsOwner = true;
+    } else {
+      this.checkFirmActivityIsDriver = false;
+      this.checkFirmActivityIsOwner = false;
     }
   }
 
@@ -204,30 +220,29 @@ export class ProfileComponent implements OnInit {
   }
 
   async doModify() {
-    
     let companyobj = {
       companyName: this.modifyCompanyForm.get('companyName').value,
       ownerName: this.modifyCompanyForm.get('ownerName').value,
       firmActivity: this.modifyCompanyForm.get('firmActivity').value,
       vehicleType: this.modifyCompanyForm.get('vehicleType').value.toString().split(','),
-      landlineNumber: this.modifyCompanyForm.get('landlineNumber').value,
       mobileNumber: this.modifyCompanyForm.get('mobileNumber').value,
       alternateMobileNumber: this.modifyCompanyForm.get('alternateMobileNumber').value,
       location: this.modifyCompanyForm.get('location').value,
       serviceProvidedLocation: this.modifyCompanyForm.get('serviceProvidedLocation').value.toString().split(','),
       referenceName: this.modifyCompanyForm.get('referenceName').value,
       language: this.modifyCompanyForm.get('language').value,
-      paymentStatus: 'NOT PAID'
+      vehicleNos: this.modifyCompanyForm.get('vehicleNos').value,
+      aadharNumber: this.modifyCompanyForm.get('aadharNumber').value,
+      drivingLicenseNumber: this.modifyCompanyForm.get('drivingLicenseNumber').value,
+      paymentStatus: 'Not Paid'
     }
     try{
       await this.fbstore.doc("companys/"+this.docid).update(companyobj).then(data => {
-        console.log(data);
         this.toastservice.showToast('Updated Sucessfully', 2000);
         // this.ngroute.navigate(['home']);
       })
     }catch(error){
       this.toastservice.showToast(error.message, 2000);
-      //console.log(error.message);
     }
   }
 }

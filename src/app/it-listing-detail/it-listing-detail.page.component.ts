@@ -62,7 +62,6 @@ export class ListingDetailPageComponent implements OnInit {
         });
     } catch (error) {
       this.toastservice.showToast(error.message, 2000);
-      console.log(error.message);
     }
   }
 
@@ -74,7 +73,6 @@ export class ListingDetailPageComponent implements OnInit {
   }
 
   callNow(number) {
-    console.log(number);
     this.callNumber.callNumber(number, true)
       .then(res => console.log('Launched dialer!', res))
       .catch(err => console.log('Error launching dialer', err));

@@ -4,10 +4,13 @@ export class Company {
   ownerName: string;
   firmActivity: string;
   vehicleType: string[];
-  landlineNumber: string;
   mobileNumber: string;
   alternateMobileNumber: string;
   location: string;
   serviceProvidedLocation: string[];
   referenceName: string;
+  paymentStatus?: string;
+  accountStatus?: string;
+  vehicleNos?: string;
+  language?: string;
 }

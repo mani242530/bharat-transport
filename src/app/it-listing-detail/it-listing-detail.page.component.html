@@ -151,30 +151,6 @@
                     >
                   </div>
                 </div>
-                <div class="bus-details pt-2 pb-0 px-2">
-                  <div class="info" id="info">
-                    <ion-label>
-                      <h3 class="font-weight-normal mb-1" style="color: #5f259f;">
-                        {{
-                          "APP.LISTING_DETAILS.LABEL.LANDLINE_NUMBER"
-                            | translate
-                        }}
-                      </h3>
-                    </ion-label>
-
-                    <div
-                      *ngIf="company.landlineNumber !== ''; else other_content"
-                    >
-                      <p class="text-muted">
-                        {{ company.landlineNumber }}
-                      </p>
-                    </div>
-
-                    <ng-template #other_content
-                      ><p class="text-muted">N/A</p></ng-template
-                    >
-                  </div>
-                </div>
               </div>
 
               <!-- Button -->

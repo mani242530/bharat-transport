@@ -85,7 +85,6 @@ export class VerificationPageComponent implements OnInit {
       this.authtenticationService
         .enterVerificationCode(res)
         .then(async (userData) => {
-          console.log(userData);
           const user = userData;
           this.appService.otpVerifiedToast();
           resolve(user);
@@ -97,14 +96,11 @@ export class VerificationPageComponent implements OnInit {
                 (result) =>
                   result.payload.doc.data()['mobileNumber'] === user.phoneNumber
               );
-              console.log(filteredUser[0].payload.doc.data());
               if (
-                filteredUser[0].payload.doc.data()['paymentStatus'] === 'PAID'
+                filteredUser[0].payload.doc.data()['paymentStatus'] === 'Paid'
               ) {
-                console.log('user did pay');
                 this.router.navigate(['/select-vehicle']);
               } else {
-                console.log('user did not pay');
                 this.appService.userSelectedFirmActivity = filteredUser[0].payload.doc.data()['firmActivity'];
                 this.router.navigate(['/payment']);
               }
