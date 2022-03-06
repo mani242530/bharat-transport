@@ -8,7 +8,7 @@ declare var RazorpayCheckout: any;
   styleUrls: ['./it-payment.page.component.scss'],
 })
 export class PaymentPageComponent implements OnInit {
-  paymentAmount: number = 9900.00;
+  paymentAmount: number = 100.00;
   currency: string = 'INR';
   currencyIcon: string = '₹';
   razor_key = 'rzp_live_hP98k48bLAaoBC';
@@ -31,9 +31,19 @@ export class PaymentPageComponent implements OnInit {
       key: this.razor_key, // your Key Id from Razorpay dashboard
       amount: this.paymentAmount, // Payment amount in smallest denomiation e.g. cents for USD
       name: 'Bharat Transport App',
+      options:{
+        checkout:{
+          method:{
+            netbanking:1,
+            card:1,
+            upi:1,
+            wallet:0,
+          }
+        }
+      },
       prefill: {
-        email: 'info@privid.net.in',
-        contact: '9081486846',
+        email: 'info@privid.co.in',
+        contact: '+91 9081486846',
         name: 'Bharat Transport App',
       },
       theme: {

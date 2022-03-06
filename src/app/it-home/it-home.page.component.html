@@ -61,7 +61,7 @@
                 required
               >
                 <ion-select-option
-                  *ngFor="let location of locations"
+                  *ngFor="let location of serviceProvidedLocations"
                   value="{{ location.name | translate }}"
                   title="{{ location.name | translate }}"
                   >{{ location.name | translate }}</ion-select-option
