@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FormControl, FormGroup, FormGroupDirective } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
-import * as location from '../json/location';
 import * as serviceProvidedLocation from '../json/service-provided-location';
 import { AppService } from '../services/app.servcie';
 
@@ -30,7 +29,6 @@ export class HomePageComponent implements OnInit {
 
   constructor(private router: Router, public appService: AppService,  public fbauth: AngularFireAuth) {
     this.docId = this.appService.docId;
-    this.locations = location.puneData;
     const serviceLocations = serviceProvidedLocation.serviceProvidedLocationData
     this.serviceProvidedLocations = serviceLocations.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
   }

@@ -598,5 +598,33 @@ export const serviceProvidedLocationData = [
     {
     id: '9',
     name: 'APP.PREFERED_LOCATION.WARANGAL',
+    },
+    {
+    id: '9',
+    name: 'APP.PREFERED_LOCATION.DELHI',
+    },
+    {
+    id: '9',
+    name: 'APP.PREFERED_LOCATION.FARIDABAD',
+    },
+    {
+    id: '9',
+    name: 'APP.PREFERED_LOCATION.JAMSHEDPUR',
+    },
+    {
+    id: '9',
+    name: 'APP.PREFERED_LOCATION.KALA-AMB',
+    },
+    {
+    id: '9',
+    name: 'APP.PREFERED_LOCATION.MUZAFFARNAGAR',
+    },
+    {
+    id: '9',
+    name: 'APP.PREFERED_LOCATION.UMBERGAON',
+    },
+    {
+    id: '9',
+    name: 'APP.PREFERED_LOCATION.VADODARA',
     }
 ];

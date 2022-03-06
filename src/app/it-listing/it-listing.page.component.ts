@@ -113,7 +113,7 @@ export class ListingPageComponent implements OnInit {
                 location: result.payload.doc.data()['location'],
                 serviceProvidedLocation: result.payload.doc.data()['serviceProvidedLocation'],
                 referenceName: result.payload.doc.data()['referenceName'],
-                // vehicleNos: result.payload.doc.data()['vehicleNos'],
+                vehicleNos: result.payload.doc.data()['vehicleNos'],
                 // aadharNumber: result.payload.doc.data()['aadharNumber'],
                 // drivingLicenseNumber: result.payload.doc.data()['drivingLicenseNumber'],
                 paymentStatus: result.payload.doc.data()['paymentStatus'],
