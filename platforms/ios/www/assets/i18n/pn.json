@@ -153,8 +153,8 @@
         "OPEN_TRUCK": "Open Trucks",
         "PART_LOAD": "Part Load",
         "ODC": "ODC",
-        "20_FT_CBT": "20ft Container CBT",
-        "20_FT_IMPORT_EXPORT": "20ft/40ft Container (Import and Export)",
+        "20_FT_CBT": "20'ft Container CBT",
+        "20_FT_IMPORT_EXPORT": "20'ft / 40'ft Container (Import and Export)",
         "32_FT_SINGLE_EXCEL": "32ft Container"
       },
       "PREFERED_LOCATION": {

@@ -51,15 +51,15 @@ export class ListingPageComponent implements OnInit {
     return item.id;
   }
 
-  checkThisList(list1,list2){  
+  checkThisList(list1,list2) {  
     let result  = false; 
     var hasValue = list2.indexOf(list1) != -1;
-    if(hasValue){
-    result = true;
+    if(hasValue) {
+      result = true;
     }
     
     return result ;
-    }
+  }
 
   async searchContactByLocation(params) {
     try {
@@ -67,22 +67,21 @@ export class ListingPageComponent implements OnInit {
         .collection('companys')
         .snapshotChanges()
         .subscribe((data) => {
-
+          console.log('1',data);
           // VEHICLE TYPE
           let fresult= [];
-          let sresult = [];
           for(let res of data){
               if(this.checkThisList(this.selectedVehicleType, res.payload.doc.data()['vehicleType']))
               {
                 fresult.push(res);
               }
           }
-
+          console.log('fresult',fresult);
           // FROM LOCATION
           const locresult = fresult.filter(function(item) {
             return item.payload.doc.data()['location'] === params.from;
           });
-
+          console.log('locresult',locresult);
           // TO LOCATION
           let serviceresult= [];
           for(let lres of locresult){
@@ -91,15 +90,16 @@ export class ListingPageComponent implements OnInit {
                 serviceresult.push(lres);
               }
           }
-
+          console.log('serviceresult',serviceresult);
           // FIRM ACTIVITY
           const activityresult = serviceresult.filter(function(item) {
             return item.payload.doc.data()['firmActivity'] === params.firmActivity;
           });
-
-          if (activityresult.length > 0) {
+          console.log('activityresult',activityresult);
+          if (activityresult && activityresult.length > 0) {
             this.noresults = false;
-            this.companys = activityresult.map((result) => {
+            this.companys = activityresult && activityresult.map((result) => {
+              console.log(result)
               return {
                 id: result.payload.doc.id,
                 companyName: result.payload.doc.data()['companyName'],
@@ -121,6 +121,7 @@ export class ListingPageComponent implements OnInit {
               };
             });
             this.companyLists = this.companys;
+            console.log(this.companyLists)
             this.finalResultForCompanys = this.companys;
           } else {
             this.noresults = true;

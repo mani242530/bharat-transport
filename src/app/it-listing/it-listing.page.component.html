@@ -32,17 +32,17 @@
       <div class="border border-warning rounded-1 shadow-sm p-2 bg-white">
         <div class="row mx-0 px-1">
           <div class="col-6 p-0">
-            <small class="text-muted mb-1 f-10 pr-1">{{
+            <small class="text-purple font-bold mb-1 f-10 pr-1">{{
               "APP.LISTING.LABEL.GOING_FROM" | translate
             }}</small>
-            <p class="small mb-0">{{ searchParam.from | uppercase }}</p>
+            <p class="small font-bold mb-0">{{ searchParam.from | uppercase }}</p>
           </div>
 
           <div class="col-6 p-0">
-            <small class="text-muted mb-1 f-10 pr-1">{{
+            <small class="text-purple font-bold mb-1 f-10 pr-1">{{
               "APP.LISTING.LABEL.GOING_TO" | translate
             }}</small>
-            <p class="small mb-0">{{ searchParam.to | uppercase }}</p>
+            <p class="small font-bold mb-0">{{ searchParam.to | uppercase }}</p>
           </div>
         </div>
       </div>
@@ -51,12 +51,20 @@
 
   <div class="row mx-0 px-1 background-image">
     <div class="col-12">
-      <small class="text-muted d-block record-text-right">{{
+      <small 
+        class="text-purple font-bold d-block record-text-right" 
+        *ngIf="companyLists && companyLists.length > 0"
+      >{{
         "APP.LISTING.LABEL.TOTAL_RECORDS" | translate
-      }} - {{ companyLists.length }}</small>
+      }} - {{ companyLists && companyLists.length }}
+      </small>
   </div>
     <div class="col-12 p-0">
-        <ion-searchbar (keyup)="setFilteredItems($event)" placeholder="Filter by Company Name"></ion-searchbar>
+        <ion-searchbar
+          (keyup)="setFilteredItems($event)"
+          class="font-bold"
+          placeholder="Filter by Company Name"
+        ></ion-searchbar>
     </div>
   </div>
 
@@ -78,9 +86,9 @@
       >
      
         <div class="tic-div mb-2">
-          <small class="text-muted d-block">{{
+          <span class="text-purple font-bold d-block">{{
             "APP.LISTING.LABEL.COMPANY_NAME" | translate
-          }}</small>
+          }}</span>
           <p class="mb-0 l-hght-10">{{ company.companyName }} </p>
         </div>
         <ion-item class="top-border-line">
@@ -93,13 +101,13 @@
             <h2>{{
               "APP.LISTING.LABEL.MOBILE" | translate
             }}</h2>
-            <p>
+            <p class="font-bold text-purple">
               {{ company.mobileNumber }}
             </p>
           </ion-label>
           <fa-icon
               icon="angle-double-right"
-              class="angle-double-right"
+              class="angle-double-right font-bold"
               [routerLink]="['/listing-detail/', company.id]"
             ></fa-icon>
         </ion-item>
@@ -108,7 +116,7 @@
   </ion-list>
 
   <ion-list lines="none" *ngIf="isLoading">
-    <ion-item-sliding *ngFor="let company of companys">
+    <ion-item-sliding>
       <ion-item lines="none">
         <ion-label>
           <h3>
@@ -132,7 +140,7 @@
     </div>
   </div>
 
-  <div class="d-flex justify-content-center text-danger mt-5" *ngIf="noresults">
+  <div class="d-flex justify-content-center text-danger font-bold mt-5" *ngIf="noresults">
     <span>{{ "APP.LISTING.NO_RESULTS" | translate }}</span>
   </div>
 

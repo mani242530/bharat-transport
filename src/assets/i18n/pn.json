@@ -8,18 +8,17 @@
         "HEADER": "ਖਾਤਾ ਬਣਾਉ",
         "PLACEHOLDER": {
           "COMPANY_NAME": "ਕੰਪਨੀ ਦਾ ਨਾਂ",      
-          "SELECT_FIRM_ACTIVITY": "ਫਰਮ ਗਤੀਵਿਧੀ ਚੁਣੋ",
-          "SELECT_VEHICLE_TYPE": "ਵਾਹਨ ਦੀ ਕਿਸਮ ਚੁਣੋ",
-          "SELECT_LOCATION": "ਟਿਕਾਣਾ ਚੁਣੋ",
+          "SELECT_FIRM_ACTIVITY": "ਫਰਮ ਗਤੀਵਿਧੀ",
+          "SELECT_VEHICLE_TYPE": "ਵਾਹਨ ਦੀ ਕਿਸਮ",
+          "SELECT_LOCATION": "ਟਿਕਾਣਾ",
           "MOBILE_NUMBER": "ਮੋਬਾਈਲ ਨੰਬਰ",
-          "SELECT_SERVICE_PROVIDED_LOCATION": "ਸੇਵਾ ਪ੍ਰਦਾਨ ਕੀਤੀ ਸਥਿਤੀ ਦੀ ਚੋਣ ਕਰੋ",
+          "SELECT_SERVICE_PROVIDED_LOCATION": "ਸੇਵਾ ਪ੍ਰਦਾਨ ਕੀਤੀ ਸਥਿਤੀ",
           "OWNER_NAME": "ਮਾਲਕ ਦਾ ਨਾਮ",
           "ALTERNATE_MOBILE_NUMBER": "ਵਿਕਲਪਿਕ ਮੋਬਾਈਲ ਨੰਬਰ",
           "NUMBER_OF_VEHICLES": "ਵਾਹਨਾਂ ਦੀ ਸੰਖਿਆ",
           "AADHAR_NUMBER": "ਆਧਾਰ ਨੰਬਰ",
           "DRIVING_LICENSE_NUMBER": "ਡਰਾਈਵਿੰਗ ਲਾਇਸੰਸ ਨੰਬਰ",
           "REFERENCE_NAME": "ਹਵਾਲਾ ਨਾਮ",
-  
           "OR": "ਜਾਂ",
           "ALREADY_A_MEMBER": "ਪਹਿਲਾਂ ਤੋਂ ਮੈਂਬਰ ਹੋ ?",
           "SELECT_LANGUAGE": "ਭਾਸ਼ਾ"
@@ -157,9 +156,9 @@
         "OPEN_TRUCK": "ਓਪਨ ਟਰੱਕ",
         "PART_LOAD": "ਭਾਗ ਲੋਡ",
         "ODC": "ਓ.ਡੀ.ਸੀ",
-        "20_FT_CBT": "20 ਫੁੱਟ ਕੰਟੇਨਰ ਸੀ.ਬੀ.ਟੀ",
-        "20_FT_IMPORT_EXPORT": "20 ਫੁੱਟ/40 ਫੁੱਟ ਕੰਟੇਨਰ (ਆਯਾਤ ਅਤੇ ਨਿਰਯਾਤ)",
-        "32_FT_SINGLE_EXCEL": "32 ਫੁੱਟ ਕੰਟੇਨਰ"
+        "20_FT_CBT": "20'ਫੁੱਟ ਕੰਟੇਨਰ ਸੀ.ਬੀ.ਟੀ",
+        "20_FT_IMPORT_EXPORT": "20'ਫੁੱਟ / 40'ਫੁੱਟ ਕੰਟੇਨਰ (ਆਯਾਤ ਅਤੇ ਨਿਰਯਾਤ)",
+        "32_FT_SINGLE_EXCEL": "32'ਫੁੱਟ ਕੰਟੇਨਰ"
       },
       "PREFERED_LOCATION": {
         "AGARTALA":"Agartala",

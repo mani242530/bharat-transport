@@ -8,11 +8,11 @@
       "HEADER": "खाते तयार करा",
       "PLACEHOLDER": {
         "COMPANY_NAME": "कंपनीचे नाव",
-        "SELECT_FIRM_ACTIVITY": "फर्म क्रियाकलाप निवडा",
-        "SELECT_VEHICLE_TYPE": "वाहनाचा प्रकार निवडा",
-        "SELECT_LOCATION": "स्थान निवडा",
+        "SELECT_FIRM_ACTIVITY": "फर्म क्रियाकलाप",
+        "SELECT_VEHICLE_TYPE": "वाहन प्रकार",
+        "SELECT_LOCATION": "स्थान",
         "MOBILE_NUMBER": "मोबाईल नंबर",
-        "SELECT_SERVICE_PROVIDED_LOCATION": "सेवा प्रदान केलेले स्थान निवडा",
+        "SELECT_SERVICE_PROVIDED_LOCATION": "सेवा प्रदान केलेले स्थान",
         "OWNER_NAME": "मालकाचे नाव",
         "ALTERNATE_MOBILE_NUMBER": "पर्यायी मोबाईल नंबर",
         "NUMBER_OF_VEHICLES": "वाहनांची संख्या",
@@ -156,9 +156,9 @@
       "OPEN_TRUCK": "उघडे ट्रक",
       "PART_LOAD": "भाग लोड",
       "ODC": "ODC",
-      "20_FT_CBT": "20 फूट कंटेनर CBT",
-      "20_FT_IMPORT_EXPORT": "20ft/40ft कंटेनर (आयात आणि निर्यात)",
-      "32_FT_SINGLE_EXCEL": "32 फूट कंटेनर"
+      "20_FT_CBT": "20'फूट कंटेनर CBT",
+      "20_FT_IMPORT_EXPORT": "20'फूट / 40'फूट कंटेनर (आयात आणि निर्यात)",
+      "32_FT_SINGLE_EXCEL": "32'फूट कंटेनर"
     },
     "PREFERED_LOCATION": {
       "AGARTALA":"Agartala",

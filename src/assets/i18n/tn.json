@@ -8,11 +8,11 @@
       "HEADER": "கணக்கை உருவாக்கு",
       "PLACEHOLDER": {
         "COMPANY_NAME": "நிறுவனத்தின் பெயர்",
-        "SELECT_FIRM_ACTIVITY": "நிறுவன செயல்பாட்டைத் தேர்ந்தெடு",
-        "SELECT_VEHICLE_TYPE": "வாகன வகையைத் தேர்ந்தெடுக்கவும்",
-        "SELECT_LOCATION": "இருப்பிடத்தைத் தேர்ந்தெடு",
+        "SELECT_FIRM_ACTIVITY": "நிறுவன செயல்பாடு",
+        "SELECT_VEHICLE_TYPE": "வாகன வகை",
+        "SELECT_LOCATION": "இடம்",
         "MOBILE_NUMBER": "மொபைல் எண்",
-        "SELECT_SERVICE_PROVIDED_LOCATION": "சேவை வழங்கப்படும் இடத்தைத் தேர்ந்தெடுக்கவும்",
+        "SELECT_SERVICE_PROVIDED_LOCATION": "சேவை வழங்கப்படும் இடம்",
         "OWNER_NAME": "உரிமையாளரின் பெயர்",
         "ALTERNATE_MOBILE_NUMBER": "மாற்று மொபைல் எண்",
         "NUMBER_OF_VEHICLES": "வாகனங்களின் எண்ணிக்கை",
@@ -156,9 +156,9 @@
       "OPEN_TRUCK": "திறந்த டிரக்குகள்",
       "PART_LOAD": "பகுதி சுமை",
       "ODC": "ODC",
-      "20_FT_CBT": "20 அடி கொள்கலன் CBT",
-      "20_FT_IMPORT_EXPORT": "20 அடி/40 அடி கொள்கலன் (இறக்குமதி மற்றும் ஏற்றுமதி)",
-      "32_FT_SINGLE_EXCEL": "32 அடி கொள்கலன்"
+      "20_FT_CBT": "20'அடி கொள்கலன் CBT",
+      "20_FT_IMPORT_EXPORT": "20'அடி / 40'அடி கொள்கலன் (இறக்குமதி மற்றும் ஏற்றுமதி)",
+      "32_FT_SINGLE_EXCEL": "32'அடி கொள்கலன்"
     },
     "PREFERED_LOCATION": {
       "AGARTALA":"Agartala",

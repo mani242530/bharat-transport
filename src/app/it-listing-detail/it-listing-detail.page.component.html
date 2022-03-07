@@ -47,7 +47,11 @@
                     name="{{ company.companyName }}"
                   ></ngx-avatar>
                   <div class="w-100 margin-left-15">
-                      <div class="mb-0 l-hght-10 l-hght-18">{{ company.companyName }} <span *ngIf="company.ownerName !== null" class="text-purple small text-small"
+                      <div class="mb-0 l-hght-10 l-hght-18 font-bold">
+                        {{ company.companyName }} 
+                        <span 
+                          *ngIf="company.ownerName !== null" 
+                          class="text-purple small text-small font-bold"
                         >({{
                           "APP.LISTING_DETAILS.LABEL.OWNER_NAME" | translate
                         }} - {{ company.ownerName }})</span
@@ -60,7 +64,7 @@
                             icon="map-marker-alt"
                             class="map-marker-alt"
                           ></fa-icon
-                          ><span class="small">{{ company.location }}</span>
+                          ><span class="small font-bold">{{ company.location }}</span>
                         </p>
                       </div>
                     </div>
@@ -69,14 +73,14 @@
                 <div class="bus-details pt-2 pb-0 px-2">
                   <div class="info" id="info">
                     <ion-label>
-                      <h3 class="font-weight-normal mb-1" style="color: #5f259f;">
+                      <h2 class="font-bold text-purple mb-1">
                         {{
                           "APP.LISTING_DETAILS.LABEL.FIRM_ACTIVITY" | translate
                         }}
-                      </h3>
+                      </h2>
                     </ion-label>
 
-                    <p class="text-muted">
+                    <p class="text-muted font-bold">
                       {{ company.firmActivity }}
                     </p>
                   </div>
@@ -84,15 +88,15 @@
                 <div class="bus-details pt-2 pb-0 px-2">
                   <div class="info" id="info">
                     <ion-label>
-                      <h3 class="font-weight-normal mb-1" style="color: #5f259f;"> 
+                      <h2 class="font-bold text-purple mb-1"> 
                         {{
                           "APP.LISTING_DETAILS.LABEL.SERVICE_PROVIDING_CITIES"
                             | translate
                         }}
-                      </h3>
+                      </h2>
                     </ion-label>
 
-                    <p class="text-muted" style="white-space: pre-line">
+                    <p class="text-muted font-bold" style="white-space: pre-line">
                       {{ company.serviceProvidedLocation }}
                     </p>
                   </div>
@@ -100,15 +104,15 @@
                 <div class="bus-details pt-2 pb-0 px-2">
                   <div class="info" id="info">
                     <ion-label>
-                      <h3 class="font-weight-normal mb-1" style="color: #5f259f;">
+                      <h2 class="font-bold text-purple mb-1">
                         {{
                           "APP.LISTING_DETAILS.LABEL.SERVICE_PROVIDING"
                             | translate
                         }}
-                      </h3>
+                      </h2>
                     </ion-label>
 
-                    <p class="text-muted" style="white-space: pre-line">
+                    <p class="text-muted font-bold" style="white-space: pre-line">
                       {{ vehicleType }}
                     </p>
                   </div>
@@ -116,14 +120,14 @@
                 <div class="bus-details pt-2 pb-0 px-2">
                   <div class="info" id="info">
                     <ion-label>
-                      <h3 class="font-weight-normal mb-1" style="color: #5f259f;">
+                      <h2 class="font-bold text-purple mb-1">
                         {{
                           "APP.LISTING_DETAILS.LABEL.MOBILE_NUMBER" | translate
                         }}
-                      </h3>
+                      </h2>
                     </ion-label>
 
-                    <p class="text-muted">
+                    <p class="text-muted font-bold">
                       {{ company.mobileNumber }}
                     </p>
                   </div>
@@ -131,23 +135,23 @@
                 <div class="bus-details pt-2 pb-0 px-2">
                   <div class="info" id="info">
                     <ion-label>
-                      <h3 class="font-weight-normal mb-1" style="color: #5f259f;">
+                      <h2 class="font-bold text-purple mb-1">
                         {{
                           "APP.LISTING_DETAILS.LABEL.ALTERNATE_MOBILE_NUMBER" | translate
                         }}
-                      </h3>
+                      </h2>
                     </ion-label>
 
                     <div
                       *ngIf="company.alternateMobileNumber !== ''; else other_content"
                     >
-                      <p class="text-muted">
+                      <p class="text-muted font-bold">
                         {{ company.alternateMobileNumber }}
                       </p>
                     </div>
 
                     <ng-template #other_content
-                      ><p class="text-muted">N/A</p></ng-template
+                      ><p class="text-muted font-bold">N/A</p></ng-template
                     >
                   </div>
                 </div>
@@ -174,9 +178,9 @@
     <ion-item-sliding>
       <ion-item lines="none">
         <ion-label>
-          <h3>
+          <h2>
             <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
-          </h3>
+          </h2>
           <p>
             <ion-skeleton-text animated style="width: 75%"></ion-skeleton-text>
           </p>

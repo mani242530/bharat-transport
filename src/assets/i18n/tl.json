@@ -8,11 +8,11 @@
       "HEADER": "ఖాతా సృష్టించు",
       "PLACEHOLDER": {
         "COMPANY_NAME": "కంపెనీ పేరు",
-        "SELECT_FIRM_ACTIVITY": "సంస్థ కార్యాచరణను ఎంచుకోండి",
-        "SELECT_VEHICLE_TYPE": "వాహనం రకాన్ని ఎంచుకోండి",
-        "SELECT_LOCATION": "స్థానాన్ని ఎంచుకోండి",
+        "SELECT_FIRM_ACTIVITY": "సంస్థ కార్యాచరణ",
+        "SELECT_VEHICLE_TYPE": "వాహనం రకం",
+        "SELECT_LOCATION": "స్థానం",
         "MOBILE_NUMBER": "మొబైల్ నంబర్",
-        "SELECT_SERVICE_PROVIDED_LOCATION": "సర్వీస్ అందించిన స్థానాన్ని ఎంచుకోండి",
+        "SELECT_SERVICE_PROVIDED_LOCATION": "సేవ అందించిన స్థానం",
         "OWNER_NAME": "యజమాని పేరు",
         "ALTERNATE_MOBILE_NUMBER": "ప్రత్యామ్నాయ మొబైల్ నంబర్",
         "NUMBER_OF_VEHICLES": "వాహనం(ల) సంఖ్య",
@@ -156,9 +156,9 @@
       "OPEN_TRUCK": "ఓపెన్ ట్రక్కులు",
       "PART_LOAD": "పార్ట్ లోడ్",
       "ODC": "ODC",
-      "20_FT_CBT": "20 అడుగుల కంటైనర్ CBT",
-      "20_FT_IMPORT_EXPORT": "20ft/40ft కంటైనర్ (దిగుమతి మరియు ఎగుమతి)",
-      "32_FT_SINGLE_EXCEL": "32 అడుగుల కంటైనర్"
+      "20_FT_CBT": "20'అడుగుల కంటైనర్ CBT",
+      "20_FT_IMPORT_EXPORT": "20'కంటైనర్ / 40'కంటైనర్ (దిగుమతి మరియు ఎగుమతి)",
+      "32_FT_SINGLE_EXCEL": "32'అడుగుల కంటైనర్"
     },
     "PREFERED_LOCATION": {
       "AGARTALA":"Agartala",

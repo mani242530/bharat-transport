@@ -8,11 +8,11 @@
       "HEADER": "ಖಾತೆ ರಚಿಸಿ",
       "PLACEHOLDER": {
         "COMPANY_NAME": "ಕಂಪೆನಿ ಹೆಸರು",
-        "SELECT_FIRM_ACTIVITY": "ಸಂಸ್ಥೆಯ ಚಟುವಟಿಕೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
-        "SELECT_VEHICLE_TYPE": "ವಾಹನದ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
-        "SELECT_LOCATION": "ಸ್ಥಳವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+        "SELECT_FIRM_ACTIVITY": "ಸಂಸ್ಥೆಯ ಚಟುವಟಿಕೆ",
+        "SELECT_VEHICLE_TYPE": "ವಾಹನದ ಪ್ರಕಾರ",
+        "SELECT_LOCATION": "ಸ್ಥಳ",
         "MOBILE_NUMBER": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
-        "SELECT_SERVICE_PROVIDED_LOCATION": "ಸೇವೆ ಒದಗಿಸಿದ ಸ್ಥಳವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+        "SELECT_SERVICE_PROVIDED_LOCATION": "ಸೇವೆ ಒದಗಿಸಿದ ಸ್ಥಳ",
         "OWNER_NAME": "ಮಾಲೀಕರ ಹೆಸರು",
         "ALTERNATE_MOBILE_NUMBER": "ಪರ್ಯಾಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
         "NUMBER_OF_VEHICLES": "ವಾಹನ(ಗಳ) ಸಂಖ್ಯೆ",
@@ -156,9 +156,9 @@
       "OPEN_TRUCK": "ಓಪನ್ ಟ್ರಕ್‌ಗಳು",
       "PART_LOAD": "ಭಾಗ ಲೋಡ್",
       "ODC": "ODC",
-      "20_FT_CBT": "20 ಅಡಿ ಕಂಟೈನರ್ CBT",
-      "20_FT_IMPORT_EXPORT": "20 ಅಡಿ/40 ಅಡಿ ಕಂಟೈನರ್ (ಆಮದು ಮತ್ತು ರಫ್ತು)",
-      "32_FT_SINGLE_EXCEL": "32 ಅಡಿ ಕಂಟೈನರ್"
+      "20_FT_CBT": "20'ಅಡಿ ಕಂಟೈನರ್ CBT",
+      "20_FT_IMPORT_EXPORT": "20'ಅಡಿ / 40'ಅಡಿ ಕಂಟೈನರ್ (ಆಮದು ಮತ್ತು ರಫ್ತು)",
+      "32_FT_SINGLE_EXCEL": "32'ಅಡಿ ಕಂಟೈನರ್"
     },
     "PREFERED_LOCATION": {
       "AGARTALA":"Agartala",

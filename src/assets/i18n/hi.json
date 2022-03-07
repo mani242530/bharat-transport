@@ -8,11 +8,11 @@
       "HEADER": "खाता बनाएं",
       "PLACEHOLDER": {
         "COMPANY_NAME": "कंपनी का नाम",
-        "SELECT_FIRM_ACTIVITY": "फर्म गतिविधि का चयन करें",
-        "SELECT_VEHICLE_TYPE": "वाहन का प्रकार चुनें",
-        "SELECT_LOCATION": "स्थान चुनें",
+        "SELECT_FIRM_ACTIVITY": "फर्म गतिविधि",
+        "SELECT_VEHICLE_TYPE": "वाहन का प्रकार",
+        "SELECT_LOCATION": "स्थान",
         "MOBILE_NUMBER": "मोबाइल नंबर",
-        "SELECT_SERVICE_PROVIDED_LOCATION": "सेवा प्रदत्त स्थान का चयन करें",
+        "SELECT_SERVICE_PROVIDED_LOCATION": "सेवा प्रदान किया गया स्थान",
         "OWNER_NAME": "मालिक का नाम",
         "ALTERNATE_MOBILE_NUMBER": "वैकल्पिक मोबाइल नंबर",
         "NUMBER_OF_VEHICLES": "वाहन की संख्या",
@@ -156,9 +156,9 @@
       "OPEN_TRUCK": "खुले ट्रक",
       "PART_LOAD": "भार का भाग",
       "ODC": "ODC",
-      "20_FT_CBT": "20 फीट कंटेनर सीबीटी",
-      "20_FT_IMPORT_EXPORT": "20 फीट / 40 फीट कंटेनर (आयात और निर्यात)",
-      "32_FT_SINGLE_EXCEL": "32 फीट कंटेनर"
+      "20_FT_CBT": "20'फीट कंटेनर सीबीटी",
+      "20_FT_IMPORT_EXPORT": "20'फीट / 40'फीट कंटेनर (आयात और निर्यात)",
+      "32_FT_SINGLE_EXCEL": "32'फीट कंटेनर"
     },
     "PREFERED_LOCATION": {
       "AGARTALA":"Agartala",

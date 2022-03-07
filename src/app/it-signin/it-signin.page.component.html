@@ -39,18 +39,21 @@
     "
   >
     <div class="px-3">
-      <form [formGroup]="signInForm" #signIn>
+      <form [formGroup]="signInForm" #signIn novalidate>
         <ion-list>
           <div class="form-group mb-4">
-            <ion-label class="text-muted mb-1">Mobile Number</ion-label>
+            <ion-label class="text-purple font-bold mb-1">
+              Mobile Number<span class="required-field"></span>
+            </ion-label>
             <ion-input
-              class="form-control rc-form-control it-form-control mt-4"
+              class="form-control rc-form-control it-form-control mt-2"
               inputMode="tel"
               clearInput="true"
               formControlName="mobileNumber"
               autofocus="true"
               maxlength="10"
               minlength="10"
+              required
               placeholder="Enter 10 digit mobile number"
             ></ion-input>
           </div>
@@ -78,13 +81,13 @@
         "
       >
         <hr class="mr-4" />
-        <p class="text-muted text-center py-2 m-0">OR</p>
+        <p class="text-muted font-bold text-center py-2 m-0">OR</p>
         <hr class="ml-4" />
       </div>
-      <div class="osahan-signin text-center text-purple p-1">
+      <div class="osahan-signin text-center font-bold text-purple p-1">
         <p class="m-0">
           Not a member ?
-          <a routerLink="/select-language" class="text-orange ml-2">Sign Up</a>
+          <a routerLink="/select-language" class="text-orange font-bold ml-2">Sign Up</a>
         </p>
       </div>
     </div>

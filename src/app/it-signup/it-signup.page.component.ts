@@ -96,9 +96,9 @@ export class SignUpPageComponent implements OnInit {
       location: new FormControl('', Validators.required),
       serviceProvidedLocation: new FormControl('', Validators.required),
       referenceName: new FormControl('', [Validators.pattern('^[a-zA-Z \-\']+')]),
-      vehicleNos: new FormControl(''),
+      vehicleNos: new FormControl('', Validators.required),
       aadharNumber: new FormControl(''),
-      drivingLicenseNumber: new FormControl(''),
+      drivingLicenseNumber: new FormControl('', Validators.required),
     });
   }
 

@@ -7,7 +7,6 @@
   animation: bounceRight 2s infinite;
   margin-left: auto !important;
 }
-
 /* bg and border */
 .bg-purple {
   background-color: #5f259f !important;
@@ -15,7 +14,6 @@
 .border-purple {
   border-color: #5f259f !important;
 }
-
 /* button */
 .btn-block {
   width: 100%;
@@ -32,7 +30,6 @@
   color: #5f259f !important;
   border-radius: 10px !important;
 }
-
 /* margin */
 .ml-auto {
   margin-left: auto !important;
@@ -49,7 +46,6 @@
 .ml-2 {
   margin-left: 0.5rem !important;
 }
-
 /* form */
 .form-group {
   margin-bottom: 1rem;
@@ -70,7 +66,9 @@
   width: 1px !important;
   white-space: nowrap !important;
 }
-
+.font-bold {
+  font-weight: bold !important;
+}
 /* text */
 .text-purple {
   color: #5f259f !important;
@@ -88,7 +86,6 @@
   font-weight: 700 !important;
   padding: 0 !important;
 }
-
 .custom-control {
   position: relative;
   z-index: 1;
@@ -124,7 +121,6 @@
 .input-wrapper {
   display: block !important;
 }
-
 .home-search-form {
   border: 1px solid #dee2e6 !important;
 }
@@ -147,12 +143,10 @@
 .osahan-form {
   width: 100%;
 }
-
 .l-hght-20,
 .text-muted {
   line-height: 20px !important;
 }
-
 .text-align-center {
   text-align: center;
 }
@@ -163,40 +157,33 @@
   font-size: 14px !important;
   font-weight: 700 !important;
 }
-
 .native-select {
   width: 100%;
   color: #111111 !important;
   font-size: 14px !important;
   font-weight: 700 !important;
 }
-
 .osahan-listing {
   background: transparent !important;
 }
-
 .language-item-list {
   width: 100%;
   height: 122px;
   border-radius: 15px;
   margin-bottom: 0 !important;
 }
-
 .text-black {
   color: #111111 !important;
   font-size: 14px;
   font-weight: 700;
   line-height: 18px !important;
 }
-
 .toolbar-container {
   padding: 0px !important;
 }
-
 .input-clear-icon {
   margin-top: -3px !important;
 }
-
 .payment-borrad {
   border-radius: 10px;
   border: 1px solid #ced4da;
@@ -204,12 +191,10 @@
   bottom: 10%;
   width: 90%;
 }
-
 .list_item_gird {
   border: 1px solid #e0e0e0 !important;
   border-radius: 10px;
 }
-
 .angle-double-right {
   font-size: 24px;
   color: #5f259f !important;
@@ -217,34 +202,27 @@
   margin-right: 15px;
   opacity: 0.75;
 }
-
 .map-marker-alt,
 .search-location,
 .building {
   margin-right: 5px;
   color: #5f259f !important;
 }
-
 .text-label {
   color: #111111 !important;
 }
-
 .home-search-form {
   border-radius: 10px;
 }
-
 .spinner-grow {
   color: #d8bfd8;
 }
-
 .it-form-control {
   border-radius: 10px !important;
 }
-
 .margin-left-15 {
   margin-left: 15px !important;
 }
-
 .otp-input {
   border: 1px solid #5f259f !important;
   width: 40px !important;
@@ -252,7 +230,6 @@
   height: 40px !important;
   margin-bottom: 10px;
 }
-
 .wrapper {
   padding: 0px !important;
 }
@@ -260,50 +237,41 @@
   content: "*";
   color: red;
 }
-
 .location-overflow {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 300px;
 }
-
 .item-native {
   padding: 0px !important;
 }
-
 .bg-c, .ion-page, .list-md, .list-ios, .background-image    {
   background: url('../assets/images/background.jpg') no-repeat !important;
   background-size: cover !important;
 }
-
 .owner-payment  {
   background: url('../assets/images/999.png') no-repeat;
   background-size: cover;
   background-position: center;
   background-size: 310px 100px;
 }
-
-
 .driver-payment   {
   background: url('../assets/images/99.png') no-repeat;
   background-size: cover;
   background-position: center;
   background-size: 310px 100px;
 }
-
 .custom-control-input {
   margin-top: 15px;
   width: 3rem !important;
 }
-
 .onemonth-tag, .oneyear-tag {
   margin-left: 40%;
   width: 160px;
   position: relative;
   left: 30px
 }
-
 .record-text-right {
   text-align: right;
 }

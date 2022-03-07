@@ -153,9 +153,9 @@ export class ProfileComponent implements OnInit {
       serviceProvidedLocation: new FormControl('', Validators.required),
       referenceName: new FormControl('', [Validators.pattern('^[a-zA-Z \-\']+')]),
       language: new FormControl(''),
-      vehicleNos: new FormControl(''),
+      vehicleNos: new FormControl('', Validators.required),
       aadharNumber: new FormControl(''),
-      drivingLicenseNumber: new FormControl(''),
+      drivingLicenseNumber: new FormControl('', Validators.required),
 
     });
   }
@@ -189,6 +189,19 @@ export class ProfileComponent implements OnInit {
       this.checkFirmActivityIsOwner = false;
       this.checkFirmActivityIsDriver = true;
     } else if (result["firmActivity"] === 'Owner') {
+      this.checkFirmActivityIsDriver = false;
+      this.checkFirmActivityIsOwner = true;
+    } else {
+      this.checkFirmActivityIsDriver = false;
+      this.checkFirmActivityIsOwner = false;
+    }
+  }
+
+  onFirmActivityChange(value) {
+    if(value.detail.value === 'Driver') {
+      this.checkFirmActivityIsOwner = false;
+      this.checkFirmActivityIsDriver = true;
+    } else if (value.detail.value === 'Owner') {
       this.checkFirmActivityIsDriver = false;
       this.checkFirmActivityIsOwner = true;
     } else {

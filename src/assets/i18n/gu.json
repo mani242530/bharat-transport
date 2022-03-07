@@ -8,11 +8,11 @@
       "HEADER": "એકાઉન્ટ બનાવો",
       "PLACEHOLDER": {
         "COMPANY_NAME": "કંપનીનું નામ",
-        "SELECT_FIRM_ACTIVITY": "પેઢી પ્રવૃત્તિ પસંદ કરો",
-        "SELECT_VEHICLE_TYPE": "વાહનનો પ્રકાર પસંદ કરો",
-        "SELECT_LOCATION": "સ્થાન પસંદ કરો",
+        "SELECT_FIRM_ACTIVITY": "પેઢી પ્રવૃત્તિ",
+        "SELECT_VEHICLE_TYPE": "વાહનનો પ્રકાર",
+        "SELECT_LOCATION": "સ્થાન",
         "MOBILE_NUMBER": "મોબાઇલ નંબર",
-        "SELECT_SERVICE_PROVIDED_LOCATION": "સેવા પ્રદાન કરેલ સ્થાન પસંદ કરો",
+        "SELECT_SERVICE_PROVIDED_LOCATION": "સેવા પ્રદાન કરેલ સ્થાન",
         "OWNER_NAME": "માલીકનું નામ",
         "ALTERNATE_MOBILE_NUMBER": "વૈકલ્પિક મોબાઇલ નંબર",
         "NUMBER_OF_VEHICLES": "વાહન(વાહનો)ની સંખ્યા",
@@ -203,9 +203,9 @@
       "OPEN_TRUCK": "ઓપન ટ્રક",
       "PART_LOAD": "ભાગ લોડ",
       "ODC": "ODC",
-      "20_FT_CBT": "20ft કન્ટેનર CBT",
-      "20_FT_IMPORT_EXPORT": "20ft/40ft કન્ટેનર (આયાત અને નિકાસ)",
-      "32_FT_SINGLE_EXCEL": "32ft કન્ટેનર"
+      "20_FT_CBT": "20'ft કન્ટેનર CBT",
+      "20_FT_IMPORT_EXPORT": "20'ft / 40'ft કન્ટેનર (આયાત અને નિકાસ)",
+      "32_FT_SINGLE_EXCEL": "32'ft કન્ટેનર"
     },
     "PREFERED_LOCATION": {
       "AGARTALA":"Agartala",

@@ -37,39 +37,11 @@
     "
   >
     <div class="px-3 py-3">
-      <form [formGroup]="modifyCompanyForm" #modifyForm>
+      <form [formGroup]="modifyCompanyForm" #modifyForm novalidate>
         <ion-list>
 
           <div class="form-group mb-3">
-            <ion-label class="text-muted mb-1">{{
-              'APP.CREATE_ACCOUNT.PLACEHOLDER.COMPANY_NAME' | translate
-            }}<span class="required-field"></span></ion-label>
-            <ion-input
-              class="form-control rc-form-control it-form-control"
-              inputMode="text"
-              clearInput="true"
-              formControlName="companyName"
-              required
-              placeholder="Enter company name"
-            ></ion-input>
-          </div>
-
-          <div class="form-group mb-3">
-            <ion-label class="text-muted mb-1">{{
-              'APP.CREATE_ACCOUNT.PLACEHOLDER.OWNER_NAME' | translate
-            }}<span class="required-field"></span></ion-label>
-            <ion-input
-              class="form-control rc-form-control it-form-control"
-              inputMode="text"
-              clearInput="true"
-              formControlName="ownerName"
-              required
-              placeholder="Enter owner name"
-            ></ion-input>
-          </div>
-
-          <div class="form-group mb-3">
-            <ion-label class="text-muted mb-1">{{
+            <ion-label class="text-purple font-bold mb-1">{{
               'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_FIRM_ACTIVITY'
                 | translate
             }}<span class="required-field"></span></ion-label>
@@ -79,8 +51,8 @@
               role="combobox"
               slot
               formControlName="firmActivity"
-              required
-              placeholder="Select"
+              placeholder="Select firm activity"
+              (ionChange)="onFirmActivityChange($event)"
             >
               <ion-select-option
                 *ngFor="let firmActivity of firmActivitys"
@@ -92,28 +64,60 @@
             </ion-select>
           </div>
 
-          <div class="form-group mb-3">
-            <ion-label class="text-muted mb-1">{{
-              'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_LOCATION' | translate
+          <div class="form-group mb-3"  *ngIf="!checkFirmActivityIsDriver">
+            <ion-label class="text-purple font-bold mb-1">{{
+              'APP.CREATE_ACCOUNT.PLACEHOLDER.COMPANY_NAME' | translate
             }}<span class="required-field"></span></ion-label>
-            <ion-select
-              interface="popover"
-              class="form-control rc-form-control native-select it-form-control"
-              formControlName="location"
-              required
-              placeholder="Select"
-            >
-              <ion-select-option
-                *ngFor="let location of locations"
-                value="{{ location.name | translate }}"
-                title="{{ location.name | translate }}"
-                >{{ location.name | translate }}</ion-select-option
-              >
-            </ion-select>
+            <ion-input
+              class="form-control rc-form-control it-form-control"
+              inputMode="text"
+              clearInput="true"
+              formControlName="companyName"
+              placeholder="Enter company name"
+            ></ion-input>
           </div>
 
           <div class="form-group mb-3">
-            <ion-label class="text-muted mb-1">{{
+            <ion-label class="text-purple font-bold mb-1">{{
+              'APP.CREATE_ACCOUNT.PLACEHOLDER.OWNER_NAME' | translate
+            }}<span class="required-field"></span></ion-label>
+            <ion-input
+              class="form-control rc-form-control it-form-control"
+              inputMode="text"
+              clearInput="true"
+              formControlName="ownerName"
+              placeholder="Enter owner name"
+            ></ion-input>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-label class="text-purple font-bold mb-1">{{
+              'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_LOCATION' | translate
+            }}<span class="required-field"></span></ion-label>
+            <input 
+                list="locations"
+                placeholder="Select location"
+                class="
+                  form-control
+                  rc-form-control
+                  native-select
+                  it-form-control
+                "
+                formControlName="location"
+                clearInput="true"
+              >
+              <datalist 
+              id="locations">
+                <option 
+                  *ngFor="let location of serviceProvidedLocations"
+                  value="{{ location.name | translate }}"
+                  title="{{ location.name | translate }}"
+                >{{ location.name | translate }}</option>
+              </datalist>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-label class="text-purple font-bold mb-1">{{
               'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_SERVICE_PROVIDED_LOCATION' | translate
             }}<span class="required-field"></span></ion-label>
             <ion-select
@@ -121,8 +125,7 @@
               interface="popover"
               class="form-control rc-form-control native-select it-form-control"
               formControlName="serviceProvidedLocation"
-              required
-              placeholder="Select"
+              placeholder="Select service provided location"
             >
               <ion-select-option
                 *ngFor="let serviceProvidedLocation of serviceProvidedLocations"
@@ -134,7 +137,7 @@
           </div>
 
           <div class="form-group mb-3">
-            <ion-label class="text-muted mb-1">{{
+            <ion-label class="text-purple font-bold mb-1">{{
               'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_VEHICLE_TYPE'
                 | translate
             }}<span class="required-field"></span></ion-label>
@@ -144,8 +147,7 @@
               formControlName="vehicleType"
               cancelText="cancel"
               okText="ok"
-              required
-              placeholder="Select"
+              placeholder="Select vehicle type"
             >
               <ion-select-option
                 *ngFor="let vehicleType of vehicleTypes"
@@ -157,15 +159,28 @@
             </ion-select>
           </div>
 
+          <div class="form-group mb-3" *ngIf="checkFirmActivityIsOwner">
+            <ion-label class="text-purple font-bold mb-1">{{
+              'APP.CREATE_ACCOUNT.PLACEHOLDER.NUMBER_OF_VEHICLES' | translate
+            }}<span class="required-field"></span></ion-label>
+            <ion-input
+              class="form-control rc-form-control it-form-control"
+              inputMode="number"
+              clearInput="true"
+              formControlName="vehicleNos"
+              placeholder="Enter number of vehicles"
+            ></ion-input>
+          </div>
+
           <div class="form-group mb-3">
-            <ion-label class="text-muted mb-1">{{
+            <ion-label class="text-purple font-bold mb-1">{{
               'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_LANGUAGE'
                 | translate
-            }}<span class="required-field"></span></ion-label>
+            }}</ion-label>
             <ion-select
               class="form-control rc-form-control native-select it-form-control"
               formControlName="language"
-              placeholder="Select"
+              placeholder="Select language"
             >
               <ion-select-option
                 *ngFor="let language of languages"
@@ -178,7 +193,7 @@
           </div>
 
           <div class="form-group mb-3">
-            <ion-label class="text-muted mb-1">{{
+            <ion-label class="text-purple font-bold mb-1">{{
               'APP.CREATE_ACCOUNT.PLACEHOLDER.MOBILE_NUMBER' | translate
             }}<span class="required-field"></span></ion-label>
             <ion-input
@@ -186,14 +201,13 @@
               inputMode="tel"
               clearInput="true"
               formControlName="mobileNumber"
-              required
               [disabled]=disabledFlag
               placeholder="Enter 10 digit mobile number"
             ></ion-input>
           </div>
 
           <div class="form-group mb-3">
-            <ion-label class="text-muted mb-1">{{
+            <ion-label class="text-purple font-bold mb-1">{{
               'APP.CREATE_ACCOUNT.PLACEHOLDER.ALTERNATE_MOBILE_NUMBER' | translate
             }}</ion-label>
             <ion-input
@@ -206,7 +220,7 @@
           </div>
 
           <div class="form-group mb-3" *ngIf="checkFirmActivityIsDriver">
-            <ion-label class="text-muted mb-1">{{
+            <ion-label class="text-purple font-bold mb-1">{{
               'APP.CREATE_ACCOUNT.PLACEHOLDER.AADHAR_NUMBER' | translate
             }}</ion-label>
             <ion-input
@@ -214,25 +228,25 @@
               inputMode="number"
               clearInput="true"
               formControlName="aadharNumber"
-              placeholder="Enter driver aadhar number"
+              placeholder="Enter aadhar number"
             ></ion-input>
           </div>
 
           <div class="form-group mb-3" *ngIf="checkFirmActivityIsDriver">
-            <ion-label class="text-muted mb-1">{{
+            <ion-label class="text-purple font-bold mb-1">{{
               'APP.CREATE_ACCOUNT.PLACEHOLDER.DRIVING_LICENSE_NUMBER' | translate
-            }}</ion-label>
+            }}<span class="required-field"></span></ion-label>
             <ion-input
               class="form-control rc-form-control it-form-control"
               inputMode="text"
               clearInput="true"
               formControlName="drivingLicenseNumber"
-              placeholder="Enter driver license number"
+              placeholder="Enter driving license number"
             ></ion-input>
           </div>
 
           <div class="form-group mb-3">
-            <ion-label class="text-muted mb-1">{{
+            <ion-label class="text-purple font-bold mb-1">{{
               'APP.CREATE_ACCOUNT.PLACEHOLDER.REFERENCE_NAME' | translate
             }}</ion-label>
             <ion-input
@@ -258,14 +272,14 @@
         </button>
       </form>
       <div
-        class="osahan-signin text-center text-muted p-1"
+        class="osahan-signin text-center text-muted font-bold p-1"
         *ngIf="invalidMobilenumber"
       >
         <p class="pt-2 text-danger">
           {{ "APP.CREATE_ACCOUNT.INVALID_MOBILE" | translate }}
         </p>
       </div>
-      <div class="osahan-signin text-center text-muted p-1" *ngIf="userExists">
+      <div class="osahan-signin text-center text-muted font-bold p-1" *ngIf="userExists">
         <p class="pt-2 text-info">
           {{ "APP.CREATE_ACCOUNT.MOBILE_EXISTS" | translate }}
         </p>

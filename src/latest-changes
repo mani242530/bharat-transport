@@ -1,9 +1,9 @@
 // // 1. sardaji remove and add truck image (vishal)
 // // 2. otp only when register not require when signin
 // // 3. payment option refer image shared by vishal
-// // 4. 20ft container CBT and OPEN - rename as 20ft Container CBT
+// // 4. 20'ft container CBT and OPEN - rename as 20'ft Container CBT
 // // 5. 32ft Container Single Excel - rename as 32ft Container
-// // 6. merge 20ft / 40ft Container Import and Export - remove 40ft containerImport and export
+// // 6. merge 20'ft / 40ft Container Import and Export - remove 40ft containerImport and export
 // // 7. listing - company name and mobile number - call option
 // // 8. import pune data  
 // // 9. create account - check first mobile exists - YES - pay / home, NO - create account page
@@ -37,7 +37,7 @@
 
 
 
-// LCV, Trailer, Truck (Taurus), Open Trucks, Part Load, ODC, 20ft Container CBT,32ft Container, 20ft/40ft Container (Import and Export)
+// LCV, Trailer, Truck (Taurus), Open Trucks, Part Load, ODC, 20'ft Container CBT,32ft Container, 20'ft / 40'ft Container (Import and Export)
 
 // console.log(res1);
 

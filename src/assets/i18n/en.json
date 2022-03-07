@@ -8,12 +8,12 @@
       "HEADER": "Create Account",
       "PLACEHOLDER": {
         "COMPANY_NAME": "Company Name",      
-        "SELECT_FIRM_ACTIVITY": "Select Firm Activity",
-        "SELECT_VEHICLE_TYPE": "Select Vehicle Type",
-        "SELECT_LOCATION": "Select Location",
+        "SELECT_FIRM_ACTIVITY": "Firm Activity",
+        "SELECT_VEHICLE_TYPE": "Vehicle Type",
+        "SELECT_LOCATION": "Location",
         "MOBILE_NUMBER": "Mobile Number",
         "SELECT_LANGUAGE": "Language",
-        "SELECT_SERVICE_PROVIDED_LOCATION": "Select Service Provided Location",
+        "SELECT_SERVICE_PROVIDED_LOCATION": "Service Provided Location",
         "OWNER_NAME": "Owner Name",
         "ALTERNATE_MOBILE_NUMBER": "Alternate Mobile Number",
         "NUMBER_OF_VEHICLES": "Number of Vehicles",      
@@ -156,9 +156,9 @@
       "OPEN_TRUCK": "Open Trucks",
       "PART_LOAD": "Part Load",
       "ODC": "ODC",
-      "20_FT_CBT": "20ft Container CBT",
-      "20_FT_IMPORT_EXPORT": "20ft/40ft Container (Import and Export)",
-      "32_FT_SINGLE_EXCEL": "32ft Container"
+      "20_FT_CBT": "20'ft Container CBT",
+      "20_FT_IMPORT_EXPORT": "20'ft / 40'ft Container (Import and Export)",
+      "32_FT_SINGLE_EXCEL": "32'ft Container"
     },
     "PREFERED_LOCATION": {
       "AGARTALA":"Agartala",
