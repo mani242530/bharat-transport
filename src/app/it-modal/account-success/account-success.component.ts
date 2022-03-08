@@ -1,12 +1,13 @@
-import { Component } from "@angular/core";
-import { Router } from "@angular/router";
-import { ModalController, NavController } from "@ionic/angular";
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ModalController, NavController } from '@ionic/angular';
 
 @Component({
-  selector: "it-account-success-modal",
-  templateUrl: "account-success.component.html",
-  styleUrls: ["account-success.component.scss"],
+  selector: 'it-account-success-modal',
+  templateUrl: 'account-success.component.html',
+  styleUrls: ['account-success.component.scss'],
 })
+
 export class AccountSuccessModalComponent {
   constructor(
     public navCtrl: NavController,
@@ -21,6 +22,6 @@ export class AccountSuccessModalComponent {
       dismissed: true,
     });
 
-    this.router.navigate(["/verification"]);
+    this.router.navigate(['/verification']);
   }
 }

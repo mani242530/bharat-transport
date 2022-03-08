@@ -10,10 +10,20 @@
     </h5>
     <div class="ml-auto d-flex align-items-center">
       <ion-buttons slot="end">
-        <a [routerLink]="['/profile/', docId]"><fa-icon icon="user-circle" class="icofont-user-circle"
-        style="color: #ffffff; font-size: 26px;"></fa-icon></a>
-        <a style="margin-left: 20px;"  (click)="doLogout()"><fa-icon icon="sign-out-alt" class="sign-out-alt"
-          style="color: #ffffff; font-size: 26px;"></fa-icon></a>
+        <a [routerLink]="['/profile/', docId]"
+          ><fa-icon
+            icon="user-circle"
+            class="icofont-user-circle"
+            style="color: #ffffff; font-size: 26px"
+          ></fa-icon
+        ></a>
+        <a style="margin-left: 20px" (click)="doLogout()"
+          ><fa-icon
+            icon="sign-out-alt"
+            class="sign-out-alt"
+            style="color: #ffffff; font-size: 26px"
+          ></fa-icon
+        ></a>
       </ion-buttons>
     </div>
   </div>
@@ -35,7 +45,9 @@
             <small class="text-purple font-bold mb-1 f-10 pr-1">{{
               "APP.LISTING.LABEL.GOING_FROM" | translate
             }}</small>
-            <p class="small font-bold mb-0">{{ searchParam.from | uppercase }}</p>
+            <p class="small font-bold mb-0">
+              {{ searchParam.from | uppercase }}
+            </p>
           </div>
 
           <div class="col-6 p-0">
@@ -51,20 +63,19 @@
 
   <div class="row mx-0 px-1 background-image">
     <div class="col-12">
-      <small 
-        class="text-purple font-bold d-block record-text-right" 
+      <small
+        class="text-purple font-bold d-block record-text-right"
         *ngIf="companyLists && companyLists.length > 0"
-      >{{
-        "APP.LISTING.LABEL.TOTAL_RECORDS" | translate
-      }} - {{ companyLists && companyLists.length }}
+        >{{ "APP.LISTING.LABEL.TOTAL_RECORDS" | translate }} -
+        {{ companyLists && companyLists.length }}
       </small>
-  </div>
+    </div>
     <div class="col-12 p-0">
-        <ion-searchbar
-          (keyup)="setFilteredItems($event)"
-          class="font-bold"
-          placeholder="Filter by Company Name"
-        ></ion-searchbar>
+      <ion-searchbar
+        (keyup)="setFilteredItems($event)"
+        class="font-bold"
+        placeholder="Filter by Company Name"
+      ></ion-searchbar>
     </div>
   </div>
 
@@ -74,42 +85,35 @@
       class="text-dark px-0 py-0"
     >
       <div
-        class="
-          list_item_gird
-          m-1
-          bg-white
-          shadow-sm
-          listing-item
-          border-right
-          p-3
-        "
+        class="list_item_gird m-1 bg-white shadow-sm listing-item border-right p-3"
       >
-     
         <div class="tic-div mb-2">
           <span class="text-purple font-bold d-block">{{
             "APP.LISTING.LABEL.COMPANY_NAME" | translate
           }}</span>
-          <p class="mb-0 l-hght-10">{{ company.companyName }} </p>
+          <p class="mb-0 l-hght-10">{{ company.companyName }}</p>
         </div>
         <ion-item class="top-border-line">
           <fa-icon
             icon="phone-alt"
             class="phone-alt"
-            style="font-size: 24px; margin-right: 20px; color: #5f259f !important;"
+            style="
+              font-size: 24px;
+              margin-right: 20px;
+              color: #5f259f !important;
+            "
           ></fa-icon>
           <ion-label>
-            <h2>{{
-              "APP.LISTING.LABEL.MOBILE" | translate
-            }}</h2>
+            <h2>{{ "APP.LISTING.LABEL.MOBILE" | translate }}</h2>
             <p class="font-bold text-purple">
               {{ company.mobileNumber }}
             </p>
           </ion-label>
           <fa-icon
-              icon="angle-double-right"
-              class="angle-double-right font-bold"
-              [routerLink]="['/listing-detail/', company.id]"
-            ></fa-icon>
+            icon="angle-double-right"
+            class="angle-double-right font-bold"
+            [routerLink]="['/listing-detail/', company.id]"
+          ></fa-icon>
         </ion-item>
       </div>
     </ion-item-sliding>
@@ -140,7 +144,10 @@
     </div>
   </div>
 
-  <div class="d-flex justify-content-center text-danger font-bold mt-5" *ngIf="noresults">
+  <div
+    class="d-flex justify-content-center text-danger font-bold mt-5"
+    *ngIf="noresults"
+  >
     <span>{{ "APP.LISTING.NO_RESULTS" | translate }}</span>
   </div>
 

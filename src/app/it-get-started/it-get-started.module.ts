@@ -1,16 +1,14 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
-import { Routes, RouterModule } from "@angular/router";
-
-import { IonicModule } from "@ionic/angular";
-
-import { GetStartedPageComponent } from "./it-get-started.page.component";
-import { GetStartedPageRoutingModule } from "./it-get-started.routing.module";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
+import { GetStartedPageComponent } from './it-get-started.page.component';
+import { GetStartedPageRoutingModule } from './it-get-started.routing.module';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: GetStartedPageComponent,
   },
 ];

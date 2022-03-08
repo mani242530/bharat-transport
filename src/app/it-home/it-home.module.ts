@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
-
 import { HomePageComponent } from './it-home.page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomePageRoutingModule } from './it-home.routing.module';

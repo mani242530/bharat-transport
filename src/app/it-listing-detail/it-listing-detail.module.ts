@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
-
 import { ListingDetailPageComponent } from './it-listing-detail.page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ListingDetailPageRoutingModule } from './it-listing-detail.page.routing.module';

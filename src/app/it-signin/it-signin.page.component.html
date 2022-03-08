@@ -28,15 +28,7 @@
   > -->
   <div id="sign-in-button"></div>
   <div
-    class="
-      osahan-index
-      bg-c
-      align-items-center
-      justify-content-center
-      vh-100
-      index-page
-      py-5
-    "
+    class="osahan-index bg-c align-items-center justify-content-center vh-100 index-page py-5"
   >
     <div class="px-3">
       <form [formGroup]="signInForm" #signIn novalidate>
@@ -71,14 +63,7 @@
       </form>
 
       <div
-        class="
-          sign-or
-          d-flex
-          align-items-center
-          justify-content-center
-          mt-4
-          mb-2
-        "
+        class="sign-or d-flex align-items-center justify-content-center mt-4 mb-2"
       >
         <hr class="mr-4" />
         <p class="text-muted font-bold text-center py-2 m-0">OR</p>
@@ -87,7 +72,9 @@
       <div class="osahan-signin text-center font-bold text-purple p-1">
         <p class="m-0">
           Not a member ?
-          <a routerLink="/select-language" class="text-orange font-bold ml-2">Sign Up</a>
+          <a routerLink="/select-language" class="text-orange font-bold ml-2"
+            >Sign Up</a
+          >
         </p>
       </div>
     </div>
@@ -98,7 +85,8 @@
     </div>
     <div class="osahan-signin text-center p-1" *ngIf="mobileNumberNotFound">
       <p class="m-5 pt-2 text-danger">
-        Sorry! Your mobile number is not registered with us. Please sign up to create account
+        Sorry! Your mobile number is not registered with us. Please sign up to
+        create account
       </p>
     </div>
   </div>

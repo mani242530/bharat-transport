@@ -1,9 +1,9 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
-import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { GetStartedPageComponent } from "./it-get-started.page.component";
+import { GetStartedPageComponent } from './it-get-started.page.component';
 
-describe("GetStartedPageComponent", () => {
+describe('GetStartedPageComponent', () => {
   let component: GetStartedPageComponent;
   let fixture: ComponentFixture<GetStartedPageComponent>;
 
@@ -22,7 +22,7 @@ describe("GetStartedPageComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

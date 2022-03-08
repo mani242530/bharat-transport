@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
-
 import { SignInPageComponent } from './it-signin.page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SignInPageRoutingModule } from './it-signin.routing.module';

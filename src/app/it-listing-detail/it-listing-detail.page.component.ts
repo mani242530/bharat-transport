@@ -3,7 +3,6 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Company } from '../models/contact';
 import { AppService } from '../services/app.servcie';
 import { ToastService } from '../services/toast.service';
 import { CallNumber } from '@ionic-native/call-number/ngx';
@@ -13,14 +12,13 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
   templateUrl: './it-listing-detail.page.component.html',
   styleUrls: ['./it-listing-detail.page.component.scss'],
 })
+
 export class ListingDetailPageComponent implements OnInit {
   id: number;
   company;
-  sub1: Subscription;
   paramId: string;
   vehicleType: string;
   isLoading = true;
-
   userData;
   user;
   userName;
@@ -31,7 +29,7 @@ export class ListingDetailPageComponent implements OnInit {
     private toastservice: ToastService,
     public ngroute: Router,
     private fbstore: AngularFirestore,
-    public appService: AppService, 
+    public appService: AppService,
     public fbauth: AngularFireAuth,
     private callNumber: CallNumber
   ) {
@@ -73,8 +71,9 @@ export class ListingDetailPageComponent implements OnInit {
   }
 
   callNow(number) {
-    this.callNumber.callNumber(number, true)
-      .then(res => console.log('Launched dialer!', res))
-      .catch(err => console.log('Error launching dialer', err));
+    this.callNumber
+      .callNumber(number, true)
+      .then((res) => console.log('Launched dialer!', res))
+      .catch((err) => console.log('Error launching dialer', err));
   }
 }

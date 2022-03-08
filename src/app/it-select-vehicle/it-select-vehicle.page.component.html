@@ -17,10 +17,20 @@
       <ngx-avatar name="{{ userName }}" size="50"></ngx-avatar>
 
       <ion-buttons slot="end">
-        <a [routerLink]="['/profile/', docId]"><fa-icon icon="user-circle" class="icofont-user-circle"
-        style="color: #ffffff; font-size: 26px;"></fa-icon></a>
-        <a style="margin-left: 20px;"  (click)="doLogout()"><fa-icon icon="sign-out-alt" class="sign-out-alt"
-          style="color: #ffffff; font-size: 26px;"></fa-icon></a>
+        <a [routerLink]="['/profile/', docId]"
+          ><fa-icon
+            icon="user-circle"
+            class="icofont-user-circle"
+            style="color: #ffffff; font-size: 26px"
+          ></fa-icon
+        ></a>
+        <a style="margin-left: 20px" (click)="doLogout()"
+          ><fa-icon
+            icon="sign-out-alt"
+            class="sign-out-alt"
+            style="color: #ffffff; font-size: 26px"
+          ></fa-icon
+        ></a>
       </ion-buttons>
     </div>
   </div>
@@ -36,14 +46,7 @@
     maxBufferPx="1350"
   > -->
   <div
-    class="
-      osahan-index
-      bg-c
-      align-items-center
-      justify-content-center
-      vh-100
-      index-page
-    "
+    class="osahan-index bg-c align-items-center justify-content-center vh-100 index-page"
   >
     <div class="osahan-listing">
       <ion-grid>
@@ -55,18 +58,14 @@
             *ngFor="let vehicleType of vehicleTypes; let i = index"
           >
             <div
-              class="
-                list-item-img
-                language-item-list
-                align-items-center
-                d-inline-flex
-                justify-content-center
-                mb-2
-              "
+              class="list-item-img language-item-list align-items-center d-inline-flex justify-content-center mb-2"
               id="vehicleType"
               (click)="selectVehicleType(vehicleType)"
             >
-              <img src="assets/images/{{vehicleType.img}}.png" class="img-fluid" />
+              <img
+                src="assets/images/{{ vehicleType.img }}.png"
+                class="img-fluid"
+              />
             </div>
             <p class="text-center text-purple font-bold mb-2">
               {{ vehicleType.name | translate }}

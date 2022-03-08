@@ -1,6 +1,3 @@
-/***********************************
- * Copyright Fedex 1995 - 2021
- ***********************************/
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { ProfileComponent } from "./it-profile.page.component";

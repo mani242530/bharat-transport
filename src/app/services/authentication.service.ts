@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Router } from '@angular/router';
 import firebase from 'firebase/app';
+import { ToastService } from './toast.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +11,7 @@ export class AuthtenticationService {
 
   constructor(
     private angularFireAuth: AngularFireAuth,
-    private router: Router
+    private toastservice: ToastService
   ) {}
 
   public signInWithPhoneNumber(recaptchaVerifier, phoneNumber) {
@@ -24,7 +24,13 @@ export class AuthtenticationService {
         })
         .catch((error) => {
           console.log(error);
-          reject('We have blocked all requests from this device due to unusual activity. Please try again later and OTP not sent');
+          this.toastservice.showToast(
+            'We have blocked all requests from this device due to unusual activity and OTP not sent. But dont worry Your data is saved and Please Sign In',
+            1000
+          );
+          reject(
+            'We have blocked all requests from this device due to unusual activity. Please try again later and OTP not sent but dont worry your data is saved. Please sign in'
+          );
         });
     });
   }

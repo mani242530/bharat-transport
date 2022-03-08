@@ -19,6 +19,7 @@ import { AppService } from '../services/app.servcie';
   templateUrl: './it-signin.page.component.html',
   styleUrls: ['./it-signin.page.component.scss'],
 })
+
 export class SignInPageComponent implements OnInit {
   OTP: string = '';
   Code: any;
@@ -81,45 +82,44 @@ export class SignInPageComponent implements OnInit {
 
   signinWithPhoneNumber(formvalue) {
     this.showProgress = true;
-    const mobileNumber = this.CountryCode + formvalue.mobileNumber
+    const mobileNumber = this.CountryCode + formvalue.mobileNumber;
     if (formvalue.mobileNumber.length === 10) {
       this.authfbObserver = this.fbauth.authState.subscribe((user) => {
         // if (user) {
-          this.fbstore
-            .collection('companys')
-            .snapshotChanges()
-            .subscribe((data) => {
-              const filteredUser = data.filter(
-                (result) =>
-                  result.payload.doc.data()['mobileNumber'] === mobileNumber
-              );
-              if(filteredUser.length > 0) {
-                if (filteredUser[0].payload.doc.data()) {
-                  this.appService.docId = filteredUser[0].payload.doc.id;
-                  this.appService.userSelectedFirmActivity = filteredUser[0].payload.doc.data()['firmActivity'];
-                  if (
-                    filteredUser[0].payload.doc.data()['paymentStatus'] === 'Paid'
-                  ) {
-                    this.showProgress = false;
-                    this.mobileNumberNotFound = false;
-                   
-                    this.router.navigate(['/select-vehicle']);
-                  } else {
-                    this.showProgress = false;
-                    this.mobileNumberNotFound = false;
-                    this.router.navigate(['/payment']);
-                  }
+        this.fbstore
+          .collection('companys')
+          .snapshotChanges()
+          .subscribe((data) => {
+            const filteredUser = data.filter(
+              (result) =>
+                result.payload.doc.data()['mobileNumber'] === mobileNumber
+            );
+            if (filteredUser.length > 0) {
+              if (filteredUser[0].payload.doc.data()) {
+                this.appService.docId = filteredUser[0].payload.doc.id;
+                this.appService.userSelectedFirmActivity =
+                  filteredUser[0].payload.doc.data()['firmActivity'];
+                if (
+                  filteredUser[0].payload.doc.data()['paymentStatus'] === 'Paid'
+                ) {
+                  this.showProgress = false;
+                  this.mobileNumberNotFound = false;
 
+                  this.router.navigate(['/select-vehicle']);
                 } else {
                   this.showProgress = false;
-                  this.mobileNumberNotFound = true;
+                  this.mobileNumberNotFound = false;
+                  this.router.navigate(['/payment']);
                 }
               } else {
                 this.showProgress = false;
                 this.mobileNumberNotFound = true;
               }
-              
-            });
+            } else {
+              this.showProgress = false;
+              this.mobileNumberNotFound = true;
+            }
+          });
       });
     }
   }

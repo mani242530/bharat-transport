@@ -13,4 +13,6 @@ export class Company {
   accountStatus?: string;
   vehicleNos?: string;
   language?: string;
+  aadharNumber?: string;
+  drivingLicenseNumber?: string;
 }

@@ -1,6 +1,3 @@
-/***********************************
- * Copyright Fedex 1995 - 2021
- ***********************************/
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GetStartedPageComponent } from './it-get-started.page.component';

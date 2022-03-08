@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { AppService } from '../services/app.servcie';
+import { ToastService } from '../services/toast.service';
 declare var RazorpayCheckout: any;
 @Component({
   selector: 'app-payment',
@@ -8,15 +10,23 @@ declare var RazorpayCheckout: any;
   styleUrls: ['./it-payment.page.component.scss'],
 })
 export class PaymentPageComponent implements OnInit {
-  paymentAmount: number = 100.00;
+  paymentAmount: number = 100.0;
   currency: string = 'INR';
   currencyIcon: string = '₹';
   razor_key = 'rzp_live_hP98k48bLAaoBC';
   cardDetails: any = {};
+  docId;
 
   userFirmActivity: string;
 
-  constructor(private router: Router, private appService: AppService) {}
+  constructor(
+    private router: Router,
+    private appService: AppService,
+    private fbstore: AngularFirestore,
+    private toastservice: ToastService
+  ) {
+    this.docId = this.appService.docId;
+  }
 
   ngOnInit() {
     // this.appService.otpVerifiedToast();
@@ -31,15 +41,15 @@ export class PaymentPageComponent implements OnInit {
       key: this.razor_key, // your Key Id from Razorpay dashboard
       amount: this.paymentAmount, // Payment amount in smallest denomiation e.g. cents for USD
       name: 'Bharat Transport App',
-      options:{
-        checkout:{
-          method:{
-            netbanking:1,
-            card:1,
-            upi:1,
-            wallet:0,
-          }
-        }
+      options: {
+        checkout: {
+          method: {
+            netbanking: 1,
+            card: 1,
+            upi: 1,
+            wallet: 0,
+          },
+        },
       },
       prefill: {
         email: 'info@privid.co.in',
@@ -56,12 +66,26 @@ export class PaymentPageComponent implements OnInit {
       },
     };
 
-    var successCallback = function (payment_id) {
+    var successCallback = (payment_id) => {
+      // <- Here!
       alert('payment_id: ' + payment_id);
-      this.router.navigate(['/select-vehicle']);
+      // if (payment_id) {
+      let paymentobj = {
+        paymentStatus: 'Paid',
+        accountStatus: 'Active',
+      };
+      this.fbstore
+        .doc('companys/' + this.docId)
+        .update(paymentobj)
+        .then(() => {
+          this.toastservice.showToast('Payment Done Successfully', 1000);
+          this.router.navigate(['/select-vehicle']);
+        });
+      // }
     };
 
-    var cancelCallback = function (error) {
+    var cancelCallback = (error) => {
+      // <- Here!
       alert(error.description + ' (Error ' + error.code + ')');
     };
 

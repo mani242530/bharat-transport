@@ -1,16 +1,13 @@
-/***********************************
- * Copyright Fedex 1995 - 2021
- ***********************************/
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { ListingPageComponent } from "./it-listing.page.component";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ListingPageComponent } from './it-listing.page.component';
 
 /**
  * Routes
  */
 const routes: Routes = [
   {
-    path: "", // path
+    path: '', // path
     component: ListingPageComponent, // component
   },
 ];

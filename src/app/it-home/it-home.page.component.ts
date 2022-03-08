@@ -27,16 +27,25 @@ export class HomePageComponent implements OnInit {
   searchCompanyForm: FormGroup;
   @ViewChild('searchForm') searchForm: FormGroupDirective;
 
-  constructor(private router: Router, public appService: AppService,  public fbauth: AngularFireAuth) {
+  constructor(
+    private router: Router,
+    public appService: AppService,
+    public fbauth: AngularFireAuth
+  ) {
     this.docId = this.appService.docId;
-    const serviceLocations = serviceProvidedLocation.serviceProvidedLocationData
-    this.serviceProvidedLocations = serviceLocations.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
+    const serviceLocations =
+      serviceProvidedLocation.serviceProvidedLocationData;
+    this.serviceProvidedLocations = serviceLocations.sort((a, b) =>
+      a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+    );
   }
 
   ngOnInit() {
     this.initializeForm();
 
-    this.firmActivitys = this.firmActivitys.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
+    this.firmActivitys = this.firmActivitys.sort((a, b) =>
+      a > b ? 1 : b > a ? -1 : 0
+    );
   }
 
   initializeForm(): void {
@@ -52,7 +61,7 @@ export class HomePageComponent implements OnInit {
       queryParams: {
         from: values.from,
         to: values.to,
-        firmActivity: values.firmActivity
+        firmActivity: values.firmActivity,
       },
     };
     this.router.navigate(['listing'], navigationExtras);

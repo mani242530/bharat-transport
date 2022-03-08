@@ -14,7 +14,6 @@ import { AngularFireAuth } from '@angular/fire/auth';
   templateUrl: './it-listing.page.component.html',
   styleUrls: ['./it-listing.page.component.scss'],
 })
-
 export class ListingPageComponent implements OnInit {
   companys: Company[];
   finalResultForCompanys: Company[];
@@ -33,7 +32,7 @@ export class ListingPageComponent implements OnInit {
     public ngroute: Router,
     private fbstore: AngularFirestore,
     private toastservice: ToastService,
-    public fbauth: AngularFireAuth,
+    public fbauth: AngularFireAuth
   ) {
     this.isLoading = true;
     this.docId = this.appService.docId;
@@ -51,14 +50,14 @@ export class ListingPageComponent implements OnInit {
     return item.id;
   }
 
-  checkThisList(list1,list2) {  
-    let result  = false; 
+  checkThisList(list1, list2) {
+    let result = false;
     var hasValue = list2.indexOf(list1) != -1;
-    if(hasValue) {
+    if (hasValue) {
       result = true;
     }
-    
-    return result ;
+
+    return result;
   }
 
   async searchContactByLocation(params) {
@@ -67,61 +66,66 @@ export class ListingPageComponent implements OnInit {
         .collection('companys')
         .snapshotChanges()
         .subscribe((data) => {
-          console.log('1',data);
           // VEHICLE TYPE
-          let fresult= [];
-          for(let res of data){
-              if(this.checkThisList(this.selectedVehicleType, res.payload.doc.data()['vehicleType']))
-              {
-                fresult.push(res);
-              }
+          let fresult = [];
+          for (let res of data) {
+            if (
+              this.checkThisList(
+                this.selectedVehicleType,
+                res.payload.doc.data()['vehicleType']
+              )
+            ) {
+              fresult.push(res);
+            }
           }
-          console.log('fresult',fresult);
           // FROM LOCATION
-          const locresult = fresult.filter(function(item) {
+          const locresult = fresult.filter(function (item) {
             return item.payload.doc.data()['location'] === params.from;
           });
-          console.log('locresult',locresult);
           // TO LOCATION
-          let serviceresult= [];
-          for(let lres of locresult){
-              if(this.checkThisList(params.to, lres.payload.doc.data()['serviceProvidedLocation']))
-              {
-                serviceresult.push(lres);
-              }
+          let serviceresult = [];
+          for (let lres of locresult) {
+            if (
+              this.checkThisList(
+                params.to,
+                lres.payload.doc.data()['serviceProvidedLocation']
+              )
+            ) {
+              serviceresult.push(lres);
+            }
           }
-          console.log('serviceresult',serviceresult);
           // FIRM ACTIVITY
-          const activityresult = serviceresult.filter(function(item) {
-            return item.payload.doc.data()['firmActivity'] === params.firmActivity;
+          const activityresult = serviceresult.filter(function (item) {
+            return (
+              item.payload.doc.data()['firmActivity'] === params.firmActivity
+            );
           });
-          console.log('activityresult',activityresult);
           if (activityresult && activityresult.length > 0) {
             this.noresults = false;
-            this.companys = activityresult && activityresult.map((result) => {
-              console.log(result)
-              return {
-                id: result.payload.doc.id,
-                companyName: result.payload.doc.data()['companyName'],
-                ownerName: result.payload.doc.data()['ownerName'],
-                firmActivity: result.payload.doc.data()['firmActivity'],
-                vehicleType: result.payload.doc
-                  .data()
-                  ['vehicleType'],
-                mobileNumber: result.payload.doc.data()['mobileNumber'],
-                alternateMobileNumber: result.payload.doc.data()['alternateMobileNumber'],
-                location: result.payload.doc.data()['location'],
-                serviceProvidedLocation: result.payload.doc.data()['serviceProvidedLocation'],
-                referenceName: result.payload.doc.data()['referenceName'],
-                vehicleNos: result.payload.doc.data()['vehicleNos'],
-                // aadharNumber: result.payload.doc.data()['aadharNumber'],
-                // drivingLicenseNumber: result.payload.doc.data()['drivingLicenseNumber'],
-                paymentStatus: result.payload.doc.data()['paymentStatus'],
-                accountStatus: result.payload.doc.data()['accountStatus'],
-              };
-            });
+            this.companys =
+              activityresult &&
+              activityresult.map((result) => {
+                return {
+                  id: result.payload.doc.id,
+                  companyName: result.payload.doc.data()['companyName'],
+                  ownerName: result.payload.doc.data()['ownerName'],
+                  firmActivity: result.payload.doc.data()['firmActivity'],
+                  vehicleType: result.payload.doc.data()['vehicleType'],
+                  mobileNumber: result.payload.doc.data()['mobileNumber'],
+                  alternateMobileNumber:
+                    result.payload.doc.data()['alternateMobileNumber'],
+                  location: result.payload.doc.data()['location'],
+                  serviceProvidedLocation:
+                    result.payload.doc.data()['serviceProvidedLocation'],
+                  referenceName: result.payload.doc.data()['referenceName'],
+                  vehicleNos: result.payload.doc.data()['vehicleNos'],
+                  // aadharNumber: result.payload.doc.data()['aadharNumber'],
+                  // drivingLicenseNumber: result.payload.doc.data()['drivingLicenseNumber'],
+                  paymentStatus: result.payload.doc.data()['paymentStatus'],
+                  accountStatus: result.payload.doc.data()['accountStatus'],
+                };
+              });
             this.companyLists = this.companys;
-            console.log(this.companyLists)
             this.finalResultForCompanys = this.companys;
           } else {
             this.noresults = true;
@@ -141,7 +145,12 @@ export class ListingPageComponent implements OnInit {
 
   async setFilteredItems(event) {
     const searchCompanyResult = this.finalResultForCompanys;
-    const duplicateResult = searchCompanyResult.filter(item => item.companyName.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1);
+    const duplicateResult = searchCompanyResult.filter(
+      (item) =>
+        item.companyName
+          .toLowerCase()
+          .indexOf(event.target.value.toLowerCase()) !== -1
+    );
 
     // const duplicateResult = searchCompanyResult.filter(function(v, i) {
     //   return ((v['mobileNumber'] == '+91'+event.target.value || v['companyName'] == event.target.value.toLowerCase()));

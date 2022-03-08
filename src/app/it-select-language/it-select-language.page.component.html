@@ -22,15 +22,7 @@
     maxBufferPx="1350"
   > -->
   <div
-    class="
-      osahan-index
-      bg-c
-      align-items-center
-      justify-content-center
-      vh-100
-      index-page
-      py-3
-    "
+    class="osahan-index bg-c align-items-center justify-content-center vh-100 index-page py-3"
   >
     <ion-grid>
       <ion-row>
@@ -42,34 +34,16 @@
           *ngFor="let language of languages"
         >
           <div
-            class="
-              list-item-img
-              language-item-list
-              align-items-center
-              d-inline-flex
-              justify-content-center
-            "
+            class="list-item-img language-item-list align-items-center d-inline-flex justify-content-center"
             id="{{ language.id }}"
             (click)="loadSelectedLanguage(language.id)"
           >
-            <img
-                src="assets/images/{{language.img}}.png"
-                class="img-fluid"
-              />
-            <!-- <p class="mb-0 l-hght-10 text-center text-purple mb-2 p-1">
-              {{ language.name }}
-            </p> -->
+            <img src="assets/images/{{ language.img }}.png" class="img-fluid" />
             <br />
-            <!-- <p class="mb-0 l-hght-10 text-center text-purple mb-2 p-1">
-              {{ language.description }}
-            </p> -->
           </div>
           <p class="text-center text-purple font-bold mb-3 p-2">
             {{ language.description }}
           </p>
-          <!-- <p class="l-hght-10 text-center text-purple mb-2">
-              {{ language }}
-            </p> -->
         </ion-col>
       </ion-row>
     </ion-grid>
