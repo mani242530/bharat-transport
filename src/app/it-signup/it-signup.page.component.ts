@@ -83,6 +83,7 @@ export class SignUpPageComponent implements OnInit {
 
     this.vehicleTypes = this.vehicleTypes.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
     this.initializeForm();
+    this.setFirmActivityValidators();
   }
 
   initializeForm(): void {
@@ -135,6 +136,34 @@ export class SignUpPageComponent implements OnInit {
       this.checkFirmActivityIsDriver = false;
       this.checkFirmActivityIsOwner = false;
     }
+  }
+
+  setFirmActivityValidators() {
+    const companyNameControl = this.createCompanyForm.get('companyName');
+    const vehicleNosControl = this.createCompanyForm.get('vehicleNos');
+    const drivingLicenseNumberControl = this.createCompanyForm.get('drivingLicenseNumber');
+
+    this.createCompanyForm.get('firmActivity').valueChanges
+      .subscribe(selectedFirmActivity => {
+
+        if (selectedFirmActivity === 'Owner') {
+          companyNameControl.setValidators([Validators.required]);
+          vehicleNosControl.setValidators([Validators.required]);
+          drivingLicenseNumberControl.setValidators(null);
+        } else if (selectedFirmActivity === 'Driver') {
+          companyNameControl.setValidators(null);
+          vehicleNosControl.setValidators(null);
+          drivingLicenseNumberControl.setValidators([Validators.required]);
+        } else {
+          companyNameControl.setValidators([Validators.required]);
+          vehicleNosControl.setValidators(null);
+          drivingLicenseNumberControl.setValidators(null);
+        }
+
+        companyNameControl.updateValueAndValidity();
+        vehicleNosControl.updateValueAndValidity();
+        drivingLicenseNumberControl.updateValueAndValidity();
+      });
   }
 
   async createCompany(formGroup: FormGroup) {
