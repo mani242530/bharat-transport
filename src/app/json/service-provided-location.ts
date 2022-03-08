@@ -173,10 +173,6 @@ export const serviceProvidedLocationData = [
     },
     {
     id: '1',
-    name: 'APP.PREFERED_LOCATION.BARODA',
-    },
-    {
-    id: '1',
     name: 'APP.PREFERED_LOCATION.ANGOL',
     },
     {
@@ -266,10 +262,6 @@ export const serviceProvidedLocationData = [
     {
     id: '14',
     name: 'APP.PREFERED_LOCATION.BANGALORE',
-    },
-    {
-    id: '15',
-    name: 'APP.PREFERED_LOCATION.BAREILY',
     },
     {
     id: '18',
@@ -626,5 +618,13 @@ export const serviceProvidedLocationData = [
     {
     id: '9',
     name: 'APP.PREFERED_LOCATION.VADODARA',
-    }
+    },
+    {
+    id: '9',
+    name: 'APP.PREFERED_LOCATION.BHIWADI',
+    },
+    {
+    id: '9',
+    name: 'APP.PREFERED_LOCATION.KOLHAPUR',
+    },
 ];
