@@ -40,6 +40,7 @@ export class SignUpPageComponent implements OnInit {
   userExists = false;
   checkFirmActivityIsDriver = false;
   checkFirmActivityIsOwner = false;
+  selectedFirmActivity;
 
   createCompanyForm: FormGroup;
   @ViewChild('createForm') createForm: FormGroupDirective;
@@ -133,6 +134,7 @@ export class SignUpPageComponent implements OnInit {
   }
 
   onFirmActivityChange(value) {
+    this.selectedFirmActivity = value.detail.value;
     if (value.detail.value === 'Driver') {
       this.checkFirmActivityIsOwner = false;
       this.checkFirmActivityIsDriver = true;

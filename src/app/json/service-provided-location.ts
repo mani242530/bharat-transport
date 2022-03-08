@@ -17,11 +17,11 @@ export const serviceProvidedLocationData = [
   },
   {
     id: '5',
-    name: 'APP.PREFERED_LOCATION.VISHAKHAPATANAM',
+    name: 'APP.PREFERED_LOCATION.VISHAKHAPATNAM',
   },
   {
     id: '6',
-    name: 'APP.PREFERED_LOCATION.VIJAYWADA',
+    name: 'APP.PREFERED_LOCATION.VIJAYAWADA',
   },
   {
     id: '7',
@@ -33,7 +33,7 @@ export const serviceProvidedLocationData = [
   },
   {
     id: '9',
-    name: 'APP.PREFERED_LOCATION.TINSUKHIYA',
+    name: 'APP.PREFERED_LOCATION.TINSUKIA',
   },
   {
     id: '10',
@@ -65,7 +65,7 @@ export const serviceProvidedLocationData = [
   },
   {
     id: '17',
-    name: 'APP.PREFERED_LOCATION.SALEM',
+    name: 'APP.PREFERED_LOCATION.SELAM',
   },
   {
     id: '18',
@@ -145,7 +145,7 @@ export const serviceProvidedLocationData = [
   },
   {
     id: '37',
-    name: 'APP.PREFERED_LOCATION.CHANDRAPUR',
+    name: 'APP.PREFERED_LOCATION.CHANDERPUR',
   },
   {
     id: '38',
@@ -189,11 +189,11 @@ export const serviceProvidedLocationData = [
   },
   {
     id: '48',
-    name: 'APP.PREFERED_LOCATION.DEHRADHUN',
+    name: 'APP.PREFERED_LOCATION.DEHARADHUN',
   },
   {
     id: '49',
-    name: 'APP.PREFERED_LOCATION.GHAZIABAD',
+    name: 'APP.PREFERED_LOCATION.GHAZIYABAD',
   },
   {
     id: '50',
@@ -425,7 +425,7 @@ export const serviceProvidedLocationData = [
   },
   {
     id: '106',
-    name: 'APP.PREFERED_LOCATION.THIRUVANTHAPURAM',
+    name: 'APP.PREFERED_LOCATION.THIRUVANANTHAPURAM',
   },
   {
     id: '107',
@@ -573,7 +573,7 @@ export const serviceProvidedLocationData = [
   },
   {
     id: '142',
-    name: 'APP.PREFERED_LOCATION.THISSUR',
+    name: 'APP.PREFERED_LOCATION.THRISSUR',
   },
   {
     id: '143',
@@ -626,5 +626,17 @@ export const serviceProvidedLocationData = [
   {
     id: '155',
     name: 'APP.PREFERED_LOCATION.KOLHAPUR',
+  },
+  {
+    id: '156',
+    name: 'APP.PREFERED_LOCATION.AMRAVATI',
+  },
+  {
+    id: '157',
+    name: 'APP.PREFERED_LOCATION.BHUBANESHWAR',
+  },
+  {
+    id: '157',
+    name: 'APP.PREFERED_LOCATION.MAHSANA',
   },
 ];
