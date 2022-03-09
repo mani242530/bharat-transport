@@ -284,10 +284,6 @@ export const serviceProvidedLocationData = [
     name: 'APP.PREFERED_LOCATION.BHOPAL',
   },
   {
-    id: '72',
-    name: 'APP.PREFERED_LOCATION.BHUBANESWAR',
-  },
-  {
     id: '73',
     name: 'APP.PREFERED_LOCATION.BHUJ',
   },
@@ -636,7 +632,7 @@ export const serviceProvidedLocationData = [
     name: 'APP.PREFERED_LOCATION.BHUBANESHWAR',
   },
   {
-    id: '157',
+    id: '158',
     name: 'APP.PREFERED_LOCATION.MAHSANA',
   },
 ];

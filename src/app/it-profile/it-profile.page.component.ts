@@ -118,7 +118,7 @@ export class ProfileComponent implements OnInit {
   constructor(
     public addnewFormbuilder: FormBuilder,
     private toastservice: ToastService,
-    public ngroute: Router,
+    public router: Router,
     private fbstore: AngularFirestore,
     private toastController: ToastController,
     public appservice: AppService,
@@ -149,19 +149,19 @@ export class ProfileComponent implements OnInit {
 
   initializeModifyForm(): void {
     this.modifyCompanyForm = new FormGroup({
-      companyName: new FormControl('', Validators.required),
+      companyName: new FormControl(''),
       ownerName: new FormControl('', Validators.required),
       firmActivity: new FormControl('', Validators.required),
       vehicleType: new FormControl('', Validators.required),
-      mobileNumber: new FormControl('', Validators.required),
+      mobileNumber: new FormControl({ value: '', disabled: true }),
       alternateMobileNumber: new FormControl(''),
       location: new FormControl('', Validators.required),
       serviceProvidedLocation: new FormControl('', Validators.required),
       referenceName: new FormControl('', [Validators.pattern("^[a-zA-Z -']+")]),
       language: new FormControl(''),
-      vehicleNos: new FormControl('', Validators.required),
+      vehicleNos: new FormControl(''),
       aadharNumber: new FormControl(''),
-      drivingLicenseNumber: new FormControl('', Validators.required),
+      drivingLicenseNumber: new FormControl(''),
     });
   }
 
@@ -182,7 +182,7 @@ export class ProfileComponent implements OnInit {
             result['firmActivity']
           );
           this.modifyCompanyForm.controls['vehicleType'].setValue(
-            result['vehicleType']
+            result['vehicleType'].split(',')
           );
           this.modifyCompanyForm.controls['mobileNumber'].setValue(
             result['mobileNumber']
@@ -194,7 +194,7 @@ export class ProfileComponent implements OnInit {
             result['location']
           );
           this.modifyCompanyForm.controls['serviceProvidedLocation'].setValue(
-            result['serviceProvidedLocation']
+            result['serviceProvidedLocation'].split(',')
           );
           this.modifyCompanyForm.controls['referenceName'].setValue(
             result['referenceName']
@@ -296,8 +296,7 @@ export class ProfileComponent implements OnInit {
   }
 
   async doModify() {
-    console.log(this.modifyCompanyForm.value);
-    let companyobj = {
+    const companyobj = {
       companyName: this.modifyCompanyForm.get('companyName').value,
       ownerName: this.modifyCompanyForm.get('ownerName').value,
       firmActivity: this.modifyCompanyForm.get('firmActivity').value,
@@ -322,9 +321,9 @@ export class ProfileComponent implements OnInit {
       await this.fbstore
         .doc('companys/' + this.docid)
         .update(companyobj)
-        .then(() => {
-          this.toastservice.showToast('Updated Sucessfully', 1000);
-          // this.ngroute.navigate(['home']);
+        .then((data) => {
+          console.log(data);
+          this.router.navigate(['/select-vehicle']);
         });
     } catch (error) {
       this.toastservice.showToast(error.message, 2000);

@@ -45,6 +45,13 @@ const routes: Routes = [
       import('./it-payment/it-payment.module').then((m) => m.PaymentPageModule),
   },
   {
+    path: 'payment-success/:paymentid',
+    loadChildren: () =>
+      import('./it-payment-success/it-payment-success.module').then(
+        (p) => p.PaymentSuccessModule
+      ),
+  },
+  {
     path: 'select-vehicle',
     loadChildren: () =>
       import('./it-select-vehicle/it-select-vehicle.module').then(

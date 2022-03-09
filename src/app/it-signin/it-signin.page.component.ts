@@ -42,9 +42,6 @@ export class SignInPageComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private alertController: AlertController,
-    private formBuilder: FormBuilder,
-    private authtenticationService: AuthtenticationService,
     public fbauth: AngularFireAuth,
     private fbstore: AngularFirestore,
     private appService: AppService

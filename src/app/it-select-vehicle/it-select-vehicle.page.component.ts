@@ -89,7 +89,7 @@ export class SelectVehiclePageComponent implements OnInit {
   async doLogout(): Promise<void> {
     await this.fbauth.signOut().then(() => {
       this.appService.selectedLanguage = '';
-      this.router.navigate(['splash']);
+      this.router.navigate(['/splash']);
     });
   }
 }
