@@ -10,7 +10,7 @@ import { ToastService } from '../services/toast.service';
   styleUrls: ['./it-payment-success.page.component.scss'],
 })
 export class PaymentSuccessComponent implements OnInit {
-  docId;
+  docid;
   paymentId;
 
   constructor(
@@ -18,34 +18,36 @@ export class PaymentSuccessComponent implements OnInit {
     private appService: AppService,
     public route: ActivatedRoute,
     public router: Router,
-    private toastservice: ToastService,
+    private toastservice: ToastService
   ) {
-    this.docId = this.appService.docId;
+    this.docid = this.appService.docId;
     this.paymentId = this.route.snapshot.paramMap.get('paymentid');
   }
 
   ngOnInit() {
-    console.log(this.paymentId, this.docId);
+    console.log(this.paymentId, this.docid);
     if (this.paymentId) {
       this.doModify();
     }
   }
 
-  async doModify() {
+  doModify() {
     let paymentobj = {
       paymentStatus: 'Paid',
       accountStatus: 'Active',
     };
     try {
-      await this.fbstore
-        .doc('companys/' + this.docId)
-        .update(paymentobj)
+      this.fbstore
+        .doc('companys/' + this.docid)
+        .ref.update(paymentobj)
         .then((data) => {
           console.log(data);
-          this.router.navigate(['/select-vehicle']);
+          setTimeout(function () {
+            this.router.navigate(['/select-vehicle']);
+          }, 15000);
         });
     } catch (error) {
-      this.toastservice.showToast(error.message, 2000);
+      this.toastservice.showToast(error.message, 15000);
       //console.log(error.message);
     }
   }

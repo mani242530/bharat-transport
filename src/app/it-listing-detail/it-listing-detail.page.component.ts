@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AppService } from '../services/app.servcie';
 import { ToastService } from '../services/toast.service';
@@ -12,7 +12,6 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
   templateUrl: './it-listing-detail.page.component.html',
   styleUrls: ['./it-listing-detail.page.component.scss'],
 })
-
 export class ListingDetailPageComponent implements OnInit {
   id: number;
   company;
@@ -23,6 +22,8 @@ export class ListingDetailPageComponent implements OnInit {
   user;
   userName;
   docId: string;
+  companyId: string;
+  searchParam;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -35,32 +36,59 @@ export class ListingDetailPageComponent implements OnInit {
   ) {
     this.docId = this.appService.docId;
     this.paramId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.companyId = this.appService.selectedCompanyId;
+    this.activatedRoute.queryParams.subscribe((params) => {
+      this.searchParam = params;
+    });
   }
 
   ngOnInit() {
-    this.getCompany(this.paramId);
+    this.getCompany();
   }
 
-  async getCompany(docid: string) {
+  async getCompany() {
+    console.log(this.companyId);
     try {
       await this.fbstore
-        .doc('companys/' + docid)
+        .doc('testcompanys/' + this.companyId)
         .valueChanges()
         .subscribe((result) => {
+          console.log(result);
           this.isLoading = false;
           if (!result) {
-            this.ngroute.navigate(['/listing']);
+            let navigationExtras: NavigationExtras = {
+              queryParams: {
+                from: this.searchParam.from,
+                to: this.searchParam.to,
+                firmActivity: this.searchParam.firmActivity,
+              },
+            };
+            this.ngroute.navigate(['/listing'], navigationExtras);
           } else {
             this.vehicleType = result['vehicleType']
               .toString()
               .split(',')
               .join('\n');
             this.company = result;
+            console.log(this.company)
           }
         });
     } catch (error) {
       this.toastservice.showToast(error.message, 2000);
     }
+  }
+
+  backToListing() {
+    console.log(this.searchParam);
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        from: this.searchParam.from,
+        to: this.searchParam.to,
+        firmActivity: this.searchParam.firmActivity,
+      },
+    };
+    this.ngroute.navigate(['/listing'], navigationExtras );
+
   }
 
   async doLogout(): Promise<void> {

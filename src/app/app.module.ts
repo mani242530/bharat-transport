@@ -48,6 +48,10 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
     SmsRetriever,
     CallNumber,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    {
+      provide: environment.firebaseConfig,
+      useValue: { experimentalForceLongPolling: true },
+    },
   ],
   bootstrap: [AppComponent],
 })

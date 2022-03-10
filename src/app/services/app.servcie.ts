@@ -10,6 +10,7 @@ export class AppService {
   selectedLanguage: any;
   docId: string;
   userSelectedFirmActivity: string;
+  selectedCompanyId: string;
 
   constructor(
     private toastController: ToastController,

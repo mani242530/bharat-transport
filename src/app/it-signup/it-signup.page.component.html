@@ -286,7 +286,7 @@
           slot="end"
           fill="clear"
           [disabled]="!createCompanyForm.valid"
-          (click)="createCompany(createCompanyForm.value)"
+          (click)="createCompanyFireStore(createCompanyForm.value)"
         >
           {{ "APP.CREATE_ACCOUNT.BUTTON.REGISTER" | translate }}
         </button>

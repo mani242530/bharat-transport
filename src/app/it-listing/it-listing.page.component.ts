@@ -1,10 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { ActivatedRoute, Router } from '@angular/router';
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+} from '@angular/fire/firestore';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { of } from 'rxjs';
-import { delay } from 'rxjs/operators';
-import { Company } from '../models/contact';
+import { delay, map } from 'rxjs/operators';
+import { Company } from '../models/company';
 import { AppService } from '../services/app.servcie';
 import { ToastService } from '../services/toast.service';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -15,15 +18,17 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['./it-listing.page.component.scss'],
 })
 export class ListingPageComponent implements OnInit {
-  companys: Company[];
+  companys: any;
   finalResultForCompanys: Company[];
-  companyLists: Company[];
+  companyLists: any;
   isLoading = true;
   searchParam;
   noresults = false;
   selectedVehicleType: string;
   searchCompanyModel;
   docId: string;
+  companysCollection: AngularFirestoreCollection<Company[]>;
+  companyid;
 
   constructor(
     public modalController: ModalController,
@@ -39,6 +44,7 @@ export class ListingPageComponent implements OnInit {
     this.router.queryParams.subscribe((params) => {
       this.searchParam = params;
       this.searchContactByLocation(this.searchParam);
+      // this.searchContactByLocationFireStore(this.searchParam);
     });
 
     this.selectedVehicleType = this.appService.selectedVehicleType;
@@ -60,10 +66,10 @@ export class ListingPageComponent implements OnInit {
     return result;
   }
 
-  async searchContactByLocation(params) {
+  searchContactByLocation(params) {
     try {
-      await this.fbstore
-        .collection('companys')
+      this.fbstore
+        .collection('testcompanys')
         .snapshotChanges()
         .subscribe((data) => {
           // VEHICLE TYPE
@@ -105,6 +111,7 @@ export class ListingPageComponent implements OnInit {
             this.companys =
               activityresult &&
               activityresult.map((result) => {
+                this.companyid = result.payload.doc.id;
                 return {
                   id: result.payload.doc.id,
                   companyName: result.payload.doc.data()['companyName'],
@@ -119,8 +126,9 @@ export class ListingPageComponent implements OnInit {
                     result.payload.doc.data()['serviceProvidedLocation'],
                   referenceName: result.payload.doc.data()['referenceName'],
                   vehicleNos: result.payload.doc.data()['vehicleNos'],
-                  // aadharNumber: result.payload.doc.data()['aadharNumber'],
-                  // drivingLicenseNumber: result.payload.doc.data()['drivingLicenseNumber'],
+                  aadharNumber: result.payload.doc.data()['aadharNumber'],
+                  drivingLicenseNumber:
+                    result.payload.doc.data()['drivingLicenseNumber'],
                   paymentStatus: result.payload.doc.data()['paymentStatus'],
                   accountStatus: result.payload.doc.data()['accountStatus'],
                 };
@@ -156,6 +164,74 @@ export class ListingPageComponent implements OnInit {
     //   return ((v['mobileNumber'] == '+91'+event.target.value || v['companyName'] == event.target.value.toLowerCase()));
     // })
     this.companyLists = duplicateResult;
+  }
+
+  searchContactByLocationFireStore(params) {
+    this.isLoading = true;
+    if (params) {
+      this.companysCollection = this.fbstore.collection('companys', (ref) =>
+        ref
+          .where('vehicleType', '==', this.selectedVehicleType)
+          .where('location', '==', params.from)
+          .where('serviceProvidedLocation', '==', params.to)
+          .where('firmActivity', '==', params.firmActivity)
+      );
+      this.companys = this.companysCollection.snapshotChanges().pipe(
+        map((actions) => {
+          return actions.map((action) => {
+            const data = action.payload.doc.data() as Company[];
+            return {
+              id: action.payload.doc.id,
+              companyName: data[0].companyName,
+              ownerName: data[0].ownerName,
+              firmActivity: data[0].firmActivity,
+              vehicleType: data[0].vehicleType,
+              mobileNumber: data[0].mobileNumber,
+              alternateMobileNumber: data[0].alternateMobileNumber,
+              location: data[0].location,
+              serviceProvidedLocation: data[0].serviceProvidedLocation,
+              referenceName: data[0].referenceName,
+              vehicleNos: data[0].vehicleNos,
+              aadharNumber: data[0].aadharNumber,
+              drivingLicenseNumber: data[0].drivingLicenseNumber,
+              paymentStatus: data[0].paymentStatus,
+              accountStatus: data[0].accountStatus,
+            };
+          });
+        })
+      );
+
+      this.companys.subscribe((snapshot) => {
+        if (snapshot.length == 0) {
+          console.log('Data NOT found');
+          console.log(snapshot);
+          this.isLoading = false;
+          this.noresults = true;
+        } else {
+          console.log('Data found' + snapshot[0].id);
+          console.log(snapshot);
+          this.isLoading = false;
+          this.noresults = false;
+          this.companyLists = this.companys;
+          this.finalResultForCompanys = this.companys;
+        }
+      });
+    }
+  }
+
+  goListingDetailPage(companyid) {
+    console.log(companyid);
+    this.appService.selectedCompanyId = companyid;
+    console.log(this.searchParam);
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        from: this.searchParam.from,
+        to: this.searchParam.to,
+        firmActivity: this.searchParam.firmActivity,
+        companyId: companyid,
+      },
+    };
+    this.ngroute.navigate(['/listing-detail'], navigationExtras);
   }
 
   async doLogout(): Promise<void> {

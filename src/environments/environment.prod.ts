@@ -3,6 +3,7 @@ export const environment = {
   firebaseConfig : {
     apiKey: "AIzaSyCwryKwaf_MDuvOWE4aHdZzI6zLf0cDcto",
     authDomain: "bharat-transport-2022.firebaseapp.com",
+    databaseURL: "https://bharat-transport-2022-default-rtdb.firebaseio.com",
     projectId: "bharat-transport-2022",
     storageBucket: "bharat-transport-2022.appspot.com",
     messagingSenderId: "304908517281",

@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+} from '@angular/fire/firestore';
 import {
   FormGroup,
   FormGroupDirective,
@@ -10,7 +13,7 @@ import {
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import * as serviceProvidedLocation from '../json/service-provided-location';
-import { Company } from '../models/contact';
+import { Company } from '../models/company';
 import { ToastService } from '../services/toast.service';
 import { AppService } from '../services/app.servcie';
 
@@ -31,6 +34,8 @@ export class ProfileComponent implements OnInit {
   disabledFlag = true;
   checkFirmActivityIsDriver = false;
   checkFirmActivityIsOwner = false;
+
+  companysCollection: AngularFirestoreCollection<Company>;
 
   modifyCompanyForm: FormGroup;
   @ViewChild('modifyForm') modifyForm: FormGroupDirective;
@@ -182,7 +187,7 @@ export class ProfileComponent implements OnInit {
             result['firmActivity']
           );
           this.modifyCompanyForm.controls['vehicleType'].setValue(
-            result['vehicleType'].split(',')
+            result['vehicleType']
           );
           this.modifyCompanyForm.controls['mobileNumber'].setValue(
             result['mobileNumber']
@@ -194,7 +199,7 @@ export class ProfileComponent implements OnInit {
             result['location']
           );
           this.modifyCompanyForm.controls['serviceProvidedLocation'].setValue(
-            result['serviceProvidedLocation'].split(',')
+            result['serviceProvidedLocation']
           );
           this.modifyCompanyForm.controls['referenceName'].setValue(
             result['referenceName']
@@ -295,7 +300,7 @@ export class ProfileComponent implements OnInit {
     toast.present();
   }
 
-  async doModify() {
+  doModify() {
     const companyobj = {
       companyName: this.modifyCompanyForm.get('companyName').value,
       ownerName: this.modifyCompanyForm.get('ownerName').value,
@@ -318,12 +323,12 @@ export class ProfileComponent implements OnInit {
       accountStatus: 'Active',
     };
     try {
-      await this.fbstore
+      this.fbstore
         .doc('companys/' + this.docid)
-        .update(companyobj)
+        .ref.update(companyobj)
         .then((data) => {
           console.log(data);
-          this.router.navigate(['/select-vehicle']);
+          this.toastservice.showToast('Profile updated successfully', 1000);
         });
     } catch (error) {
       this.toastservice.showToast(error.message, 2000);

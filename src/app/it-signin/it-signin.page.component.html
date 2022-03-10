@@ -28,7 +28,7 @@
   > -->
   <div id="sign-in-button"></div>
   <div
-    class="osahan-index bg-c align-items-center justify-content-center vh-100 index-page py-5"
+    class="osahan-index bg-c align-items-center justify-content-center vh-92 index-page py-5"
   >
     <div class="px-3">
       <form [formGroup]="signInForm" #signIn novalidate>
@@ -56,7 +56,7 @@
           slot="end"
           fill="clear"
           [disabled]="!signInForm.valid"
-          (click)="signinWithPhoneNumber(signInForm.value)"
+          (click)="signinWithPhoneNumberFireStore(signInForm.value)"
         >
           SIGN IN
         </button>

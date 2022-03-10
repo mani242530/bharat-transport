@@ -4,13 +4,12 @@
     class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple"
   >
     <h5 class="font-weight-normal mb-0 text-white">
-      <a class="text-purple" routerLink="/listing"
+      <a class="text-purple" (click)="backToListing()"
         ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
       ></a>
       <ion-title>{{ "APP.LISTING_DETAILS.TITLE" | translate }}</ion-title>
     </h5>
     <div class="ml-auto d-flex align-items-center">
-      <ngx-avatar name="{{ userName }}" size="50"></ngx-avatar>
       <ion-buttons slot="end">
         <a [routerLink]="['/profile/', docId]"
           ><fa-icon
@@ -49,40 +48,87 @@
             <div class="Bus-Details padding-bt">
               <div class="list_item m-0">
                 <div class="px-2 py-3 tic-div border-bottom d-flex">
-                  <ngx-avatar
-                    size="40"
-                    initialsSize="2"
-                    cornerRadius="4"
-                    [round]="false"
-                    name="{{ company.companyName }}"
-                  ></ngx-avatar>
-                  <div class="w-100 margin-left-15">
-                    <div class="mb-0 l-hght-10 l-hght-18 font-bold">
-                      {{ company.companyName }}
-                      <span
-                        *ngIf="company.ownerName !== null"
-                        class="text-purple small text-small font-bold"
-                        >({{
-                          "APP.LISTING_DETAILS.LABEL.OWNER_NAME" | translate
-                        }}
-                        - {{ company.ownerName }})</span
-                      >
+                  <div
+                    style="width: 100%"
+                    *ngIf="company.companyName !== ''; else defaultcompanyname"
+                  >
+                    <div
+                      class="float-left"
+                      style="float: left; margin-right: 15px"
+                    >
+                      <ngx-avatar
+                        size="40"
+                        initialsSize="2"
+                        cornerRadius="4"
+                        [round]="false"
+                        name="{{ company.companyName }}"
+                      ></ngx-avatar>
                     </div>
 
-                    <div class="start-rating f-10">
-                      <div class="d-flex mt-1">
-                        <p class="m-0">
-                          <fa-icon
-                            icon="map-marker-alt"
-                            class="map-marker-alt"
-                          ></fa-icon
-                          ><span class="small font-bold">{{
-                            company.location
-                          }}</span>
-                        </p>
+                    <div class="w-100 margin-left-15">
+                      <div class="mb-0 l-hght-10 l-hght-18 font-bold">
+                        {{ company.companyName }}
+                        <span
+                          *ngIf="company.ownerName !== ''"
+                          class="text-purple small text-small font-bold"
+                          >({{
+                            "APP.LISTING_DETAILS.LABEL.OWNER_NAME" | translate
+                          }}
+                          - {{ company.ownerName }})</span
+                        >
+                      </div>
+
+                      <div class="start-rating f-10">
+                        <div class="d-flex mt-1">
+                          <p class="m-0">
+                            <fa-icon
+                              icon="map-marker-alt"
+                              class="map-marker-alt"
+                            ></fa-icon
+                            ><span class="small font-bold">{{
+                              company.location
+                            }}</span>
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  <ng-template #defaultcompanyname>
+                    <div class="w-100 margin-left-15">
+                      <ngx-avatar
+                        size="40"
+                        initialsSize="2"
+                        cornerRadius="4"
+                        [round]="false"
+                        name="NA"
+                      ></ngx-avatar>
+                    </div>
+
+                    <div class="w-100 margin-left-15">
+                      <div class="mb-0 l-hght-10 l-hght-18 font-bold">
+                        NO NAME
+                        <span class="text-purple small text-small font-bold"
+                          >({{
+                            "APP.LISTING_DETAILS.LABEL.OWNER_NAME" | translate
+                          }}
+                          - NO NAME)</span
+                        >
+                      </div>
+
+                      <div class="start-rating f-10">
+                        <div class="d-flex mt-1">
+                          <p class="m-0">
+                            <fa-icon
+                              icon="map-marker-alt"
+                              class="map-marker-alt"
+                            ></fa-icon
+                            ><span class="small font-bold">India</span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
                 </div>
                 <div class="bus-details pt-2 pb-0 px-2">
                   <div class="info" id="info">

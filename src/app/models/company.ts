@@ -1,5 +1,5 @@
 export class Company {
-  id: string;
+  id?: string;
   companyName: string;
   ownerName: string;
   firmActivity: string;

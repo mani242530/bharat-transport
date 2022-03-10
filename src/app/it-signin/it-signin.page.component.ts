@@ -1,25 +1,28 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
 import {
-  FormBuilder,
   FormControl,
   FormGroup,
   FormGroupDirective,
   Validators,
 } from '@angular/forms';
-import { AuthtenticationService } from '../services/authentication.service';
 import firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+} from '@angular/fire/firestore';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { AppService } from '../services/app.servcie';
+import { Company } from '../models/company';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-signin',
   templateUrl: './it-signin.page.component.html',
   styleUrls: ['./it-signin.page.component.scss'],
 })
-
 export class SignInPageComponent implements OnInit {
   OTP: string = '';
   Code: any;
@@ -36,6 +39,9 @@ export class SignInPageComponent implements OnInit {
   mobileNumberNotFound = false;
   tryagain: string;
   authfbObserver;
+  filteredUser: Observable<any>;
+
+  companysCollection: AngularFirestoreCollection<Company>;
 
   signInForm: FormGroup;
   @ViewChild('signIn') signIn: FormGroupDirective;
@@ -44,7 +50,8 @@ export class SignInPageComponent implements OnInit {
     private router: Router,
     public fbauth: AngularFireAuth,
     private fbstore: AngularFirestore,
-    private appService: AppService
+    private appService: AppService,
+    private fbdb: AngularFireDatabase
   ) {}
 
   ngOnInit() {
@@ -53,71 +60,93 @@ export class SignInPageComponent implements OnInit {
     });
   }
 
-  async ionViewDidEnter() {
-    this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-      'sign-in-button',
-      {
-        size: 'invisible',
-        callback: (response) => {},
-        'expired-callback': () => {},
-      }
-    );
-  }
+  signinWithPhoneNumberFireStore(formvalue) {
+    this.showProgress = true;
+    const mobileNumber = this.CountryCode + formvalue.mobileNumber;
+    if (formvalue.mobileNumber.length === 10) {
+      this.companysCollection = this.fbstore.collection('companys', (ref) =>
+        ref.where('mobileNumber', '==', mobileNumber)
+      );
+      this.filteredUser = this.companysCollection.snapshotChanges().pipe(
+        map((actions) => {
+          return actions.map((action) => {
+            const data = action.payload.doc.data() as Company;
+            //const id = action.payload.doc.id;
+            return {
+              id: action.payload.doc.id,
+              paymentStatus: data.paymentStatus,
+              accountStatus: data.accountStatus,
+              firmActivity: data.firmActivity,
+            };
+          });
+        })
+      );
 
-  ionViewDidLoad() {
-    this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-      'sign-in-button',
-      {
-        size: 'invisible',
-        callback: (response) => {},
-        'expired-callback': () => {},
-      }
-    );
+      this.filteredUser.subscribe((snapshot) => {
+        if (snapshot.length == 0) {
+          console.log('User NOT found');
+          this.showProgress = false;
+          this.mobileNumberNotFound = true;
+        } else {
+          console.log('User found' + snapshot[0].id);
+          this.showProgress = false;
+          this.mobileNumberNotFound = false;
+          this.appService.docId = snapshot[0].id;
+          this.appService.userSelectedFirmActivity = snapshot[0].firmActivity;
+
+          if (snapshot[0].paymentStatus === 'Paid') {
+            this.router.navigate(['/select-vehicle']);
+          } else {
+            this.router.navigate(['/payment']);
+          }
+        }
+      });
+    }
   }
 
   // Button event after the nmber is entered and button is clicked
 
-  signinWithPhoneNumber(formvalue) {
-    this.showProgress = true;
-    const mobileNumber = this.CountryCode + formvalue.mobileNumber;
-    if (formvalue.mobileNumber.length === 10) {
-      this.authfbObserver = this.fbauth.authState.subscribe((user) => {
-        // if (user) {
-        this.fbstore
-          .collection('companys')
-          .snapshotChanges()
-          .subscribe((data) => {
-            const filteredUser = data.filter(
-              (result) =>
-                result.payload.doc.data()['mobileNumber'] === mobileNumber
-            );
-            if (filteredUser.length > 0) {
-              if (filteredUser[0].payload.doc.data()) {
-                this.appService.docId = filteredUser[0].payload.doc.id;
-                this.appService.userSelectedFirmActivity =
-                  filteredUser[0].payload.doc.data()['firmActivity'];
-                if (
-                  filteredUser[0].payload.doc.data()['paymentStatus'] === 'Paid'
-                ) {
-                  this.showProgress = false;
-                  this.mobileNumberNotFound = false;
+  // signinWithPhoneNumber(formvalue) {
+  //   this.showProgress = true;
+  //   const mobileNumber = this.CountryCode + formvalue.mobileNumber;
+  //   if (formvalue.mobileNumber.length === 10) {
+  //     this.authfbObserver = this.fbauth.authState.subscribe((user) => {
+  //       // if (user) {
+  //       this.fbstore
+  //         .collection('companys')
+  //         .snapshotChanges()
+  //         .subscribe((data) => {
+  //           const filteredUser = data.filter(
+  //             (result) =>
+  //               result.payload.doc.data()['mobileNumber'] === mobileNumber
+  //           );
+  //           if (filteredUser.length > 0) {
+  //             if (filteredUser[0].payload.doc.data()) {
+  //               this.appService.docId = filteredUser[0].payload.doc.id;
+  //               this.appService.userSelectedFirmActivity =
+  //                 filteredUser[0].payload.doc.data()['firmActivity'];
+  //               if (
+  //                 filteredUser[0].payload.doc.data()['paymentStatus'] === 'Paid'
+  //               ) {
+  //                 this.showProgress = false;
+  //                 this.mobileNumberNotFound = false;
 
-                  this.router.navigate(['/select-vehicle']);
-                } else {
-                  this.showProgress = false;
-                  this.mobileNumberNotFound = false;
-                  this.router.navigate(['/payment']);
-                }
-              } else {
-                this.showProgress = false;
-                this.mobileNumberNotFound = true;
-              }
-            } else {
-              this.showProgress = false;
-              this.mobileNumberNotFound = true;
-            }
-          });
-      });
-    }
-  }
+  //                 this.router.navigate(['/select-vehicle']);
+  //               } else {
+  //                 this.showProgress = false;
+  //                 this.mobileNumberNotFound = false;
+  //                 this.router.navigate(['/payment']);
+  //               }
+  //             } else {
+  //               this.showProgress = false;
+  //               this.mobileNumberNotFound = true;
+  //             }
+  //           } else {
+  //             this.showProgress = false;
+  //             this.mobileNumberNotFound = true;
+  //           }
+  //         });
+  //     });
+  //   }
+  // }
 }

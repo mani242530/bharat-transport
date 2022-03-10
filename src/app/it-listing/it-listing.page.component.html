@@ -112,7 +112,7 @@
           <fa-icon
             icon="angle-double-right"
             class="angle-double-right font-bold"
-            [routerLink]="['/listing-detail/', company.id]"
+            (click)="goListingDetailPage(company.id)"
           ></fa-icon>
         </ion-item>
       </div>
