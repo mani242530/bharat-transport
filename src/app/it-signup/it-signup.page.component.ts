@@ -214,7 +214,7 @@ export class SignUpPageComponent implements OnInit {
     });
 
     if (companyObj) {
-      this.companysNewCollection = this.fbstore.collection('testcompanys', (ref) =>
+      this.companysNewCollection = this.fbstore.collection('companys', (ref) =>
         ref.where('mobileNumber', '==', companyObj.mobileNumber)
       );
       this.filteredUser = this.companysNewCollection.snapshotChanges().pipe(

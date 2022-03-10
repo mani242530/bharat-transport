@@ -129,7 +129,8 @@ export class ProfileComponent implements OnInit {
     public appservice: AppService,
     public route: ActivatedRoute
   ) {
-    this.docid = this.route.snapshot.paramMap.get('id');
+    // this.docid = this.route.snapshot.paramMap.get('id');
+    this.docid = this.appservice.docId;
   }
 
   ngOnInit() {

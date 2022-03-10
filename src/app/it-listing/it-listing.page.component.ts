@@ -69,7 +69,7 @@ export class ListingPageComponent implements OnInit {
   searchContactByLocation(params) {
     try {
       this.fbstore
-        .collection('testcompanys')
+        .collection('companys')
         .snapshotChanges()
         .subscribe((data) => {
           // VEHICLE TYPE

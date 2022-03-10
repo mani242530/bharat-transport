@@ -49,7 +49,7 @@ export class SignInPageComponent implements OnInit {
     private router: Router,
     public fbauth: AngularFireAuth,
     private fbstore: AngularFirestore,
-    private appService: AppService,
+    private appService: AppService
   ) {}
 
   ngOnInit() {
@@ -69,7 +69,6 @@ export class SignInPageComponent implements OnInit {
         map((actions) => {
           return actions.map((action) => {
             const data = action.payload.doc.data() as Company;
-            //const id = action.payload.doc.id;
             return {
               id: action.payload.doc.id,
               paymentStatus: data.paymentStatus,
@@ -86,6 +85,7 @@ export class SignInPageComponent implements OnInit {
           this.showProgress = false;
           this.mobileNumberNotFound = true;
         } else {
+          console.log(snapshot[0]);
           console.log('User found' + snapshot[0].id);
           this.showProgress = false;
           this.mobileNumberNotFound = false;

@@ -50,7 +50,7 @@ export class ListingDetailPageComponent implements OnInit {
     console.log(this.companyId);
     try {
       await this.fbstore
-        .doc('testcompanys/' + this.companyId)
+        .doc('companys/' + this.companyId)
         .valueChanges()
         .subscribe((result) => {
           console.log(result);
