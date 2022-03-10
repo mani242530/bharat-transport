@@ -185,77 +185,6 @@ export class SignUpPageComponent implements OnInit {
       });
   }
 
-  // async createCompany(formGroup: FormGroup) {
-  //   this.showProgress = true;
-  //   const companyObj = {
-  //     companyName: this.createCompanyForm.get('companyName').value,
-  //     ownerName: this.createCompanyForm.get('ownerName').value,
-  //     firmActivity: this.createCompanyForm.get('firmActivity').value,
-  //     vehicleType: this.createCompanyForm.get('vehicleType').value,
-  //     mobileNumber: '+91' + this.createCompanyForm.get('mobileNumber').value,
-  //     alternateMobileNumber:
-  //       '+91' + this.createCompanyForm.get('alternateMobileNumber').value,
-  //     location: this.createCompanyForm.get('location').value,
-  //     serviceProvidedLocation: this.createCompanyForm.get(
-  //       'serviceProvidedLocation'
-  //     ).value,
-  //     referenceName: this.createCompanyForm.get('referenceName').value,
-  //     vehicleNos: this.createCompanyForm.get('vehicleNos').value,
-  //     aadharNumber: this.createCompanyForm.get('aadharNumber').value,
-  //     drivingLicenseNumber: this.createCompanyForm.get('drivingLicenseNumber')
-  //       .value,
-  //     language: this.appservice.selectedLanguage,
-  //     paymentStatus: 'Not Paid',
-  //   };
-  //   Object.keys(companyObj).forEach((k) => {
-  //     if (typeof companyObj[k] !== 'object') {
-  //       companyObj[k] = companyObj[k].trim();
-  //     }
-  //   });
-  //   this.fbstore
-  //     .collection('companys', (ref) =>
-  //       ref.where('mobileNumber', '==', companyObj.mobileNumber).limit(1)
-  //     )
-  //     .get()
-  //     .subscribe((users) => {
-  //       if (users.size === 0) {
-  //         try {
-  //           this.fbstore
-  //             .collection('companys')
-  //             .add(companyObj)
-  //             .then((data) => {
-  //               if (data) {
-  //                 return new Promise<any>((resolve, reject) => {
-  //                   this.authtenticationService
-  //                     .signInWithPhoneNumber(
-  //                       this.recaptchaVerifier,
-  //                       companyObj.mobileNumber
-  //                     )
-  //                     .then((success) => {
-  //                       resolve(success);
-  //                       this.showProgress = false;
-  //                       this.invalidMobilenumber = false;
-  //                       this.registerSuccessToast();
-  //                       this.ngroute.navigate(['verification']);
-  //                     })
-  //                     .catch((error) => {
-  //                       this.showProgress = false;
-  //                       this.invalidMobilenumber = true;
-  //                       reject(error);
-  //                     });
-  //                 });
-  //               }
-  //             });
-  //         } catch (error) {
-  //           this.showProgress = false;
-  //         }
-  //       } else {
-  //         this.showProgress = false;
-  //         this.userExists = true;
-  //       }
-  //     });
-  // }
-
   createCompanyFireStore(formvalue) {
     this.showProgress = true;
     const companyObj = {
@@ -285,7 +214,7 @@ export class SignUpPageComponent implements OnInit {
     });
 
     if (companyObj) {
-      this.companysNewCollection = this.fbstore.collection('companys', (ref) =>
+      this.companysNewCollection = this.fbstore.collection('testcompanys', (ref) =>
         ref.where('mobileNumber', '==', companyObj.mobileNumber)
       );
       this.filteredUser = this.companysNewCollection.snapshotChanges().pipe(
@@ -302,10 +231,11 @@ export class SignUpPageComponent implements OnInit {
       this.filteredUser.subscribe((snapshot) => {
         if (snapshot.length == 0) {
           console.log('User NOT found');
-          this.showProgress = false;
-          this.userExists = false;
+         
           this.companysNewCollection.add(companyObj).then((data) => {
             if (data) {
+              this.showProgress = false;
+              this.userExists = false;
               return new Promise<any>((resolve, reject) => {
                 this.authtenticationService
                   .signInWithPhoneNumber(
@@ -314,6 +244,7 @@ export class SignUpPageComponent implements OnInit {
                   )
                   .then((success) => {
                     resolve(success);
+                    this.userExists = false;
                     this.registerSuccessToast();
                     this.ngroute.navigate(['verification']);
                   })

@@ -156,7 +156,7 @@ export class ProfileComponent implements OnInit {
     this.modifyCompanyForm = new FormGroup({
       companyName: new FormControl(''),
       ownerName: new FormControl('', Validators.required),
-      firmActivity: new FormControl('', Validators.required),
+      firmActivity: new FormControl({ value: '', disabled: true }),
       vehicleType: new FormControl('', Validators.required),
       mobileNumber: new FormControl({ value: '', disabled: true }),
       alternateMobileNumber: new FormControl(''),

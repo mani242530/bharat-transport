@@ -42,9 +42,9 @@ export class PaymentSuccessComponent implements OnInit {
         .ref.update(paymentobj)
         .then((data) => {
           console.log(data);
-          setTimeout(function () {
-            this.router.navigate(['/select-vehicle']);
-          }, 15000);
+          // setTimeout(function () {
+          //   this.router.navigate(['/select-vehicle']);
+          // }, 15000);
         });
     } catch (error) {
       this.toastservice.showToast(error.message, 15000);
