@@ -15,9 +15,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _it_splash_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./it-splash.page.component */ "ODfu");
 
-/***********************************
- * Copyright Fedex 1995 - 2021
- ***********************************/
 
 
 
@@ -26,7 +23,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 const routes = [
     {
-        path: "",
+        path: '',
         component: _it_splash_page_component__WEBPACK_IMPORTED_MODULE_3__["SplashPageComponent"],
     },
 ];
@@ -147,18 +144,8 @@ let SplashPageComponent = class SplashPageComponent {
     constructor(router) {
         this.router = router;
     }
-    ngOnInit() {
-        // this.initTranslate();
-    }
-    initTranslate() {
-        // Set the default language for translation strings, and the current language.
-        // this._translate.setDefaultLang('hi');
-        // if (this._translate.getBrowserLang() !== undefined) {
-        //   this._translate.use(this._translate.getBrowserLang());
-        // } else {
-        //   this._translate.use("hi"); // Set your language here
-        // }
-    }
+    ngOnInit() { }
+    initTranslate() { }
 };
 SplashPageComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
@@ -183,7 +170,7 @@ SplashPageComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\n  <!-- Osahan Index -->\n  <div\n    class=\"\n      osahan-index\n      bg-c\n      d-flex\n      align-items-center\n      justify-content-center\n      vh-100\n      index-page\n    \"\n  >\n    <div class=\"text-center\">\n      <a routerLink=\"/get-started\">\n        <img src=\"assets/images/app_logo.png\" class=\"display-1 p-3\" /> </a\n      ><br />\n\n      <div class=\"spinner\"></div>\n    </div>\n  </div>\n  <div class=\"osahan-fotter fixed-bottom m-3\">\n    <a\n      class=\"\n        btn btn-block\n        px-4\n        py-3\n        d-flex\n        align-items-center\n        osahanbus-btlan\n        btn-purple\n        shadow\n      \"\n      routerLink=\"/get-started\"\n    >\n      {{ \"APP.GET_STARTED\" | translate }}\n      <fa-icon\n        icon=\"arrow-right\"\n        class=\"text-white splash-arrow-right\"\n      ></fa-icon>\n    </a>\n  </div>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\n  <!-- Osahan Index -->\n  <div\n    class=\"osahan-index bg-c d-flex align-items-center vh-92 justify-content-center index-page\"\n  >\n    <div class=\"text-center\">\n      <a routerLink=\"/get-started\">\n        <img src=\"assets/images/app_logo.png\" class=\"display-1 p-3\" /> </a\n      ><br />\n\n      <div class=\"spinner\"></div>\n    </div>\n  </div>\n  <div class=\"osahan-fotter fixed-bottom m-3\">\n    <a\n      class=\"btn btn-block px-4 py-3 d-flex align-items-center osahanbus-btlan btn-purple shadow\"\n      routerLink=\"/get-started\"\n    >\n      {{ \"APP.GET_STARTED\" | translate }}\n      <fa-icon\n        icon=\"arrow-right\"\n        class=\"text-white splash-arrow-right\"\n      ></fa-icon>\n    </a>\n  </div>\n</ion-content>\n");
 
 /***/ })
 

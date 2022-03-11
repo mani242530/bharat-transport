@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\n  <!-- Osahan Started -->\n  <div\n    class=\"\n      osahan-index\n      bg-c\n      d-flex\n      align-items-center\n      justify-content-center\n      vh-100\n      index-page\n    \"\n  >\n    <div class=\"py-4 d-flex align-items-center justify-content-center\">\n      <div class=\"osahan-started pt-2 text-center\">\n        <img\n          src=\"assets/images/bharat-transport-truck.png\"\n          class=\"img-fluid mb-2 col-9 mx-auto rounded\"\n        />\n        <div class=\"fixed-bottom p-4\">\n          <a\n            routerLink=\"/select-language\"\n            class=\"btn btn-block mb-3 osahanbus-btn btn-purple\"\n            >CREATE AN ACCOUNT</a\n          >\n          <a routerLink=\"/signin\" class=\"btn btn-block btn-white osahanbus-btn\"\n            >SIGN IN</a\n          >\n        </div>\n      </div>\n    </div>\n  </div>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\n  <!-- Osahan Started -->\n  <div\n    class=\"osahan-index bg-c d-flex align-items-center vh-92 justify-content-center index-page\"\n  >\n    <div class=\"py-4 d-flex align-items-center justify-content-center\">\n      <div class=\"osahan-started pt-2 text-center\">\n        <img\n          src=\"assets/images/bharat-transport-truck.png\"\n          class=\"img-fluid mb-2 col-9 mx-auto rounded\"\n        />\n        <div class=\"fixed-bottom p-4\">\n          <a\n            routerLink=\"/select-language\"\n            class=\"btn btn-block mb-3 osahanbus-btn btn-purple\"\n            >CREATE AN ACCOUNT</a\n          >\n          <a routerLink=\"/signin\" class=\"btn btn-block btn-white osahanbus-btn\"\n            >SIGN IN</a\n          >\n        </div>\n      </div>\n    </div>\n  </div>\n</ion-content>\n");
 
 /***/ }),
 
@@ -41,7 +41,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: "",
+        path: '',
         component: _it_get_started_page_component__WEBPACK_IMPORTED_MODULE_6__["GetStartedPageComponent"],
     },
 ];
@@ -130,9 +130,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _it_get_started_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./it-get-started.page.component */ "bIuy");
 
-/***********************************
- * Copyright Fedex 1995 - 2021
- ***********************************/
 
 
 

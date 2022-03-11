@@ -1234,6 +1234,9 @@ sub {
   width: 1px !important;
   white-space: nowrap !important;
 }
+.font-bold {
+  font-weight: bold !important;
+}
 /* text */
 .text-purple {
   color: #5f259f !important;
@@ -1301,8 +1304,8 @@ sub {
   border: 1px solid #5f259f !important;
   border-radius: 10px !important;
 }
-.vh-80 {
-  height: 80vh !important;
+.vh-92 {
+  height: 92vh !important;
 }
 .osahan-form {
   width: 100%;
@@ -1351,6 +1354,9 @@ sub {
 .payment-borrad {
   border-radius: 10px;
   border: 1px solid #ced4da;
+  position: fixed;
+  bottom: 10%;
+  width: 90%;
 }
 .list_item_gird {
   border: 1px solid #e0e0e0 !important;
@@ -1407,9 +1413,34 @@ sub {
 .item-native {
   padding: 0px !important;
 }
-.bg-c, .ion-page, .list-md, .list-ios {
-  background: url('background.jpg') no-repeat;
+.bg-c, .ion-page, .list-md, .list-ios, .background-image {
+  background: url('background.jpg') no-repeat !important;
+  background-size: cover !important;
+}
+.owner-payment {
+  background: url('999.png') no-repeat;
   background-size: cover;
+  background-position: center;
+  background-size: 310px 100px;
+}
+.driver-payment {
+  background: url('99.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-size: 310px 100px;
+}
+.custom-control-input {
+  margin-top: 15px;
+  width: 3rem !important;
+}
+.onemonth-tag, .oneyear-tag {
+  margin-left: 40%;
+  width: 160px;
+  position: relative;
+  left: 30px;
+}
+.record-text-right {
+  text-align: right;
 }
 @font-face {
   font-family: "Quicksand";
@@ -1560,7 +1591,7 @@ h5 {
 }
 
 .l-hght-18 {
-  line-height: 18px;
+  line-height: 17px;
 }
 
 .osahan-qr {

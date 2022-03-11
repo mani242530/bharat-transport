@@ -34,55 +34,55 @@ let SelectLanguagePageComponent = class SelectLanguagePageComponent {
                 id: 'en',
                 name: 'ENGLISH',
                 description: 'ENGLISH',
-                img: 'english'
+                img: 'english',
             },
             {
                 id: 'hi',
                 name: 'हिंदी',
                 description: 'HINDI',
-                img: 'hindi'
+                img: 'hindi',
             },
             {
                 id: 'ma',
                 name: 'मराठी',
                 description: 'MARATHI',
-                img: 'marathi'
+                img: 'marathi',
             },
             {
                 id: 'gu',
                 name: 'ગુજરાતી',
                 description: 'GUJARATI',
-                img: 'gujarati'
+                img: 'gujarati',
             },
             {
                 id: 'tn',
                 name: 'தமிழ்',
                 description: 'TAMIL',
-                img: 'tamil'
+                img: 'tamil',
             },
             {
                 id: 'tl',
                 name: 'తెలుగు',
                 description: 'TELUGU',
-                img: 'telugu'
+                img: 'telugu',
             },
             {
                 id: 'ka',
                 name: 'ಕೆನಡಾ',
                 description: 'KANADA',
-                img: 'kanada'
+                img: 'kanada',
             },
             {
                 id: 'ml',
                 name: 'മലയാളം',
                 description: 'MALAYALAM',
-                img: 'malayalam'
+                img: 'malayalam',
             },
             {
                 id: 'pn',
                 name: 'ਪੰਜਾਬੀ',
                 description: 'PUNJABI',
-                img: 'punjabi'
+                img: 'punjabi',
             },
         ];
     }
@@ -153,7 +153,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: "",
+        path: '',
         component: _it_select_language_page_component__WEBPACK_IMPORTED_MODULE_6__["SelectLanguagePageComponent"],
     },
 ];
@@ -205,7 +205,7 @@ SelectLanguagePageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <!-- <ion-toolbar> -->\n  <div\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\n  >\n    <h5 class=\"font-weight-normal mb-0 text-white\">\n      <a class=\"text-purple\" routerLink=\"/get-started\"\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\n      ></a>\n      <ion-title>Choose Language</ion-title>\n    </h5>\n  </div>\n  <!-- </ion-toolbar> -->\n</ion-header>\n\n<ion-content id=\"content\" fullscreen>\n  <!-- <cdk-virtual-scroll-viewport\n    class=\"scroll-viewport\"\n    #scroll\n    itemSize=\"80\"\n    minBufferPx=\"900\"\n    maxBufferPx=\"1350\"\n  > -->\n  <div\n    class=\"\n      osahan-index\n      bg-c\n      align-items-center\n      justify-content-center\n      vh-100\n      index-page\n      py-3\n    \"\n  >\n    <ion-grid>\n      <ion-row>\n        <ion-col\n          size=\"4\"\n          margin\n          routerLink=\"/signup\"\n          class=\"text-dark text-center\"\n          *ngFor=\"let language of languages\"\n        >\n          <div\n            class=\"\n              list-item-img\n              language-item-list\n              align-items-center\n              d-inline-flex\n              justify-content-center\n            \"\n            id=\"{{ language.id }}\"\n            (click)=\"loadSelectedLanguage(language.id)\"\n          >\n            <img\n                src=\"assets/images/{{language.img}}.png\"\n                class=\"img-fluid\"\n              />\n            <!-- <p class=\"mb-0 l-hght-10 text-center text-black mb-2 p-1\">\n              {{ language.name }}\n            </p> -->\n            <br />\n            <!-- <p class=\"mb-0 l-hght-10 text-center text-black mb-2 p-1\">\n              {{ language.description }}\n            </p> -->\n          </div>\n          <p class=\"mb-0 l-hght-10 text-center text-black mb-2 p-1\">\n            {{ language.description }}\n          </p>\n          <!-- <p class=\"l-hght-10 text-center text-black mb-2\">\n              {{ language }}\n            </p> -->\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </div>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <!-- <ion-toolbar> -->\n  <div\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\n  >\n    <h5 class=\"font-weight-normal mb-0 text-white\">\n      <a class=\"text-purple\" routerLink=\"/get-started\"\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\n      ></a>\n      <ion-title>Choose Language</ion-title>\n    </h5>\n  </div>\n  <!-- </ion-toolbar> -->\n</ion-header>\n\n<ion-content id=\"content\" fullscreen>\n  <!-- <cdk-virtual-scroll-viewport\n    class=\"scroll-viewport\"\n    #scroll\n    itemSize=\"80\"\n    minBufferPx=\"900\"\n    maxBufferPx=\"1350\"\n  > -->\n  <div\n    class=\"osahan-index bg-c align-items-center justify-content-center index-page py-3\"\n  >\n    <ion-grid>\n      <ion-row>\n        <ion-col\n          size=\"4\"\n          margin\n          routerLink=\"/signup\"\n          class=\"text-dark text-center\"\n          *ngFor=\"let language of languages\"\n        >\n          <div\n            class=\"list-item-img language-item-list align-items-center d-inline-flex justify-content-center\"\n            id=\"{{ language.id }}\"\n            (click)=\"loadSelectedLanguage(language.id)\"\n          >\n            <img src=\"assets/images/{{ language.img }}.png\" class=\"img-fluid\" />\n            <br />\n          </div>\n          <p class=\"text-center text-purple font-bold mb-3 p-2\">\n            {{ language.description }}\n          </p>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </div>\n</ion-content>\n");
 
 /***/ }),
 
@@ -224,9 +224,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _it_select_language_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./it-select-language.page.component */ "+ZFL");
 
-/***********************************
- * Copyright Fedex 1995 - 2021
- ***********************************/
 
 
 
@@ -235,7 +232,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 const routes = [
     {
-        path: "",
+        path: '',
         component: _it_select_language_page_component__WEBPACK_IMPORTED_MODULE_3__["SelectLanguagePageComponent"],
     },
 ];

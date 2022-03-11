@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <!-- <ion-toolbar> -->\n  <div\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\n  >\n    <h5 class=\"font-weight-normal mb-0 text-white\">\n      <a class=\"text-purple\" routerLink=\"/get-started\"\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\n      ></a>\n      <ion-title>{{ \"APP.VERIFICATION.TITLE\" | translate }}</ion-title>\n    </h5>\n  </div>\n  <!-- </ion-toolbar> -->\n</ion-header>\n\n<ion-content id=\"content\" fullscreen>\n  <!-- <cdk-virtual-scroll-viewport\n    class=\"scroll-viewport\"\n    #scroll\n    itemSize=\"80\"\n    minBufferPx=\"900\"\n    maxBufferPx=\"1350\"\n  > -->\n  <div\n    class=\"\n      osahan-index\n      bg-c\n      align-items-center\n      justify-content-center\n      vh-100\n      index-page\n    \"\n  >\n    <div class=\"osahan-form px-3 py-5 text-center mb-5\">\n      <div class=\"row my-3 px-3 pb-2\">\n        <p class=\"a-o-i text-muted\">\n          {{ \"APP.VERIFICATION.ENTER_VERIFICATION_CODE\" | translate }}\n        </p>\n        <div class=\"col px-1\">\n          <ng-otp-input\n            #ngOtpInput\n            (onInputChange)=\"onOtpChange($event)\"\n            *ngIf=\"showOtpComponent\"\n            [config]=\"config\"\n            class=\"\n              form-control\n              otp\n              text-purple\n              form-control-lg\n              text-center\n              pb-0\n              px-0\n            \"\n          ></ng-otp-input>\n        </div>\n        <p class=\"a-o-i text-muted p-2 mt-2\">{{ OTPmessage | translate }}</p>\n      </div>\n      <button\n        type=\"submit\"\n        name=\"submit_button\"\n        class=\"btn btn-purple btn-block osahanbus-btn mb-4\"\n        [disabled]=\"!otpVerified\"\n        (click)=\"verifyOtp()\"\n      >\n        {{ \"APP.VERIFICATION.BUTTON.VERIFICATION\" | translate }}\n      </button>\n      <p class=\"text-muted\">\n        {{ \"APP.VERIFICATION.TEXT\" | translate\n        }}<a href=\"#\" class=\"ml-2 text-orange\">{{\n          \"APP.VERIFICATION.BUTTON.RESEND\" | translate\n        }}</a>\n      </p>\n      <div class=\"d-flex justify-content-center pt-3 m-5\" *ngIf=\"errorOtpMsg\">\n        <span class=\"text-danger\">OOPs! Please enter valid OTP.</span>\n      </div>\n      <div\n        class=\"d-flex justify-content-center pt-3 m-5\"\n        *ngIf=\"otpNotVerified\"\n      >\n        <span class=\"text-danger\"\n          >Sorry! Entered OTP is not correct. Please try again</span\n        >\n      </div>\n    </div>\n  </div>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <!-- <ion-toolbar> -->\n  <div\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\n  >\n    <h5 class=\"font-weight-normal mb-0 text-white\">\n      <a class=\"text-purple\" routerLink=\"/get-started\"\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\n      ></a>\n      <ion-title>{{ \"APP.VERIFICATION.TITLE\" | translate }}</ion-title>\n    </h5>\n  </div>\n  <!-- </ion-toolbar> -->\n</ion-header>\n\n<ion-content id=\"content\" fullscreen>\n  <!-- <cdk-virtual-scroll-viewport\n    class=\"scroll-viewport\"\n    #scroll\n    itemSize=\"80\"\n    minBufferPx=\"900\"\n    maxBufferPx=\"1350\"\n  > -->\n  <div\n    class=\"osahan-index bg-c align-items-center justify-content-center vh-92 index-page\"\n  >\n    <div class=\"osahan-form px-3 py-5 text-center mb-5\">\n      <div class=\"row my-3 px-3 pb-2\">\n        <p class=\"a-o-i text-muted\">\n          {{ \"APP.VERIFICATION.ENTER_VERIFICATION_CODE\" | translate }}\n        </p>\n        <div class=\"col px-1\">\n          <ng-otp-input\n            #ngOtpInput\n            (onInputChange)=\"onOtpChange($event)\"\n            *ngIf=\"showOtpComponent\"\n            [config]=\"config\"\n            class=\"form-control otp text-purple form-control-lg text-center pb-0 px-0\"\n          ></ng-otp-input>\n        </div>\n        <p class=\"a-o-i text-muted p-2 mt-2\">{{ OTPmessage | translate }}</p>\n      </div>\n      <button\n        type=\"submit\"\n        name=\"submit_button\"\n        class=\"btn btn-purple btn-block osahanbus-btn mb-4\"\n        [disabled]=\"!otpVerified\"\n        (click)=\"verifyOtp()\"\n      >\n        {{ \"APP.VERIFICATION.BUTTON.VERIFICATION\" | translate }}\n      </button>\n      <p class=\"text-muted\">\n        {{ \"APP.VERIFICATION.TEXT\" | translate\n        }}<a href=\"#\" class=\"ml-2 text-orange\">{{\n          \"APP.VERIFICATION.BUTTON.RESEND\" | translate\n        }}</a>\n      </p>\n      <div class=\"d-flex justify-content-center pt-3 m-5\" *ngIf=\"errorOtpMsg\">\n        <span class=\"text-danger\">OOPs! Please enter valid OTP.</span>\n      </div>\n      <div\n        class=\"d-flex justify-content-center pt-3 m-5\"\n        *ngIf=\"otpNotVerified\"\n      >\n        <span class=\"text-danger\"\n          >Sorry! Entered OTP is not correct. Please try again</span\n        >\n      </div>\n    </div>\n  </div>\n</ion-content>\n");
 
 /***/ }),
 
@@ -492,7 +492,6 @@ let VerificationPageComponent = class VerificationPageComponent {
             this.authtenticationService
                 .enterVerificationCode(res)
                 .then((userData) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-                console.log(userData);
                 const user = userData;
                 this.appService.otpVerifiedToast();
                 resolve(user);
@@ -501,13 +500,12 @@ let VerificationPageComponent = class VerificationPageComponent {
                     .snapshotChanges()
                     .subscribe((data) => {
                     const filteredUser = data.filter((result) => result.payload.doc.data()['mobileNumber'] === user.phoneNumber);
-                    console.log(filteredUser[0].payload.doc.data());
-                    if (filteredUser[0].payload.doc.data()['paymentStatus'] === 'PAID') {
-                        console.log('user did pay');
+                    if (filteredUser[0].payload.doc.data()['paymentStatus'] === 'Paid') {
                         this.router.navigate(['/select-vehicle']);
                     }
                     else {
-                        console.log('user did not pay');
+                        this.appService.userSelectedFirmActivity =
+                            filteredUser[0].payload.doc.data()['firmActivity'];
                         this.router.navigate(['/payment']);
                     }
                 });
@@ -684,9 +682,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _it_verification_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./it-verification.page.component */ "LWu3");
 
-/***********************************
- * Copyright Fedex 1995 - 2021
- ***********************************/
 
 
 
@@ -695,7 +690,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 const routes = [
     {
-        path: "",
+        path: '',
         component: _it_verification_page_component__WEBPACK_IMPORTED_MODULE_3__["VerificationPageComponent"],
     },
 ];

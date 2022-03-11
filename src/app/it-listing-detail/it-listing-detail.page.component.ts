@@ -70,7 +70,7 @@ export class ListingDetailPageComponent implements OnInit {
               .split(',')
               .join('\n');
             this.company = result;
-            console.log(this.company)
+            console.log(this.company);
           }
         });
     } catch (error) {
@@ -87,8 +87,7 @@ export class ListingDetailPageComponent implements OnInit {
         firmActivity: this.searchParam.firmActivity,
       },
     };
-    this.ngroute.navigate(['/listing'], navigationExtras );
-
+    this.ngroute.navigate(['/listing'], navigationExtras);
   }
 
   async doLogout(): Promise<void> {

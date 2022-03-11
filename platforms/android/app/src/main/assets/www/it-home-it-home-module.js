@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <!-- <ion-toolbar> -->\n  <div\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\n  >\n    <h5 class=\"font-weight-normal mb-0 text-white\">\n      <a class=\"text-purple\" routerLink=\"/select-vehicle\"\n        ><fa-icon\n          icon=\"bus\"\n          class=\"icofont-truck text-white h2 bg-purple p-2 rounded-circle\"\n        ></fa-icon\n      ></a>\n      <ion-title>{{ \"APP.HOME.BUTTON.SEARCH\" | translate }}</ion-title>\n    </h5>\n    <div class=\"ml-auto d-flex align-items-center\">\n\n      <ion-buttons slot=\"end\">\n        <a [routerLink]=\"['/profile/', docId]\"><fa-icon icon=\"user-circle\" class=\"icofont-user-circle\"\n        style=\"color: #ffffff; font-size: 26px;\"></fa-icon></a>\n        <a style=\"margin-left: 20px;\"  (click)=\"doLogout()\"><fa-icon icon=\"sign-out-alt\" class=\"sign-out-alt\"\n          style=\"color: #ffffff; font-size: 26px;\"></fa-icon></a>\n      </ion-buttons>\n    </div>\n  </div>\n  <!-- </ion-toolbar> -->\n</ion-header>\n\n<ion-content id=\"content\" fullscreen>\n  <div\n    class=\"\n      osahan-index\n      bg-c\n      align-items-center\n      justify-content-center\n      vh-100\n      index-page\n    \"\n  >\n    <div class=\"px-3 pb-3 pt-3\">\n      <div class=\"bg-white p-3 home-search-form\">\n        <form [formGroup]=\"searchCompanyForm\" #searchForm>\n          <div class=\"form-group border-bottom\">\n            <fa-icon icon=\"search-location\" class=\"search-location\"></fa-icon>\n            <label for=\"exampleFormControlSelect1\" class=\"mb-2\"\n              ><span class=\"icofont-search-map text-purple\"></span>\n              {{ \"APP.HOME.LABEL.FROM\" | translate }}</label\n            ><br />\n            <div class=\"form-group mb-3\">\n              <ion-select\n                interface=\"popover\"\n                class=\"\n                  form-control\n                  rc-form-control\n                  native-select\n                  it-form-control\n                \"\n                placeholder=\"{{\n                  'APP.HOME.PLACEHOLDER.SELECT_FROM_LOCATION' | translate\n                }}\"\n                formControlName=\"from\"\n                required\n              >\n                <ion-select-option\n                  *ngFor=\"let location of locations\"\n                  value=\"{{ location.name | translate }}\"\n                  title=\"{{ location.name | translate }}\"\n                  >{{ location.name | translate }}</ion-select-option\n                >\n              </ion-select>\n            </div>\n          </div>\n          <div class=\"form-group border-bottom\">\n            <fa-icon icon=\"map-marker-alt\" class=\"map-marker-alt\"></fa-icon>\n            <label for=\"exampleFormControlSelect1\" class=\"mb-2\"\n              ><span class=\"icofont-google-map text-purple\"></span>\n              {{ \"APP.HOME.LABEL.TO\" | translate }}</label\n            ><br />\n            <div class=\"form-group mb-3\">\n              <ion-select\n                interface=\"popover\"\n                class=\"\n                  form-control\n                  rc-form-control\n                  native-select\n                  it-form-control\n                \"\n                placeholder=\"{{\n                  'APP.HOME.PLACEHOLDER.SELECT_TO_LOCATION' | translate\n                }}\"\n                formControlName=\"to\"\n                required\n              >\n                <ion-select-option\n                  *ngFor=\"let location of serviceProvidedLocations\"\n                  value=\"{{ location.name | translate }}\"\n                  title=\"{{ location.name | translate }}\"\n                  >{{ location.name | translate }}</ion-select-option\n                >\n              </ion-select>\n            </div>\n          </div>\n          <div class=\"form-group border-bottom\">\n            <fa-icon icon=\"building\" class=\"building\"></fa-icon>\n            <label for=\"exampleFormControlSelect1\" class=\"mb-2\"\n              ><span class=\"icofont-google-map text-purple\"></span>\n              {{ \"APP.HOME.LABEL.FIRM_ACTIVITY\" | translate }}</label\n            ><br />\n            <div class=\"form-group mb-3\">\n              <ion-select\n                interface=\"popover\"\n                class=\"\n                  form-control\n                  rc-form-control\n                  native-select\n                  it-form-control\n                \"\n                placeholder=\"{{\n                  'APP.HOME.PLACEHOLDER.SELECT_FIRM_ACTIVITY' | translate\n                }}\"\n                formControlName=\"firmActivity\"\n                required\n              >\n              <ion-select-option\n                *ngFor=\"let firmActivity of firmActivitys\"\n                selected=\"false\"\n                value=\"{{ firmActivity | translate }}\"\n                title=\"{{ firmActivity | translate }}\"\n                >{{ firmActivity | translate }}</ion-select-option\n              >\n              </ion-select>\n            </div>\n          </div>\n          <button\n            type=\"submit\"\n            class=\"btn btn-purple btn-block osahanbus-btn mt-2\"\n            [disabled]=\"!searchCompanyForm.valid\"\n            (click)=\"searchContactByLocation(searchCompanyForm.value)\"\n          >\n            {{ \"APP.HOME.BUTTON.SEARCH\" | translate }}\n          </button>\n        </form>\n      </div>\n    </div>\n    <div class=\"p-3 bg-warning\">\n      <div class=\"row m-0\">\n        <div class=\"col-12 py-1 pr-1 pl-0\">\n          <div class=\"p-3 bg-white shadow-sm rounded-1\">\n            <!-- <img class=\"img-fluid\" src=\"assets/images/ad1.jpg\" alt=\"\" /> -->\n            <p class=\"mb-0 mt-4 font-weight-bold\">\n             Advertisement Panel\n            </p>\n          </div>\n        </div> \n      </div>\n      <div class=\"row m-0\">\n        <div class=\"col-12 py-1 pl-1 pr-0\">\n          <div class=\"p-3 bg-white shadow-sm rounded-1\">\n            <!-- <img\n              class=\"img-fluid\"\n              src=\"assets/images/ad2.jpg\"\n              alt=\"\"\n            /> -->\n            <p class=\"mb-0 mt-4 font-weight-bold\">\n              Advertisement Panel\n             </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <!-- <ion-toolbar> -->\n  <div\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\n  >\n    <h5 class=\"font-weight-normal mb-0 text-white\">\n      <a class=\"text-purple\" routerLink=\"/select-vehicle\"\n        ><fa-icon\n          icon=\"bus\"\n          class=\"icofont-truck text-white h2 bg-purple p-2 rounded-circle\"\n        ></fa-icon\n      ></a>\n      <ion-title>{{ \"APP.HOME.BUTTON.SEARCH\" | translate }}</ion-title>\n    </h5>\n    <div class=\"ml-auto d-flex align-items-center\">\n      <ion-buttons slot=\"end\">\n        <a [routerLink]=\"['/profile/', docId]\"\n          ><fa-icon\n            icon=\"user-circle\"\n            class=\"icofont-user-circle\"\n            style=\"color: #ffffff; font-size: 26px\"\n          ></fa-icon\n        ></a>\n        <a style=\"margin-left: 20px\" (click)=\"doLogout()\"\n          ><fa-icon\n            icon=\"sign-out-alt\"\n            class=\"sign-out-alt\"\n            style=\"color: #ffffff; font-size: 26px\"\n          ></fa-icon\n        ></a>\n      </ion-buttons>\n    </div>\n  </div>\n  <!-- </ion-toolbar> -->\n</ion-header>\n\n<ion-content id=\"content\" fullscreen>\n  <div\n    class=\"osahan-index bg-c align-items-center justify-content-center index-page\"\n  >\n    <div class=\"px-3 pb-3 pt-3\">\n      <div class=\"bg-white p-3 home-search-form\">\n        <form [formGroup]=\"searchCompanyForm\" #searchForm>\n          <div class=\"form-group border-bottom\">\n            <fa-icon icon=\"search-location\" class=\"search-location\"></fa-icon>\n            <label\n              for=\"exampleFormControlSelect1\"\n              class=\"mb-2 text-purple font-bold\"\n              ><span class=\"icofont-search-map text-purple font-bold\"></span>\n              {{ \"APP.HOME.LABEL.FROM\" | translate }}</label\n            ><br />\n            <div class=\"form-group mb-3\">\n              <input\n                list=\"fromLocations\"\n                placeholder=\"{{\n                  'APP.HOME.PLACEHOLDER.SELECT_FROM_LOCATION' | translate\n                }}\"\n                class=\"form-control rc-form-control native-select it-form-control\"\n                required\n                formControlName=\"from\"\n                clearInput=\"true\"\n              />\n              <datalist id=\"fromLocations\">\n                <option\n                  *ngFor=\"let location of serviceProvidedLocations\"\n                  value=\"{{ location.name | translate }}\"\n                  title=\"{{ location.name | translate }}\"\n                >\n                  {{ location.name | translate }}\n                </option>\n              </datalist>\n            </div>\n          </div>\n          <div class=\"form-group border-bottom\">\n            <fa-icon icon=\"map-marker-alt\" class=\"map-marker-alt\"></fa-icon>\n            <label\n              for=\"exampleFormControlSelect1\"\n              class=\"mb-2 text-purple font-bold\"\n              ><span class=\"icofont-google-map text-purple font-bold\"></span>\n              {{ \"APP.HOME.LABEL.TO\" | translate }}</label\n            ><br />\n            <div class=\"form-group mb-3\">\n              <input\n                list=\"toLocations\"\n                placeholder=\"{{\n                  'APP.HOME.PLACEHOLDER.SELECT_TO_LOCATION' | translate\n                }}\"\n                class=\"form-control rc-form-control native-select it-form-control\"\n                required\n                formControlName=\"to\"\n                clearInput=\"true\"\n              />\n              <datalist id=\"toLocations\">\n                <option\n                  *ngFor=\"let location of serviceProvidedLocations\"\n                  value=\"{{ location.name | translate }}\"\n                  title=\"{{ location.name | translate }}\"\n                >\n                  {{ location.name | translate }}\n                </option>\n              </datalist>\n            </div>\n          </div>\n          <div class=\"form-group border-bottom\">\n            <fa-icon icon=\"building\" class=\"building\"></fa-icon>\n            <label\n              for=\"exampleFormControlSelect1\"\n              class=\"mb-2 text-purple font-bold\"\n              ><span class=\"icofont-google-map text-purple font-bold\"></span>\n              {{ \"APP.HOME.LABEL.FIRM_ACTIVITY\" | translate }}</label\n            ><br />\n            <div class=\"form-group mb-3\">\n              <ion-select\n                interface=\"popover\"\n                class=\"form-control rc-form-control native-select it-form-control\"\n                placeholder=\"{{\n                  'APP.HOME.PLACEHOLDER.SELECT_FIRM_ACTIVITY' | translate\n                }}\"\n                formControlName=\"firmActivity\"\n                required\n              >\n                <ion-select-option\n                  *ngFor=\"let firmActivity of firmActivitys\"\n                  selected=\"false\"\n                  value=\"{{ firmActivity | translate }}\"\n                  title=\"{{ firmActivity | translate }}\"\n                  >{{ firmActivity | translate }}</ion-select-option\n                >\n              </ion-select>\n            </div>\n          </div>\n          <button\n            type=\"submit\"\n            class=\"btn btn-purple btn-block osahanbus-btn mt-2\"\n            [disabled]=\"!searchCompanyForm.valid\"\n            (click)=\"searchContactByLocation(searchCompanyForm.value)\"\n          >\n            {{ \"APP.HOME.BUTTON.SEARCH\" | translate }}\n          </button>\n        </form>\n      </div>\n    </div>\n    <div class=\"p-3 bg-warning\">\n      <div class=\"row m-0\">\n        <div class=\"col-12 py-1 pr-1 pl-0\">\n          <div class=\"p-3 bg-white shadow-sm rounded-1\">\n            <!-- <img class=\"img-fluid\" src=\"assets/images/ad1.jpg\" alt=\"\" /> -->\n            <p class=\"mb-0 mt-4 font-weight-bold\">Advertisement Panel</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"row m-0\">\n        <div class=\"col-12 py-1 pl-1 pr-0\">\n          <div class=\"p-3 bg-white shadow-sm rounded-1\">\n            <!-- <img\n              class=\"img-fluid\"\n              src=\"assets/images/ad2.jpg\"\n              alt=\"\"\n            /> -->\n            <p class=\"mb-0 mt-4 font-weight-bold\">Advertisement Panel</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</ion-content>\n");
 
 /***/ }),
 
@@ -121,9 +121,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _it_home_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./it-home.page.component */ "rdMg");
 
-/***********************************
- * Copyright Fedex 1995 - 2021
- ***********************************/
 
 
 
@@ -172,10 +169,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire/auth */ "UbJi");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _json_location__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../json/location */ "wEno");
-/* harmony import */ var _json_service_provided_location__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../json/service-provided-location */ "3ScB");
-/* harmony import */ var _services_app_servcie__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../services/app.servcie */ "+hHy");
-
+/* harmony import */ var _json_service_provided_location__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../json/service-provided-location */ "3ScB");
+/* harmony import */ var _services_app_servcie__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../services/app.servcie */ "+hHy");
 
 
 
@@ -192,19 +187,16 @@ let HomePageComponent = class HomePageComponent {
         this.fbauth = fbauth;
         this.serviceProvidedLocations = [];
         this.firmActivitys = [
-            'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.FREIGHT',
             'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.BOOKING',
             'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.SUPPLIER',
-            'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.OWNER_DRIVER',
         ];
         this.docId = this.appService.docId;
-        this.locations = _json_location__WEBPACK_IMPORTED_MODULE_7__["puneData"];
-        const serviceLocations = _json_service_provided_location__WEBPACK_IMPORTED_MODULE_8__["serviceProvidedLocationData"];
-        this.serviceProvidedLocations = serviceLocations.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
+        const serviceLocations = _json_service_provided_location__WEBPACK_IMPORTED_MODULE_7__["serviceProvidedLocationData"];
+        this.serviceProvidedLocations = serviceLocations.sort((a, b) => a.name > b.name ? 1 : b.name > a.name ? -1 : 0);
     }
     ngOnInit() {
         this.initializeForm();
-        this.firmActivitys = this.firmActivitys.sort((a, b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
+        this.firmActivitys = this.firmActivitys.sort((a, b) => a > b ? 1 : b > a ? -1 : 0);
     }
     initializeForm() {
         this.searchCompanyForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
@@ -218,7 +210,7 @@ let HomePageComponent = class HomePageComponent {
             queryParams: {
                 from: values.from,
                 to: values.to,
-                firmActivity: values.firmActivity
+                firmActivity: values.firmActivity,
             },
         };
         this.router.navigate(['listing'], navigationExtras);
@@ -234,7 +226,7 @@ let HomePageComponent = class HomePageComponent {
 };
 HomePageComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
-    { type: _services_app_servcie__WEBPACK_IMPORTED_MODULE_9__["AppService"] },
+    { type: _services_app_servcie__WEBPACK_IMPORTED_MODULE_8__["AppService"] },
     { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_4__["AngularFireAuth"] }
 ];
 HomePageComponent.propDecorators = {
@@ -248,125 +240,6 @@ HomePageComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     })
 ], HomePageComponent);
 
-
-
-/***/ }),
-
-/***/ "wEno":
-/*!**********************************!*\
-  !*** ./src/app/json/location.ts ***!
-  \**********************************/
-/*! exports provided: puneData, locationData */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "puneData", function() { return puneData; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "locationData", function() { return locationData; });
-const puneData = [
-    {
-        id: '1',
-        name: 'APP.LOCATION.PUNE',
-        state: 'Maharashtra',
-    },
-];
-const locationData = [
-    {
-        id: '1',
-        name: 'APP.LOCATION.MUMBAI',
-        state: 'Maharashtra',
-    },
-    {
-        id: '2',
-        name: 'APP.LOCATION.DELHI',
-        state: 'Delhi',
-    },
-    {
-        id: '3',
-        name: 'APP.LOCATION.BENGALURU',
-        state: 'Karnataka',
-    },
-    {
-        id: '4',
-        name: 'APP.LOCATION.AHMEDABAD',
-        state: 'Gujarat',
-    },
-    {
-        id: '5',
-        name: 'APP.LOCATION.HYDERABAD',
-        state: 'Telangana',
-    },
-    {
-        id: '6',
-        name: 'APP.LOCATION.CHENNAI',
-        state: 'Tamil Nadu',
-    },
-    {
-        id: '7',
-        name: 'APP.LOCATION.KOLKATA',
-        state: 'West Bengal',
-    },
-    {
-        id: '8',
-        name: 'APP.LOCATION.PUNE',
-        state: 'Maharashtra',
-    },
-    {
-        id: '9',
-        name: 'APP.LOCATION.JAIPUR',
-        state: 'Rajasthan',
-    },
-    {
-        id: '10',
-        name: 'APP.LOCATION.SURAT',
-        state: 'Gujarat',
-    },
-    {
-        id: '11',
-        name: 'APP.LOCATION.LUCKNOW',
-        state: 'Uttar Pradesh',
-    },
-    {
-        id: '12',
-        name: 'APP.LOCATION.KANPUR',
-        state: 'Uttar Pradesh',
-    },
-    {
-        id: '13',
-        name: 'APP.LOCATION.NAGPUR',
-        state: 'Maharashtra',
-    },
-    {
-        id: '14',
-        name: 'APP.LOCATION.PATNA',
-        state: 'Bihar',
-    },
-    {
-        id: '15',
-        name: 'APP.LOCATION.INDORE',
-        state: 'Madhya Pradesh',
-    },
-    {
-        id: '16',
-        name: 'APP.LOCATION.THANE',
-        state: 'Maharashtra',
-    },
-    {
-        id: '17',
-        name: 'APP.LOCATION.BHOPAL',
-        state: 'Madhya Pradesh',
-    },
-    {
-        id: '18',
-        name: 'APP.LOCATION.VISAKHAPATNAM',
-        state: 'Andhra Pradesh',
-    },
-    {
-        id: '19',
-        name: 'APP.LOCATION.VADODARA',
-        state: 'Gujarat',
-    },
-];
 
 
 /***/ })

@@ -21,10 +21,12 @@ let ToastService = class ToastService {
         this.toast = toast;
     }
     showToast(toastmsg, dur) {
-        this.toastobj = this.toast.create({
+        this.toastobj = this.toast
+            .create({
             message: toastmsg,
-            duration: dur
-        }).then((toastData) => {
+            duration: dur,
+        })
+            .then((toastData) => {
             toastData.present();
         });
     }
@@ -37,7 +39,7 @@ ToastService.ctorParameters = () => [
 ];
 ToastService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
+        providedIn: 'root',
     })
 ], ToastService);
 
@@ -101,9 +103,9 @@ const openURL = async (url, ev, direction, animation) => {
 
 /***/ }),
 
-/***/ "RPWk":
+/***/ "P+Z7":
 /*!***********************************!*\
-  !*** ./src/app/models/contact.ts ***!
+  !*** ./src/app/models/company.ts ***!
   \***********************************/
 /*! exports provided: Company */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -261,15 +263,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/auth */ "UbJi");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _toast_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./toast.service */ "2g2N");
 
 
 
 
 let AuthtenticationService = class AuthtenticationService {
-    constructor(angularFireAuth, router) {
+    constructor(angularFireAuth, toastservice) {
         this.angularFireAuth = angularFireAuth;
-        this.router = router;
+        this.toastservice = toastservice;
     }
     signInWithPhoneNumber(recaptchaVerifier, phoneNumber) {
         return new Promise((resolve, reject) => {
@@ -281,7 +283,8 @@ let AuthtenticationService = class AuthtenticationService {
             })
                 .catch((error) => {
                 console.log(error);
-                reject('We have blocked all requests from this device due to unusual activity. Please try again later and OTP not sent');
+                this.toastservice.showToast('We have blocked all requests from this device due to unusual activity and OTP not sent. But dont worry Your data is saved and Please Sign In', 1000);
+                reject('We have blocked all requests from this device due to unusual activity. Please try again later and OTP not sent but dont worry your data is saved. Please sign in');
             });
         });
     }
@@ -304,7 +307,7 @@ let AuthtenticationService = class AuthtenticationService {
 };
 AuthtenticationService.ctorParameters = () => [
     { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_2__["AngularFireAuth"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    { type: _toast_service__WEBPACK_IMPORTED_MODULE_3__["ToastService"] }
 ];
 AuthtenticationService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({

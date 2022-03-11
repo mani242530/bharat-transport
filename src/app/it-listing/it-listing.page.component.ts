@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
@@ -29,6 +29,8 @@ export class ListingPageComponent implements OnInit {
   docId: string;
   companysCollection: AngularFirestoreCollection<Company[]>;
   companyid;
+  selectedVehicleTypeFilter;
+  finalFilteredVehicleType;
 
   constructor(
     public modalController: ModalController,
@@ -41,114 +43,17 @@ export class ListingPageComponent implements OnInit {
   ) {
     this.isLoading = true;
     this.docId = this.appService.docId;
+    this.selectedVehicleType = this.appService.selectedVehicleType;
     this.router.queryParams.subscribe((params) => {
       this.searchParam = params;
-      this.searchContactByLocation(this.searchParam);
-      // this.searchContactByLocationFireStore(this.searchParam);
+      this.searchContactByLocationFireStore(this.searchParam);
     });
-
-    this.selectedVehicleType = this.appService.selectedVehicleType;
   }
 
   async ngOnInit() {}
 
   trackByFn(_, item) {
     return item.id;
-  }
-
-  checkThisList(list1, list2) {
-    let result = false;
-    var hasValue = list2.indexOf(list1) != -1;
-    if (hasValue) {
-      result = true;
-    }
-
-    return result;
-  }
-
-  searchContactByLocation(params) {
-    try {
-      this.fbstore
-        .collection('companys')
-        .snapshotChanges()
-        .subscribe((data) => {
-          // VEHICLE TYPE
-          let fresult = [];
-          for (let res of data) {
-            if (
-              this.checkThisList(
-                this.selectedVehicleType,
-                res.payload.doc.data()['vehicleType']
-              )
-            ) {
-              fresult.push(res);
-            }
-          }
-          // FROM LOCATION
-          const locresult = fresult.filter(function (item) {
-            return item.payload.doc.data()['location'] === params.from;
-          });
-          // TO LOCATION
-          let serviceresult = [];
-          for (let lres of locresult) {
-            if (
-              this.checkThisList(
-                params.to,
-                lres.payload.doc.data()['serviceProvidedLocation']
-              )
-            ) {
-              serviceresult.push(lres);
-            }
-          }
-          // FIRM ACTIVITY
-          const activityresult = serviceresult.filter(function (item) {
-            return (
-              item.payload.doc.data()['firmActivity'] === params.firmActivity
-            );
-          });
-          if (activityresult && activityresult.length > 0) {
-            this.noresults = false;
-            this.companys =
-              activityresult &&
-              activityresult.map((result) => {
-                this.companyid = result.payload.doc.id;
-                return {
-                  id: result.payload.doc.id,
-                  companyName: result.payload.doc.data()['companyName'],
-                  ownerName: result.payload.doc.data()['ownerName'],
-                  firmActivity: result.payload.doc.data()['firmActivity'],
-                  vehicleType: result.payload.doc.data()['vehicleType'],
-                  mobileNumber: result.payload.doc.data()['mobileNumber'],
-                  alternateMobileNumber:
-                    result.payload.doc.data()['alternateMobileNumber'],
-                  location: result.payload.doc.data()['location'],
-                  serviceProvidedLocation:
-                    result.payload.doc.data()['serviceProvidedLocation'],
-                  referenceName: result.payload.doc.data()['referenceName'],
-                  vehicleNos: result.payload.doc.data()['vehicleNos'],
-                  aadharNumber: result.payload.doc.data()['aadharNumber'],
-                  drivingLicenseNumber:
-                    result.payload.doc.data()['drivingLicenseNumber'],
-                  paymentStatus: result.payload.doc.data()['paymentStatus'],
-                  accountStatus: result.payload.doc.data()['accountStatus'],
-                };
-              });
-            this.companyLists = this.companys;
-            this.finalResultForCompanys = this.companys;
-          } else {
-            this.noresults = true;
-          }
-
-          /* remove later only for delaying loading of products list to show animation for a longer duration */
-          of(data)
-            .pipe(delay(1000))
-            .subscribe((data) => {
-              this.isLoading = false;
-            });
-        });
-    } catch (error) {
-      this.toastservice.showToast(error.message, 2000);
-    }
   }
 
   async setFilteredItems(event) {
@@ -171,9 +76,8 @@ export class ListingPageComponent implements OnInit {
     if (params) {
       this.companysCollection = this.fbstore.collection('companys', (ref) =>
         ref
-          .where('vehicleType', '==', this.selectedVehicleType)
           .where('location', '==', params.from)
-          .where('serviceProvidedLocation', '==', params.to)
+          .where('serviceProvidedLocation', 'array-contains', params.to)
           .where('firmActivity', '==', params.firmActivity)
       );
       this.companys = this.companysCollection.snapshotChanges().pipe(
@@ -182,20 +86,20 @@ export class ListingPageComponent implements OnInit {
             const data = action.payload.doc.data() as Company[];
             return {
               id: action.payload.doc.id,
-              companyName: data[0].companyName,
-              ownerName: data[0].ownerName,
-              firmActivity: data[0].firmActivity,
-              vehicleType: data[0].vehicleType,
-              mobileNumber: data[0].mobileNumber,
-              alternateMobileNumber: data[0].alternateMobileNumber,
-              location: data[0].location,
-              serviceProvidedLocation: data[0].serviceProvidedLocation,
-              referenceName: data[0].referenceName,
-              vehicleNos: data[0].vehicleNos,
-              aadharNumber: data[0].aadharNumber,
-              drivingLicenseNumber: data[0].drivingLicenseNumber,
-              paymentStatus: data[0].paymentStatus,
-              accountStatus: data[0].accountStatus,
+              companyName: data['companyName'],
+              ownerName: data['ownerName'],
+              firmActivity: data['firmActivity'],
+              vehicleType: data['vehicleType'],
+              mobileNumber: data['mobileNumber'],
+              alternateMobileNumber: data['alternateMobileNumber'],
+              location: data['location'],
+              serviceProvidedLocation: data['serviceProvidedLocation'],
+              referenceName: data['referenceName'],
+              vehicleNos: data['vehicleNos'],
+              aadharNumber: data['aadharNumber'],
+              drivingLicenseNumber: data['drivingLicenseNumber'],
+              paymentStatus: data['paymentStatus'],
+              accountStatus: data['accountStatus'],
             };
           });
         })
@@ -208,12 +112,20 @@ export class ListingPageComponent implements OnInit {
           this.isLoading = false;
           this.noresults = true;
         } else {
-          console.log('Data found' + snapshot[0].id);
+          console.log('Data found');
           console.log(snapshot);
           this.isLoading = false;
           this.noresults = false;
-          this.companyLists = this.companys;
-          this.finalResultForCompanys = this.companys;
+
+          const finallist = snapshot.filter((item) =>
+            item.vehicleType.find(
+              (vehicleType) => vehicleType === this.selectedVehicleType
+            )
+          );
+
+          console.log(finallist);
+          this.companyLists = finallist;
+          this.finalResultForCompanys = finallist;
         }
       });
     }

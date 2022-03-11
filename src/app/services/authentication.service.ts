@@ -26,7 +26,7 @@ export class AuthtenticationService {
           console.log(error);
           this.toastservice.showToast(
             'We have blocked all requests from this device due to unusual activity and OTP not sent. But dont worry Your data is saved and Please Sign In',
-            1000
+            5000
           );
           reject(
             'We have blocked all requests from this device due to unusual activity. Please try again later and OTP not sent but dont worry your data is saved. Please sign in'

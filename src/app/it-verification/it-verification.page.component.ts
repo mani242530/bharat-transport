@@ -1,8 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+} from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { map } from 'rxjs/operators';
+import { Company } from '../models/company';
 import { Config } from '../models/otp.config';
 import { AppService } from '../services/app.servcie';
 import { AuthtenticationService } from '../services/authentication.service';
@@ -26,6 +31,10 @@ export class VerificationPageComponent implements OnInit {
   otpNotVerified = false;
   authfbObserver;
 
+  filteredUser;
+
+  companysCollection: AngularFirestoreCollection<Company>;
+
   @ViewChild('ngOtpInput', { static: false }) ngOtpInput: any;
   config: Config = {
     allowNumbersOnly: false,
@@ -40,7 +49,7 @@ export class VerificationPageComponent implements OnInit {
   };
 
   constructor(
-    private router: Router,
+    private ngroute: Router,
     private authtenticationService: AuthtenticationService,
     private toastController: ToastController,
     private appService: AppService,
@@ -49,11 +58,6 @@ export class VerificationPageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.authfbObserver = this.fbauth.authState.subscribe((user) => {
-      if (user) {
-        this.otpSentToast();
-      }
-    });
     this.otpSentToast();
   }
 
@@ -88,29 +92,38 @@ export class VerificationPageComponent implements OnInit {
           const user = userData;
           this.appService.otpVerifiedToast();
           resolve(user);
-          this.fbstore
-            .collection('companys')
-            .snapshotChanges()
-            .subscribe((data) => {
-              const filteredUser = data.filter(
-                (result) =>
-                  result.payload.doc.data()['mobileNumber'] === user.phoneNumber
-              );
-              if (
-                filteredUser[0].payload.doc.data()['paymentStatus'] === 'Paid'
-              ) {
-                this.router.navigate(['/select-vehicle']);
+          this.companysCollection = this.fbstore.collection('companys', (ref) =>
+            ref.where('mobileNumber', '==', user.phoneNumber)
+          );
+          this.filteredUser = this.companysCollection.snapshotChanges().pipe(
+            map((actions) => {
+              return actions.map((action) => {
+                const data = action.payload.doc.data() as Company;
+                return {
+                  id: action.payload.doc.id,
+                  paymentStatus: data.paymentStatus,
+                  accountStatus: data.accountStatus,
+                  firmActivity: data.firmActivity,
+                };
+              });
+            })
+          );
+          this.filteredUser.subscribe((snapshot) => {
+            if (snapshot.length === 0) {
+              console.log('User NOT found');
+              this.ngroute.navigate(['splash']);
+            } else {
+              console.log(snapshot[0]);
+              console.log('User found Verification Component' + snapshot[0].id);
+              this.appService.userSelectedFirmActivity =
+                snapshot[0].firmActivity;
+              if (snapshot[0].paymentStatus === 'Paid') {
+                this.ngroute.navigate(['select-vehicle']);
               } else {
-                this.appService.userSelectedFirmActivity =
-                  filteredUser[0].payload.doc.data()['firmActivity'];
-                this.router.navigate(['/payment']);
+                this.ngroute.navigate(['payment']);
               }
-            });
-        })
-        .catch((error) => {
-          this.errorOtpMsg = false;
-          this.otpNotVerified = true;
-          reject(error.message);
+            }
+          });
         });
     });
   }

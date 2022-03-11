@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <!-- <ion-toolbar> -->\n  <div\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\n  >\n    <h5 class=\"font-weight-normal mb-0 text-white\">\n      <a class=\"text-purple\" routerLink=\"/get-started\"\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\n      ></a>\n      <ion-title>Sign In</ion-title>\n    </h5>\n  </div>\n  <ion-progress-bar\n    *ngIf=\"showProgress\"\n    color=\"warning\"\n    type=\"indeterminate\"\n  ></ion-progress-bar>\n  <!-- </ion-toolbar> -->\n</ion-header>\n\n<ion-content id=\"content\" fullscreen>\n  <!-- <cdk-virtual-scroll-viewport\n    class=\"scroll-viewport\"\n    #scroll\n    itemSize=\"80\"\n    minBufferPx=\"900\"\n    maxBufferPx=\"1350\"\n  > -->\n  <div id=\"sign-in-button\"></div>\n  <div\n    class=\"\n      osahan-index\n      bg-c\n      align-items-center\n      justify-content-center\n      vh-100\n      index-page\n      py-5\n    \"\n  >\n    <div class=\"px-3\">\n      <form [formGroup]=\"signInForm\" #signIn>\n        <ion-list>\n          <div class=\"form-group mb-4\">\n            <ion-label class=\"text-muted mb-1\">Mobile Number</ion-label>\n            <ion-input\n              class=\"form-control rc-form-control it-form-control mt-4\"\n              inputMode=\"tel\"\n              clearInput=\"true\"\n              formControlName=\"mobileNumber\"\n              autofocus=\"true\"\n              maxlength=\"10\"\n              minlength=\"10\"\n              placeholder=\"Enter 10 digit mobile number\"\n            ></ion-input>\n          </div>\n        </ion-list>\n        <button\n          type=\"submit\"\n          class=\"btn btn-purple btn-block osahanbus-btn mt-2\"\n          slot=\"end\"\n          fill=\"clear\"\n          [disabled]=\"!signInForm.valid\"\n          (click)=\"signinWithPhoneNumber(signInForm.value)\"\n        >\n          SIGN IN\n        </button>\n      </form>\n\n      <div\n        class=\"\n          sign-or\n          d-flex\n          align-items-center\n          justify-content-center\n          mt-4\n          mb-2\n        \"\n      >\n        <hr class=\"mr-4\" />\n        <p class=\"text-muted text-center py-2 m-0\">OR</p>\n        <hr class=\"ml-4\" />\n      </div>\n      <div class=\"osahan-signin text-center text-purple p-1\">\n        <p class=\"m-0\">\n          Not a member ?\n          <a routerLink=\"/select-language\" class=\"text-orange ml-2\">Sign Up</a>\n        </p>\n      </div>\n    </div>\n    <div class=\"osahan-signin text-center p-1\" *ngIf=\"invalidMobilenumber\">\n      <p class=\"m-5 pt-2 text-danger\">\n        {{ tryagain }}\n      </p>\n    </div>\n    <div class=\"osahan-signin text-center p-1\" *ngIf=\"mobileNumberNotFound\">\n      <p class=\"m-5 pt-2 text-danger\">\n        Sorry! Your mobile number is not registered with us. Please sign up to create account\n      </p>\n    </div>\n  </div>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <!-- <ion-toolbar> -->\n  <div\n    class=\"osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple\"\n  >\n    <h5 class=\"font-weight-normal mb-0 text-white\">\n      <a class=\"text-purple\" routerLink=\"/get-started\"\n        ><fa-icon icon=\"arrow-left\" class=\"icofont-rounded-left\"></fa-icon\n      ></a>\n      <ion-title>Sign In</ion-title>\n    </h5>\n  </div>\n  <ion-progress-bar\n    *ngIf=\"showProgress\"\n    color=\"warning\"\n    type=\"indeterminate\"\n  ></ion-progress-bar>\n  <!-- </ion-toolbar> -->\n</ion-header>\n\n<ion-content id=\"content\" fullscreen>\n  <!-- <cdk-virtual-scroll-viewport\n    class=\"scroll-viewport\"\n    #scroll\n    itemSize=\"80\"\n    minBufferPx=\"900\"\n    maxBufferPx=\"1350\"\n  > -->\n  <div id=\"sign-in-button\"></div>\n  <div\n    class=\"osahan-index bg-c align-items-center justify-content-center vh-92 index-page py-5\"\n  >\n    <div class=\"px-3\">\n      <form [formGroup]=\"signInForm\" #signIn novalidate>\n        <ion-list>\n          <div class=\"form-group mb-4\">\n            <ion-label class=\"text-purple font-bold mb-1\">\n              Mobile Number<span class=\"required-field\"></span>\n            </ion-label>\n            <ion-input\n              class=\"form-control rc-form-control it-form-control mt-2\"\n              inputMode=\"tel\"\n              clearInput=\"true\"\n              formControlName=\"mobileNumber\"\n              autofocus=\"true\"\n              maxlength=\"10\"\n              minlength=\"10\"\n              required\n              placeholder=\"Enter 10 digit mobile number\"\n            ></ion-input>\n          </div>\n        </ion-list>\n        <button\n          type=\"submit\"\n          class=\"btn btn-purple btn-block osahanbus-btn mt-2\"\n          slot=\"end\"\n          fill=\"clear\"\n          [disabled]=\"!signInForm.valid\"\n          (click)=\"signinWithPhoneNumberFireStore(signInForm.value)\"\n        >\n          SIGN IN\n        </button>\n      </form>\n\n      <div\n        class=\"sign-or d-flex align-items-center justify-content-center mt-4 mb-2\"\n      >\n        <hr class=\"mr-4\" />\n        <p class=\"text-muted font-bold text-center py-2 m-0\">OR</p>\n        <hr class=\"ml-4\" />\n      </div>\n      <div class=\"osahan-signin text-center font-bold text-purple p-1\">\n        <p class=\"m-0\">\n          Not a member ?\n          <a routerLink=\"/select-language\" class=\"text-orange font-bold ml-2\"\n            >Sign Up</a\n          >\n        </p>\n      </div>\n    </div>\n    <div class=\"osahan-signin text-center p-1\" *ngIf=\"invalidMobilenumber\">\n      <p class=\"m-5 pt-2 text-danger\">\n        {{ tryagain }}\n      </p>\n    </div>\n    <div class=\"osahan-signin text-center p-1\" *ngIf=\"mobileNumberNotFound\">\n      <p class=\"m-5 pt-2 text-danger\">\n        Sorry! Your mobile number is not registered with us. Please sign up to\n        create account\n      </p>\n    </div>\n  </div>\n</ion-content>\n");
 
 /***/ }),
 
@@ -28,9 +28,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _it_signin_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./it-signin.page.component */ "Y/qf");
 
-/***********************************
- * Copyright Fedex 1995 - 2021
- ***********************************/
 
 
 
@@ -39,7 +36,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 const routes = [
     {
-        path: "",
+        path: '',
         component: _it_signin_page_component__WEBPACK_IMPORTED_MODULE_3__["SignInPageComponent"],
     },
 ];
@@ -77,15 +74,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _it_signin_page_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./it-signin.page.component.scss */ "h7ix");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
-/* harmony import */ var _services_authentication_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../services/authentication.service */ "ej43");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! firebase/app */ "Jgta");
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/fire/auth */ "UbJi");
-/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/fire/firestore */ "I/3d");
-/* harmony import */ var _services_app_servcie__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../services/app.servcie */ "+hHy");
-
-
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/fire/auth */ "UbJi");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/fire/firestore */ "I/3d");
+/* harmony import */ var _services_app_servcie__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../services/app.servcie */ "+hHy");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
 
 
 
@@ -97,11 +90,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let SignInPageComponent = class SignInPageComponent {
-    constructor(router, alertController, formBuilder, authtenticationService, fbauth, fbstore, appService) {
+    constructor(router, fbauth, fbstore, appService) {
         this.router = router;
-        this.alertController = alertController;
-        this.formBuilder = formBuilder;
-        this.authtenticationService = authtenticationService;
         this.fbauth = fbauth;
         this.fbstore = fbstore;
         this.appService = appService;
@@ -114,80 +104,55 @@ let SignInPageComponent = class SignInPageComponent {
         this.mobileNumberNotFound = false;
     }
     ngOnInit() {
-        this.signInForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormGroup"]({
-            mobileNumber: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+        this.signInForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
+            mobileNumber: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
         });
     }
-    ionViewDidEnter() {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            this.recaptchaVerifier = new firebase_app__WEBPACK_IMPORTED_MODULE_8__["default"].auth.RecaptchaVerifier('sign-in-button', {
-                size: 'invisible',
-                callback: (response) => { },
-                'expired-callback': () => { },
-            });
-        });
-    }
-    ionViewDidLoad() {
-        this.recaptchaVerifier = new firebase_app__WEBPACK_IMPORTED_MODULE_8__["default"].auth.RecaptchaVerifier('sign-in-button', {
-            size: 'invisible',
-            callback: (response) => { },
-            'expired-callback': () => { },
-        });
-    }
-    // Button event after the nmber is entered and button is clicked
-    signinWithPhoneNumber(formvalue) {
+    signinWithPhoneNumberFireStore(formvalue) {
         this.showProgress = true;
         const mobileNumber = this.CountryCode + formvalue.mobileNumber;
         if (formvalue.mobileNumber.length === 10) {
-            this.authfbObserver = this.fbauth.authState.subscribe((user) => {
-                // if (user) {
-                this.fbstore
-                    .collection('companys')
-                    .snapshotChanges()
-                    .subscribe((data) => {
-                    const filteredUser = data.filter((result) => result.payload.doc.data()['mobileNumber'] === mobileNumber);
-                    if (filteredUser.length > 0) {
-                        console.log(filteredUser[0].payload.doc.data());
-                        if (filteredUser[0].payload.doc.data()) {
-                            this.appService.docId = filteredUser[0].payload.doc.id;
-                            console.log(filteredUser[0].payload.doc.id);
-                            if (filteredUser[0].payload.doc.data()['paymentStatus'] === 'PAID') {
-                                console.log('user did pay');
-                                this.showProgress = false;
-                                this.mobileNumberNotFound = false;
-                                this.router.navigate(['/select-vehicle']);
-                            }
-                            else {
-                                console.log('user did not pay');
-                                this.showProgress = false;
-                                this.mobileNumberNotFound = false;
-                                this.router.navigate(['/payment']);
-                            }
-                        }
-                        else {
-                            this.showProgress = false;
-                            this.mobileNumberNotFound = true;
-                            console.log('user not found in db');
-                        }
+            this.companysCollection = this.fbstore.collection('companys', (ref) => ref.where('mobileNumber', '==', mobileNumber));
+            this.filteredUser = this.companysCollection.snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["map"])((actions) => {
+                return actions.map((action) => {
+                    const data = action.payload.doc.data();
+                    return {
+                        id: action.payload.doc.id,
+                        paymentStatus: data.paymentStatus,
+                        accountStatus: data.accountStatus,
+                        firmActivity: data.firmActivity,
+                    };
+                });
+            }));
+            this.filteredUser.subscribe((snapshot) => {
+                if (snapshot.length == 0) {
+                    console.log('User NOT found');
+                    this.showProgress = false;
+                    this.mobileNumberNotFound = true;
+                }
+                else {
+                    console.log(snapshot[0]);
+                    console.log('User found' + snapshot[0].id);
+                    this.showProgress = false;
+                    this.mobileNumberNotFound = false;
+                    this.appService.docId = snapshot[0].id;
+                    this.appService.userSelectedFirmActivity = snapshot[0].firmActivity;
+                    if (snapshot[0].paymentStatus === 'Paid') {
+                        this.router.navigate(['/select-vehicle']);
                     }
                     else {
-                        this.showProgress = false;
-                        this.mobileNumberNotFound = true;
-                        console.log('user not found in db');
+                        this.router.navigate(['/payment']);
                     }
-                });
+                }
             });
         }
     }
 };
 SignInPageComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"] },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"] },
-    { type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_7__["AuthtenticationService"] },
-    { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_9__["AngularFireAuth"] },
-    { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_10__["AngularFirestore"] },
-    { type: _services_app_servcie__WEBPACK_IMPORTED_MODULE_11__["AppService"] }
+    { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_6__["AngularFireAuth"] },
+    { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_7__["AngularFirestore"] },
+    { type: _services_app_servcie__WEBPACK_IMPORTED_MODULE_8__["AppService"] }
 ];
 SignInPageComponent.propDecorators = {
     signIn: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: ['signIn',] }]

@@ -83,14 +83,24 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     firebaseConfig: {
-        apiKey: "AIzaSyCdPZ05t_qR2N4UNNEjMfgEHsXhnk3_Ogg",
-        authDomain: "bharat-transport-01-dc0a3.firebaseapp.com",
-        projectId: "bharat-transport-01-dc0a3",
-        storageBucket: "bharat-transport-01-dc0a3.appspot.com",
-        messagingSenderId: "321366935151",
-        appId: "1:321366935151:web:fd2c44eba37ff353f32f9a"
+        apiKey: "AIzaSyCwryKwaf_MDuvOWE4aHdZzI6zLf0cDcto",
+        authDomain: "bharat-transport-2022.firebaseapp.com",
+        databaseURL: "https://bharat-transport-2022-default-rtdb.firebaseio.com",
+        projectId: "bharat-transport-2022",
+        storageBucket: "bharat-transport-2022.appspot.com",
+        messagingSenderId: "304908517281",
+        appId: "1:304908517281:web:1b2b25f6b0a5456a0795e0",
+        measurementId: "G-3QW3JJQ94Z"
     },
 };
+// FINAL
+// apiKey: "AIzaSyCwryKwaf_MDuvOWE4aHdZzI6zLf0cDcto",
+// authDomain: "bharat-transport-2022.firebaseapp.com",
+// projectId: "bharat-transport-2022",
+// storageBucket: "bharat-transport-2022.appspot.com",
+// messagingSenderId: "304908517281",
+// appId: "1:304908517281:web:1b2b25f6b0a5456a0795e0",
+// measurementId: "G-3QW3JJQ94Z"
 
 
 /***/ }),
@@ -115,6 +125,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngx-translate/core */ "sYmb");
 /* harmony import */ var _services_app_servcie__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/app.servcie */ "+hHy");
 /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/fire/firestore */ "I/3d");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+
 
 
 
@@ -136,35 +148,41 @@ let AppComponent = class AppComponent {
         this.currentDate = new Date();
         this.authfbObserver = fbauth.authState.subscribe((user) => {
             if (user) {
-                this.fbstore
-                    .collection('companys')
-                    .snapshotChanges()
-                    .subscribe((data) => {
-                    const filteredUser = data.filter((result) => result.payload.doc.data()['mobileNumber'] === user.phoneNumber);
-                    debugger;
-                    if (filteredUser.length > 0) {
-                        console.log(filteredUser[0].payload.doc.data());
-                        if (filteredUser[0].payload.doc.data()) {
-                            this.userDetails = filteredUser[0].payload.doc.data();
-                            this.username = this.userDetails.companyName;
-                        }
-                        else {
-                            console.log('user not found in db');
-                        }
+                this.companysCollection = this.fbstore.collection('companys', (ref) => ref.where('mobileNumber', '==', user.phoneNumber));
+                this.filteredUser = this.companysCollection.snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["map"])((actions) => {
+                    return actions.map((action) => {
+                        const data = action.payload.doc.data();
+                        return {
+                            id: action.payload.doc.id,
+                            paymentStatus: data.paymentStatus,
+                            accountStatus: data.accountStatus,
+                            firmActivity: data.firmActivity,
+                        };
+                    });
+                }));
+                this.filteredUser.subscribe((snapshot) => {
+                    if (snapshot.length == 0) {
+                        console.log('User NOT found');
+                        this.ngroute.navigate(['splash']);
+                    }
+                    else {
+                        console.log(snapshot[0]);
+                        console.log('User found' + snapshot[0].id);
+                        this.username = snapshot[0].companyName;
+                        this.userDetails = snapshot[0];
+                        this.ngroute.navigate(['select-vehicle']);
                     }
                 });
-                this.ngroute.navigate(['select-vehicle']);
             }
             else {
-                console.log('user not logged in');
                 this.ngroute.navigate(['splash']);
             }
+            this.platform.ready().then(() => {
+                // Okay, so the platform is ready and our plugins are available.
+                // Here you can do any higher level native things you might need.
+            });
+            this.translateService.setDefaultLang('en');
         });
-        this.platform.ready().then(() => {
-            // Okay, so the platform is ready and our plugins are available.
-            // Here you can do any higher level native things you might need.
-        });
-        this.translateService.setDefaultLang('en');
     }
     doLogout() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
@@ -195,41 +213,6 @@ AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 /***/ }),
 
-/***/ "UE6G":
-/*!***********************************************!*\
-  !*** ./src/app/helpers/validation.helpers.ts ***!
-  \***********************************************/
-/*! exports provided: Validator */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Validator", function() { return Validator; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-let Validator = class Validator {
-    constructor() { }
-    emailCheck(control) {
-        return new Promise(resolve => {
-            const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            if (!emailPattern.test(control.value)) {
-                resolve({ InvalidEmail: true });
-            }
-            resolve(null);
-        });
-    }
-};
-Validator.ctorParameters = () => [];
-Validator = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
-], Validator);
-
-
-
-/***/ }),
-
 /***/ "VzVu":
 /*!**************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html ***!
@@ -239,7 +222,7 @@ Validator = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\n  <ion-menu side=\"start\" contentId=\"app-content\">\n    <ion-content>\n      <a\n        href=\"#\"\n        class=\"\n          bg-purple\n          sidebar-user\n          d-flex\n          align-items-center\n          py-4\n          px-3\n          border-0\n          mb-0\n        \"\n      >\n        <ngx-avatar name=\"{{ username }}\" size=\"50\"></ngx-avatar>\n        <div class=\"text-white ml-2\">\n          <h6 class=\"mb-0\">\n            {{ userDetails && userDetails.companyName }}\n          </h6>\n          <small>{{ userDetails && userDetails.mobileNumber }}</small\n          ><br />\n          <span class=\"f-10 text-white-50\">{{\n            currentDate | date: \"yyyy-MM-dd\"\n          }}</span>\n        </div>\n      </a>\n\n      <a\n        href=\"#\"\n        class=\"\n          bg-purple\n          sidebar-user\n          py-2\n          px-2border-0\n          mb-0\n          fixed-bottom\n          text-align-center\n        \"\n        (click)=\"doLogout()\"\n      >\n        <div class=\"text-white\">\n          <h6 class=\"mb-0\">Logout</h6>\n        </div>\n      </a>\n    </ion-content>\n  </ion-menu>\n  <ion-router-outlet\n    id=\"app-content\"\n    overflow-scroll=\"true\"\n  ></ion-router-outlet>\n</ion-app>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\n  <ion-menu side=\"start\" contentId=\"app-content\">\n    <ion-content>\n      <a\n        href=\"#\"\n        class=\"bg-purple sidebar-user d-flex align-items-center py-4 px-3 border-0 mb-0\"\n      >\n        <ngx-avatar name=\"{{ username }}\" size=\"50\"></ngx-avatar>\n        <div class=\"text-white ml-2\">\n          <h6 class=\"mb-0\">\n            {{ userDetails && userDetails.companyName }}\n          </h6>\n          <small>{{ userDetails && userDetails.mobileNumber }}</small\n          ><br />\n          <span class=\"f-10 text-white-50\">{{\n            currentDate | date: \"yyyy-MM-dd\"\n          }}</span>\n        </div>\n      </a>\n\n      <a\n        href=\"#\"\n        class=\"bg-purple sidebar-user py-2 px-2border-0 mb-0 fixed-bottom text-align-center\"\n        (click)=\"doLogout()\"\n      >\n        <div class=\"text-white\">\n          <h6 class=\"mb-0\">Logout</h6>\n        </div>\n      </a>\n    </ion-content>\n  </ion-menu>\n  <ion-router-outlet\n    id=\"app-content\"\n    overflow-scroll=\"true\"\n  ></ion-router-outlet>\n</ion-app>\n");
 
 /***/ }),
 
@@ -265,17 +248,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/fire */ "spgP");
 /* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/fire/auth */ "UbJi");
 /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/fire/firestore */ "I/3d");
-/* harmony import */ var _helpers_validation_helpers__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./helpers/validation.helpers */ "UE6G");
-/* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ "6NWb");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "8tEE");
-/* harmony import */ var _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fortawesome/free-regular-svg-icons */ "twK/");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "wHSu");
-/* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ngx-translate/http-loader */ "mqiu");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ngx-translate/core */ "sYmb");
-/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ngx-avatar */ "HWWf");
-/* harmony import */ var _ionic_native_sms_retriever_ngx__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @ionic-native/sms-retriever/ngx */ "BeAq");
-/* harmony import */ var _ionic_native_call_number_ngx__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @ionic-native/call-number/ngx */ "Wwn5");
+/* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ "6NWb");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "8tEE");
+/* harmony import */ var _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @fortawesome/free-regular-svg-icons */ "twK/");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "wHSu");
+/* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ngx-translate/http-loader */ "mqiu");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ngx-translate/core */ "sYmb");
+/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ngx-avatar */ "HWWf");
+/* harmony import */ var _ionic_native_sms_retriever_ngx__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @ionic-native/sms-retriever/ngx */ "BeAq");
+/* harmony import */ var _ionic_native_call_number_ngx__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @ionic-native/call-number/ngx */ "Wwn5");
 
 
 
@@ -298,14 +280,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 let AppModule = class AppModule {
     constructor(library) {
-        library.addIconPacks(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_16__["fas"], _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_14__["fab"], _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_15__["far"]);
+        library.addIconPacks(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_15__["fas"], _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_13__["fab"], _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_14__["far"]);
     }
 };
 AppModule.ctorParameters = () => [
-    { type: _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_12__["FaIconLibrary"] }
+    { type: _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_11__["FaIconLibrary"] }
 ];
 AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
@@ -315,32 +296,35 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
             _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
-            _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_12__["FontAwesomeModule"],
-            ngx_avatar__WEBPACK_IMPORTED_MODULE_19__["AvatarModule"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_13__["HttpClientModule"],
+            _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_11__["FontAwesomeModule"],
+            ngx_avatar__WEBPACK_IMPORTED_MODULE_18__["AvatarModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"],
             _angular_fire__WEBPACK_IMPORTED_MODULE_8__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].firebaseConfig),
             _angular_fire_auth__WEBPACK_IMPORTED_MODULE_9__["AngularFireAuthModule"],
             _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_10__["AngularFirestoreModule"],
-            _ngx_translate_core__WEBPACK_IMPORTED_MODULE_18__["TranslateModule"].forRoot({
+            _ngx_translate_core__WEBPACK_IMPORTED_MODULE_17__["TranslateModule"].forRoot({
                 loader: {
-                    provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_18__["TranslateLoader"],
+                    provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_17__["TranslateLoader"],
                     useFactory: HttpLoaderFactory,
-                    deps: [_angular_common_http__WEBPACK_IMPORTED_MODULE_13__["HttpClient"]],
+                    deps: [_angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClient"]],
                 },
             }),
         ],
         providers: [
-            _helpers_validation_helpers__WEBPACK_IMPORTED_MODULE_11__["Validator"],
-            _ionic_native_sms_retriever_ngx__WEBPACK_IMPORTED_MODULE_20__["SmsRetriever"],
-            _ionic_native_call_number_ngx__WEBPACK_IMPORTED_MODULE_21__["CallNumber"],
+            _ionic_native_sms_retriever_ngx__WEBPACK_IMPORTED_MODULE_19__["SmsRetriever"],
+            _ionic_native_call_number_ngx__WEBPACK_IMPORTED_MODULE_20__["CallNumber"],
             { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] },
+            {
+                provide: _environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].firebaseConfig,
+                useValue: { experimentalForceLongPolling: true },
+            },
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]],
     })
 ], AppModule);
 
 function HttpLoaderFactory(http) {
-    return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_17__["TranslateHttpLoader"](http, './assets/i18n/', '.json');
+    return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_16__["TranslateHttpLoader"](http, './assets/i18n/', '.json');
 }
 
 
@@ -612,7 +596,7 @@ const routes = [
     },
     {
         path: 'signin',
-        loadChildren: () => Promise.all(/*! import() | it-signin-it-signin-module */[__webpack_require__.e("common"), __webpack_require__.e("it-signin-it-signin-module")]).then(__webpack_require__.bind(null, /*! ./it-signin/it-signin.module */ "qdbj")).then((m) => m.SignInPageModule),
+        loadChildren: () => __webpack_require__.e(/*! import() | it-signin-it-signin-module */ "it-signin-it-signin-module").then(__webpack_require__.bind(null, /*! ./it-signin/it-signin.module */ "qdbj")).then((m) => m.SignInPageModule),
     },
     {
         path: 'signup',
@@ -629,6 +613,10 @@ const routes = [
     {
         path: 'payment',
         loadChildren: () => __webpack_require__.e(/*! import() | it-payment-it-payment-module */ "it-payment-it-payment-module").then(__webpack_require__.bind(null, /*! ./it-payment/it-payment.module */ "X4+X")).then((m) => m.PaymentPageModule),
+    },
+    {
+        path: 'payment-success/:paymentid',
+        loadChildren: () => Promise.all(/*! import() | it-payment-success-it-payment-success-module */[__webpack_require__.e("common"), __webpack_require__.e("it-payment-success-it-payment-success-module")]).then(__webpack_require__.bind(null, /*! ./it-payment-success/it-payment-success.module */ "I2rB")).then((p) => p.PaymentSuccessModule),
     },
     {
         path: 'select-vehicle',
@@ -649,7 +637,7 @@ const routes = [
     {
         path: 'profile/:id',
         loadChildren: () => Promise.all(/*! import() | it-profile-it-profile-module */[__webpack_require__.e("default~it-home-it-home-module~it-profile-it-profile-module~it-signup-it-signup-module"), __webpack_require__.e("common"), __webpack_require__.e("it-profile-it-profile-module")]).then(__webpack_require__.bind(null, /*! ./it-profile/it-profile.module */ "TuRf")).then((p) => p.ProfilePageModule),
-    }
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
