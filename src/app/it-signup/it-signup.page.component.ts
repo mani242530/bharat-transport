@@ -54,23 +54,23 @@ export class SignUpPageComponent implements OnInit {
   @ViewChild('createForm') createForm: FormGroupDirective;
 
   vehicleTypes = [
-    'APP.VEHICLE_TYPE.LCV',
-    'APP.VEHICLE_TYPE.TRAILER',
-    'APP.VEHICLE_TYPE.TRUCK',
-    'APP.VEHICLE_TYPE.OPEN_TRUCK',
-    'APP.VEHICLE_TYPE.PART_LOAD',
-    'APP.VEHICLE_TYPE.ODC',
-    'APP.VEHICLE_TYPE.20_FT_CBT',
-    'APP.VEHICLE_TYPE.32_FT_SINGLE_EXCEL',
-    'APP.VEHICLE_TYPE.20_FT_IMPORT_EXPORT',
+    'LCV',
+    'Trailer',
+    'Truck (Taurus)',
+    'Open Trucks',
+    'Part Load',
+    'ODC',
+    '20ft Container CBT',
+    '20ft / 40ft Container (Import and Export)',
+    '32ft Container',
   ];
 
   firmActivitys = [
-    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.FREIGHT',
-    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.BOOKING',
-    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.SUPPLIER',
-    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.OWNER',
-    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.DRIVER',
+    'Freight Forwarders',
+    'Booking',
+    'Supplier',
+    'Owner',
+    'Driver',
   ];
 
   locations = [];

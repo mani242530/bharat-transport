@@ -19,10 +19,7 @@ export class HomePageComponent implements OnInit {
   docId: string;
   authfbObserver;
 
-  firmActivitys = [
-    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.BOOKING',
-    'APP.CREATE_ACCOUNT.SELECT.FIRM_ACTIVITY.SUPPLIER',
-  ];
+  firmActivitys = ['Booking', 'Supplier'];
 
   searchCompanyForm: FormGroup;
   @ViewChild('searchForm') searchForm: FormGroupDirective;
