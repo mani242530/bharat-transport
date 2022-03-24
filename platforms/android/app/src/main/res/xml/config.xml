@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.app.bt" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.app.bt" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="Checkout">
         <param name="android-package" value="com.razorpay.cordova.Main" />
     </feature>
@@ -27,7 +27,7 @@
         <param name="android-package" value="com.ionicframework.cordova.webview.IonicWebView" />
     </feature>
     <name>BharatTransport</name>
-    <description>Bharat Transport app.</description>
+    <description>Bharat Transport</description>
     <author email="hi@ionicframework.com" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
     <access origin="*" />
@@ -69,6 +69,23 @@
     <preference name="FadeSplashScreenDuration" value="300" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashScreenDelay" value="2000" />
+    <preference name="KeepRunning" value="false" />
+    <preference name="LoadUrlTimeoutValue" value="10000" />
+    <preference name="InAppBrowserStorageEnabled" value="true" />
+    <preference name="LoadingDialog" value="My Title,My Message" />
+    <preference name="ErrorUrl" value="myErrorPage.html" />
+    <preference name="ShowTitle" value="true" />
+    <preference name="LogLevel" value="VERBOSE" />
+    <preference name="AndroidLaunchMode" value="singleTop" />
+    <preference name="DefaultVolumeStream" value="call" />
+    <preference name="OverrideUserAgent" value="Mozilla/5.0 My Browser" />
+    <preference name="AppendUserAgent" value="My Browser" />
+    <preference name="AndroidXEnabled" value="true" />
+    <preference name="GradlePluginGoogleServicesEnabled" value="true" />
+    <preference name="GradlePluginGoogleServicesVersion" value="4.2.0" />
+    <preference name="GradlePluginKotlinEnabled" value="true" />
+    <preference name="GradlePluginKotlinCodeStyle" value="official" />
+    <preference name="GradlePluginKotlinVersion" value="1.3.50" />
     <preference name="Scheme" value="http" />
 </widget>

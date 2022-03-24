@@ -1,21 +1,21 @@
 <ion-header>
-  <!-- <ion-toolbar> -->
-  <div
-    class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple"
-  >
-    <h5 class="font-weight-normal mb-0 text-white">
-      <a class="text-purple" routerLink="/get-started"
-        ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
-      ></a>
-      <ion-title>{{ "APP.CREATE_ACCOUNT.HEADER" | translate }}</ion-title>
-    </h5>
-  </div>
-  <ion-progress-bar
-    *ngIf="showProgress"
-    color="warning"
-    type="indeterminate"
-  ></ion-progress-bar>
-  <!-- </ion-toolbar> -->
+  <ion-toolbar>
+    <div
+      class="osahan-header-nav shadow-sm d-flex align-items-center bg-purple"
+    >
+      <h5 class="font-weight-normal mb-0 text-white mt-2">
+        <a class="text-purple" routerLink="/get-started"
+          ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
+        ></a>
+        <ion-title>{{ "APP.CREATE_ACCOUNT.HEADER" | translate }}</ion-title>
+      </h5>
+    </div>
+    <ion-progress-bar
+      *ngIf="showProgress"
+      color="warning"
+      type="indeterminate"
+    ></ion-progress-bar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content id="content" fullscreen>
@@ -28,7 +28,7 @@
   > -->
   <div id="sign-UP-button"></div>
   <div
-    class="osahan-index bg-c align-items-center justify-content-center index-page"
+    class="osahan-index signup bg-c align-items-center justify-content-center index-page"
   >
     <div class="px-3 py-3">
       <form [formGroup]="createCompanyForm" #createForm novalidate>

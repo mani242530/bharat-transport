@@ -11,6 +11,7 @@ import { Company } from '../models/company';
 import { AppService } from '../services/app.servcie';
 import { ToastService } from '../services/toast.service';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 
 @Component({
   selector: 'app-listing',
@@ -39,7 +40,8 @@ export class ListingPageComponent implements OnInit {
     public ngroute: Router,
     private fbstore: AngularFirestore,
     private toastservice: ToastService,
-    public fbauth: AngularFireAuth
+    public fbauth: AngularFireAuth,
+    private callNumber: CallNumber
   ) {
     this.isLoading = true;
     this.docId = this.appService.docId;
@@ -144,6 +146,13 @@ export class ListingPageComponent implements OnInit {
       },
     };
     this.ngroute.navigate(['/listing-detail'], navigationExtras);
+  }
+
+  callNow(number) {
+    this.callNumber
+      .callNumber(number, true)
+      .then((res) => console.log('Launched dialer!', res))
+      .catch((err) => console.log('Error launching dialer', err));
   }
 
   async doLogout(): Promise<void> {

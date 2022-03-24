@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 import { AppService } from '../services/app.servcie';
 import { ToastService } from '../services/toast.service';
-import { CallNumber } from '@ionic-native/call-number/ngx';
 
 @Component({
   selector: 'app-listing',

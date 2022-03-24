@@ -1,34 +1,34 @@
 <ion-header>
-  <!-- <ion-toolbar> -->
-  <div
-    class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple"
-  >
-    <h5 class="font-weight-normal mb-0 text-white">
-      <a class="text-purple" (click)="backToListing()"
-        ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
-      ></a>
-      <ion-title>{{ "APP.LISTING_DETAILS.TITLE" | translate }}</ion-title>
-    </h5>
-    <div class="ml-auto d-flex align-items-center">
-      <ion-buttons slot="end">
-        <a [routerLink]="['/profile/', docId]"
-          ><fa-icon
-            icon="user-circle"
-            class="icofont-user-circle"
-            style="color: #ffffff; font-size: 26px"
-          ></fa-icon
+  <ion-toolbar>
+    <div
+      class="osahan-header-nav shadow-sm d-flex align-items-center bg-purple"
+    >
+      <h5 class="font-weight-normal mb-0 text-white mt-2">
+        <a class="text-purple" (click)="backToListing()"
+          ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
         ></a>
-        <a style="margin-left: 20px" (click)="doLogout()"
-          ><fa-icon
-            icon="sign-out-alt"
-            class="sign-out-alt"
-            style="color: #ffffff; font-size: 26px"
-          ></fa-icon
-        ></a>
-      </ion-buttons>
+        <ion-title>{{ "APP.LISTING_DETAILS.TITLE" | translate }}</ion-title>
+      </h5>
+      <div class="ml-auto d-flex align-items-center mt-2">
+        <ion-buttons slot="end">
+          <a [routerLink]="['/profile/', docId]"
+            ><fa-icon
+              icon="user-circle"
+              class="icofont-user-circle"
+              style="color: #ffffff; font-size: 26px"
+            ></fa-icon
+          ></a>
+          <a style="margin-left: 20px" (click)="doLogout()"
+            ><fa-icon
+              icon="sign-out-alt"
+              class="sign-out-alt"
+              style="color: #ffffff; font-size: 26px"
+            ></fa-icon
+          ></a>
+        </ion-buttons>
+      </div>
     </div>
-  </div>
-  <!-- </ion-toolbar> -->
+  </ion-toolbar>
 </ion-header>
 
 <ion-content id="content" fullscreen>

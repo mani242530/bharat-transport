@@ -1,13 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
-import { HomePageComponent } from './it-home.page.component';
+import { RouterModule, Routes } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HomePageRoutingModule } from './it-home.routing.module';
-import { AvatarModule } from 'ngx-avatar';
+import { IonicSelectableModule } from '@ionic-selectable/angular';
+import { IonicModule } from '@ionic/angular';
 import { TranslateModule } from '@ngx-translate/core';
+import { AvatarModule } from 'ngx-avatar';
+import { HomePageComponent } from './it-home.page.component';
+import { HomePageRoutingModule } from './it-home.routing.module';
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const MODULES = [
   AvatarModule,
   TranslateModule,
   HomePageRoutingModule,
+  IonicSelectableModule
 ];
 
 /**

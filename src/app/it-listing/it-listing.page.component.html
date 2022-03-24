@@ -1,14 +1,14 @@
 <ion-header>
   <div
-    class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-purple"
+    class="osahan-header-nav shadow-sm d-flex align-items-center bg-purple"
   >
-    <h5 class="font-weight-normal mb-0 text-white">
+    <h5 class="font-weight-normal mb-0 text-white mt-2">
       <a class="text-purple" routerLink="/home"
         ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
       ></a>
       <ion-title>{{ "APP.LISTING.TITLE" | translate }}</ion-title>
     </h5>
-    <div class="ml-auto d-flex align-items-center">
+    <div class="ml-auto d-flex align-items-center mt-2">
       <ion-buttons slot="end">
         <a [routerLink]="['/profile/', docId]"
           ><fa-icon
@@ -102,6 +102,7 @@
               margin-right: 20px;
               color: #5f259f !important;
             "
+            (click)="callNow(company.mobileNumber)"
           ></fa-icon>
           <ion-label>
             <h2>{{ "APP.LISTING.LABEL.MOBILE" | translate }}</h2>

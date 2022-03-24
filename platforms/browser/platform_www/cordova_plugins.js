@@ -84,7 +84,8 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "6.0.0",
     "cordova-plugin-statusbar": "3.0.0",
     "cordova-plugin-whitelist": "1.3.5",
-    "mx.ferreyra.callnumber": "0.0.2"
+    "mx.ferreyra.callnumber": "0.0.2",
+    "cordova-support-google-services": "1.4.1"
 }
 // BOTTOM OF METADATA
 });

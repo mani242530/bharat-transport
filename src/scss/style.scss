@@ -115,7 +115,7 @@
   padding: 5px 10px !important;
   height: 35px !important;
 }
-.icofont-sign-out-alt{
+.icofont-sign-out-alt {
   color: #ffffff;
 }
 .input-wrapper {
@@ -136,9 +136,6 @@
 .modal-body {
   border: 1px solid #5f259f !important;
   border-radius: 10px !important;
-}
-.vh-92 {
-  height: 92vh !important;
 }
 .osahan-form {
   width: 100%;
@@ -246,18 +243,22 @@
 .item-native {
   padding: 0px !important;
 }
-.bg-c, .ion-page, .list-md, .list-ios, .background-image    {
-  background: url('../assets/images/background.jpg') no-repeat !important;
+.bg-c,
+.ion-page,
+.list-md,
+.list-ios,
+.background-image {
+  background: url("../assets/images/background.jpg") no-repeat !important;
   background-size: cover !important;
 }
-.owner-payment  {
-  background: url('../assets/images/999.png') no-repeat;
+.owner-payment {
+  background: url("../assets/images/999.png") no-repeat;
   background-size: cover;
   background-position: center;
   background-size: 310px 100px;
 }
-.driver-payment   {
-  background: url('../assets/images/99.png') no-repeat;
+.driver-payment {
+  background: url("../assets/images/99.png") no-repeat;
   background-size: cover;
   background-position: center;
   background-size: 310px 100px;
@@ -266,12 +267,21 @@
   margin-top: 15px;
   width: 3rem !important;
 }
-.onemonth-tag, .oneyear-tag {
+.onemonth-tag,
+.oneyear-tag {
   margin-left: 40%;
   width: 160px;
   position: relative;
-  left: 30px
+  left: 30px;
 }
 .record-text-right {
   text-align: right;
+}
+
+.osahan-index {
+  height: 100%;
+}
+
+.signup {
+  height: auto !important;
 }

@@ -1,27 +1,28 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { environment } from '../environments/environment';
 //firebase imports
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouteReuseStrategy } from '@angular/router';
 import {
   FaIconLibrary,
-  FontAwesomeModule,
+  FontAwesomeModule
 } from '@fortawesome/angular-fontawesome';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { AvatarModule } from 'ngx-avatar';
-import { SmsRetriever } from '@ionic-native/sms-retriever/ngx';
 import { CallNumber } from '@ionic-native/call-number/ngx';
+import { SmsRetriever } from '@ionic-native/sms-retriever/ngx';
+import { IonicSelectableModule } from '@ionic-selectable/angular';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AvatarModule } from 'ngx-avatar';
+import { environment } from '../environments/environment';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,6 +37,7 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    IonicSelectableModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

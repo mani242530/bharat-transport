@@ -9,9 +9,8 @@ declare var RazorpayCheckout: any;
   templateUrl: './it-payment.page.component.html',
   styleUrls: ['./it-payment.page.component.scss'],
 })
-
 export class PaymentPageComponent implements OnInit {
-  paymentAmount: number = 100.0;
+  paymentAmount: number;
   currency: string = 'INR';
   currencyIcon: string = '₹';
   razor_key = 'rzp_live_hP98k48bLAaoBC';
@@ -20,15 +19,13 @@ export class PaymentPageComponent implements OnInit {
 
   userFirmActivity: string;
 
-  constructor(
-    private router: Router,
-    private appService: AppService,
-  ) {
+  constructor(private router: Router, private appService: AppService) {
     this.docId = this.appService.docId;
   }
 
   ngOnInit() {
     this.userFirmActivity = this.appService.userSelectedFirmActivity;
+    this.paymentAmount = this.userFirmActivity === 'Driver' ? 9900.0 : 99900.0;
   }
 
   payWithRazorpay() {
