@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "304908517281",
+    "firebase_url": "https://bharat-transport-2022-default-rtdb.firebaseio.com",
+    "project_id": "bharat-transport-2022",
+    "storage_bucket": "bharat-transport-2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304908517281:android:4c9d118489bb0f540795e0",
+        "android_client_info": {
+          "package_name": "com.app.bt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304908517281-qtf6ua9l2msa9eg801n5ocahp3s194vr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjyn6K373fYq8tbAc4yFfg6xp1JTfxIUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304908517281-qtf6ua9l2msa9eg801n5ocahp3s194vr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

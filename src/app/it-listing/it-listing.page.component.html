@@ -1,14 +1,12 @@
 <ion-header>
-  <div
-    class="osahan-header-nav shadow-sm d-flex align-items-center bg-purple"
-  >
-    <h5 class="font-weight-normal mb-0 text-white mt-2">
+  <div class="osahan-header-nav shadow-sm d-flex align-items-center bg-purple">
+    <h5 class="font-weight-normal mb-0 text-white mt-3">
       <a class="text-purple" routerLink="/home"
         ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
       ></a>
       <ion-title>{{ "APP.LISTING.TITLE" | translate }}</ion-title>
     </h5>
-    <div class="ml-auto d-flex align-items-center mt-2">
+    <div class="ml-auto d-flex align-items-center mt-3">
       <ion-buttons slot="end">
         <a [routerLink]="['/profile/', docId]"
           ><fa-icon
