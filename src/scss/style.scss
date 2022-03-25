@@ -187,6 +187,7 @@
   position: fixed;
   bottom: 10%;
   width: 90%;
+  padding: 10px 20px 0px 20px !important;
 }
 .list_item_gird {
   border: 1px solid #e0e0e0 !important;
@@ -284,4 +285,21 @@
 
 .signup {
   height: auto !important;
+}
+
+.terms-condition {
+  border-radius: 10px;
+  position: fixed;
+  bottom: 15%;
+  width: 90%;
+}
+
+.terms-condition-ul {
+  font-size: 9px;
+  text-align: justify;
+  padding: 20px;
+}
+
+.terms-condition-ul li {
+  margin-bottom: 10px;
 }
