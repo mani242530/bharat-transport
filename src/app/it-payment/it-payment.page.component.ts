@@ -44,6 +44,7 @@ export class PaymentPageComponent implements OnInit {
               instruments: [
                 {
                   method: 'upi',
+                  apps: ["google_pay", "phonepe", "paytm"]
                 },
                 {
                   method: 'card',
@@ -71,7 +72,7 @@ export class PaymentPageComponent implements OnInit {
       prefill: {
         email: 'info@privid.co.in',
         contact: '+91 9081486846',
-        name: 'Bharat Transport App',
+        name: 'Bharat Transport',
       },
       theme: {
         color: '#5f259f',

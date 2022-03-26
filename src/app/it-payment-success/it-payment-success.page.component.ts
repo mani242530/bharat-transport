@@ -35,6 +35,7 @@ export class PaymentSuccessComponent implements OnInit {
     let paymentobj = {
       paymentStatus: 'Paid',
       accountStatus: 'Active',
+      payment_id: this.paymentId,
     };
     try {
       this.fbstore

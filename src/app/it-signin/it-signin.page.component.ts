@@ -16,6 +16,7 @@ import { AppService } from '../services/app.servcie';
 import { Company } from '../models/company';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-signin',
@@ -49,7 +50,8 @@ export class SignInPageComponent implements OnInit {
     private router: Router,
     public fbauth: AngularFireAuth,
     private fbstore: AngularFirestore,
-    private appService: AppService
+    private appService: AppService,
+    public translateService: TranslateService
   ) {}
 
   ngOnInit() {
@@ -74,6 +76,7 @@ export class SignInPageComponent implements OnInit {
               paymentStatus: data.paymentStatus,
               accountStatus: data.accountStatus,
               firmActivity: data.firmActivity,
+              language: data.language,
             };
           });
         })
@@ -91,6 +94,9 @@ export class SignInPageComponent implements OnInit {
           this.mobileNumberNotFound = false;
           this.appService.docId = snapshot[0].id;
           this.appService.userSelectedFirmActivity = snapshot[0].firmActivity;
+          const userLanguage = snapshot[0].language;
+          console.log(userLanguage);
+          this.translateService.setDefaultLang(userLanguage);
 
           if (snapshot[0].paymentStatus === 'Paid') {
             this.router.navigate(['/select-vehicle']);
