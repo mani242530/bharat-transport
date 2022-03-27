@@ -102,28 +102,28 @@
   },
   "installed_plugins": {
     "com.razorpay.cordova": {
-      "PACKAGE_NAME": "com.app.bt"
+      "PACKAGE_NAME": "com.app.bharattransport"
     },
     "cordova-plugin-cocoapod-support": {
-      "PACKAGE_NAME": "com.app.bt"
+      "PACKAGE_NAME": "com.app.bharattransport"
     },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.app.bt"
+      "PACKAGE_NAME": "com.app.bharattransport"
     },
     "cordova-plugin-ionic-keyboard": {
-      "PACKAGE_NAME": "com.app.bt"
+      "PACKAGE_NAME": "com.app.bharattransport"
     },
     "cordova-plugin-ionic-webview": {
-      "PACKAGE_NAME": "com.app.bt"
+      "PACKAGE_NAME": "com.app.bharattransport"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.app.bt"
+      "PACKAGE_NAME": "com.app.bharattransport"
     },
     "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.app.bt"
+      "PACKAGE_NAME": "com.app.bharattransport"
     },
     "mx.ferreyra.callnumber": {
-      "PACKAGE_NAME": "com.app.bt"
+      "PACKAGE_NAME": "com.app.bharattransport"
     }
   },
   "dependent_plugins": {},

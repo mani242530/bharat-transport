@@ -23,6 +23,6 @@ command to use for google play strore deploy
 
 1. ionic cordova platform add android
 2. ionic cordova build android --prod --release -- -- --packageType=bundle
-3. keytool -genkey -v -keystore bt-release-key.keystore -alias com.app.bt  -keyalg RSA -keysize 2048 -validity 10000
-4. keytool -exportcert -list -v -alias com.app.bt -keystore bt-release-key.keystore
-5. jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore bt-release-key.keystore ./platforms/android/app/build/outputs/bundle/release/app-release.aab com.app.bt
+3. keytool -genkey -v -keystore bharat-release-key.keystore -alias com.app.bharattransport  -keyalg RSA -keysize 2048 -validity 10000
+4. keytool -exportcert -list -v -alias com.app.bharattransport -keystore bharat-release-key.keystore
+5. jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore bharat-release-key.keystore ./platforms/android/app/build/outputs/bundle/release/app-release.aab com.app.bharattransport
