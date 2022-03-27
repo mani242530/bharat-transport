@@ -31,7 +31,7 @@ export class PaymentPageComponent implements OnInit {
   payWithRazorpay() {
     var options = {
       description: 'Credit towards Service',
-      image: 'https://mabblesoft.com/works/bharat-transport/app_logo.png',
+      image: 'http://privid.net.in/app_logo.png',
       currency: 'INR', // your 3 letter currency code
       key: this.razor_key, // your Key Id from Razorpay dashboard
       amount: this.paymentAmount, // Payment amount in smallest denomiation e.g. cents for USD
@@ -44,7 +44,6 @@ export class PaymentPageComponent implements OnInit {
               instruments: [
                 {
                   method: 'upi',
-                  apps: ["google_pay", "phonepe", "paytm"]
                 },
                 {
                   method: 'card',
@@ -72,7 +71,7 @@ export class PaymentPageComponent implements OnInit {
       prefill: {
         email: 'info@privid.co.in',
         contact: '+91 9081486846',
-        name: 'Bharat Transport',
+        name: '',
       },
       theme: {
         color: '#5f259f',
