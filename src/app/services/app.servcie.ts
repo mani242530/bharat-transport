@@ -11,6 +11,7 @@ export class AppService {
   docId: string;
   userSelectedFirmActivity: string;
   selectedCompanyId: string;
+  mobileNumber: string;
 
   constructor(
     private toastController: ToastController,
@@ -21,7 +22,7 @@ export class AppService {
     const toast = await this.toastController.create({
       message: 'OTP Verified.',
       duration: 2000,
-      position: 'bottom',
+      position: 'top',
       animated: true,
       color: 'Success',
     });

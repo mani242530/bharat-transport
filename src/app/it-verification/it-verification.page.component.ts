@@ -111,7 +111,7 @@ export class VerificationPageComponent implements OnInit {
           this.filteredUser.subscribe((snapshot) => {
             if (snapshot.length === 0) {
               console.log('User NOT found');
-              this.ngroute.navigate(['splash']);
+              this.ngroute.navigate(['signin']);
             } else {
               console.log(snapshot[0]);
               console.log('User found Verification Component' + snapshot[0].id);
