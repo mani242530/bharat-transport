@@ -95,7 +95,7 @@
               }}<span class="required-field"></span
             ></ion-label>
 
-            <input
+            <!-- <input
               list="locations"
               placeholder="Select location"
               class="form-control rc-form-control native-select it-form-control"
@@ -110,7 +110,24 @@
               >
                 {{ location.name | translate }}
               </option>
-            </datalist>
+            </datalist> -->
+            <ion-select
+              interface="popover"
+              class="form-control rc-form-control native-select it-form-control"
+              placeholder="{{
+                'APP.CREATE_ACCOUNT.PLACEHOLDER.SELECT_LOCATION' | translate
+              }}"
+              formControlName="location"
+              required
+            >
+              <ion-select-option
+                *ngFor="let location of serviceProvidedLocations"
+                selected="false"
+                value="{{ location.name | translate }}"
+                value="{{ location.name | translate }}"
+                >{{ location.name | translate }}</ion-select-option
+              >
+            </ion-select>
           </div>
 
           <div class="form-group mb-3">
@@ -246,6 +263,8 @@
               clearInput="true"
               formControlName="aadharNumber"
               placeholder="Enter aadhar number"
+              maxlength="12"
+              minlength="12"
             ></ion-input>
           </div>
 
@@ -262,6 +281,8 @@
               clearInput="true"
               formControlName="drivingLicenseNumber"
               placeholder="Enter driving license number"
+              maxlength="16"
+              minlength="16"
             ></ion-input>
           </div>
 
