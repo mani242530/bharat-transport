@@ -166,8 +166,13 @@ export class ProfileComponent implements OnInit {
       referenceName: new FormControl('', [Validators.pattern("^[a-zA-Z -']+")]),
       language: new FormControl(''),
       vehicleNos: new FormControl(''),
-      aadharNumber: new FormControl(''),
-      drivingLicenseNumber: new FormControl(''),
+      aadharNumber: new FormControl('', [
+        Validators.pattern('[0-9]{1,12}$'),
+      ]),
+      drivingLicenseNumber: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9]+$'),
+      ]),
     });
   }
 
@@ -263,15 +268,22 @@ export class ProfileComponent implements OnInit {
         if (selectedFirmActivity === 'Owner') {
           companyNameControl.setValidators([Validators.required]);
           vehicleNosControl.setValidators([Validators.required]);
-          drivingLicenseNumberControl.setValidators(null);
+          drivingLicenseNumberControl.setValidators([
+            Validators.pattern('[a-zA-Z0-9 ]*$'),
+          ]);
         } else if (selectedFirmActivity === 'Driver') {
           companyNameControl.setValidators(null);
           vehicleNosControl.setValidators(null);
-          drivingLicenseNumberControl.setValidators([Validators.required]);
+          drivingLicenseNumberControl.setValidators([
+            Validators.required,
+            Validators.pattern('[a-zA-Z0-9 ]*$'),
+          ]);
         } else {
           companyNameControl.setValidators([Validators.required]);
           vehicleNosControl.setValidators(null);
-          drivingLicenseNumberControl.setValidators(null);
+          drivingLicenseNumberControl.setValidators([
+            Validators.pattern('[a-zA-Z0-9 ]*$'),
+          ]);
         }
 
         companyNameControl.updateValueAndValidity();
