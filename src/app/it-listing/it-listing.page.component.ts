@@ -79,7 +79,11 @@ export class ListingPageComponent implements OnInit {
       this.companysCollection = this.fbstore.collection('companys', (ref) =>
         ref
           .where('location', '==', params.from)
-          .where('serviceProvidedLocation', 'array-contains', params.to)
+          // .where('serviceProvidedLocation', 'array-contains', params.to)
+          .where('serviceProvidedLocation', 'array-contains-any', [
+            params.to,
+            'Pan India',
+          ])
           .where('firmActivity', '==', params.firmActivity)
       );
       this.companys = this.companysCollection.snapshotChanges().pipe(
