@@ -52,6 +52,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'payment-failure',
+    loadChildren: () =>
+      import('./it-payment-failure/it-payment-failure.module').then(
+        (p) => p.PaymentFailureModule
+      ),
+  },
+  {
     path: 'select-vehicle',
     loadChildren: () =>
       import('./it-select-vehicle/it-select-vehicle.module').then(

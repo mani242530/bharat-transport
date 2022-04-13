@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { PaymentSuccessComponent } from './it-payment-success.page.component';
+import { PaymentFailureComponent } from './it-payment-failure.page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { PaymentSuccessRoutingModule } from './it-payment-success.routing.module';
+import { PaymentFailureRoutingModule } from './it-payment-failure.routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
     path: '',
-    component: PaymentSuccessComponent,
+    component: PaymentFailureComponent,
   },
 ];
 /**
@@ -24,7 +24,7 @@ const MODULES = [
   ReactiveFormsModule,
   RouterModule.forChild(routes),
   FontAwesomeModule,
-  PaymentSuccessRoutingModule, // PaymentSuccessRoutingModule
+  PaymentFailureRoutingModule, // PaymentFailureRoutingModule
   TranslateModule,
 ];
 
@@ -32,7 +32,7 @@ const MODULES = [
  * COMPONENTS
  */
 const COMPONENTS = [
-  PaymentSuccessComponent, // PaymentSuccessComponent
+  PaymentFailureComponent, // PaymentFailureComponent
 ];
 
 /**
@@ -49,4 +49,4 @@ const PROVIDERS = [];
   declarations: COMPONENTS,
   providers: PROVIDERS,
 })
-export class PaymentSuccessModule {}
+export class PaymentFailureModule {}

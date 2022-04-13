@@ -4,6 +4,9 @@
       class="osahan-header-nav shadow-sm d-flex align-items-center bg-purple"
     >
       <h5 class="font-weight-normal mb-0 text-white mt-5">
+        <a class="text-purple" routerLink="/payment"
+          ><fa-icon icon="arrow-left" class="icofont-rounded-left"></fa-icon
+        ></a>
         <ion-title>{{ "APP.PAYMENT.TITLE" | translate }}</ion-title>
       </h5>
     </div>
@@ -26,7 +29,7 @@
       <div class="osahan-signin text-center font-bold text-purple p-1">
         <div class="row">
           <div class="col-md-9 col-lg-7 col-xl-6 mx-auto">
-            <!-- Payment Success
+            <!-- Payment Cancelled
             ============================================= -->
             <div
               class="bg-white text-center shadow-sm rounded p-3 pt-sm-4 pb-sm-5 px-sm-5 mb-4"
@@ -34,14 +37,15 @@
               <div class="my-4">
                 <p class="text-success text-20 lh-1">
                   <fa-icon
-                    icon="check-circle"
-                    class="icofont-check-circle"
+                    icon="ban"
+                    class="icofont-ban"
                     style="font-size: 50px"
                   ></fa-icon>
                 </p>
-                <p class="text-success text-8 fw-500 lh-1">Success!</p>
+                <p class="text-danger text-8 fw-500 lh-1">Payment Cancelled!</p>
                 <p class="text-purple">
-                  Thank you for the payment and subscription.
+                  User has explicitly cancelled the payment due to which the
+                  transaction is not completed.
                 </p>
               </div>
             </div>
@@ -49,10 +53,8 @@
         </div>
 
         <p class="m-5 pt-2 text-purple">
-          We saved your transaction for future. Please click the below link to
-          continue.
-          <a routerLink="/select-vehicle" class="text-orange font-bold ml-2"
-            >Home</a
+          <a routerLink="/payment" class="text-orange font-bold ml-2"
+            >Back to Payment</a
           >
         </p>
       </div>

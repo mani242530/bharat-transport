@@ -113,13 +113,9 @@ export class ListingPageComponent implements OnInit {
 
       this.companys.subscribe((snapshot) => {
         if (snapshot.length == 0) {
-          console.log('Data NOT found');
-          console.log(snapshot);
           this.isLoading = false;
           this.noresults = true;
         } else {
-          console.log('Data found');
-          console.log(snapshot);
           this.isLoading = false;
           this.noresults = false;
 
@@ -128,8 +124,6 @@ export class ListingPageComponent implements OnInit {
               (vehicleType) => vehicleType === this.selectedVehicleType
             )
           );
-
-          console.log(finallist);
           this.companyLists = finallist;
           this.finalResultForCompanys = finallist;
         }
@@ -138,9 +132,7 @@ export class ListingPageComponent implements OnInit {
   }
 
   goListingDetailPage(companyid) {
-    console.log(companyid);
     this.appService.selectedCompanyId = companyid;
-    console.log(this.searchParam);
     const navigationExtras: NavigationExtras = {
       queryParams: {
         from: this.searchParam.from,

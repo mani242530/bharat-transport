@@ -67,6 +67,7 @@ export class HomePageComponent implements OnInit {
   async doLogout(): Promise<void> {
     await this.fbauth.signOut().then(() => {
       this.appService.selectedLanguage = '';
+      this.authfbObserver.unsubscribe();
       this.router.navigate(['splash']);
     });
   }

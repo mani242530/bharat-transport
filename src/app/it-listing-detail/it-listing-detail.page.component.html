@@ -211,7 +211,8 @@
 
                     <div
                       *ngIf="
-                        company.alternateMobileNumber !== '';
+                        company.alternateMobileNumber !== '' &&
+                          company.alternateMobileNumber !== '+91';
                         else other_content
                       "
                     >

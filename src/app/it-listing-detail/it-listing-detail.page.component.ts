@@ -46,13 +46,11 @@ export class ListingDetailPageComponent implements OnInit {
   }
 
   async getCompany() {
-    console.log(this.companyId);
     try {
       await this.fbstore
         .doc('companys/' + this.companyId)
         .valueChanges()
         .subscribe((result) => {
-          console.log(result);
           this.isLoading = false;
           if (!result) {
             let navigationExtras: NavigationExtras = {
@@ -69,7 +67,6 @@ export class ListingDetailPageComponent implements OnInit {
               .split(',')
               .join('\n');
             this.company = result;
-            console.log(this.company);
           }
         });
     } catch (error) {
@@ -78,7 +75,6 @@ export class ListingDetailPageComponent implements OnInit {
   }
 
   backToListing() {
-    console.log(this.searchParam);
     const navigationExtras: NavigationExtras = {
       queryParams: {
         from: this.searchParam.from,

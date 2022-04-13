@@ -242,7 +242,6 @@ export class SignUpPageComponent implements OnInit {
 
       this.filteredUser.subscribe((snapshot) => {
         if (snapshot.length === 0) {
-          console.log('User NOT found');
 
           this.companysNewCollection.add(companyObj).then((data) => {
             if (data) {
@@ -267,7 +266,6 @@ export class SignUpPageComponent implements OnInit {
             }
           });
         } else {
-          console.log('User found signup component' + snapshot[0].id);
           this.showProgress = false;
           setTimeout(() => {
             this.userExists = true;

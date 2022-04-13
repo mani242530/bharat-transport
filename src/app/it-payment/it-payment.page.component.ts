@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 import { AppService } from '../services/app.servcie';
+import { ToastService } from '../services/toast.service';
 
 declare var RazorpayCheckout: any;
 
@@ -19,7 +21,12 @@ export class PaymentPageComponent implements OnInit {
 
   userFirmActivity: string;
 
-  constructor(private router: Router, private appService: AppService) {
+  constructor(
+    private router: Router,
+    private appService: AppService,
+    private toastController: ToastController,
+    private toastservice: ToastService
+  ) {
     this.docId = this.appService.docId;
   }
 
@@ -97,15 +104,14 @@ export class PaymentPageComponent implements OnInit {
     };
 
     var cancelCallback = (error) => {
-      alert(error.description + ' (Error ' + error.code + ')');
+      console.log(error.description + ' (Error ' + error.code + ')');
+      this.router.navigate(['/payment-failure']);
     };
 
     RazorpayCheckout.open(options, successCallback, cancelCallback);
   }
 
   successPayment(payment_id) {
-    console.log(payment_id);
-    console.log(this.docId);
     this.router.navigate(['/payment-success', payment_id]);
   }
 }

@@ -74,6 +74,7 @@ export class SignInPageComponent implements OnInit {
             return {
               id: action.payload.doc.id,
               paymentStatus: data.paymentStatus,
+              payment_id: data.payment_id,
               accountStatus: data.accountStatus,
               firmActivity: data.firmActivity,
               language: data.language,
@@ -84,18 +85,14 @@ export class SignInPageComponent implements OnInit {
 
       this.filteredUser.subscribe((snapshot) => {
         if (snapshot.length === 0) {
-          console.log('User NOT found');
           this.showProgress = false;
           this.mobileNumberNotFound = true;
         } else {
-          console.log(snapshot[0]);
-          console.log('User found signin component' + snapshot[0].id);
           this.showProgress = false;
           this.mobileNumberNotFound = false;
           this.appService.docId = snapshot[0].id;
           this.appService.userSelectedFirmActivity = snapshot[0].firmActivity;
           const userLanguage = snapshot[0].language;
-          console.log(userLanguage);
           this.translateService.setDefaultLang(userLanguage);
 
           if (snapshot[0].paymentStatus === 'Paid') {

@@ -166,9 +166,7 @@ export class ProfileComponent implements OnInit {
       referenceName: new FormControl('', [Validators.pattern("^[a-zA-Z -']+")]),
       language: new FormControl(''),
       vehicleNos: new FormControl(''),
-      aadharNumber: new FormControl('', [
-        Validators.pattern('[0-9]{1,12}$'),
-      ]),
+      aadharNumber: new FormControl('', [Validators.pattern('[0-9]{1,12}$')]),
       drivingLicenseNumber: new FormControl('', [
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9]+$'),
@@ -324,9 +322,9 @@ export class ProfileComponent implements OnInit {
       alternateMobileNumber: this.modifyCompanyForm.get('alternateMobileNumber')
         .value,
       location: this.modifyCompanyForm.get('location').value,
-      serviceProvidedLocation: this.modifyCompanyForm
-        .get('serviceProvidedLocation')
-        .value,
+      serviceProvidedLocation: this.modifyCompanyForm.get(
+        'serviceProvidedLocation'
+      ).value,
       referenceName: this.modifyCompanyForm.get('referenceName').value,
       language: this.modifyCompanyForm.get('language').value,
       vehicleNos: this.modifyCompanyForm.get('vehicleNos').value,
