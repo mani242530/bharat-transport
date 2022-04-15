@@ -124,8 +124,25 @@ export class ListingPageComponent implements OnInit {
               (vehicleType) => vehicleType === this.selectedVehicleType
             )
           );
-          this.companyLists = finallist;
-          this.finalResultForCompanys = finallist;
+          console.log(finallist);
+          const panResult = finallist.filter(
+            (data) => data.serviceProvidedLocation[0] === 'Pan India'
+          );
+          console.log('panResult', panResult);
+          const nonPanResult = finallist.filter(
+            (data) => data.serviceProvidedLocation[0] !== 'Pan India'
+          );
+          console.log('nonPanResult', nonPanResult);
+          const mergedArray = [...nonPanResult, ...panResult];
+          const uniqueData = [
+            ...mergedArray
+              .reduce((map, obj) => map.set(obj.mobileNumber, obj), new Map())
+              .values(),
+          ];
+
+          console.log(uniqueData);
+          this.companyLists = uniqueData;
+          this.finalResultForCompanys = uniqueData;
         }
       });
     }

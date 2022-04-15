@@ -90,8 +90,10 @@ export class VerificationPageComponent implements OnInit {
         .enterVerificationCode(res)
         .then(async (userData) => {
           const user = userData;
+          console.log(userData);
           this.appService.otpVerifiedToast();
           resolve(user);
+          console.log(user);
           this.companysCollection = this.fbstore.collection('companys', (ref) =>
             ref.where('mobileNumber', '==', user.phoneNumber)
           );

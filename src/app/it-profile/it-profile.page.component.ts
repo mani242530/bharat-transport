@@ -34,6 +34,7 @@ export class ProfileComponent implements OnInit {
   disabledFlag = true;
   checkFirmActivityIsDriver = false;
   checkFirmActivityIsOwner = false;
+  formSubmitted = false;
 
   companysCollection: AngularFirestoreCollection<Company>;
 
@@ -170,6 +171,8 @@ export class ProfileComponent implements OnInit {
       drivingLicenseNumber: new FormControl('', [
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9]+$'),
+        Validators.minLength(16),
+        Validators.maxLength(16),
       ]),
     });
   }
@@ -312,38 +315,53 @@ export class ProfileComponent implements OnInit {
     toast.present();
   }
 
+  validationErrorExists() {
+    return (
+      (this.formSubmitted || this.modifyCompanyForm.dirty) &&
+      !this.modifyCompanyForm.valid
+    );
+  }
+
+  hasError = (controlName: string, errorName: string) => {
+    return this.modifyCompanyForm.controls[controlName].hasError(errorName);
+  };
+
   doModify() {
-    const companyobj = {
-      companyName: this.modifyCompanyForm.get('companyName').value,
-      ownerName: this.modifyCompanyForm.get('ownerName').value,
-      firmActivity: this.modifyCompanyForm.get('firmActivity').value,
-      vehicleType: this.modifyCompanyForm.get('vehicleType').value,
-      mobileNumber: this.modifyCompanyForm.get('mobileNumber').value,
-      alternateMobileNumber: this.modifyCompanyForm.get('alternateMobileNumber')
-        .value,
-      location: this.modifyCompanyForm.get('location').value,
-      serviceProvidedLocation: this.modifyCompanyForm.get(
-        'serviceProvidedLocation'
-      ).value,
-      referenceName: this.modifyCompanyForm.get('referenceName').value,
-      language: this.modifyCompanyForm.get('language').value,
-      vehicleNos: this.modifyCompanyForm.get('vehicleNos').value,
-      aadharNumber: this.modifyCompanyForm.get('aadharNumber').value,
-      drivingLicenseNumber: this.modifyCompanyForm.get('drivingLicenseNumber')
-        .value,
-      paymentStatus: 'Paid',
-      accountStatus: 'Active',
-    };
-    try {
-      this.fbstore
-        .doc('companys/' + this.docid)
-        .ref.update(companyobj)
-        .then((data) => {
-          console.log(data);
-          this.toastservice.showToast('Profile updated successfully', 1000);
-        });
-    } catch (error) {
-      this.toastservice.showToast(error.message, 2000);
+    this.formSubmitted = true;
+    if (this.modifyCompanyForm.valid) {
+      const companyobj = {
+        companyName: this.modifyCompanyForm.get('companyName').value,
+        ownerName: this.modifyCompanyForm.get('ownerName').value,
+        firmActivity: this.modifyCompanyForm.get('firmActivity').value,
+        vehicleType: this.modifyCompanyForm.get('vehicleType').value,
+        mobileNumber: this.modifyCompanyForm.get('mobileNumber').value,
+        alternateMobileNumber: this.modifyCompanyForm.get(
+          'alternateMobileNumber'
+        ).value,
+        location: this.modifyCompanyForm.get('location').value,
+        serviceProvidedLocation: this.modifyCompanyForm.get(
+          'serviceProvidedLocation'
+        ).value,
+        referenceName: this.modifyCompanyForm.get('referenceName').value,
+        language: this.modifyCompanyForm.get('language').value,
+        vehicleNos: this.modifyCompanyForm.get('vehicleNos').value,
+        aadharNumber: this.modifyCompanyForm.get('aadharNumber').value,
+        drivingLicenseNumber: this.modifyCompanyForm.get('drivingLicenseNumber')
+          .value,
+        paymentStatus: 'Paid',
+        accountStatus: 'Active',
+      };
+      try {
+        this.fbstore
+          .doc('companys/' + this.docid)
+          .ref.update(companyobj)
+          .then((data) => {
+            console.log(data);
+            this.toastservice.showToast('Profile updated successfully', 1000);
+          });
+      } catch (error) {
+        this.toastservice.showToast(error.message, 2000);
+      }
     }
   }
 }

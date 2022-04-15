@@ -33,7 +33,11 @@ export class AppComponent {
     public appservice: AppService,
     private fbstore: AngularFirestore
   ) {
-    this.authfbObserver = fbauth.authState.subscribe((user) => {
+    this.authenticateUser();
+  }
+
+  authenticateUser() {
+    this.authfbObserver = this.fbauth.authState.subscribe((user) => {
       if (user) {
         this.companysCollection = this.fbstore.collection('companys', (ref) =>
           ref.where('mobileNumber', '==', user.phoneNumber)
@@ -57,7 +61,8 @@ export class AppComponent {
           } else {
             this.username = snapshot[0].companyName;
             this.userDetails = snapshot[0];
-            if (snapshot[0].companyName === 'Paid') {
+            console.log(snapshot[0]);
+            if (snapshot[0].paymentStatus === 'Paid') {
               this.ngroute.navigate(['select-vehicle']);
             } else {
               this.ngroute.navigate(['payment']);

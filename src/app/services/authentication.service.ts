@@ -39,10 +39,12 @@ export class AuthtenticationService {
       this.confirmationResult
         .confirm(code)
         .then(async (result) => {
+          console.log(result);
           const user = result.user;
           resolve(user);
         })
         .catch((error) => {
+          console.log(error.message);
           reject(error.message);
         });
     });
