@@ -271,7 +271,7 @@ export class SignUpPageComponent implements OnInit {
                       console.log(success);
                       this.userExists = false;
                       this.registerSuccessToast();
-                      this.ngroute.navigate(['verification']);
+                      this.ngroute.navigate(['/verification']);
                     })
                     .catch((error) => {
                       reject(error);

@@ -112,14 +112,14 @@ export class VerificationPageComponent implements OnInit {
           );
           this.filteredUser.subscribe((snapshot) => {
             if (snapshot.length === 0) {
-              this.ngroute.navigate(['signin']);
+              this.ngroute.navigate(['/signin']);
             } else {
               this.appService.userSelectedFirmActivity =
                 snapshot[0].firmActivity;
-              if (snapshot[0].paymentStatus === 'Paid') {
-                this.ngroute.navigate(['select-vehicle']);
+              if (snapshot[0] && snapshot[0].paymentStatus === 'Paid') {
+                this.ngroute.navigate(['/select-vehicle']);
               } else {
-                this.ngroute.navigate(['payment']);
+                this.ngroute.navigate(['/payment']);
               }
             }
           });
@@ -166,4 +166,12 @@ export class VerificationPageComponent implements OnInit {
       this.errorOtpMsg = true;
     }
   }
+
+  // gotoNextField(nextElement) {
+  //   nextElement.setFocus();
+  // }
+
+  // finishFunction() {
+  //   alert('otp');
+  // }
 }

@@ -33,7 +33,8 @@ export class AppComponent {
     public appservice: AppService,
     private fbstore: AngularFirestore
   ) {
-    this.authenticateUser();
+    // this.authenticateUser();
+    this.translateService.setDefaultLang('en');
   }
 
   authenticateUser() {
@@ -63,9 +64,9 @@ export class AppComponent {
             this.userDetails = snapshot[0];
             console.log(snapshot[0]);
             if (snapshot[0].paymentStatus === 'Paid') {
-              this.ngroute.navigate(['select-vehicle']);
+              this.ngroute.navigate(['/select-vehicle']);
             } else {
-              this.ngroute.navigate(['payment']);
+              this.ngroute.navigate(['/payment']);
             }
           }
         });
@@ -85,7 +86,7 @@ export class AppComponent {
   async doLogout(): Promise<void> {
     await this.fbauth.signOut().then(() => {
       this.appservice.selectedLanguage = '';
-      this.authfbObserver.unsubscribe();
+      // this.authfbObserver.unsubscribe();
       this.filteredUser.unsubscribe();
     });
   }

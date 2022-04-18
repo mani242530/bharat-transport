@@ -27,10 +27,10 @@
   >
     <div class="osahan-form pt-3 px-3">
       <!-- You Ticket -->
-      <div class="your-ticket mb-3">
+      <div class="your-ticket mb-1">
         <div class="p-0">
           <!-- Select Payment -->
-          <div class="m-0 p-3">
+          <div class="m-0">
             <ng-container
               *ngIf="
                 userFirmActivity === 'Driver';
@@ -40,7 +40,7 @@
             >
             </ng-container>
             <ng-template #driverPay>
-              <div class="p-3 mb-3 driver-payment">
+              <div class="p-3 driver-payment">
                 <div class="payment-tag-onemonth">
                   <img src="assets/images/onemonth.png" class="onemonth-tag" />
                 </div>
@@ -65,7 +65,7 @@
               </div>
             </ng-template>
             <ng-template #otherPay>
-              <div class="p-3 mb-3 owner-payment">
+              <div class="p-3 owner-payment">
                 <div class="payment-tag-oneyear">
                   <img src="assets/images/oneyear.png" class="oneyear-tag" />
                 </div>
