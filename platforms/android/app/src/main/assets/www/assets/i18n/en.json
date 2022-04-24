@@ -12,6 +12,7 @@
         "SELECT_VEHICLE_TYPE": "Vehicle Type",
         "SELECT_LOCATION": "Location",
         "MOBILE_NUMBER": "Mobile Number",
+        "PASSWORD_PIN": "Pin Number",
         "SELECT_LANGUAGE": "Language",
         "SELECT_SERVICE_PROVIDED_LOCATION": "Service Provided Location",
         "OWNER_NAME": "Owner Name",
@@ -48,7 +49,9 @@
     },
     "VERIFICATION": {
       "TITLE": "Verification",
+      "PIN": "Pin",
       "ENTER_VERIFICATION_CODE": "Enter verification code",
+      "ENTER_PIN_CODE": "Enter Pin",
       "OTP_MESSAGE": "'An OTP is sent to your number. You should receive it in 15 s'",
       "BUTTON": {
         "VERIFICATION": "VERIFICATION",

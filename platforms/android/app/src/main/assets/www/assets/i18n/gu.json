@@ -12,6 +12,7 @@
         "SELECT_VEHICLE_TYPE": "વાહનનો પ્રકાર",
         "SELECT_LOCATION": "સ્થાન",
         "MOBILE_NUMBER": "મોબાઇલ નંબર",
+        "PASSWORD_PIN": "પીન નંંબર",
         "SELECT_SERVICE_PROVIDED_LOCATION": "સેવા પ્રદાન કરેલ સ્થાન",
         "OWNER_NAME": "માલીકનું નામ",
         "ALTERNATE_MOBILE_NUMBER": "વૈકલ્પિક મોબાઇલ નંબર",
@@ -47,7 +48,9 @@
       },
       "VERIFICATION": {
         "TITLE": "ચકાસણી",
+        "PIN": "પિન",
         "ENTER_VERIFICATION_CODE": "ચકાસણી કોડ દાખલ કરો",
+        "ENTER_PIN_CODE": "પિન દાખલ કરો",
         "OTP_MESSAGE": "'તમારા નંબર પર એક OTP મોકલવામાં આવે છે. તમારે તે 15 સેકન્ડમાં પ્રાપ્ત કરવું જોઈએ'",
         "BUTTON": {
           "VERIFICATION": "ચકાસણી",

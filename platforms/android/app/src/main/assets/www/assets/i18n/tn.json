@@ -12,6 +12,7 @@
         "SELECT_VEHICLE_TYPE": "வாகன வகை",
         "SELECT_LOCATION": "இடம்",
         "MOBILE_NUMBER": "மொபைல் எண்",
+        "PASSWORD_PIN": "பின் எண்",
         "SELECT_SERVICE_PROVIDED_LOCATION": "சேவை வழங்கப்படும் இடம்",
         "OWNER_NAME": "உரிமையாளரின் பெயர்",
         "ALTERNATE_MOBILE_NUMBER": "மாற்று மொபைல் எண்",
@@ -48,7 +49,9 @@
     },
     "VERIFICATION": {
       "TITLE": "சரிபார்ப்பு",
+      "PIN": "பின்",
       "ENTER_VERIFICATION_CODE": "சரிபார்ப்புக் குறியீட்டை உள்ளிடவும்",
+      "ENTER_PIN_CODE": "பின்னை உள்ளிடவும்",
       "OTP_MESSAGE": "'உங்கள் எண்ணுக்கு OTP அனுப்பப்பட்டது. நீங்கள் அதை 15 வினாடிகளில் பெற வேண்டும்'",
       "BUTTON": {
         "VERIFICATION": "சரிபார்ப்பு",

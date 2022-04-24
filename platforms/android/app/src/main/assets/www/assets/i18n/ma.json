@@ -12,6 +12,7 @@
         "SELECT_VEHICLE_TYPE": "वाहन प्रकार",
         "SELECT_LOCATION": "स्थान",
         "MOBILE_NUMBER": "मोबाईल नंबर",
+        "PASSWORD_PIN": "पिन क्रमांक",
         "SELECT_SERVICE_PROVIDED_LOCATION": "सेवा प्रदान केलेले स्थान",
         "OWNER_NAME": "मालकाचे नाव",
         "ALTERNATE_MOBILE_NUMBER": "पर्यायी मोबाईल नंबर",
@@ -41,14 +42,16 @@
         "SIGN_IN": "साइन इन करा",
         "OK": "ठीक आहे",
         "CANCEL": "रद्द करा",
-        "UPDATE": "UPDATE"
+        "UPDATE": "अपडेट करा"
       },
       "INVALID_MOBILE": "अवैध मोबाईल नंबर. कृपया तपासा आणि पुन्हा प्रयत्न करा.",
       "MOBILE_EXISTS": "तुमचा मोबाईल नंबर आधीच नोंदणीकृत आहे."
     },
     "VERIFICATION": {
       "TITLE": "पडताळणी",
+      "PIN": "पिन",
       "ENTER_VERIFICATION_CODE": "सत्यापन कोड प्रविष्ट करा",
+      "ENTER_PIN_CODE": "पिन एंटर करा",
       "OTP_MESSAGE": "'तुमच्या नंबरवर OTP पाठवला जातो. तुम्हाला ते १५ सेकंदात मिळायला हवे'",
       "BUTTON": {
         "VERIFICATION": "पडताळणी",
