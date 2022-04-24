@@ -12,6 +12,7 @@
         "SELECT_VEHICLE_TYPE": "वाहन का प्रकार",
         "SELECT_LOCATION": "स्थान",
         "MOBILE_NUMBER": "मोबाइल नंबर",
+        "PASSWORD_PIN": "पिन नम्बर",
         "SELECT_SERVICE_PROVIDED_LOCATION": "सेवा प्रदान किया गया स्थान",
         "OWNER_NAME": "मालिक का नाम",
         "ALTERNATE_MOBILE_NUMBER": "वैकल्पिक मोबाइल नंबर",
@@ -21,7 +22,7 @@
         "REFERENCE_NAME": "संदर्भ नाम",
         "OR": "या",
         "ALREADY_A_MEMBER": "क्या पहले से ही सदस्य हैं ?",
-        "SELECT_LANGUAGE": "Language"
+        "SELECT_LANGUAGE": "भाषा"
       },
       "SELECT": {
         "FIRM_ACTIVITY": {
@@ -41,14 +42,16 @@
         "SIGN_IN": "साइन इन करें",
         "OK": "ठीक है",
         "CANCEL": "रद्द करना",
-        "UPDATE": "UPDATE"
+        "UPDATE": "अपडेट करें"
       },
       "INVALID_MOBILE": "अमान्य मोबाइल नंबर। कृपया जाँच करें और पुनः प्रयास करें।",
       "MOBILE_EXISTS": "आपका मोबाइल नंबर पहले से पंजीकृत है।"
     },
     "VERIFICATION": {
       "TITLE": "सत्यापन",
+      "PIN": "नत्थी करना",
       "ENTER_VERIFICATION_CODE": "सत्यापन कोड दर्ज करें",
+      "ENTER_PIN_CODE": "पिन दर्ज करें",
       "OTP_MESSAGE": "'आपके नंबर पर एक ओटीपी भेजा जाता है। आपको इसे 15 सेकंड में प्राप्त करना चाहिए'",
       "BUTTON": {
         "VERIFICATION": "सत्यापन",

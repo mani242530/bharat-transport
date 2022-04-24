@@ -12,6 +12,7 @@
         "SELECT_VEHICLE_TYPE": "ವಾಹನದ ಪ್ರಕಾರ",
         "SELECT_LOCATION": "ಸ್ಥಳ",
         "MOBILE_NUMBER": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+        "PASSWORD_PIN": "ಪಿನ್ ಸಂಖ್ಯೆ",
         "SELECT_SERVICE_PROVIDED_LOCATION": "ಸೇವೆ ಒದಗಿಸಿದ ಸ್ಥಳ",
         "OWNER_NAME": "ಮಾಲೀಕರ ಹೆಸರು",
         "ALTERNATE_MOBILE_NUMBER": "ಪರ್ಯಾಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
@@ -41,14 +42,16 @@
         "SIGN_IN": "ಸೈನ್ ಇನ್",
         "OK": "ಸರಿ",
         "CANCEL": "ರದ್ದುಮಾಡು",
-        "UPDATE": "UPDATE"
+        "UPDATE": "ನವೀಕರಿಸಿ"
       },
       "INVALID_MOBILE": "ಅಮಾನ್ಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ. ದಯವಿಟ್ಟು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
       "MOBILE_EXISTS": "ನಿಮ್ಮ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ಈಗಾಗಲೇ "
     },
     "VERIFICATION": {
       "TITLE": "ಪರಿಶೀಲನೆ",
+      "PIN": "ಪಿನ್",
       "ENTER_VERIFICATION_CODE": "ಪರೀಶೀಲನಾ ಕೋಡನ್ನು ನಮೂದಿಸಿರಿ",
+      "ENTER_PIN_CODE": "ಪಿನ್ ನಮೂದಿಸಿ",
       "OTP_MESSAGE": "'ನಿಮ್ಮ ಸಂಖ್ಯೆಗೆ OTP ಕಳುಹಿಸಲಾಗಿದೆ. ನೀವು ಅದನ್ನು 15 ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಸ್ವೀಕರಿಸಬೇಕು'",
       "BUTTON": {
         "VERIFICATION": "ಪರಿಶೀಲನೆ",

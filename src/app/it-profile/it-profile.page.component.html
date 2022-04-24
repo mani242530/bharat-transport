@@ -221,7 +221,25 @@
               inputMode="tel"
               clearInput="true"
               formControlName="mobileNumber"
+              maxlength="10"
+              minlength="10"
               placeholder="Enter 10 digit mobile number"
+            ></ion-input>
+          </div>
+
+          <div class="form-group mb-3">
+            <ion-label class="text-purple font-bold mb-1"
+              >{{ "APP.CREATE_ACCOUNT.PLACEHOLDER.PASSWORD_PIN" | translate
+              }}<span class="required-field"></span
+            ></ion-label>
+            <ion-input
+              class="form-control rc-form-control it-form-control"
+              inputMode="tel"
+              clearInput="true"
+              formControlName="passwordPin"
+              maxlength="4"
+              minlength="4"
+              placeholder="Enter 4 digit password pin number"
             ></ion-input>
           </div>
 
@@ -235,6 +253,8 @@
               inputMode="tel"
               clearInput="true"
               formControlName="alternateMobileNumber"
+              maxlength="10"
+              minlength="10"
               placeholder="Enter 10 digit mobile number"
             ></ion-input>
           </div>

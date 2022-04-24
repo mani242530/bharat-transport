@@ -30,13 +30,12 @@ export class ProfileComponent implements OnInit {
   invalidMobilenumber = false;
   userExists = false;
   docid: string;
+  paymentStatus: string;
 
   disabledFlag = true;
   checkFirmActivityIsDriver = false;
   checkFirmActivityIsOwner = false;
   formSubmitted = false;
-
-  companysCollection: AngularFirestoreCollection<Company>;
 
   modifyCompanyForm: FormGroup;
   @ViewChild('modifyForm') modifyForm: FormGroupDirective;
@@ -130,8 +129,8 @@ export class ProfileComponent implements OnInit {
     public appservice: AppService,
     public route: ActivatedRoute
   ) {
-    // this.docid = this.route.snapshot.paramMap.get('id');
     this.docid = this.appservice.docId;
+    this.paymentStatus = this.appservice.paymentStatus;
   }
 
   ngOnInit() {
@@ -161,6 +160,7 @@ export class ProfileComponent implements OnInit {
       firmActivity: new FormControl({ value: '', disabled: true }),
       vehicleType: new FormControl('', Validators.required),
       mobileNumber: new FormControl({ value: '', disabled: true }),
+      passwordPin: new FormControl('', Validators.required),
       alternateMobileNumber: new FormControl(''),
       location: new FormControl('', Validators.required),
       serviceProvidedLocation: new FormControl('', Validators.required),
@@ -177,14 +177,13 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  async getCompanys(docid: string) {
+  getCompanys(docid: string) {
     try {
-      await this.fbstore
+      this.fbstore
         .doc('companys/' + docid)
         .valueChanges()
         .subscribe((result) => {
           this.onFirmActivityValue(result);
-          console.log('profile', result);
           this.modifyCompanyForm.controls['companyName'].setValue(
             result['companyName']
           );
@@ -199,6 +198,9 @@ export class ProfileComponent implements OnInit {
           );
           this.modifyCompanyForm.controls['mobileNumber'].setValue(
             result['mobileNumber']
+          );
+          this.modifyCompanyForm.controls['passwordPin'].setValue(
+            result['passwordPin']
           );
           this.modifyCompanyForm.controls['alternateMobileNumber'].setValue(
             result['alternateMobileNumber']
@@ -293,28 +295,6 @@ export class ProfileComponent implements OnInit {
       });
   }
 
-  async registerSuccessToast() {
-    const toast = await this.toastController.create({
-      message: 'Account updated successfully.',
-      duration: 2000,
-      position: 'bottom',
-      animated: true,
-      color: 'Success',
-    });
-    toast.present();
-  }
-
-  async userRegisteredAlreadyToast() {
-    const toast = await this.toastController.create({
-      message: 'Your mobile number is already registered.',
-      duration: 2000,
-      position: 'top',
-      animated: true,
-      color: 'warning',
-    });
-    toast.present();
-  }
-
   validationErrorExists() {
     return (
       (this.formSubmitted || this.modifyCompanyForm.dirty) &&
@@ -326,15 +306,16 @@ export class ProfileComponent implements OnInit {
     return this.modifyCompanyForm.controls[controlName].hasError(errorName);
   };
 
-  doModify() {
+  async doModify() {
     this.formSubmitted = true;
     if (this.modifyCompanyForm.valid) {
-      const companyobj = {
+      const companyObj = {
         companyName: this.modifyCompanyForm.get('companyName').value,
         ownerName: this.modifyCompanyForm.get('ownerName').value,
         firmActivity: this.modifyCompanyForm.get('firmActivity').value,
         vehicleType: this.modifyCompanyForm.get('vehicleType').value,
         mobileNumber: this.modifyCompanyForm.get('mobileNumber').value,
+        passwordPin: this.modifyCompanyForm.get('passwordPin').value,
         alternateMobileNumber: this.modifyCompanyForm.get(
           'alternateMobileNumber'
         ).value,
@@ -348,16 +329,28 @@ export class ProfileComponent implements OnInit {
         aadharNumber: this.modifyCompanyForm.get('aadharNumber').value,
         drivingLicenseNumber: this.modifyCompanyForm.get('drivingLicenseNumber')
           .value,
-        paymentStatus: 'Paid',
-        accountStatus: 'Active',
+        userEntry: 'Yes',
       };
+
+      Object.keys(companyObj).forEach((k) => {
+        if (typeof companyObj[k] !== 'object') {
+          companyObj[k] = companyObj[k].trim();
+        }
+      });
+
       try {
-        this.fbstore
+        await this.fbstore
           .doc('companys/' + this.docid)
-          .ref.update(companyobj)
-          .then((data) => {
-            console.log(data);
-            this.toastservice.showToast('Profile updated successfully', 1000);
+          .ref.update(companyObj)
+          .then(() => {
+           //setTimeout(() => {
+              this.toastservice.showToast('Profile updated successfully', 1000);
+              if (this.paymentStatus === 'Paid') {
+                this.router.navigate(['select-vehicle']);
+              } else {
+                this.router.navigate(['payment']);
+              }
+            //}, 5000);
           });
       } catch (error) {
         this.toastservice.showToast(error.message, 2000);

@@ -90,10 +90,8 @@ export class VerificationPageComponent implements OnInit {
         .enterVerificationCode(res)
         .then(async (userData) => {
           const user = userData;
-          console.log(userData);
           this.appService.otpVerifiedToast();
           resolve(user);
-          console.log(user);
           this.companysCollection = this.fbstore.collection('companys', (ref) =>
             ref.where('mobileNumber', '==', user.phoneNumber)
           );
@@ -112,14 +110,14 @@ export class VerificationPageComponent implements OnInit {
           );
           this.filteredUser.subscribe((snapshot) => {
             if (snapshot.length === 0) {
-              this.ngroute.navigate(['/signin']);
+              this.ngroute.navigate(['signin']);
             } else {
               this.appService.userSelectedFirmActivity =
                 snapshot[0].firmActivity;
               if (snapshot[0] && snapshot[0].paymentStatus === 'Paid') {
-                this.ngroute.navigate(['/select-vehicle']);
+                this.ngroute.navigate(['select-vehicle']);
               } else {
-                this.ngroute.navigate(['/payment']);
+                this.ngroute.navigate(['payment']);
               }
             }
           });
@@ -149,14 +147,6 @@ export class VerificationPageComponent implements OnInit {
     }
   }
 
-  onConfigChange() {
-    this.showOtpComponent = false;
-    this.otp = null;
-    setTimeout(() => {
-      this.showOtpComponent = true;
-    }, 0);
-  }
-
   verifyOtp() {
     if (this.otp.length === 6) {
       const otpNumber = this.otp.toString();
@@ -165,6 +155,14 @@ export class VerificationPageComponent implements OnInit {
       this.otpNotVerified = false;
       this.errorOtpMsg = true;
     }
+  }
+
+  onConfigChange() {
+    this.showOtpComponent = false;
+    this.otp = null;
+    setTimeout(() => {
+      this.showOtpComponent = true;
+    }, 0);
   }
 
   // gotoNextField(nextElement) {

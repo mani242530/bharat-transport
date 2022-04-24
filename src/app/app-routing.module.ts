@@ -40,6 +40,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'pin',
+    loadChildren: () =>
+      import('./it-password-pin/it-password-pin.module').then(
+        (p) => p.PasswordPinPageModule
+      ),
+  },
+  {
     path: 'payment',
     loadChildren: () =>
       import('./it-payment/it-payment.module').then((m) => m.PaymentPageModule),

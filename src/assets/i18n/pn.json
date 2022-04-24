@@ -12,6 +12,7 @@
         "SELECT_VEHICLE_TYPE": "ਵਾਹਨ ਦੀ ਕਿਸਮ",
         "SELECT_LOCATION": "ਟਿਕਾਣਾ",
         "MOBILE_NUMBER": "ਮੋਬਾਈਲ ਨੰਬਰ",
+        "PASSWORD_PIN": "ਪਿੰਨ ਨੰਬਰ",
         "SELECT_SERVICE_PROVIDED_LOCATION": "ਸੇਵਾ ਪ੍ਰਦਾਨ ਕੀਤੀ ਸਥਿਤੀ",
         "OWNER_NAME": "ਮਾਲਕ ਦਾ ਨਾਮ",
         "ALTERNATE_MOBILE_NUMBER": "ਵਿਕਲਪਿਕ ਮੋਬਾਈਲ ਨੰਬਰ",
@@ -48,7 +49,9 @@
     },
     "VERIFICATION": {
       "TITLE": "ਪੁਸ਼ਟੀਕਰਨ",
+      "PIN": "ਪਿੰਨ",
       "ENTER_VERIFICATION_CODE": "ਤਸਦੀਕ ਕੋਡ ਦਰਜ ਕਰੋ",
+      "ENTER_PIN_CODE": "ਪਿੰਨ ਦਰਜ ਕਰੋ",
       "OTP_MESSAGE": "'ਤੁਹਾਡੇ ਨੰਬਰ 'ਤੇ ਇੱਕ OTP ਭੇਜਿਆ ਜਾਂਦਾ ਹੈ। ਤੁਹਾਨੂੰ ਇਹ 15 ਸਕਿੰਟ ਵਿੱਚ ਪ੍ਰਾਪਤ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ'",
       "BUTTON": {
         "VERIFICATION": "ਪੁਸ਼ਟੀਕਰਨ",

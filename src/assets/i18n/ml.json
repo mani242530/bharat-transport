@@ -12,6 +12,7 @@
         "SELECT_VEHICLE_TYPE": "വാഹന തരം",
         "SELECT_LOCATION": "സ്ഥാനം",
         "MOBILE_NUMBER": "മൊബൈൽ നമ്പർ",
+        "PASSWORD_PIN": "പിൻ നമ്പർ",
         "SELECT_SERVICE_PROVIDED_LOCATION": "സേവനം നൽകിയ സ്ഥലം",
         "OWNER_NAME": "ഉടമയുടെ പേര്",
         "ALTERNATE_MOBILE_NUMBER": "ഓപ്ഷണൽ മൊബൈൽ നമ്പർ",
@@ -48,7 +49,9 @@
     },
     "VERIFICATION": {
       "TITLE": "സ്ഥിരീകരണം",
+      "PIN": "പിൻ",
       "ENTER_VERIFICATION_CODE": "സ്ഥിരീകരണ കോഡ് നൽകുക",
+      "ENTER_PIN_CODE": "പിൻ നൽകുക",
       "OTP_MESSAGE": "'നിങ്ങളുടെ നമ്പറിലേക്ക് ഒരു OTP അയച്ചു. നിങ്ങൾക്ക് ഇത് 15 സെക്കൻഡിനുള്ളിൽ ലഭിക്കും'",
       "BUTTON": {
         "VERIFICATION": "സ്ഥിരീകരണം",

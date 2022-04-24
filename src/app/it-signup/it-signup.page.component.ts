@@ -109,6 +109,7 @@ export class SignUpPageComponent implements OnInit {
       firmActivity: new FormControl('', Validators.required),
       vehicleType: new FormControl('', Validators.required),
       mobileNumber: new FormControl('', Validators.required),
+      passwordPin: new FormControl('', Validators.required),
       alternateMobileNumber: new FormControl(''),
       location: new FormControl('', Validators.required),
       serviceProvidedLocation: new FormControl('', Validators.required),
@@ -218,6 +219,7 @@ export class SignUpPageComponent implements OnInit {
         firmActivity: this.createCompanyForm.get('firmActivity').value,
         vehicleType: this.createCompanyForm.get('vehicleType').value,
         mobileNumber: '+91' + this.createCompanyForm.get('mobileNumber').value,
+        passwordPin: this.createCompanyForm.get('passwordPin').value,
         alternateMobileNumber:
           '+91' + this.createCompanyForm.get('alternateMobileNumber').value,
         location: this.createCompanyForm.get('location').value,
@@ -231,6 +233,8 @@ export class SignUpPageComponent implements OnInit {
           .value,
         language: this.appservice.selectedLanguage,
         paymentStatus: 'Not Paid',
+        accountStatus: 'Inactive',
+        userEntry: 'Yes',
       };
       Object.keys(companyObj).forEach((k) => {
         if (typeof companyObj[k] !== 'object') {
@@ -268,14 +272,12 @@ export class SignUpPageComponent implements OnInit {
                     )
                     .then((success) => {
                       resolve(success);
-                      console.log(success);
                       this.userExists = false;
                       this.registerSuccessToast();
                       this.ngroute.navigate(['/verification']);
                     })
                     .catch((error) => {
                       reject(error);
-                      console.log(error);
                     });
                 });
               }

@@ -73,11 +73,9 @@ export class SignInPageComponent implements OnInit {
             const data = action.payload.doc.data() as Company;
             return {
               id: action.payload.doc.id,
+              mobileNumber: data.mobileNumber,
               paymentStatus: data.paymentStatus,
-              payment_id: data.payment_id,
-              accountStatus: data.accountStatus,
-              firmActivity: data.firmActivity,
-              language: data.language,
+              userEntry: data.userEntry
             };
           });
         })
@@ -91,15 +89,10 @@ export class SignInPageComponent implements OnInit {
           this.showProgress = false;
           this.mobileNumberNotFound = false;
           this.appService.docId = snapshot[0].id;
-          this.appService.userSelectedFirmActivity = snapshot[0].firmActivity;
-          const userLanguage = snapshot[0].language;
-          this.translateService.setDefaultLang(userLanguage);
-
-          if (snapshot[0].paymentStatus === 'Paid') {
-            this.router.navigate(['/select-vehicle']);
-          } else {
-            this.router.navigate(['/payment']);
-          }
+          this.appService.paymentStatus = snapshot[0].paymentStatus;
+          this.appService.signinMobileNumber = snapshot[0].mobileNumber;
+          this.appService.userEntry = snapshot[0].userEntry;
+          this.router.navigate(['pin']);
         }
       });
     }

@@ -12,6 +12,9 @@ export class AppService {
   userSelectedFirmActivity: string;
   selectedCompanyId: string;
   mobileNumber: string;
+  signinMobileNumber: string;
+  paymentStatus: string;
+  userEntry: string;
 
   constructor(
     private toastController: ToastController,

@@ -35,6 +35,7 @@ export class PaymentSuccessComponent implements OnInit {
       paymentStatus: 'Paid',
       accountStatus: 'Active',
       payment_id: this.paymentId,
+      payment_date: new Date(),
     };
     try {
       this.fbstore

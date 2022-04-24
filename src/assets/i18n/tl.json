@@ -12,6 +12,7 @@
         "SELECT_VEHICLE_TYPE": "వాహనం రకం",
         "SELECT_LOCATION": "స్థానం",
         "MOBILE_NUMBER": "మొబైల్ నంబర్",
+        "PASSWORD_PIN": "పిన్ నెంబర్",
         "SELECT_SERVICE_PROVIDED_LOCATION": "సేవ అందించిన స్థానం",
         "OWNER_NAME": "యజమాని పేరు",
         "ALTERNATE_MOBILE_NUMBER": "ప్రత్యామ్నాయ మొబైల్ నంబర్",
@@ -48,7 +49,9 @@
     },
     "VERIFICATION": {
       "TITLE": "ధృవీకరణ",
+      "PIN": "పిన్",
       "ENTER_VERIFICATION_CODE": "ధృవీకరణ కోడ్ను నమోదు చేయండి",
+      "ENTER_PIN_CODE": "పిన్ నమోదు చేయండి",
       "OTP_MESSAGE": "'మీ నంబర్‌కి OTP పంపబడుతుంది. మీరు దానిని 15 సెకన్లలో స్వీకరించాలి'",
       "BUTTON": {
         "VERIFICATION": "ధృవీకరణ",
