@@ -25,9 +25,9 @@ export class PaymentSuccessComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.paymentId) {
+    // if (this.paymentId) {
       this.doModify();
-    }
+    // }
   }
 
   doModify() {

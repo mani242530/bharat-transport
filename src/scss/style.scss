@@ -23,12 +23,14 @@
   border-color: #5f259f !important;
   color: #ffffff !important;
   border-radius: 10px !important;
+  height: 40px;
 }
 .btn-white {
   background-color: #ffffff !important;
   border-color: #5f259f !important;
   color: #5f259f !important;
   border-radius: 10px !important;
+  height: 40px;
 }
 /* margin */
 .ml-auto {
@@ -51,7 +53,7 @@
   margin-bottom: 1rem;
 }
 .form-control {
-  font-size: 13px;
+  font-size: 14px;
   padding: 5px 10px;
 }
 .select2-hidden-accessible {
@@ -72,12 +74,13 @@
 /* text */
 .text-purple {
   color: #5f259f !important;
+  font-size:16px !important;
 }
 .text-orange {
   color: #f57921 !important;
 }
 .text-small {
-  font-size: 12px !important;
+  font-size: 14px !important;
 }
 .otp {
   border: 1px solid #5f259f !important;
@@ -111,7 +114,7 @@
   height: 1.25rem;
 }
 .rc-form-control {
-  font-size: 13px !important;
+  font-size: 16px !important;
   padding: 5px 10px !important;
   height: 35px !important;
 }
@@ -142,7 +145,8 @@
 }
 .l-hght-20,
 .text-muted {
-  line-height: 20px !important;
+  line-height: 25px !important;
+  font-size: 18px;
 }
 .text-align-center {
   text-align: center;
@@ -151,13 +155,13 @@
   float: left;
   width: 90% !important;
   color: #111111 !important;
-  font-size: 14px !important;
+  font-size: 16px !important;
   font-weight: 700 !important;
 }
 .native-select {
   width: 100%;
   color: #111111 !important;
-  font-size: 14px !important;
+  font-size: 16px !important;
   font-weight: 700 !important;
 }
 .osahan-listing {

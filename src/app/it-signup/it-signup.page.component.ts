@@ -19,6 +19,7 @@ import { AuthtenticationService } from '../services/authentication.service';
 import { AppService } from '../services/app.servcie';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-signup',
@@ -82,7 +83,8 @@ export class SignUpPageComponent implements OnInit {
     private fbstore: AngularFirestore,
     private toastController: ToastController,
     private authtenticationService: AuthtenticationService,
-    public appservice: AppService
+    public appService: AppService,
+    private toastservice: ToastService
   ) {}
 
   ngOnInit() {
@@ -231,16 +233,17 @@ export class SignUpPageComponent implements OnInit {
         aadharNumber: this.createCompanyForm.get('aadharNumber').value,
         drivingLicenseNumber: this.createCompanyForm.get('drivingLicenseNumber')
           .value,
-        language: this.appservice.selectedLanguage,
+        language: this.appService.selectedLanguage,
         paymentStatus: 'Not Paid',
         accountStatus: 'Inactive',
         userEntry: 'Yes',
       };
-      Object.keys(companyObj).forEach((k) => {
-        if (typeof companyObj[k] !== 'object') {
-          companyObj[k] = companyObj[k].trim();
-        }
-      });
+
+      // Object.keys(companyObj).forEach((k) => {
+      //   if (typeof companyObj[k] !== 'object') {
+      //     companyObj[k] = companyObj[k].trim();
+      //   }
+      // });
 
       if (companyObj) {
         this.companysNewCollection = this.fbstore.collection(
@@ -264,21 +267,58 @@ export class SignUpPageComponent implements OnInit {
               if (data) {
                 this.showProgress = false;
                 this.userExists = false;
-                return new Promise<any>((resolve, reject) => {
-                  this.authtenticationService
-                    .signInWithPhoneNumber(
-                      this.recaptchaVerifier,
-                      companyObj.mobileNumber
-                    )
-                    .then((success) => {
-                      resolve(success);
-                      this.userExists = false;
-                      this.registerSuccessToast();
-                      this.ngroute.navigate(['/verification']);
+                this.toastservice.showToast(
+                  'Profile created successfully',
+                  2000
+                );
+                // return new Promise<any>((resolve, reject) => {
+                //   this.authtenticationService
+                //     .signInWithPhoneNumber(
+                //       this.recaptchaVerifier,
+                //       companyObj.mobileNumber
+                //     )
+                //     .then((success) => {
+                //       resolve(success);
+                //       this.userExists = false;
+                //       this.registerSuccessToast();
+                //       this.ngroute.navigate(['/verification']);
+                //     })
+                //     .catch((error) => {
+                //       reject(error);
+                //     });
+                // });
+                this.companysNewCollection = this.fbstore.collection(
+                  'companys',
+                  (ref) =>
+                    ref.where('mobileNumber', '==', companyObj.mobileNumber)
+                );
+                this.filteredUser = this.companysNewCollection
+                  .snapshotChanges()
+                  .pipe(
+                    map((actions) => {
+                      return actions.map((action) => {
+                        const data = action.payload.doc.data() as Company;
+                        return {
+                          id: action.payload.doc.id,
+                          paymentStatus: data.paymentStatus,
+                          accountStatus: data.accountStatus,
+                          firmActivity: data.firmActivity,
+                        };
+                      });
                     })
-                    .catch((error) => {
-                      reject(error);
-                    });
+                  );
+                this.filteredUser.subscribe((snapshot) => {
+                  if (snapshot.length === 0) {
+                    this.ngroute.navigate(['signup']);
+                  } else {
+                    this.appService.userSelectedFirmActivity =
+                      snapshot[0].firmActivity;
+                    if (snapshot[0] && snapshot[0].paymentStatus === 'Paid') {
+                      this.ngroute.navigate(['select-vehicle']);
+                    } else {
+                      this.ngroute.navigate(['payment']);
+                    }
+                  }
                 });
               }
             });

@@ -332,11 +332,11 @@ export class ProfileComponent implements OnInit {
         userEntry: 'Yes',
       };
 
-      Object.keys(companyObj).forEach((k) => {
-        if (typeof companyObj[k] !== 'object') {
-          companyObj[k] = companyObj[k].trim();
-        }
-      });
+      // Object.keys(companyObj).forEach((k) => {
+      //   if (typeof companyObj[k] !== 'object') {
+      //     companyObj[k] = companyObj[k].trim();
+      //   }
+      // });
 
       try {
         await this.fbstore

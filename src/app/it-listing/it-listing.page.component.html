@@ -63,6 +63,7 @@
     <div class="col-12">
       <small
         class="text-purple font-bold d-block record-text-right"
+        style="font-size: 12px !important"
         *ngIf="companyLists && companyLists.length > 0"
         >{{ "APP.LISTING.LABEL.TOTAL_RECORDS" | translate }} -
         {{ companyLists && companyLists.length }}
@@ -104,7 +105,7 @@
           ></fa-icon>
           <ion-label>
             <h2>{{ "APP.LISTING.LABEL.MOBILE" | translate }}</h2>
-            <p class="font-bold text-purple">
+            <p class="font-bold text-purple" style="font-size: 18px !important">
               {{ company.mobileNumber }}
             </p>
           </ion-label>

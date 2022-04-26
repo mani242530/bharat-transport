@@ -12,6 +12,7 @@ import { Company } from '../models/company';
 import { Config } from '../models/otp.config';
 import { AppService } from '../services/app.servcie';
 import { AuthtenticationService } from '../services/authentication.service';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-password-pin',
@@ -57,7 +58,8 @@ export class PasswordPinPageComponent implements OnInit {
     private appService: AppService,
     public fbauth: AngularFireAuth,
     private fbstore: AngularFirestore,
-    public translateService: TranslateService
+    public translateService: TranslateService,
+    private toastservice: ToastService
   ) {}
 
   ngOnInit() {
@@ -116,7 +118,7 @@ export class PasswordPinPageComponent implements OnInit {
 
           if (snapshot[0].userEntry === 'Yes') {
             if (snapshot[0].paymentStatus === 'Paid') {
-              this.pinVerifiedToast();
+              this.toastservice.showToast('Pin verified successfully', 1000);
               this.router.navigate(['select-vehicle']);
             } else {
               this.router.navigate(['payment']);
