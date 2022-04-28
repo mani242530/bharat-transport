@@ -25,9 +25,7 @@ export class PaymentSuccessComponent implements OnInit {
   }
 
   ngOnInit() {
-    // if (this.paymentId) {
-      this.doModify();
-    // }
+    this.doModify();
   }
 
   doModify() {
@@ -36,6 +34,7 @@ export class PaymentSuccessComponent implements OnInit {
       accountStatus: 'Active',
       payment_id: this.paymentId,
       payment_date: new Date(),
+      paymentAmount: this.appService.paymentAmount,
     };
     try {
       this.fbstore

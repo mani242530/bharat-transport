@@ -15,6 +15,7 @@ export class AppService {
   signinMobileNumber: string;
   paymentStatus: string;
   userEntry: string;
+  paymentAmount: number;
 
   constructor(
     private toastController: ToastController,

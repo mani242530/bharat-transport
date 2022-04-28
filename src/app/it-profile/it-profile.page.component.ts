@@ -184,6 +184,27 @@ export class ProfileComponent implements OnInit {
         .valueChanges()
         .subscribe((result) => {
           this.onFirmActivityValue(result);
+          let modifyMobileNumber;
+          let modifyAlternateNumber;
+
+          const mobileNumber = result['mobileNumber'].indexOf('+91');
+          if (mobileNumber !== -1) {
+            modifyMobileNumber = result['mobileNumber'].replace('+91', '');
+          } else {
+            modifyMobileNumber = result['mobileNumber'];
+          }
+
+          const alternateNumber =
+            result['alternateMobileNumber'].indexOf('+91');
+          if (alternateNumber !== -1) {
+            modifyAlternateNumber = result['alternateMobileNumber'].replace(
+              '+91',
+              ''
+            );
+          } else {
+            modifyAlternateNumber = result['alternateMobileNumber'];
+          }
+
           this.modifyCompanyForm.controls['companyName'].setValue(
             result['companyName']
           );
@@ -197,13 +218,13 @@ export class ProfileComponent implements OnInit {
             result['vehicleType']
           );
           this.modifyCompanyForm.controls['mobileNumber'].setValue(
-            result['mobileNumber']
+            modifyMobileNumber
           );
           this.modifyCompanyForm.controls['passwordPin'].setValue(
             result['passwordPin']
           );
           this.modifyCompanyForm.controls['alternateMobileNumber'].setValue(
-            result['alternateMobileNumber']
+            modifyAlternateNumber
           );
           this.modifyCompanyForm.controls['location'].setValue(
             result['location']
@@ -314,11 +335,10 @@ export class ProfileComponent implements OnInit {
         ownerName: this.modifyCompanyForm.get('ownerName').value,
         firmActivity: this.modifyCompanyForm.get('firmActivity').value,
         vehicleType: this.modifyCompanyForm.get('vehicleType').value,
-        mobileNumber: this.modifyCompanyForm.get('mobileNumber').value,
+        mobileNumber: '+91' + this.modifyCompanyForm.get('mobileNumber').value,
         passwordPin: this.modifyCompanyForm.get('passwordPin').value,
-        alternateMobileNumber: this.modifyCompanyForm.get(
-          'alternateMobileNumber'
-        ).value,
+        alternateMobileNumber:
+          '+91' + this.modifyCompanyForm.get('alternateMobileNumber').value,
         location: this.modifyCompanyForm.get('location').value,
         serviceProvidedLocation: this.modifyCompanyForm.get(
           'serviceProvidedLocation'
@@ -343,13 +363,13 @@ export class ProfileComponent implements OnInit {
           .doc('companys/' + this.docid)
           .ref.update(companyObj)
           .then(() => {
-           //setTimeout(() => {
-              this.toastservice.showToast('Profile updated successfully', 1000);
-              if (this.paymentStatus === 'Paid') {
-                this.router.navigate(['select-vehicle']);
-              } else {
-                this.router.navigate(['payment']);
-              }
+            //setTimeout(() => {
+            this.toastservice.showToast('Profile updated successfully', 1000);
+            if (this.paymentStatus === 'Paid') {
+              this.router.navigate(['select-vehicle']);
+            } else {
+              this.router.navigate(['payment']);
+            }
             //}, 5000);
           });
       } catch (error) {

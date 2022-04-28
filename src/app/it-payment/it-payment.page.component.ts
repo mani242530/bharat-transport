@@ -33,6 +33,7 @@ export class PaymentPageComponent implements OnInit {
   ngOnInit() {
     this.userFirmActivity = this.appService.userSelectedFirmActivity;
     this.paymentAmount = this.userFirmActivity === 'Driver' ? 9900.0 : 99900.0;
+    this.appService.paymentAmount =  this.paymentAmount;
   }
 
   payWithRazorpay() {
