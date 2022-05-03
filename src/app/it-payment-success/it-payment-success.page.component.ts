@@ -12,6 +12,7 @@ import { ToastService } from '../services/toast.service';
 export class PaymentSuccessComponent implements OnInit {
   docid;
   paymentId;
+  razor_key = 'rzp_live_hP98k48bLAaoBC';
 
   constructor(
     private fbstore: AngularFirestore,
@@ -25,7 +26,7 @@ export class PaymentSuccessComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.doModify();
+    // this.doModify();
   }
 
   doModify() {

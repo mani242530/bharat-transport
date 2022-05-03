@@ -8,7 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import {
   FaIconLibrary,
-  FontAwesomeModule
+  FontAwesomeModule,
 } from '@fortawesome/angular-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
@@ -17,6 +17,7 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 import { SmsRetriever } from '@ionic-native/sms-retriever/ngx';
 import { IonicSelectableModule } from '@ionic-selectable/angular';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { MbscModule } from '@mobiscroll/angular-lite';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AvatarModule } from 'ngx-avatar';
@@ -37,6 +38,7 @@ import { AppComponent } from './app.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    MbscModule,
     IonicSelectableModule.forRoot(),
     TranslateModule.forRoot({
       loader: {

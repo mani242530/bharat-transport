@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { AppService } from '../services/app.servcie';
@@ -25,7 +26,8 @@ export class PaymentPageComponent implements OnInit {
     private router: Router,
     private appService: AppService,
     private toastController: ToastController,
-    private toastservice: ToastService
+    private toastservice: ToastService,
+    private fbstore: AngularFirestore
   ) {
     this.docId = this.appService.docId;
   }
@@ -33,7 +35,7 @@ export class PaymentPageComponent implements OnInit {
   ngOnInit() {
     this.userFirmActivity = this.appService.userSelectedFirmActivity;
     this.paymentAmount = this.userFirmActivity === 'Driver' ? 9900.0 : 99900.0;
-    this.appService.paymentAmount =  this.paymentAmount;
+    this.appService.paymentAmount = this.paymentAmount;
   }
 
   payWithRazorpay() {
@@ -113,6 +115,27 @@ export class PaymentPageComponent implements OnInit {
   }
 
   successPayment(payment_id) {
-    this.router.navigate(['/payment-success', payment_id]);
+    if (payment_id) {
+      let paymentobj = {
+        paymentStatus: 'Paid',
+        accountStatus: 'Active',
+        payment_id: payment_id,
+        payment_date: new Date(),
+        paymentAmount: this.paymentAmount,
+      };
+      try {
+        this.fbstore
+          .doc('companys/' + this.docId)
+          .ref.update(paymentobj)
+          .then((data) => {
+            console.log(data);
+            setTimeout(() => {
+              this.router.navigate(['/payment-success', payment_id]);
+            }, 5000);
+          });
+      } catch (error) {
+        this.toastservice.showToast(error.message, 15000);
+      }
+    }
   }
 }
