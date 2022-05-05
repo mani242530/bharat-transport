@@ -11,11 +11,11 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ToastController } from '@ionic/angular';
 import * as serviceProvidedLocation from '../json/service-provided-location';
 import { Company } from '../models/company';
 import { ToastService } from '../services/toast.service';
 import { AppService } from '../services/app.servcie';
+import * as sharedContansts from '../constants/shared.constants';
 
 @Component({
   selector: 'app-profile',
@@ -125,7 +125,6 @@ export class ProfileComponent implements OnInit {
     private toastservice: ToastService,
     public router: Router,
     private fbstore: AngularFirestore,
-    private toastController: ToastController,
     public appservice: AppService,
     public route: ActivatedRoute
   ) {
@@ -254,10 +253,10 @@ export class ProfileComponent implements OnInit {
   }
 
   onFirmActivityValue(result) {
-    if (result['firmActivity'] === 'Driver') {
+    if (result['firmActivity'] === sharedContansts.default.app.DRIVER) {
       this.checkFirmActivityIsOwner = false;
       this.checkFirmActivityIsDriver = true;
-    } else if (result['firmActivity'] === 'Owner') {
+    } else if (result['firmActivity'] === sharedContansts.default.app.OWNER) {
       this.checkFirmActivityIsDriver = false;
       this.checkFirmActivityIsOwner = true;
     } else {
@@ -267,10 +266,10 @@ export class ProfileComponent implements OnInit {
   }
 
   onFirmActivityChange(value) {
-    if (value.detail.value === 'Driver') {
+    if (value.detail.value === sharedContansts.default.app.DRIVER) {
       this.checkFirmActivityIsOwner = false;
       this.checkFirmActivityIsDriver = true;
-    } else if (value.detail.value === 'Owner') {
+    } else if (value.detail.value === sharedContansts.default.app.OWNER) {
       this.checkFirmActivityIsDriver = false;
       this.checkFirmActivityIsOwner = true;
     } else {
@@ -289,13 +288,15 @@ export class ProfileComponent implements OnInit {
     this.modifyCompanyForm
       .get('firmActivity')
       .valueChanges.subscribe((selectedFirmActivity) => {
-        if (selectedFirmActivity === 'Owner') {
+        if (selectedFirmActivity === sharedContansts.default.app.OWNER) {
           companyNameControl.setValidators([Validators.required]);
           vehicleNosControl.setValidators([Validators.required]);
           drivingLicenseNumberControl.setValidators([
             Validators.pattern('[a-zA-Z0-9 ]*$'),
           ]);
-        } else if (selectedFirmActivity === 'Driver') {
+        } else if (
+          selectedFirmActivity === sharedContansts.default.app.DRIVER
+        ) {
           companyNameControl.setValidators(null);
           vehicleNosControl.setValidators(null);
           drivingLicenseNumberControl.setValidators([
@@ -335,10 +336,13 @@ export class ProfileComponent implements OnInit {
         ownerName: this.modifyCompanyForm.get('ownerName').value,
         firmActivity: this.modifyCompanyForm.get('firmActivity').value,
         vehicleType: this.modifyCompanyForm.get('vehicleType').value,
-        mobileNumber: '+91' + this.modifyCompanyForm.get('mobileNumber').value,
+        mobileNumber:
+          sharedContansts.default.app._91 +
+          this.modifyCompanyForm.get('mobileNumber').value,
         passwordPin: this.modifyCompanyForm.get('passwordPin').value,
         alternateMobileNumber:
-          '+91' + this.modifyCompanyForm.get('alternateMobileNumber').value,
+          sharedContansts.default.app._91 +
+          this.modifyCompanyForm.get('alternateMobileNumber').value,
         location: this.modifyCompanyForm.get('location').value,
         serviceProvidedLocation: this.modifyCompanyForm.get(
           'serviceProvidedLocation'
@@ -349,14 +353,15 @@ export class ProfileComponent implements OnInit {
         aadharNumber: this.modifyCompanyForm.get('aadharNumber').value,
         drivingLicenseNumber: this.modifyCompanyForm.get('drivingLicenseNumber')
           .value,
-        userEntry: 'Yes',
+        userEntry: sharedContansts.default.app.YES,
+        updatedDate: new Date().toISOString().slice(0, 10),
       };
 
-      // Object.keys(companyObj).forEach((k) => {
-      //   if (typeof companyObj[k] !== 'object') {
-      //     companyObj[k] = companyObj[k].trim();
-      //   }
-      // });
+      Object.keys(companyObj).forEach((k) => {
+        if (typeof companyObj[k] !== 'object') {
+          companyObj[k] = companyObj[k].trim();
+        }
+      });
 
       try {
         await this.fbstore
@@ -365,7 +370,7 @@ export class ProfileComponent implements OnInit {
           .then(() => {
             //setTimeout(() => {
             this.toastservice.showToast('Profile updated successfully', 1000);
-            if (this.paymentStatus === 'Paid') {
+            if (this.paymentStatus === sharedContansts.default.app.PAID) {
               this.router.navigate(['select-vehicle']);
             } else {
               this.router.navigate(['payment']);

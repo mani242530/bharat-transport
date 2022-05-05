@@ -120,7 +120,7 @@ export class PaymentPageComponent implements OnInit {
         paymentStatus: 'Paid',
         accountStatus: 'Active',
         payment_id: payment_id,
-        payment_date: new Date(),
+        payment_date: new Date().toISOString().slice(0, 10),
         paymentAmount: this.paymentAmount,
       };
       try {

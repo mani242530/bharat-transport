@@ -5,13 +5,13 @@ import {
 } from '@angular/fire/firestore';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { of } from 'rxjs';
-import { delay, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Company } from '../models/company';
 import { AppService } from '../services/app.servcie';
 import { ToastService } from '../services/toast.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { CallNumber } from '@ionic-native/call-number/ngx';
+import * as sharedContansts from '../constants/shared.constants';
 
 @Component({
   selector: 'app-listing',
@@ -66,10 +66,6 @@ export class ListingPageComponent implements OnInit {
           .toLowerCase()
           .indexOf(event.target.value.toLowerCase()) !== -1
     );
-
-    // const duplicateResult = searchCompanyResult.filter(function(v, i) {
-    //   return ((v['mobileNumber'] == '+91'+event.target.value || v['companyName'] == event.target.value.toLowerCase()));
-    // })
     this.companyLists = duplicateResult;
   }
 
@@ -125,10 +121,14 @@ export class ListingPageComponent implements OnInit {
             )
           );
           const panResult = finallist.filter(
-            (data) => data.serviceProvidedLocation[0] === 'Pan India'
+            (data) =>
+              data.serviceProvidedLocation[0] ===
+              sharedContansts.default.app.PAN_INDIA
           );
           const nonPanResult = finallist.filter(
-            (data) => data.serviceProvidedLocation[0] !== 'Pan India'
+            (data) =>
+              data.serviceProvidedLocation[0] !==
+              sharedContansts.default.app.PAN_INDIA
           );
           const mergedArray = [...nonPanResult, ...panResult];
           const uniqueData = [

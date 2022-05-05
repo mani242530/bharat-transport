@@ -11,6 +11,7 @@ import { Company } from '../models/company';
 import { Config } from '../models/otp.config';
 import { AppService } from '../services/app.servcie';
 import { AuthtenticationService } from '../services/authentication.service';
+import * as sharedContansts from '../constants/shared.constants';
 
 @Component({
   selector: 'app-verification',
@@ -114,7 +115,10 @@ export class VerificationPageComponent implements OnInit {
             } else {
               this.appService.userSelectedFirmActivity =
                 snapshot[0].firmActivity;
-              if (snapshot[0] && snapshot[0].paymentStatus === 'Paid') {
+              if (
+                snapshot[0] &&
+                snapshot[0].paymentStatus === sharedContansts.default.app.PAID
+              ) {
                 this.ngroute.navigate(['select-vehicle']);
               } else {
                 this.ngroute.navigate(['payment']);

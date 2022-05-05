@@ -75,7 +75,8 @@ export class SignInPageComponent implements OnInit {
               id: action.payload.doc.id,
               mobileNumber: data.mobileNumber,
               paymentStatus: data.paymentStatus,
-              userEntry: data.userEntry
+              userEntry: data.userEntry,
+              signInCount: data.signInCount === NaN ? 0 : data.signInCount,
             };
           });
         })
@@ -86,12 +87,22 @@ export class SignInPageComponent implements OnInit {
           this.showProgress = false;
           this.mobileNumberNotFound = true;
         } else {
+          
           this.showProgress = false;
           this.mobileNumberNotFound = false;
           this.appService.docId = snapshot[0].id;
           this.appService.paymentStatus = snapshot[0].paymentStatus;
           this.appService.signinMobileNumber = snapshot[0].mobileNumber;
           this.appService.userEntry = snapshot[0].userEntry;
+
+          // console.log(snapshot[0].signInCount);
+        
+          // this.fbstore
+          //   .doc('companys/' + snapshot[0].id)
+          //   .ref.update({ signInCount: count })
+          //   .then((data) => {
+          //     console.log(data);
+          //   });
           this.router.navigate(['pin']);
         }
       });

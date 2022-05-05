@@ -20,6 +20,7 @@ import { AppService } from '../services/app.servcie';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ToastService } from '../services/toast.service';
+import * as sharedContansts from '../constants/shared.constants';
 
 @Component({
   selector: 'app-signup',
@@ -151,10 +152,10 @@ export class SignUpPageComponent implements OnInit {
 
   onFirmActivityChange(value) {
     this.selectedFirmActivity = value.detail.value;
-    if (value.detail.value === 'Driver') {
+    if (value.detail.value === sharedContansts.default.app.DRIVER) {
       this.checkFirmActivityIsOwner = false;
       this.checkFirmActivityIsDriver = true;
-    } else if (value.detail.value === 'Owner') {
+    } else if (value.detail.value === sharedContansts.default.app.OWNER) {
       this.checkFirmActivityIsDriver = false;
       this.checkFirmActivityIsOwner = true;
     } else {
@@ -173,13 +174,15 @@ export class SignUpPageComponent implements OnInit {
     this.createCompanyForm
       .get('firmActivity')
       .valueChanges.subscribe((selectedFirmActivity) => {
-        if (selectedFirmActivity === 'Owner') {
+        if (selectedFirmActivity === sharedContansts.default.app.OWNER) {
           companyNameControl.setValidators([Validators.required]);
           vehicleNosControl.setValidators([Validators.required]);
           drivingLicenseNumberControl.setValidators([
             Validators.pattern('[a-zA-Z0-9 ]*$'),
           ]);
-        } else if (selectedFirmActivity === 'Driver') {
+        } else if (
+          selectedFirmActivity === sharedContansts.default.app.DRIVER
+        ) {
           companyNameControl.setValidators(null);
           vehicleNosControl.setValidators(null);
           drivingLicenseNumberControl.setValidators([
@@ -211,7 +214,7 @@ export class SignUpPageComponent implements OnInit {
     return this.createCompanyForm.controls[controlName].hasError(errorName);
   };
 
-  createCompanyFireStore(formvalue) {
+  createCompanyFireStore() {
     this.showProgress = true;
     this.formSubmitted = true;
     if (this.createCompanyForm.valid) {
@@ -220,10 +223,13 @@ export class SignUpPageComponent implements OnInit {
         ownerName: this.createCompanyForm.get('ownerName').value,
         firmActivity: this.createCompanyForm.get('firmActivity').value,
         vehicleType: this.createCompanyForm.get('vehicleType').value,
-        mobileNumber: '+91' + this.createCompanyForm.get('mobileNumber').value,
+        mobileNumber:
+          sharedContansts.default.app._91 +
+          this.createCompanyForm.get('mobileNumber').value,
         passwordPin: this.createCompanyForm.get('passwordPin').value,
         alternateMobileNumber:
-          '+91' + this.createCompanyForm.get('alternateMobileNumber').value,
+          sharedContansts.default.app._91 +
+          this.createCompanyForm.get('alternateMobileNumber').value,
         location: this.createCompanyForm.get('location').value,
         serviceProvidedLocation: this.createCompanyForm.get(
           'serviceProvidedLocation'
@@ -234,9 +240,11 @@ export class SignUpPageComponent implements OnInit {
         drivingLicenseNumber: this.createCompanyForm.get('drivingLicenseNumber')
           .value,
         language: this.appService.selectedLanguage,
-        paymentStatus: 'Not Paid',
-        accountStatus: 'Inactive',
-        userEntry: 'Yes',
+        paymentStatus: sharedContansts.default.app.NOT_PAID,
+        accountStatus: sharedContansts.default.app.INACTIVE,
+        userEntry: sharedContansts.default.app.YES,
+        registeredDate: new Date().toISOString().slice(0, 10),
+        signInCount: 0,
       };
 
       // Object.keys(companyObj).forEach((k) => {
@@ -313,7 +321,11 @@ export class SignUpPageComponent implements OnInit {
                   } else {
                     this.appService.userSelectedFirmActivity =
                       snapshot[0].firmActivity;
-                    if (snapshot[0] && snapshot[0].paymentStatus === 'Paid') {
+                    if (
+                      snapshot[0] &&
+                      snapshot[0].paymentStatus ===
+                        sharedContansts.default.app.PAID
+                    ) {
                       this.ngroute.navigate(['select-vehicle']);
                     } else {
                       this.ngroute.navigate(['payment']);

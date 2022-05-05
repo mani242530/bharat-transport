@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 import { Company } from '../models/company';
 import { Config } from '../models/otp.config';
 import { AppService } from '../services/app.servcie';
-import { AuthtenticationService } from '../services/authentication.service';
+import * as sharedContansts from '../constants/shared.constants';
 import { ToastService } from '../services/toast.service';
 
 @Component({
@@ -63,7 +63,10 @@ export class PasswordPinPageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.userEntryFlag = this.appService.userEntry === 'No' ? true : false;
+    this.userEntryFlag =
+      this.appService.userEntry === sharedContansts.default.app.NO
+        ? true
+        : false;
   }
 
   async pinVerifiedToast() {
@@ -116,8 +119,10 @@ export class PasswordPinPageComponent implements OnInit {
           const userLanguage = snapshot[0].language;
           this.translateService.setDefaultLang(userLanguage);
 
-          if (snapshot[0].userEntry === 'Yes') {
-            if (snapshot[0].paymentStatus === 'Paid') {
+          if (snapshot[0].userEntry === sharedContansts.default.app.YES) {
+            if (
+              snapshot[0].paymentStatus === sharedContansts.default.app.PAID
+            ) {
               this.toastservice.showToast('Pin verified successfully', 1000);
               this.router.navigate(['select-vehicle']);
             } else {
