@@ -50,12 +50,14 @@
     "VERIFICATION": {
       "TITLE": "पडताळणी",
       "PIN": "पिन",
+      "RESET_PIN": "रीसेट पिन",
       "ENTER_VERIFICATION_CODE": "सत्यापन कोड प्रविष्ट करा",
       "ENTER_PIN_CODE": "पिन एंटर करा",
       "OTP_MESSAGE": "'तुमच्या नंबरवर OTP पाठवला जातो. तुम्हाला ते १५ सेकंदात मिळायला हवे'",
       "BUTTON": {
         "VERIFICATION": "पडताळणी",
-        "RESEND": "पुन्हा पाठवा"
+        "RESEND": "पुन्हा पाठवा",
+        "RESET": "रीसेट"
       },
       "TEXT": "कोड प्राप्त झाला नाही?"
     },

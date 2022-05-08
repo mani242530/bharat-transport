@@ -49,12 +49,14 @@
       "VERIFICATION": {
         "TITLE": "ચકાસણી",
         "PIN": "પિન",
+        "RESET_PIN": "રીસેટ પિન",
         "ENTER_VERIFICATION_CODE": "ચકાસણી કોડ દાખલ કરો",
         "ENTER_PIN_CODE": "પિન દાખલ કરો",
         "OTP_MESSAGE": "'તમારા નંબર પર એક OTP મોકલવામાં આવે છે. તમારે તે 15 સેકન્ડમાં પ્રાપ્ત કરવું જોઈએ'",
         "BUTTON": {
           "VERIFICATION": "ચકાસણી",
-          "RESEND": "ફરીથી મોકલો"
+          "RESEND": "ફરીથી મોકલો",
+          "RESET": "રીસેટ"
         },
         "TEXT": "કોડ મળ્યો નથી?"
       },

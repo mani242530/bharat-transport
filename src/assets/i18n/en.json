@@ -50,11 +50,13 @@
     "VERIFICATION": {
       "TITLE": "Verification",
       "PIN": "Pin",
+      "RESET_PIN": "Reset Pin",
       "ENTER_VERIFICATION_CODE": "Enter verification code",
       "ENTER_PIN_CODE": "Enter Pin",
       "OTP_MESSAGE": "'An OTP is sent to your number. You should receive it in 15 s'",
       "BUTTON": {
         "VERIFICATION": "VERIFICATION",
+        "RESET": "RESET",
         "RESEND": "Resend"
       },
       "TEXT": "Didn't receive code?"

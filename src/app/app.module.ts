@@ -18,6 +18,7 @@ import { SmsRetriever } from '@ionic-native/sms-retriever/ngx';
 import { IonicSelectableModule } from '@ionic-selectable/angular';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { MbscModule } from '@mobiscroll/angular-lite';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AvatarModule } from 'ngx-avatar';
@@ -39,6 +40,7 @@ import { AppComponent } from './app.component';
     AngularFireAuthModule,
     AngularFirestoreModule,
     MbscModule,
+    NgSelectModule,
     IonicSelectableModule.forRoot(),
     TranslateModule.forRoot({
       loader: {

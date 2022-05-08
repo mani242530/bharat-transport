@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IonicSelectableModule } from '@ionic-selectable/angular';
 import { IonicModule } from '@ionic/angular';
 import { MbscModule } from '@mobiscroll/angular-lite';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { TranslateModule } from '@ngx-translate/core';
 import { AvatarModule } from 'ngx-avatar';
 import { HomePageComponent } from './it-home.page.component';
@@ -32,7 +33,8 @@ const MODULES = [
   TranslateModule,
   HomePageRoutingModule,
   IonicSelectableModule,
-  MbscModule
+  MbscModule,
+  NgSelectModule,
 ];
 
 /**

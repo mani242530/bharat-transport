@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { FormControl, FormGroup, FormGroupDirective } from '@angular/forms';
+import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import * as serviceProvidedLocation from '../json/service-provided-location';
+import * as location from '../json/location';
 import { AppService } from '../services/app.servcie';
 
 @Component({
@@ -11,11 +12,12 @@ import { AppService } from '../services/app.servcie';
   styleUrls: ['./it-home.page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
-  locations;
+  locations = [];
+  serviceProvidedLocations = [];
   userData;
   user;
   userName;
-  serviceProvidedLocations = [];
+
   docId: string;
   authfbObserver;
 
@@ -32,7 +34,11 @@ export class HomePageComponent implements OnInit {
     this.docId = this.appService.docId;
     const serviceLocations =
       serviceProvidedLocation.serviceProvidedLocationData;
+    const locations = location.serviceProvidedLocationData;
     this.serviceProvidedLocations = serviceLocations.sort((a, b) =>
+      a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+    );
+    this.locations = locations.sort((a, b) =>
       a.name > b.name ? 1 : b.name > a.name ? -1 : 0
     );
   }
@@ -47,17 +53,18 @@ export class HomePageComponent implements OnInit {
 
   initializeForm(): void {
     this.searchCompanyForm = new FormGroup({
-      from: new FormControl(''),
-      to: new FormControl(''),
-      firmActivity: new FormControl(''),
+      from: new FormControl('', [Validators.required]),
+      to: new FormControl('', [Validators.required]),
+      firmActivity: new FormControl('', [Validators.required]),
     });
   }
 
   searchContactByLocation(values) {
+    console.log(values);
     let navigationExtras: NavigationExtras = {
       queryParams: {
-        from: values.from,
-        to: values.to,
+        from: values.from && values.from.name,
+        to: values.to && values.to.name,
         firmActivity: values.firmActivity,
       },
     };
@@ -70,5 +77,17 @@ export class HomePageComponent implements OnInit {
       // this.authfbObserver.unsubscribe();
       this.router.navigate(['splash']);
     });
+  }
+
+  getServiceProvidedLocationsName(event) {
+    console.log(event);
+    const location = this.locations.filter((data) =>
+      data.name
+        .toLocaleLowerCase()
+        .includes(event.target.value.toLocaleLowerCase())
+    );
+    console.log(location);
+
+    this.locations = location;
   }
 }

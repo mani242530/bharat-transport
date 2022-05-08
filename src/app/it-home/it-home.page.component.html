@@ -70,7 +70,7 @@
                 </option>
               </datalist> -->
 
-              <ion-select
+              <!-- <ion-select
                 interface="popover"
                 class="form-control rc-form-control native-select it-form-control"
                 placeholder="{{
@@ -86,7 +86,19 @@
                   value="{{ location.name | translate }}"
                   >{{ location.name | translate }}</ion-select-option
                 >
-              </ion-select>
+              </ion-select> -->
+              <ng-select
+                class="native-select it-form-control"
+                [items]="locations"
+                bindLabel="name"
+                formControlName="from"
+                notFoundText="No records found"
+                (keyup)="getServiceProvidedLocationsName($event)"
+                placeholder="{{
+                  'APP.HOME.PLACEHOLDER.SELECT_FROM_LOCATION' | translate
+                }}"
+              >
+              </ng-select>
             </div>
           </div>
           <div class="form-group border-bottom">
@@ -117,7 +129,7 @@
                   {{ location.name | translate }}
                 </option>
               </datalist> -->
-              <ion-select
+              <!-- <ion-select
                 interface="popover"
                 class="form-control rc-form-control native-select it-form-control"
                 placeholder="{{
@@ -133,7 +145,19 @@
                   value="{{ location.name | translate }}"
                   >{{ location.name | translate }}</ion-select-option
                 >
-              </ion-select>
+              </ion-select> -->
+              <ng-select
+                class="native-select it-form-control"
+                [items]="locations"
+                bindLabel="name"
+                formControlName="to"
+                notFoundText="No records found"
+                (keyup)="getServiceProvidedLocationsName($event)"
+                placeholder="{{
+                  'APP.HOME.PLACEHOLDER.SELECT_TO_LOCATION' | translate
+                }}"
+              >
+              </ng-select>
             </div>
           </div>
           <div class="form-group border-bottom">

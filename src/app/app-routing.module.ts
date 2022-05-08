@@ -47,6 +47,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'reset-pin',
+    loadChildren: () =>
+      import('./it-reset-pin/it-reset-pin.module').then(
+        (p) => p.ResetPinPageModule
+      ),
+  },
+  {
     path: 'payment',
     loadChildren: () =>
       import('./it-payment/it-payment.module').then((m) => m.PaymentPageModule),
