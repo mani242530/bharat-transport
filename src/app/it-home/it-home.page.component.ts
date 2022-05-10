@@ -1,6 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  FormGroupDirective,
+  Validators,
+} from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import * as serviceProvidedLocation from '../json/service-provided-location';
 import * as location from '../json/location';
@@ -63,9 +68,9 @@ export class HomePageComponent implements OnInit {
     console.log(values);
     let navigationExtras: NavigationExtras = {
       queryParams: {
-        from: values.from && values.from.name,
-        to: values.to && values.to.name,
-        firmActivity: values.firmActivity,
+        from: values && values.from,
+        to: values && values.to,
+        firmActivity: values && values.firmActivity,
       },
     };
     this.router.navigate(['listing'], navigationExtras);

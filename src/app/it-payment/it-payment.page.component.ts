@@ -39,7 +39,7 @@ export class PaymentPageComponent implements OnInit {
   }
 
   payWithRazorpay() {
-    var options = {
+    let options = {
       description: 'Credit towards Service',
       image: 'http://privid.net.in/app_logo.png',
       currency: 'INR', // your 3 letter currency code
@@ -97,16 +97,14 @@ export class PaymentPageComponent implements OnInit {
           }
         },
       },
-      handler: (response) => {
-        this.successPayment(response);
-      },
     };
 
-    var successCallback = (payment_id) => {
+    let successCallback = (payment_id) => {
+      console.log('PaymentId ' + payment_id);
       this.successPayment(payment_id);
     };
 
-    var cancelCallback = (error) => {
+    let cancelCallback = (error) => {
       console.log(error.description + ' (Error ' + error.code + ')');
       this.router.navigate(['/payment-failure']);
     };
@@ -114,24 +112,25 @@ export class PaymentPageComponent implements OnInit {
     RazorpayCheckout.open(options, successCallback, cancelCallback);
   }
 
-  successPayment(payment_id) {
-    if (payment_id) {
-      let paymentobj = {
+  async successPayment(id) {
+    alert(id);
+    if (id) {
+      const paymentobj = {
         paymentStatus: 'Paid',
         accountStatus: 'Active',
-        payment_id: payment_id,
+        payment_id: id,
         payment_date: new Date().toISOString().slice(0, 10),
         paymentAmount: this.paymentAmount,
       };
       try {
-        this.fbstore
+        await this.fbstore
           .doc('companys/' + this.docId)
           .ref.update(paymentobj)
           .then((data) => {
             console.log(data);
-            setTimeout(() => {
-              this.router.navigate(['/payment-success', payment_id]);
-            }, 5000);
+            // setTimeout(() => {
+            this.router.navigate(['/payment-success', id]);
+            // }, 5000);
           });
       } catch (error) {
         this.toastservice.showToast(error.message, 15000);
