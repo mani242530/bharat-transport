@@ -45,7 +45,7 @@ export class PaymentPageComponent implements OnInit {
       currency: 'INR', // your 3 letter currency code
       key: this.razor_key, // your Key Id from Razorpay dashboard
       amount: this.paymentAmount, // Payment amount in smallest denomiation e.g. cents for USD
-      name: 'Bharat Transport App',
+      name: 'Bharat Transport Digital Directory',
       config: {
         display: {
           blocks: {
