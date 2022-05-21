@@ -163,7 +163,10 @@ export class ProfileComponent implements OnInit {
       alternateMobileNumber: new FormControl(''),
       location: new FormControl('', Validators.required),
       serviceProvidedLocation: new FormControl('', Validators.required),
-      referenceName: new FormControl('', [Validators.pattern("^[a-zA-Z -']+")]),
+      referenceName: new FormControl('', [
+        Validators.required,
+        Validators.pattern("^[a-zA-Z -']+"),
+      ]),
       language: new FormControl(''),
       vehicleNos: new FormControl(''),
       aadharNumber: new FormControl('', [Validators.pattern('[0-9]{1,12}$')]),

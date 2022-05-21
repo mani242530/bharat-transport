@@ -112,8 +112,7 @@ export class PaymentPageComponent implements OnInit {
     RazorpayCheckout.open(options, successCallback, cancelCallback);
   }
 
-  async successPayment(id) {
-    alert(id);
+  successPayment(id) {
     if (id) {
       const paymentobj = {
         paymentStatus: 'Paid',
@@ -123,7 +122,7 @@ export class PaymentPageComponent implements OnInit {
         paymentAmount: this.paymentAmount,
       };
       try {
-        await this.fbstore
+        this.fbstore
           .doc('companys/' + this.docId)
           .ref.update(paymentobj)
           .then((data) => {
